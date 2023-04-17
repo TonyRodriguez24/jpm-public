@@ -358,7 +358,7 @@ body {
 
 .portfolio__text-paragraph {
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.02em;
@@ -712,6 +712,10 @@ body {
   .slideshow__images-image {
     max-height: 300px;
     max-width: 350px;
+  }
+
+  .slideshow__text {
+    max-width: 100%;
   }
 
   .slideshow__text-title {
