@@ -98,7 +98,7 @@ body {
 .header {
   width: 100vw;
   height: 100vh;
-  background: url(assets/1.jpeg) no-repeat fixed center;
+  background: url(assets/header.jpeg) no-repeat fixed center;
   background-color: rgb(210, 210, 210);
   background-blend-mode: multiply;
   display: flex;
