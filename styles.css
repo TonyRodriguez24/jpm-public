@@ -44,13 +44,13 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.nav__options li a {
+.nav__options li > a {
   color: white;
   font-size: 17px;
   text-transform: uppercase;
 }
 
-.nav__options li a:hover {
+.nav__options li > a:hover {
   border-bottom: 2px solid white;
   transition: 0.2s;
 }
@@ -82,6 +82,10 @@ body {
   border: 2px solid var(--red);
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.nav__button a {
+  color: white;
 }
 
 .nav__button:hover {
@@ -129,7 +133,7 @@ body {
   flex-direction: column;
 }
 
-.header__left-social > i {
+.header__left-social > a {
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -503,6 +507,12 @@ body {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 6px;
+  color: white;
+}
+
+.footer__info-links a:hover {
+  text-decoration: underline;
+  transition: 0.2s;
 }
 
 .footer__info-about {
@@ -517,7 +527,7 @@ body {
   display: flex;
 }
 
-.footer__info-social > i {
+.footer__info-social > a {
   cursor: pointer;
   margin-right: 12px;
 }
@@ -563,6 +573,56 @@ body {
   object-fit: cover;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin: 120px 20px 80px 20px;
+}
+
+.about h1 {
+  font-family: "Montserrat", serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 400;
+  border-bottom: 3px solid black;
+  margin: 24px 0 24px 0;
+  padding-bottom: 24px;
+  width: 70%;
+}
+
+.about > div {
+  width: 70%;
+}
+
+.about h5 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 40px 0 0 0;
+  letter-spacing: 0.02em;
+}
+
+.about p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+}
+
+.about__image {
+  margin-top: 40px;
+}
+
+.about__image img {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1040px) {
   .nav__options li a {
     font-size: 16px;
@@ -599,6 +659,14 @@ body {
 
   #check:checked ~ ul {
     left: 0;
+  }
+
+  .about h1 {
+    width: 100%;
+  }
+
+  .about > div {
+    width: 100%;
   }
 }
 
