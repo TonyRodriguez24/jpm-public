@@ -694,7 +694,7 @@ body {
 
   .header__left-social {
     flex-direction: row;
-    width: 15%;
+    width: 20%;
     justify-content: space-between;
   }
 
