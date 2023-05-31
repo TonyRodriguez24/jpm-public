@@ -1,0 +1,10 @@
+{
+  "name": "jpm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0"
+  },
+  "author": "",
+  "description": ""
+}

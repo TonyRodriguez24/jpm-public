@@ -11,6 +11,7 @@ body {
 
 :root {
   --red: #c53139;
+  --dark-red: #b42f35;
 }
 
 .nav {
@@ -628,6 +629,108 @@ body {
   object-fit: cover;
 }
 
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 20px 80px 20px;
+}
+
+#contact h2 {
+  font-family: "Montserrat", serif;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 24px 0 24px 0;
+  padding-bottom: 24px;
+}
+
+#contact > form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 12px;
+  width: 50%;
+}
+
+.input-group {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  font-family: "Montserrat", serif;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.input-group > input {
+  border: 1px rgb(176, 176, 176) solid;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.input-group > textarea {
+  border: 1px rgb(176, 176, 176) solid;
+  font-family: "Montserrat", serif;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+  height: 140px;
+  resize: vertical;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.contact-submit > button {
+  padding: 16px 0 16px 0;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+}
+.contact-submit > button:hover {
+  background-color: var(--dark-red);
+}
+
+#contact .success {
+  width: 50%;
+  padding: 12px;
+  margin: 8px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(114, 248, 114);
+  border: 2px rgb(4, 167, 4) solid;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+}
+#contact .fail {
+  width: 50%;
+  padding: 12px;
+  margin: 8px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(252, 84, 84);
+  border: 2px rgb(199, 0, 0) solid;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 1040px) {
   .nav__options li a {
     font-size: 16px;
@@ -672,6 +775,21 @@ body {
 
   .about > div {
     width: 100%;
+  }
+  #contact > form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    width: 100%;
+  }
+  #contact .success {
+    width: 100%;
+  }
+
+  #contact .fail {
+    width: 100%;
+  }
+  .col-span-2 {
+    grid-column: 1;
   }
 }
 
