@@ -6,15 +6,7 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-973643795"
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "AW-973643795");
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,6 +60,13 @@
           // these IDs from the previous steps
           emailjs.sendForm("service_kkh2xjb", "template_swlojfa", form).then(
             () => {
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+
+              gtag("config", "AW-973643795");
               form.style.display = "none";
               fail.classList.add("hidden");
               success.classList.remove("hidden");
