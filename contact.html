@@ -12,6 +12,8 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
+
+      gtag("config", "AW-973643795");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,7 +68,6 @@
           // these IDs from the previous steps
           emailjs.sendForm("service_kkh2xjb", "template_swlojfa", form).then(
             () => {
-              gtag("config", "AW-973643795");
               form.style.display = "none";
               fail.classList.add("hidden");
               success.classList.remove("hidden");
