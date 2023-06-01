@@ -16,12 +16,6 @@
       gtag("config", "AW-973643795");
     </script>
 
-    <script>
-      gtag("event", "form_submit", {
-        send_to: "AW-973643795",
-        value: "1.0",
-      });
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,6 +58,19 @@
       })();
     </script>
     <script type="text/javascript">
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-973643795/F7nmCNPMzKYYEJPAotAD",
+          event_callback: callback,
+        });
+        return false;
+      }
+
       window.onload = () => {
         const form = document.querySelector("#contact-form");
         const success = document.querySelector(".success");
@@ -75,6 +82,7 @@
           // these IDs from the previous steps
           emailjs.sendForm("service_kkh2xjb", "template_swlojfa", form).then(
             () => {
+              gtag_report_conversion();
               form.style.display = "none";
               fail.classList.add("hidden");
               success.classList.remove("hidden");
