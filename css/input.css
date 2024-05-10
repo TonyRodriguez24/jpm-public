@@ -1,58 +1,48 @@
-npm install tailwindcss base;
-@tailwind components;
-@tailwind utilities;
-
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 *,
 *::after,
-*::before
-{
+*::before {
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
 
-body
-{
+body {
   margin: 0px;
   padding: 0px;
 }
 
-h1
-{
+h1 {
   font-size: 90px;
 }
 
-h2
-{
+h2 {
   font-size: 60px;
 }
 
-h3
-{
+
+h3 {
   font-size: 20px;
   font-weight: bold;
 }
 
-p
-{
+p {
   font-size: 20px;
   z-index: 3;
 }
 
-li
-{
+li {
   list-style: none;
 }
 
-a
-{
+a {
   text-decoration: none;
   color: white;
 }
 
-.header-container
-{
+.header-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -61,13 +51,13 @@ a
   text-align: center;
   width: 100%;
   height: 88vh;
-  background: url('../assets/header-picc.jpg') no-repeat center center/cover;
+  background: url("../assets/header-picc.jpg") no-repeat center center/cover;
   background-size: cover;
-
 }
 
+
 .header-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -77,17 +67,23 @@ a
   z-index: 1;
 }
 
-.text-container
-{
+@keyframes fadeIn {
+  0% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-container {
   color: white;
   z-index: 4;
   line-height: 1;
   font-weight: bold;
 }
 
-
-.why-section
-{
+.why-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,33 +96,26 @@ a
   color: rgb(255, 255, 255);
 }
 
-.why-logo
-{
+.why-logo {
   height: 350px;
   width: 350px;
   z-index: 20;
 }
 
-
-
-.why-section h1
-{
+.why-section h1 {
   font-size: 3.5rem;
   z-index: 2;
   margin-top: 20px;
   font-weight: 600;
-  
 }
 
-.why-section p
-{
- width: 60%;
- font-size: 1.4rem;
+.why-section p {
+  width: 60%;
+  font-size: 1.4rem;
 }
 
-.why-section::after
-{
-  content: '';
+.why-section::after {
+  content: "";
   position: absolute;
   top: 921px;
   left: 0;
@@ -136,24 +125,18 @@ a
   z-index: 1;
 }
 
-
-.learn-more
-{
+.learn-more {
   display: grid;
   z-index: 2;
-
 }
 
-.services-header
-{
+.services-header {
   display: flex;
   justify-content: center;
   margin: 60px 0px 10px;
 }
 
-
-.services-container
-{
+.services-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -163,8 +146,7 @@ a
   padding: 20px;
 }
 
-.service-section
-{
+.service-section {
   border: 3px solid black;
   border-radius: 20px;
   border-image: fill;
@@ -172,29 +154,25 @@ a
   background-color: rgb(214, 206, 195);
 }
 
-.service-section img
-{
+.service-section img {
   border-radius: 10px;
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
-  width: 100%; 
+  width: 100%;
 }
 
-.service-section h3
-{
+.service-section h3 {
   color: black;
   font-size: 1.4em;
   margin: 10px 0px 0px 15px;
   font-weight: 700;
 }
 
-.service-section p
-{
+.service-section p {
   padding: 15px;
 }
-
 
 .footer-heading-title {
   display: flex;
@@ -216,11 +194,7 @@ a
   margin: 0 auto; /* Adjust the margin */
 }
 
-
-
-
-.footer
-{
+.footer {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -231,38 +205,33 @@ a
   font-weight: 600;
 }
 
-.footer a
-{
+.footer a {
   color: black;
 }
 
-.footer h3
-{
+.footer h3 {
   text-decoration: underline;
 }
 
 .footer-info-connect,
 .footer-social,
 .footer-info-links,
-.footer-info-about-us
-{
+.footer-info-about-us {
   flex: 1;
 }
 
-.footer-info-connect
-{
+.footer-info-connect {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   text-align: center;
   min-height: 100%;
   width: 100%;
   line-height: 2;
 }
 
-.footer-social
-{
+.footer-social {
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -272,12 +241,9 @@ a
   width: 100%;
   min-height: 100%;
   font-size: 5rem;
-
 }
 
-
-.footer-info-links
-{
+.footer-info-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,18 +254,15 @@ a
   color: black;
 }
 
-.footer-info-about-us
-{
+.footer-info-about-us {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  
 }
 
-.footer-info-about-us p
-{
+.footer-info-about-us p {
   font-size: 16px;
 }
