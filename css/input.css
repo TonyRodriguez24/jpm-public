@@ -114,7 +114,8 @@ header::after {
   font-size: 1.4rem;
 }
 
-.why-choose-us::after {
+.why-choose-us::after
+{
   content: "";
   position: absolute;
   width: 100%;
