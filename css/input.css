@@ -13,14 +13,16 @@ body{
 
 h1 {
   font-size:8vh;
-  color: white;
+  color: rgb(255, 255, 255);
   z-index: 10;
+  font-weight: 800;
 }
 
 h2 {
   font-size: 3vh;
   color: white;
   z-index: 10;
+  font-weight: 600;
 }
 
 
@@ -41,6 +43,59 @@ li {
 a {
   text-decoration: none;
   color: white;
+}
+
+nav{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-header{
+  display: flex;
+  width: 100%;
+  background-color: burlywood;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding-left: 40px;
+}
+.nav-header h2{
+  font-size: 46px;
+  color: white;
+  font-weight: 600;
+}
+
+nav img{
+  height: 80px;
+  width: 80px;
+
+}
+
+select{
+  background-color: rgb(255, 255, 255);
+  width: fit-content;
+  height: 40px;
+  font-size: 20px;
+}
+
+.nav-links{
+  background-color: rgb(26, 26, 247);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  padding-right: 40px;
+}
+
+.nav-links a{
+  color: white;
+  font-size: 20px;
+  background-color: rgb(102, 56, 145);
+  padding:5px;
 }
 
 header {
@@ -88,8 +143,9 @@ header::after {
   margin: 40px auto;
   position: relative;
   width: 60%;
-  height: 80vh;
+  height: 70vh;
   border-radius: 20px;
+  border: 2px solid white;
   background-image: url(/assets/head-photo.jpg);
   background-size: cover;
   background-position: center;
@@ -98,7 +154,6 @@ header::after {
 }
 
 .why-choose-us img {
-  height: 30%;
   width: 20%;
   z-index: 20;
 }
@@ -112,6 +167,18 @@ header::after {
 .why-choose-us p {
   width: 70%;
   font-size: 1.4rem;
+}
+
+.why-choose-us a{
+  background-color: rgb(12, 223, 93);
+  color: black;
+  padding: 20px 60px;
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 5;
+  margin-top: 40px;
 }
 
 .why-choose-us::after
@@ -141,10 +208,9 @@ header::after {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  gap: 20px;
-  padding: 0px 172px;
+  width: 64%;
+  margin: 0 auto;
+  justify-content: space-between;
   background-color: seagreen;
 }
 
@@ -205,14 +271,12 @@ header::after {
 }
 
 .footer {
-  background-color: saddlebrown;
-  padding: 0px 192px;
-  position: absolute;
+  background-color: rgb(197, 175, 160);
   display: flex;
   flex-direction: row;
   min-height: 30vh;
-  width: 100%;
-  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
   color: black;
   font-weight: 600;
 }

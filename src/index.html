@@ -20,6 +20,29 @@
   </head>
 
   <body>
+    <nav class="nav-bar">
+      <a href="index.html" class="nav-header">
+        <img
+          src="/assets/logo-transparent.png"
+          class="nav-logo"
+          alt="JPM Logo" />
+        <h2 class="nav-name">JPM & Sons</h2>
+      </a>
+
+
+      <select name="nav-dropdown" id="nav-dropdown" onchange="window.location.href=this.value;">
+        <option value="services.html" hidden>Services</option>
+        <option value="masonry.html">Masonry</option>
+        <option value="powerwashing.html">Powerwashing</option>
+        <option value="concrete.html">Concrete & Asphalt Work</option>
+      </select>
+      
+      <ul class="nav-links">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
     <header>
       <h2 class="header-slogan">Your Trusted Partner in Construction,</h2>
       <h1 class="header-name">JPM & Sons</h1>
@@ -36,7 +59,7 @@
         completion, ensuring a stress-free experience. Trust JPM and Sons for
         superior results every time.
       </p>
-      <a href="#" class="schedule"> Schedule your free quote today! </a>
+      <a href="contact.html" class="schedule"> Schedule your free quote today! </a>
     </section>
 
     <h2 class="services-header">Our Services</h2>
