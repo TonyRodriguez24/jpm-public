@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: rgb(119, 72, 72);
+    background-color: rgba(126, 79, 8, 0.228);
 }
 
 h1 {
@@ -62,7 +62,6 @@ a {
 }
 
 .nav-header p{
-  background-color: aqua;
   display: flex;
   align-items: center;
   padding-left:20px;
@@ -190,9 +189,8 @@ header::after {
     flex-direction: row;
     flex-wrap: wrap;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     justify-content: space-evenly;
-    background-color: seagreen;
 }
 
 #services h2 {
@@ -206,9 +204,8 @@ header::after {
     border-radius: 20px;
     border-image: fill;
     width: 20%;
-    background-color: rgb(142, 90, 18);
     min-width: 370px;
-    background-color: aqua;
+    background-color: rgb(165, 165, 165)
 }
 
 .service-section img {
@@ -231,6 +228,39 @@ header::after {
     padding: 15px;
 }
 
+.gallery-header{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px 20px;
+    color: black;
+
+}
+
+.gallery-container{
+    position: relative;
+    width: 50%;
+    height:100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery-button{
+    margin:20px 0px 50px;
+    border: 2px solid black;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: rgb(148, 22, 22);
+    
+}
+
+.gallery-button ion-icon{
+    position: relative;
+    top: 3px;
+    font-size: 1.3rem;
+    margin-left: 5px;
+}
+
+
 .footer-heading-title {
     display: flex;
     text-align: center;
@@ -252,7 +282,6 @@ header::after {
 }
 
 .footer {
-    background-color: rgb(197, 175, 160);
     display: flex;
     flex-direction: row;
     min-height: 30vh;
@@ -264,10 +293,6 @@ header::after {
 
 .footer a {
     color: black;
-}
-
-.footer h3 {
-    text-decoration: underline;
 }
 
 .footer-info-connect,
@@ -323,6 +348,41 @@ header::after {
 .footer-info-about-us p {
     font-size: 16px;
 }
+
+
+.footer-social ion-icon {
+    margin: 0 2px;
+    border-radius: 50%;
+}
+
+.footer-info-connect ion-icon {
+    font-size: 1.8rem;
+    margin-right: 6px;
+}
+
+.footer-info-connect a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+ion-icon[name="logo-instagram"]:hover {
+    background-color: rgba(255, 0, 0, 0.37);
+    border-radius: 20px;
+}
+
+ion-icon[name="logo-facebook"]:hover {
+    background-color: rgba(0, 42, 250, 0.37);
+
+}
+
+ion-icon[name="logo-tiktok"]:hover {
+    background-color: rgba(0, 255, 0, 0.37);
+    border-radius: 20px;
+}
+
+
 
 @media screen and (max-width: 768px) {
     header {
