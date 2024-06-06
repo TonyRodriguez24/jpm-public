@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 *,
 *::after,
@@ -50,7 +50,6 @@ a {
     color: white;
 }
 
-
 .nav-header {
     display: flex;
     background-color: rgb(232, 139, 17);
@@ -61,29 +60,28 @@ a {
     font-weight: 600;
 }
 
-.nav-header p{
-  display: flex;
-  align-items: center;
-  padding-left:20px;
+.nav-header p {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }
 
 .nav-links {
     background-color: rgb(26, 26, 247);
     display: flex;
     font-size: 18px;
-    gap:20px;
+    gap: 20px;
 }
 
-.nav-links li{
+.nav-links li {
     color: white;
     width: 100px;
-    height: 40px;;
+    height: 40px;
     border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 header {
     display: flex;
@@ -106,7 +104,6 @@ header::after {
     z-index: 1;
 }
 
-
 .why-choose-us {
     display: flex;
     flex-direction: column;
@@ -117,8 +114,9 @@ header::after {
     margin: 40px auto;
     min-width: 380px;
     height: 70vh;
-    border-radius: 20px;
-    border: 2px solid white;
+    border-radius: 25px;
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.8);
     background-image: url(/assets/head-photo.jpg);
     background-size: cover;
     background-position: center;
@@ -142,25 +140,23 @@ header::after {
 }
 
 .why-choose-us a {
-    background-color: hsl(271, 90%, 46%);
-    color: black;
+    background-color: hsl(143, 90%, 46%);
+    color: rgb(0, 0, 0);
     padding: 20px 60px;
     border-radius: 10px;
-    border: 3px solid rgb(43, 4, 219);
+    border: 3px solid rgb(255, 255, 255);
     font-size: 1.2rem;
     font-weight: 600;
     z-index: 5;
     margin-top: 40px;
-    transition: all .3s ;
+    transition: all 0.3s;
 }
 
-.why-choose-us a:hover{
+.why-choose-us a:hover {
     transform: scale(1.05);
     background-color: hsl(143, 90%, 26%);
     color: white;
 }
-
-
 
 .why-choose-us::after {
     content: "";
@@ -205,7 +201,7 @@ header::after {
     border-image: fill;
     width: 20%;
     min-width: 370px;
-    background-color: rgb(165, 165, 165)
+    background-color: rgba(11, 163, 228, 0.598);
 }
 
 .service-section img {
@@ -228,38 +224,38 @@ header::after {
     padding: 15px;
 }
 
-.gallery-header{
+.gallery-header {
     display: flex;
     justify-content: center;
     margin: 40px 0px 20px;
     color: black;
-
 }
 
-.gallery-container{
+.gallery-container {
     position: relative;
     width: 50%;
-    height:100%;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
-.gallery-button{
-    margin:20px 0px 50px;
-    border: 2px solid black;
-    padding: 6px 12px;
+.gallery-button {
+    margin: 10px 0px 50px;
+    color: black;
     border-radius: 10px;
-    background-color: rgb(148, 22, 22);
-    
 }
 
-.gallery-button ion-icon{
+.gallery-button a {
+    color: rgb(83, 83, 83);
+    text-decoration: underline;
+}
+
+.gallery-button ion-icon {
     position: relative;
-    top: 3px;
+    top: 4px;
     font-size: 1.3rem;
     margin-left: 5px;
 }
-
 
 .footer-heading-title {
     display: flex;
@@ -349,7 +345,6 @@ header::after {
     font-size: 16px;
 }
 
-
 .footer-social ion-icon {
     margin: 0 2px;
     border-radius: 50%;
@@ -360,29 +355,59 @@ header::after {
     margin-right: 6px;
 }
 
-.footer-info-connect a{
+.footer-info-connect a {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+ion-icon:hover{
+   transition: .4s ease all;
+    
+}
 
 ion-icon[name="logo-instagram"]:hover {
-    background-color: rgba(255, 0, 0, 0.37);
     border-radius: 20px;
+color: white;
+    background: #f09433;
+    background: -moz-linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
 ion-icon[name="logo-facebook"]:hover {
-    background-color: rgba(0, 42, 250, 0.37);
-
+    color: #1877f2;
+    background-color: white;
 }
 
 ion-icon[name="logo-tiktok"]:hover {
-    background-color: rgba(0, 255, 0, 0.37);
+    background-color: black;
+    color: white;
     border-radius: 20px;
+    
 }
-
-
 
 @media screen and (max-width: 768px) {
     header {
@@ -390,7 +415,7 @@ ion-icon[name="logo-tiktok"]:hover {
     }
 
     .service-section {
-        height: 340px;
+        height: 380px;
     }
 
     .service-section p {

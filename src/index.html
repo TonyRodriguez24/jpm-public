@@ -122,22 +122,21 @@
                                         <a
                                             href="remodeling.html"
                                             class="block px-4 py-2 hover:bg-gray-600"
-                                            >Remodeling and Renovations</a
+                                            >Paving and Sealing</a
                                         >
                                     </li>
                                     <li>
                                         <a
                                             href="homeimprovement.html"
                                             class="block px-4 py-2 hover:bg-gray-600"
-                                            >Home Improvement</a
+                                            >Concrete</a
                                         >
                                     </li>
                                     <li>
                                         <a
                                             href="construction.html"
                                             class="block px-4 py-2 hover:bg-gray-600"
-                                            >Residential & Commercial
-                                            Construction</a
+                                            >Other Services</a
                                         >
                                     </li>
                                 </ul>
@@ -219,7 +218,7 @@
             <div class="service-section">
                 <a href="remodeling.html">
                     <img
-                        src="/assets/remodeling.jpg"
+                        src="/assets/paving-work.jpg"
                         alt
                         txt="photo of man laying brick"
                     />
@@ -239,7 +238,7 @@
             <div class="service-section">
                 <a href="homeimprovement.html">
                     <img
-                        src="/assets/homeimprovement.jpg"
+                        src="/assets/concrete-work.jpg"
                         alt
                         txt="photo of man laying brick"
                     />
@@ -285,6 +284,7 @@
                 data-carousel="static"
             >
                 <!-- Carousel wrapper -->
+                <!-- Carousel wrapper -->
                 <div class="relative h-40 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
                     <div
@@ -293,7 +293,7 @@
                     >
                         <img
                             src="/assets/17.jpeg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="block w-full h-full object-cover"
                             alt="..."
                         />
                     </div>
@@ -304,7 +304,7 @@
                     >
                         <img
                             src="/assets/2.jpeg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="block w-full h-full object-cover object-center"
                             alt="..."
                         />
                     </div>
@@ -315,7 +315,7 @@
                     >
                         <img
                             src="/assets/pool.jpeg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="block w-full h-full object-cover"
                             alt="..."
                         />
                     </div>
@@ -326,7 +326,7 @@
                     >
                         <img
                             src="/assets/7.jpeg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="block w-full h-full object-cover object-left-bottom"
                             alt="..."
                         />
                     </div>
@@ -337,11 +337,12 @@
                     >
                         <img
                             src="/assets/buh.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            class="block w-full h-full object-cover"
                             alt="..."
                         />
                     </div>
                 </div>
+
                 <!-- Slider indicators -->
                 <div
                     class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
@@ -389,7 +390,7 @@
                     data-carousel-prev
                 >
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-500 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
                     >
                         <svg
                             class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
@@ -415,7 +416,7 @@
                     data-carousel-next
                 >
                     <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-500 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
                     >
                         <svg
                             class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
@@ -438,7 +439,11 @@
             </div>
 
             <button class="gallery-button">
-                <a href="gallery.html">Browse our entire gallery<ion-icon name="arrow-forward-outline"></ion-icon></a>
+                <a href="gallery.html"
+                    >Browse our entire gallery<ion-icon
+                        name="arrow-forward-outline"
+                    ></ion-icon
+                ></a>
             </button>
         </div>
 
@@ -449,9 +454,18 @@
         <footer class="footer">
             <div class="footer-info-connect">
                 <a href="contact-us.html"><h3>Connect With Us</h3></a>
-                <a href="tel:516-735-0685"><ion-icon name="call-outline"></ion-icon>Phone: 516-735-0685</a>
-                <a href="mailto:JPMandSons123@Gmail.com"><ion-icon name="mail-outline"></ion-icon>JPMandSons123@Gmail.com</a>
-                <a href="address.html"><ion-icon name="navigate-circle-outline"></ion-icon>150 Spring Lane, Levittown, NY</a>
+                <a href="tel:516-735-0685"
+                    ><ion-icon name="call-outline"></ion-icon>Phone:
+                    516-735-0685</a
+                >
+                <a href="mailto:JPMandSons123@Gmail.com"
+                    ><ion-icon name="mail-outline"></ion-icon
+                    >JPMandSons123@Gmail.com</a
+                >
+                <a href="address.html"
+                    ><ion-icon name="navigate-circle-outline"></ion-icon>150
+                    Spring Lane, Levittown, NY</a
+                >
             </div>
 
             <div class="footer-social">
