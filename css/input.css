@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: #1876f2;
+    background-color: #ffffff;
 }
 
 h1 {
@@ -83,13 +83,13 @@ a {
     align-items: center;
 }
 
-header{
+header {
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
 }
 
-.text-container{
+.text-container {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -99,73 +99,74 @@ header{
     margin: 0 auto;
 }
 
-.text-container h1{
+.text-container h1 {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.text-container p{
+.text-container p {
     font-size: 1.4em;
     width: 80%;
     margin: 0 auto;
     height: auto;
 }
 
-.text-container button{
+.text-container button {
     background-color: hsl(144, 20%, 5%);
     color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 3px solid rgb(255, 84, 32);
+    border: 3px solid #ff5420;
     font-size: 1.2rem;
     font-weight: 600;
     transition: all 0.3s;
     margin: 20px 78px;
 }
 
-.pictures-container{
+.pictures-container {
     width: 60%;
-    display: flex;
-    flex-direction: column;
     height: calc(100vh - 80px);
-}
-
-.logo-container {
-    width:60%;
     display: flex;
     flex-direction: column;
-    color: rgb(0, 0, 0);
     align-items: center;
+}
+
+.pictures-container img:nth-child(1) {
+    margin-top: 20px;
+    width: 86%;
+    height: 70%;
+    border: 3px solid rgb(180, 180, 180);
+    object-fit: cover;
+}
+
+.pictures-container ul {
+    display: flex;
     justify-content: center;
-    margin: 30px auto 60px;
-
+    gap: 0px;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    margin: 0px auto;
 }
 
-.logo-container img {
+.pictures-container ul li {
+    width: 100%;
+    height: 40px;
     display: flex;
-    width: 50%;
-}
-
-
-.work-display-container{
-    width: 80%;
-    margin: 0 auto;
-    height: auto;
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
 }
 
-.work-display-container img{
-    width: 280px;
-    height: auto;
-    border-radius: 2px;
-    border: 2px double inset rgb(0, 0, 0);
+.pictures-container ion-icon {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: rgb(0, 236, 145);
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
 }
-
-
-
 
 .why-choose-us {
     display: flex;
@@ -202,24 +203,23 @@ header{
     font-size: 1.3rem;
 }
 
-.why-choose-us a {
-    background-color: hsl(123, 97%, 39%);
-    color: rgb(0, 0, 0);
-    padding: 10px 30px;
+.why-choose-us button {
+    background-color: #ff5420;
+    color: rgb(255, 255, 255);
+    padding: 8px 20px;
     border-radius: 10px;
-    border:2px solid #000000;
+    border: 2px solid #000000;
     box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.1);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 18px;
     z-index: 5;
     margin-top: 40px;
     transition: all 0.3s;
 }
 
-.why-choose-us a:hover {
-    transform: scale(1.05);
-    background-color: hsl(143, 90%, 26%);
-    color: white;
+.why-choose-us button:hover {
+    transform: scale(1.1);
+    background-color: hsl(14, 100%, 36%);
+    border: 2px solid black;
 }
 
 .why-choose-us::after {
@@ -265,7 +265,7 @@ header{
     border-image: fill;
     width: 20%;
     min-width: 370px;
-    background-color: rgb(220, 217, 202);
+    background-color: rgb(171, 171, 171);
 }
 
 .service-section img {
@@ -419,22 +419,21 @@ header{
     margin-right: 6px;
 }
 
-ion-icon[name ="call"]:hover {
+ion-icon[name="call"]:hover {
     color: #08f500;
 }
 
-ion-icon[name="mail"]{
-    border-radius: 6px;  
+ion-icon[name="mail"] {
+    border-radius: 6px;
 }
-    
+
 ion-icon[name="mail"]:hover {
     color: #ffffff;
 }
 
-ion-icon[name = "navigate-circle"]:hover{
+ion-icon[name="navigate-circle"]:hover {
     color: #ffd500;
     background-color: #000000;
-
 }
 
 .footer-info-connect a {
@@ -443,14 +442,13 @@ ion-icon[name = "navigate-circle"]:hover{
     justify-content: center;
 }
 
-ion-icon:hover{
-   transition: .4s ease all;
-    
+ion-icon:hover {
+    transition: 0.4s ease all;
 }
 
 ion-icon[name="logo-instagram"]:hover {
     border-radius: 20px;
-color: white;
+    color: white;
     background: #f09433;
     background: -moz-linear-gradient(
         45deg,
@@ -488,7 +486,6 @@ ion-icon[name="logo-tiktok"]:hover {
     background-color: black;
     color: white;
     border-radius: 20px;
-    
 }
 
 @media screen and (max-width: 768px) {

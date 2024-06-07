@@ -80,7 +80,7 @@ button[type="submit"]{
     margin: 8px 0;
     border:2px solid #000000;
     border-radius: 4px;
-    background-color: #00ff37;
+    background-color: #ff5420;
     color: rgb(0, 0, 0);
     font-size: 14px;
     font-weight: bold;
@@ -105,7 +105,7 @@ button[type="submit"]{
 .contact-cards ion-icon{
     font-size: 40px;
     margin: 0 8px;
-    background-color: rgb(205, 179, 164);
+    background-color: #ff5420;
     padding: 20px;
     border-radius: 20px;
 }
