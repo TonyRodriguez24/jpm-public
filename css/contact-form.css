@@ -1,37 +1,48 @@
-form{
-    width: 86%;
-    height: calc(100vh - 80px);
-    margin: 0 auto;
+.input-container{
+    width: 80%;
+    height: 88vh;
+    margin: 20px auto;
     padding: 24px;
-    border: 1px solid #ccc;
+    border: 2px solid #535353;
     border-radius: 5px;
-    background-color: #21ee2f;
     display: flex;
 }
 
-.input-container{
+body{
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: 16%;
+    margin: 0px 399px;
+    height: auto;
+}
+
+form{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     align-content: flex-start;
     width: 60%;
     height: 100%;
-    background-color: brown;
-
 }
 
 h2{
     text-align: center;
     margin:20px;
+    color: #000000;
+}
+
+p{
+    font-size: 18px;
 }
 
 
-
 .input-group{
-    background-color: blue;
     width: 360px;
     height: 100px;
-    margin: 20px 20px;
+    margin: 0px 10px;
     padding: 10px;
 }
 
@@ -39,23 +50,42 @@ h2{
     padding:4px;
 }
 
-.input-group input{
+.input-group input, .input-group textarea{
     width: 100%;
     padding: 8px;
     margin: 4px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #2a2a2a;
     border-radius: 4px;
 }
 
 .input-group:nth-last-of-type(1){
-    width: 100%;
-    height: 200px;
+    width: 80%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #21ee2f;
+    flex-wrap: wrap;
 }
+
+.input-group:nth-last-of-type(1) textarea{
+    width: 100%;
+    height: 120px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+button[type="submit"]{
+    width: 14%;
+    padding: 2px 4px;
+    margin: 8px 0;
+    border:2px solid #000000;
+    border-radius: 4px;
+    background-color: #00ff37;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
 
 .contact-cards{
@@ -66,13 +96,16 @@ h2{
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    background-color: blue;;
+}
+
+.contact-cards h3{
+    font-size: 1.6rem;
 }
 
 .contact-cards ion-icon{
     font-size: 40px;
     margin: 0 8px;
-    background-color: azure;
+    background-color: rgb(205, 179, 164);
     padding: 20px;
     border-radius: 20px;
 }
