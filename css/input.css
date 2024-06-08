@@ -50,43 +50,11 @@ a {
     color: white;
 }
 
-.nav-header {
-    display: flex;
-    background-color: rgb(232, 139, 17);
-}
-.nav-header h2 {
-    font-size: 42px;
-    color: white;
-    font-weight: 600;
-}
-
-.nav-header p {
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.nav-links {
-    background-color: rgb(26, 26, 247);
-    display: flex;
-    font-size: 18px;
-    gap: 20px;
-}
-
-.nav-links li {
-    color: white;
-    width: 100px;
-    height: 40px;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 header {
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
+    flex-wrap: wrap;
 }
 
 .text-container {
@@ -95,6 +63,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
     color: rgb(0, 0, 0);
     margin: 0 auto;
 }
@@ -157,7 +126,7 @@ header {
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .pictures-container ion-icon {
@@ -168,7 +137,16 @@ header {
     border-radius: 50%;
 }
 
-.why-choose-us {
+#why-us {
+    width: 100%;
+    /* background-color: #08f500; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.why-us-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,23 +165,23 @@ header {
     color: rgb(255, 255, 255);
 }
 
-.why-choose-us img {
+.why-us-container img {
     width: 18%;
     z-index: 20;
 }
 
-.why-choose-us h2 {
+#why-us h2 {
     font-size: 4em;
     z-index: 2;
     font-weight: 600;
 }
 
-.why-choose-us p {
+#why-us p {
     width: 70%;
     font-size: 1.3rem;
 }
 
-.why-choose-us button {
+#why-us button {
     background-color: #ff5420;
     color: rgb(255, 255, 255);
     padding: 8px 20px;
@@ -216,13 +194,13 @@ header {
     transition: all 0.3s;
 }
 
-.why-choose-us button:hover {
+#why-us button:hover {
     transform: scale(1.1);
     background-color: hsl(14, 100%, 36%);
     border: 2px solid black;
 }
 
-.why-choose-us::after {
+.why-us-container::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -232,31 +210,29 @@ header {
     z-index: 1;
 }
 
-.learn-more {
-    display: grid;
-    z-index: 2;
-}
-
-.services-header {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px;
-    color: black;
-}
-
 #services {
+    width: 100%;
+    /* background-color: #f50000; */
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#services h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #000000;
+}
+
+.services-container {
+    display: flex;
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto 20px;
     justify-content: space-evenly;
-}
-
-#services h2 {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .service-section {
@@ -284,6 +260,11 @@ header {
     font-weight: 700;
 }
 
+.service-section a:hover {
+    text-decoration: underline black;
+
+}
+
 .service-section p {
     padding: 15px;
 }
@@ -296,17 +277,25 @@ header {
 }
 
 .gallery-container {
-    position: relative;
-    width: 50%;
+    width: 40%;
+    min-width: 500px;
     height: 100%;
-    margin: 0 auto;
-    text-align: center;
+    padding: 80px 40px;
+    /* background-color: #08f500; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.gallery-button {
-    margin: 10px 0px 50px;
-    color: black;
-    border-radius: 10px;
+.custom-carousel-height {
+    height: 300px; /* Or any desired height */
+}
+
+@media (min-width: 768px) {
+    .custom-carousel-height {
+        height: 500px; /* Adjust for larger screens */
+    }
 }
 
 .gallery-button a {
@@ -321,7 +310,7 @@ header {
     margin-left: 5px;
 }
 
-.footer-heading-title {
+.f-container h3 {
     display: flex;
     text-align: center;
     align-items: center;
@@ -331,123 +320,131 @@ header {
     margin-top: 40px;
 }
 
-.footer-heading-title::before,
-.footer-heading-title::after {
+.f-container h3::before,
+.f-container h3::after {
     content: " ";
     display: flex;
     height: 2px;
     background-color: black;
-    padding: 0px 192px;
+    width: 30%;
     margin: 0 auto; /* Adjust the margin */
 }
 
-.footer {
+footer {
     display: flex;
-    flex-direction: row;
-    min-height: 30vh;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 100px auto 40px;
     width: 80%;
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: 600;
+    gap: 30px;
 }
 
-.footer a {
-    color: black;
-}
-
-.footer-info-connect,
-.footer-social,
-.footer-info-links,
-.footer-info-about-us {
+#connect,
+.social,
+#links,
+#about-us {
     flex: 1;
+    min-width: 300px;
 }
 
-.footer-info-connect {
+#connect {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100%;
-    width: 100%;
     line-height: 2;
 }
 
-.footer-social {
+#connect a {
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 100%;
-    font-size: 5rem;
-}
-
-.footer-info-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    line-height: 2;
-    width: 100%;
-    min-height: 100%;
-    color: black;
-}
-
-.footer-info-about-us {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    min-height: 100%;
 }
 
-.footer-info-about-us p {
-    font-size: 16px;
-}
-
-.footer-social ion-icon {
-    margin: 0 2px;
-    border-radius: 50%;
-}
-
-.footer-info-connect ion-icon {
+#connect ion-icon {
     font-size: 1.8rem;
     margin-right: 6px;
-}
-
-ion-icon[name="call"]:hover {
-    color: #08f500;
-}
-
-ion-icon[name="mail"] {
-    border-radius: 6px;
-}
-
-ion-icon[name="mail"]:hover {
-    color: #ffffff;
-}
-
-ion-icon[name="navigate-circle"]:hover {
-    color: #ffd500;
-    background-color: #000000;
-}
-
-.footer-info-connect a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 ion-icon:hover {
     transition: 0.4s ease all;
 }
 
-ion-icon[name="logo-instagram"]:hover {
+ion-icon[name="call"]:hover {
+    color: #08f500;
+}
+
+ion-icon[name="mail"]:hover {
+    color: #bcbcbc;
+}
+
+ion-icon[name="navigate-circle"]:hover {
+    color: #d1b214;
+}
+
+#connect a,
+#links a,
+#about-us {
+    color: black;
+}
+
+#connect a:hover,
+#links a:hover {
+    text-decoration: underline;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.social ion-icon {
+    font-size: 60px;
+    padding: 5px;
+    border-radius: 30%;
+    margin: 0 3px;
+    background-color: #313131;
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+    color: black;
+}
+
+#about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-us p {
+    font-size: 16px;
+    margin: 0 40px;
+}
+
+ion-icon[name="logo-facebook"]:hover {
+    color: #1877f2;
+    background-color: white;
+}
+
+ion-icon[name="logo-tiktok"]:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
     border-radius: 20px;
+}
+
+ion-icon[name="logo-instagram"]:hover {
     color: white;
     background: #f09433;
     background: -moz-linear-gradient(
@@ -477,17 +474,6 @@ ion-icon[name="logo-instagram"]:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-ion-icon[name="logo-facebook"]:hover {
-    color: #1877f2;
-    background-color: white;
-}
-
-ion-icon[name="logo-tiktok"]:hover {
-    background-color: black;
-    color: white;
-    border-radius: 20px;
-}
-
 @media screen and (max-width: 768px) {
     header {
         height: 100vh;
@@ -501,12 +487,21 @@ ion-icon[name="logo-tiktok"]:hover {
         display: none;
     }
 
-    .footer {
-        display: flex;
-        flex-direction: column;
+    footer {
+        background-color: #9c4940;
     }
 
-    .footer-info-about-us {
+
+
+    #links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #about-us{
         display: none;
     }
+
 }
+
