@@ -21,21 +21,21 @@
     </head>
 
     <body>
-        <nav class="bg-gray-900 border-black-700">
+        <nav class=" border-black-700">
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
                 <a
                     href="index.html"
                     class="flex items-center space-x-3 rtl:space-x-reverse">
                     <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+                        class="self-center text-2xl font-semibold whitespace-nowrap text-black"
                         >JPM and Sons</span
                     >
                 </a>
                 <button
                     data-collapse-toggle="navbar-dropdown"
                     type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-dropdown"
                     aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -148,33 +148,35 @@
             </div>
         </nav>
 
-        <header>
-            <div class="text-container">
-                <h1 class="header-name">JPM & Sons</h1>
+        <section id="front-page">
+            <header>
+                <div class="text-container">
+                    <h1 class="header-name">JPM & Sons</h1>
+                    <p>
+                        A trusted family-owned business primarily serving Long
+                        Island. We specialize in masonry, paver sealing, asphalt
+                        paving, concrete work, and offer general contracting
+                        services. Our commitment to quality craftsmanship and
+                        customer satisfaction has made us a go-to contractor for
+                        residential and commercial projects throughout the
+                        region.
+                    </p>
+                    <button class = "learn-more">
+                        <a href="about.html">Learn More</a>
+                </div>
 
-                <p>
-                    A trusted family-owned business primarily serving Long
-                    Island. We specialize in masonry, paver sealing, asphalt
-                    paving, concrete work, and offer general contracting
-                    services. Our commitment to quality craftsmanship and
-                    customer satisfaction has made us a go-to contractor for
-                    residential and commercial projects throughout the region.
-                </p>
+            </header>
 
-                <button class="learn-more">
-                    <a href="about.html">Learn More</a>
-                </button>
-            </div>
-
-            <div class="pictures-container">
+            <div class="header-image-container">
                 <img src="/assets/header.jpeg" />
+
                 <ul>
                     <li>
                         Fully Licensed and Insured<ion-icon
                             name="checkmark-circle-sharp"></ion-icon>
                     </li>
                     <li>
-                        Family Owned and Operated<ion-icon
+                        Family Owned and Oiled<ion-icon
                             name="checkmark-circle-sharp"></ion-icon>
                     </li>
                     <li>
@@ -183,33 +185,37 @@
                     </li>
                 </ul>
             </div>
-        </header>
 
-
-        <section id="why-us">
-            <div class = "why-us-container">
-            <img
-                src="/assets/logo-transparent.png"
-                class="why-logo"
-                alt="JPM Logo" />
-            <h2>Why Choose Us?</h2>
-            <p>
-                Choose JPM and Sons as your general contractor for unparalleled
-                quality and reliability. With years of experience, our skilled
-                team delivers exceptional construction and renovation services
-                tailored to your needs. We prioritize clear communication,
-                attention to detail, and on-time completion, ensuring a
-                stress-free experience. Trust JPM and Sons for superior results
-                every time.
-            </p>
-            <button>
-                <a href="contact.html" class="schedule">
-                    Schedule your free quote today!
-                </a>
-            </button>
-        </div>
+            <div class="header-list-container"></div>
         </section>
 
+        <section id="why-us">
+            <div class="why-us-container">
+                <img
+                    src="/assets/logo-transparent.png"
+                    class="why-logo"
+                    alt="JPM Logo" />
+                <h2>Why Choose Us?</h2>
+                <p>
+                    Choose JPM and Sons as your general contractor for
+                    unparalleled quality and reliability. With years of
+                    experience, our skilled team delivers exceptional
+                    construction and renovation services tailored to your needs.
+                    We prioritize clear communication, attention to detail, and
+                    on-time completion, ensuring a stress-free experience. Trust
+                    JPM and Sons for superior results every time.
+                </p>
+                <button>
+                    <a href="contact.html" class="schedule">
+                        Schedule your free quote today!
+                    </a>
+                </button>
+            </div>
+        </section>
+
+        <button class="learn-more">
+            <a href="about.html">Learn More</a>
+        </button>
 
         <section id="services">
             <h2>Our Services</h2>
@@ -316,7 +322,7 @@
                         class="hidden duration-700 ease-in-out"
                         data-carousel-item>
                         <img
-                            src="/assets/2.jpeg"
+                            src="/assets/yoda.jpg"
                             class="block w-full h-full object-cover object-center"
                             alt="..." />
                     </div>
@@ -446,7 +452,7 @@
         <footer>
             <div id="connect">
                 <a href="contact-us.html"><h3>Connect With Us</h3></a>
-                
+
                 <a href="tel:516-735-0685"
                     ><ion-icon name="call"></ion-icon>Phone: 516-735-0685</a
                 >

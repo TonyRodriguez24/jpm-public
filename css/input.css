@@ -12,11 +12,11 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #ebd4c3;
 }
 
 h1 {
-    font-size: 12vh;
+    font-size: 6vw;
     color: rgb(16, 16, 16);
     z-index: 10;
     font-weight: 800;
@@ -50,38 +50,64 @@ a {
     color: white;
 }
 
-header {
+#front-page {
+    position: relative;
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
     flex-wrap: wrap;
 }
 
+
+header {
+    height: 100%;
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 500px;
+    background-color: #08f500;
+}
+
 .text-container {
-    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    color: rgb(0, 0, 0);
-    margin: 0 auto;
+    gap: 20px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #1877f2;
+
+   
 }
 
-.text-container h1 {
+header button {
+    background-color: hsl(144, 20%, 5%);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 3px solid #ff5420;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+
+header h1 {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.text-container p {
+header p {
     font-size: 1.4em;
     width: 80%;
     margin: 0 auto;
     height: auto;
 }
 
-.text-container button {
+/* .text-container button {
     background-color: hsl(144, 20%, 5%);
     color: rgb(0, 0, 0);
     padding: 10px 20px;
@@ -91,45 +117,66 @@ header {
     font-weight: 600;
     transition: all 0.3s;
     margin: 20px 78px;
-}
+} */
 
-.pictures-container {
-    width: 60%;
-    height: calc(100vh - 80px);
+.header-image-container {
+    width:54%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
-.pictures-container img:nth-child(1) {
-    margin-top: 20px;
-    width: 86%;
-    height: 70%;
-    border: 3px solid rgb(180, 180, 180);
+.header-image-container img {
+    width: 80%;
+    margin: 40px;
+    height: 54%;
     object-fit: cover;
+    object-position: center;
 }
 
-.pictures-container ul {
+.header-work-container
+{
+    display: flex;
+    height: 30vh;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    z-index: 20;
+}
+
+.header-work-container img {
+    width: 28%;
+    height: 58%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.header-image-container ul{
     display: flex;
     justify-content: center;
     gap: 0px;
     flex-direction: column;
-    width: 400px;
-    height: 200px;
+    height: 100px;
     margin: 0px auto;
+    text-align: end;
 }
 
-.pictures-container ul li {
+.header-image-container li {
     width: 100%;
     height: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+    text-align: end;
     color: rgb(0, 0, 0);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
-.pictures-container ion-icon {
+#checklist ion-icon {
     font-size: 1.5rem;
     margin-left: 10px;
     color: rgb(0, 236, 145);
@@ -155,7 +202,7 @@ header {
     width: 60%;
     margin: 40px auto;
     min-width: 380px;
-    height: 70vh;
+    height: 70%;
     border-radius: 25px;
     border: 5px solid rgb(0, 0, 0);
     box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
@@ -262,7 +309,6 @@ header {
 
 .service-section a:hover {
     text-decoration: underline black;
-
 }
 
 .service-section p {
@@ -475,9 +521,6 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        height: 100vh;
-    }
 
     .service-section {
         height: 380px;
@@ -491,17 +534,13 @@ ion-icon[name="logo-instagram"]:hover {
         background-color: #9c4940;
     }
 
-
-
-    #links{
+    #links {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
 
-    #about-us{
+    #about-us {
         display: none;
     }
-
 }
-
