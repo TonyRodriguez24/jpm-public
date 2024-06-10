@@ -21,21 +21,18 @@
     </head>
 
     <body>
-        <nav class=" border-black-700">
+        <nav class="text-black border-black-700">
             <div
                 class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
                 <a
                     href="index.html"
                     class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap text-black"
-                        >JPM and Sons</span
-                    >
+                    
                 </a>
                 <button
                     data-collapse-toggle="navbar-dropdown"
                     type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-dropdown"
                     aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -61,7 +58,7 @@
                         <li>
                             <a
                                 href="index.html"
-                                class="block py-2 px-3 text-blue-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
+                                class="block py-2 px-3 text-red-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
                                 >Home</a
                             >
                         </li>
@@ -69,7 +66,7 @@
                             <button
                                 id="dropdownNavbarLink"
                                 data-dropdown-toggle="dropdownNavbar"
-                                class="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
                                 Services<svg
                                     class="w-2.5 h-2.5 ms-2.5"
                                     aria-hidden="true"
@@ -87,9 +84,9 @@
                             <!-- Dropdown menu -->
                             <div
                                 id="dropdownNavbar"
-                                class="z-10 hidden font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
+                                class="z-10 hidden text-black font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
                                 <ul
-                                    class="py-2 text-sm text-white"
+                                    class="py-2 text-sm text-gray-900"
                                     aria-labelledby="dropdownLargeButton">
                                     <li>
                                         <a
@@ -101,7 +98,7 @@
                                     <li>
                                         <a
                                             href="paving-sealing.html"
-                                            class="block px-4 py-2 hover:bg-gray-600"
+                                            class="block text-black px-4 py-2 hover:bg-gray-600"
                                             >Paving and Sealing</a
                                         >
                                     </li>
@@ -125,21 +122,21 @@
                         <li>
                             <a
                                 href="gallery.html"
-                                class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                                 >Gallery</a
                             >
                         </li>
                         <li>
                             <a
                                 href="about.html"
-                                class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                                 >About</a
                             >
                         </li>
                         <li>
                             <a
                                 href="contact.html"
-                                class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                                 >Contact Us</a
                             >
                         </li>
@@ -161,32 +158,36 @@
                         residential and commercial projects throughout the
                         region.
                     </p>
-                    <button class = "learn-more">
+                    <button class="learn-more">
                         <a href="about.html">Learn More</a>
+                    </button>
                 </div>
-
             </header>
 
-            <div class="header-image-container">
-                <img src="/assets/header.jpeg" />
+            <div class="carousel-list-container">
+                <div class="carousel">
+                    <div class="slides">
+                        <img src="/assets/header.jpeg" class="slide active" />
+                        <img src="/assets/29.jpg" class="slide" />
+                        <img src="/assets/28.jpg" class="slide" />
+                    </div>
+                </div>
 
                 <ul>
-                    <li>
-                        Fully Licensed and Insured<ion-icon
-                            name="checkmark-circle-sharp"></ion-icon>
-                    </li>
-                    <li>
-                        Family Owned and Oiled<ion-icon
-                            name="checkmark-circle-sharp"></ion-icon>
-                    </li>
-                    <li>
-                        Free Estimates<ion-icon
-                            name="checkmark-circle-sharp"></ion-icon>
-                    </li>
-                </ul>
+                        <li>
+                            Fully Licensed and Insured<ion-icon
+                                name="checkmark-circle-sharp"></ion-icon>
+                        </li>
+                        <li>
+                            Family Owned and Oiled<ion-icon
+                                name="checkmark-circle-sharp"></ion-icon>
+                        </li>
+                        <li>
+                            Free Estimates<ion-icon
+                                name="checkmark-circle-sharp"></ion-icon>
+                        </li>
+                    </ul>
             </div>
-
-            <div class="header-list-container"></div>
         </section>
 
         <section id="why-us">
@@ -212,10 +213,6 @@
                 </button>
             </div>
         </section>
-
-        <button class="learn-more">
-            <a href="about.html">Learn More</a>
-        </button>
 
         <section id="services">
             <h2>Our Services</h2>
@@ -507,5 +504,6 @@
             nomodule
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        <script src="/script.js"></script>
     </body>
 </html>

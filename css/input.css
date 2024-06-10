@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: #ebd4c3;
+    background-color: #e1e9ef;
 }
 
 h1 {
@@ -58,7 +58,6 @@ a {
     flex-wrap: wrap;
 }
 
-
 header {
     height: 100%;
     width: 46%;
@@ -66,32 +65,30 @@ header {
     flex-direction: column;
     justify-content: space-between;
     min-width: 500px;
-    background-color: #08f500;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
     align-items: center;
-    height: 100%;
+    margin: auto 0;
     width: 100%;
-    background-color: #1877f2;
-
-   
 }
 
 header button {
-    background-color: hsl(144, 20%, 5%);
-    color: rgb(0, 0, 0);
+    background-color: hsl(208, 94%, 47%);
     padding: 10px 20px;
-    border-radius: 10px;
-    border: 3px solid #ff5420;
-    font-size: 1.2rem;
     font-weight: 600;
+    border-radius: 5px;
+    margin: 20px 0px;
     transition: all 0.3s;
 }
+
+header button:hover {
+    background-color: hsl(208, 94%, 37%);
+}
+
 
 
 header h1 {
@@ -107,82 +104,70 @@ header p {
     height: auto;
 }
 
-/* .text-container button {
-    background-color: hsl(144, 20%, 5%);
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 3px solid #ff5420;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    margin: 20px 78px;
-} */
-
-.header-image-container {
-    width:54%;
+.carousel-list-container {
+    width: 54%;
     height: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-
+    gap: 40px;
 }
 
-.header-image-container img {
+.carousel {
     width: 80%;
-    margin: 40px;
-    height: 54%;
-    object-fit: cover;
-    object-position: center;
+    height: 60%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent; /* Transparent border for gradient effect */
+    border-image: linear-gradient(45deg, rgb(179, 179, 179), #444444) 1; /* Gradient border */
 }
 
-.header-work-container
-{
-    display: flex;
-    height: 30vh;
+.carousel img {
     width: 100%;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    margin-bottom: 80px;
-    z-index: 20;
-}
-
-.header-work-container img {
-    width: 28%;
-    height: 58%;
     object-fit: cover;
     object-position: center;
 }
 
+.slide {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-.header-image-container ul{
+.slide.active {
+    opacity: 1;
+}
+
+.carousel-list-container ul {
     display: flex;
     justify-content: center;
-    gap: 0px;
+    align-items: center;
     flex-direction: column;
-    height: 100px;
-    margin: 0px auto;
-    text-align: end;
+    font-size: 20px;
 }
 
-.header-image-container li {
-    width: 100%;
-    height: 40px;
+.carousel-list-container ul li {
+    width: 300px;
+    height: 10px;
+    margin: 10px 0;
     display: flex;
     justify-content: end;
     align-items: center;
-    text-align: end;
-    color: rgb(0, 0, 0);
-    font-size: 1.4rem;
 }
 
-#checklist ion-icon {
+.carousel-list-container ion-icon {
     font-size: 1.5rem;
-    margin-left: 10px;
-    color: rgb(0, 236, 145);
+    color: hsl(208, 94%, 47%);
+    margin: 0 5px;
     background-color: rgb(0, 0, 0);
     border-radius: 50%;
 }
+
 
 #why-us {
     width: 100%;
@@ -229,7 +214,7 @@ header p {
 }
 
 #why-us button {
-    background-color: #ff5420;
+    background-color: hsl(14, 100%, 56%);
     color: rgb(255, 255, 255);
     padding: 8px 20px;
     border-radius: 10px;
@@ -242,9 +227,7 @@ header p {
 }
 
 #why-us button:hover {
-    transform: scale(1.1);
-    background-color: hsl(14, 100%, 36%);
-    border: 2px solid black;
+    background-color: hsl(14, 100%, 46%);
 }
 
 .why-us-container::after {
@@ -288,7 +271,7 @@ header p {
     border-image: fill;
     width: 20%;
     min-width: 370px;
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(141, 192, 214);
 }
 
 .service-section img {
@@ -521,7 +504,6 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 @media screen and (max-width: 768px) {
-
     .service-section {
         height: 380px;
     }
