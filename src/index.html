@@ -1,509 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="JPM and Sons is a general contracting business
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JPM and Sons is a general contracting business
     located in Levittown, New York and serves many towns on Long Island." />
-        <title>JPM and Sons - General Contracting in Levittown, NY</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap"
-            rel="stylesheet" />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-            rel="stylesheet" />
+    <title>JPM and Sons - General Contracting in Levittown, NY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet" />
 
-        <link rel="stylesheet" href="/css/input.css" />
-    </head>
+    <link rel="stylesheet" href="/css/input.css" />
+  </head>
 
-    <body>
-        <nav class="text-black border-black-700">
-            <div
-                class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-                <a
-                    href="index.html"
-                    class="flex items-center space-x-3 rtl:space-x-reverse">
-                    
-                </a>
-                <button
-                    data-collapse-toggle="navbar-dropdown"
-                    type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                    aria-controls="navbar-dropdown"
-                    aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 17 14">
-                        <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <div
-                    class="hidden w-full md:block md:w-auto"
-                    id="navbar-dropdown">
-                    <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900">
-                        <li>
-                            <a
-                                href="index.html"
-                                class="block py-2 px-3 text-red-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
-                                >Home</a
-                            >
-                        </li>
-                        <li>
-                            <button
-                                id="dropdownNavbarLink"
-                                data-dropdown-toggle="dropdownNavbar"
-                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
-                                Services<svg
-                                    class="w-2.5 h-2.5 ms-2.5"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 10 6">
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m1 1 4 4 4-4" />
-                                </svg>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div
-                                id="dropdownNavbar"
-                                class="z-10 hidden text-black font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
-                                <ul
-                                    class="py-2 text-sm text-gray-900"
-                                    aria-labelledby="dropdownLargeButton">
-                                    <li>
-                                        <a
-                                            href="masonry.html"
-                                            class="block px-4 py-2 hover:bg-gray-600"
-                                            >Masonry</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="paving-sealing.html"
-                                            class="block text-black px-4 py-2 hover:bg-gray-600"
-                                            >Paving and Sealing</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="concrete.html"
-                                            class="block px-4 py-2 hover:bg-gray-600"
-                                            >Concrete</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="services.html"
-                                            class="block px-4 py-2 hover:bg-gray-600"
-                                            >Other Services</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a
-                                href="gallery.html"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                                >Gallery</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="about.html"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                                >About</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="contact.html"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                                >Contact Us</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <body>
+    <nav class="text-black border-black-700">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <!-- Logo and Slogan -->
+          <img
+            src="/assets/logotransparent.jpg"
+            alt="JPM Logo"
+            class="w-16 h-auto" />
+          <div class="flex flex-col">
+            <span class="text-xl">Proudly Serving Long Island</span>
+            <a
+              href="index.html"
+              class="flex items-center space-x-3 rtl:space-x-reverse">
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap text-black"
+                >JPM and Sons</span
+              >
+            </a>
+          </div>
+        </div>
+        <button
+          data-collapse-toggle="navbar-dropdown"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 navbar-button"
+          aria-controls="navbar-dropdown"
+          aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            id="navbarButton"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900">
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 text-red-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
+                Services<svg
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6">
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden text-black font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
+                <ul
+                  class="py-2 text-sm text-gray-900"
+                  aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a
+                      href="masonry.html"
+                      class="block px-4 py-2 hover:bg-gray-600"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="paving-sealing.html"
+                      class="block text-black px-4 py-2 hover:bg-gray-600"
+                      >Paving and Sealing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="concrete.html"
+                      class="block px-4 py-2 hover:bg-gray-600"
+                      >Concrete</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="services.html"
+                      class="block px-4 py-2 hover:bg-gray-600"
+                      >Other Services</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a
+                href="gallery.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-        <section id="front-page">
-            <header>
-                <div class="text-container">
-                    <h1 class="header-name">JPM & Sons</h1>
-                    <p>
-                        A trusted family-owned business primarily serving Long
-                        Island. We specialize in masonry, paver sealing, asphalt
-                        paving, concrete work, and offer general contracting
-                        services. Our commitment to quality craftsmanship and
-                        customer satisfaction has made us a go-to contractor for
-                        residential and commercial projects throughout the
-                        region.
-                    </p>
-                    <button class="learn-more">
-                        <a href="about.html">Learn More</a>
-                    </button>
-                </div>
-            </header>
+    <section id="front-page">
+      <header>
+        <div class="text-container">
+          <h1 class="header-name">Craftsmanship You Can Count On</h1>
+          <p>
+            A trusted family-owned business primarily serving Long Island. We
+            specialize in masonry, paver sealing, asphalt paving, concrete work,
+            and offer general contracting services. Our commitment to quality
+            craftsmanship and customer satisfaction has made us a go-to
+            contractor for residential and commercial projects throughout the
+            region.
+          </p>
+          <button class="learn-more">
+            <a href="about.html">Learn More</a>
+          </button>
+        </div>
+      </header>
 
-            <div class="carousel-list-container">
-                <div class="carousel">
-                    <div class="slides">
-                        <img src="/assets/header.jpeg" class="slide active" />
-                        <img src="/assets/29.jpg" class="slide" />
-                        <img src="/assets/28.jpg" class="slide" />
-                    </div>
-                </div>
-
-                <ul>
-                        <li>
-                            Fully Licensed and Insured<ion-icon
-                                name="checkmark-circle-sharp"></ion-icon>
-                        </li>
-                        <li>
-                            Family Owned and Oiled<ion-icon
-                                name="checkmark-circle-sharp"></ion-icon>
-                        </li>
-                        <li>
-                            Free Estimates<ion-icon
-                                name="checkmark-circle-sharp"></ion-icon>
-                        </li>
-                    </ul>
-            </div>
-        </section>
-
-        <section id="why-us">
-            <div class="why-us-container">
-                <img
-                    src="/assets/logo-transparent.png"
-                    class="why-logo"
-                    alt="JPM Logo" />
-                <h2>Why Choose Us?</h2>
-                <p>
-                    Choose JPM and Sons as your general contractor for
-                    unparalleled quality and reliability. With years of
-                    experience, our skilled team delivers exceptional
-                    construction and renovation services tailored to your needs.
-                    We prioritize clear communication, attention to detail, and
-                    on-time completion, ensuring a stress-free experience. Trust
-                    JPM and Sons for superior results every time.
-                </p>
-                <button>
-                    <a href="contact.html" class="schedule">
-                        Schedule your free quote today!
-                    </a>
-                </button>
-            </div>
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services-container">
-                <div class="service-section">
-                    <a href="masonry.html">
-                        <img
-                            src="/assets/masonry.jpg"
-                            alt
-                            txt="photo of man laying brick" />
-                        <h3 class="masonry-title">Masonry</h3>
-                    </a>
-                    <p class="service-section-paragraph">
-                        At JPM and Sons, we specialize in quality masonry work.
-                        From fireplaces and retaining walls to stone patios, we
-                        handle each project with care and precision. Our
-                        experienced masons are dedicated to bringing your vision
-                        to life with craftsmanship you can trust. Let’s create
-                        something lasting and beautiful together.
-                    </p>
-                </div>
-
-                <div class="service-section">
-                    <a href="remodeling.html">
-                        <img
-                            src="/assets/paving-work.jpg"
-                            alt
-                            txt="photo of man laying brick" />
-                        <h3 class="remodeling-title">Paving and Sealing</h3>
-                    </a>
-                    <p class="service-section-paragraph">
-                        A well-paved and sealed surface can make all the
-                        difference. Whether it's asphalt paving for your
-                        driveway or sealing pavers to protect and enhance their
-                        look, our team delivers reliable, high-quality results.
-                        We focus on durability and aesthetics, ensuring your
-                        surfaces not only look great but also stand the test of
-                        time. Trust JPM and Sons to keep your pathways,
-                        driveways, and patios in top shape.
-                    </p>
-                </div>
-
-                <div class="service-section">
-                    <a href="homeimprovement.html">
-                        <img
-                            src="/assets/concrete-work.jpg"
-                            alt
-                            txt="photo of man laying brick" />
-                        <h3 class="homeimprovement">Concrete</h3>
-                    </a>
-                    <p class="service-section-paragraph">
-                        Quality concrete work is essential for lasting results.
-                        Whether you need a solid foundation, a smooth driveway,
-                        or a durable sidewalk, JPM and Sons has you covered. Our
-                        team focuses on precision and strength in every project,
-                        ensuring that your concrete structures endure over time.
-                        Depend on us for reliable and enduring concrete
-                        solutions.
-                    </p>
-                </div>
-
-                <div class="service-section">
-                    <a href="homeimprovement.html">
-                        <img
-                            src="/assets/homeimprovement.jpg"
-                            alt
-                            txt="photo of man laying brick" />
-                        <h3 class="homeimprovement">Other Services</h3>
-                    </a>
-                    <p class="service-section-paragraph">
-                        Transforming homes from the ground up is our specialty.
-                        Whether you're looking to build a new home or improve
-                        your existing one, JPM and Sons offers comprehensive
-                        project management and expert craftsmanship. From
-                        initial planning to final touches, we handle every
-                        aspect of your project with meticulous attention to
-                        detail. Trust us to bring your vision to life and create
-                        a space you'll love for years to come.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="gallery-container">
-            <h2 class="gallery-header">Gallery</h2>
-            <div
-                id="default-carousel"
-                class="relative w-full mx-auto"
-                data-carousel="static">
-                <!-- Carousel wrapper -->
-                <div
-                    class="relative custom-carousel-height overflow-hidden rounded-xl">
-                    <!-- Item 1 -->
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item>
-                        <img
-                            src="/assets/17.jpeg"
-                            class="block w-full h-full object-cover"
-                            alt="..." />
-                    </div>
-                    <!-- Item 2 -->
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item>
-                        <img
-                            src="/assets/yoda.jpg"
-                            class="block w-full h-full object-cover object-center"
-                            alt="..." />
-                    </div>
-                    <!-- Item 3 -->
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item>
-                        <img
-                            src="/assets/pool.jpeg"
-                            class="block w-full h-full object-cover"
-                            alt="..." />
-                    </div>
-                    <!-- Item 4 -->
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item>
-                        <img
-                            src="/assets/7.jpeg"
-                            class="block w-full h-full object-cover object-left-bottom"
-                            alt="..." />
-                    </div>
-                    <!-- Item 5 -->
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item>
-                        <img
-                            src="/assets/pool-fountain.jpeg"
-                            class="block w-full h-full object-cover"
-                            alt="..." />
-                    </div>
-                </div>
-
-                <!-- Slider indicators -->
-                <div
-                    class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="true"
-                        aria-label="Slide 1"
-                        data-carousel-slide-to="0"></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 2"
-                        data-carousel-slide-to="1"></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 3"
-                        data-carousel-slide-to="2"></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 4"
-                        data-carousel-slide-to="3"></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 5"
-                        data-carousel-slide-to="4"></button>
-                </div>
-                <!-- Slider controls -->
-                <button
-                    type="button"
-                    class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-prev>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-500 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
-                        <svg
-                            class="w-4 h-4 text-white rtl:rotate-180"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10">
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 1 1 5l4 4" />
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button
-                    type="button"
-                    class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-next>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-500 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
-                        <svg
-                            class="w-4 h-4 text-white rtl:rotate-180"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10">
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="m1 9 4-4-4-4" />
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
-            </div>
-
-            <button class="gallery-button mt-4">
-                <a href="gallery.html" class="text-black underline"
-                    >Browse our entire gallery<ion-icon
-                        name="arrow-forward-outline"
-                        class="ml-2"></ion-icon
-                ></a>
-            </button>
+      <div class="carousel-list-container">
+        <div class="carousel">
+          <div class="slides">
+            <img src="/assets/header.jpeg" class="slide active" />
+            <img src="/assets/29.jpg" class="slide" />
+            <img src="/assets/28.jpg" class="slide" />
+          </div>
         </div>
 
-        <div class="f-container">
-            <h3>JPM and Sons</h3>
+        <ul>
+          <li>
+            Fully Licensed and Insured<ion-icon name="checkmark-outline"></ion-icon>
+          </li>
+          <li>
+            Family Owned and Oiled<ion-icon name="checkmark-outline"></ion-icon>
+          </li>
+          <li>
+            Free Estimates<ion-icon name="checkmark-outline"></ion-icon>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="why-us-container">
+        <img
+          src="/assets/logo-transparent.png"
+          class="why-logo"
+          alt="JPM Logo" />
+        <h2>Why Choose Us?</h2>
+        <p>
+          Choose JPM and Sons as your general contractor for unparalleled
+          quality and reliability. With years of experience, our skilled team
+          delivers exceptional construction and renovation services tailored to
+          your needs. We prioritize clear communication, attention to detail,
+          and on-time completion, ensuring a stress-free experience. Trust JPM
+          and Sons for superior results every time.
+        </p>
+        <button>
+          <a href="contact.html" class="schedule">
+            Schedule your free quote today!
+          </a>
+        </button>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-section">
+          <a href="masonry.html">
+            <img
+              src="/assets/masonry.jpg"
+              alt
+              txt="photo of man laying brick" />
+            <h3 class="masonry-title">Masonry</h3>
+          </a>
+          <p class="service-section-paragraph">
+            At JPM and Sons, we specialize in quality masonry work. From
+            fireplaces and retaining walls to stone patios, we handle each
+            project with care and precision. Our experienced masons are
+            dedicated to bringing your vision to life with craftsmanship you can
+            trust. Let’s create something lasting and beautiful together.
+          </p>
         </div>
 
-        <footer>
-            <div id="connect">
-                <a href="contact-us.html"><h3>Connect With Us</h3></a>
+        <div class="service-section">
+          <a href="remodeling.html">
+            <img
+              src="/assets/paving-work.jpg"
+              alt
+              txt="photo of man laying brick" />
+            <h3 class="remodeling-title">Paving and Sealing</h3>
+          </a>
+          <p class="service-section-paragraph">
+            A well-paved and sealed surface can make all the difference. Whether
+            it's asphalt paving for your driveway or sealing pavers to protect
+            and enhance their look, our team delivers reliable, high-quality
+            results. We focus on durability and aesthetics, ensuring your
+            surfaces not only look great but also stand the test of time. Trust
+            JPM and Sons to keep your pathways, driveways, and patios in top
+            shape.
+          </p>
+        </div>
 
-                <a href="tel:516-735-0685"
-                    ><ion-icon name="call"></ion-icon>Phone: 516-735-0685</a
-                >
-                <a href="mailto:JPMandSons123@Gmail.com"
-                    ><ion-icon name="mail"></ion-icon>JPMandSons123@Gmail.com</a
-                >
-                <a href="address.html"
-                    ><ion-icon name="navigate-circle"></ion-icon>150 Spring
-                    Lane, Levittown, NY</a
-                >
-            </div>
+        <div class="service-section">
+          <a href="homeimprovement.html">
+            <img
+              src="/assets/concrete-work.jpg"
+              alt
+              txt="photo of man laying brick" />
+            <h3 class="homeimprovement">Concrete</h3>
+          </a>
+          <p class="service-section-paragraph">
+            Quality concrete work is essential for lasting results. Whether you
+            need a solid foundation, a smooth driveway, or a durable sidewalk,
+            JPM and Sons has you covered. Our team focuses on precision and
+            strength in every project, ensuring that your concrete structures
+            endure over time. Depend on us for reliable and enduring concrete
+            solutions.
+          </p>
+        </div>
 
-            <div class="social">
-                <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
+        <div class="service-section">
+          <a href="homeimprovement.html">
+            <img
+              src="/assets/homeimprovement.jpg"
+              alt
+              txt="photo of man laying brick" />
+            <h3 class="homeimprovement">Other Services</h3>
+          </a>
+          <p class="service-section-paragraph">
+            Transforming homes from the ground up is our specialty. Whether
+            you're looking to build a new home or improve your existing one, JPM
+            and Sons offers comprehensive project management and expert
+            craftsmanship. From initial planning to final touches, we handle
+            every aspect of your project with meticulous attention to detail.
+            Trust us to bring your vision to life and create a space you'll love
+            for years to come.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                <a href="https://www.tiktok.com/@jpmandsons" target="_blank">
-                    <ion-icon name="logo-tiktok" href=""></ion-icon>
-                </a>
+    <div id="gallery-container">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="/assets/pool.jpeg" alt="photo" />
+        <img src="/assets/kitchen.jpg" alt="photo" />
+        <img src="/assets/living-area.jpg" alt="photo" />
+        <img src="/assets/home-built.jpg" alt="photo" />
+        <img src="/assets/front.jpg" alt="photo" />
+        <img src="/assets/backyard.jpg" alt="photo" />
+      </div>
+      <button>
+        <a href="gallery.html" class="view-more">View Complete Gallery</a>
+      </button>
+    </div>
 
-                <a
-                    class="insta-link"
-                    href="https://www.instagram.com/jpm_and_sons/"
-                    target="_blank">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </div>
+    <div class="f-container">
+      <h3>JPM and Sons</h3>
+    </div>
 
-            <div id="links">
-                <a href="index.html">Home</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact Us</a>
-            </div>
+    <footer>
+      <div id="connect">
+        <a href="contact-us.html"><h3>Connect With Us</h3></a>
 
-            <div id="about-us">
-                <h3>About Us</h3>
-                <p>
-                    We are a family-owned business where personal involvement
-                    matters. Led by our founder, James Moore, and his eldest
-                    son, Nick, we ensure each project receives the attention it
-                    deserves, guaranteeing top-notch service for our clients.
-                </p>
-            </div>
-        </footer>
+        <a href="tel:516-735-0685"
+          ><ion-icon name="call"></ion-icon>Phone: 516-735-0685</a
+        >
+        <a href="mailto:JPMandSons123@Gmail.com"
+          ><ion-icon name="mail"></ion-icon>JPMandSons123@Gmail.com</a
+        >
+        <a href="address.html"
+          ><ion-icon name="navigate-circle"></ion-icon>150 Spring Lane,
+          Levittown, NY</a
+        >
+      </div>
 
-        <script
-            type="module"
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script
-            nomodule
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-        <script src="/script.js"></script>
-    </body>
+      <div class="social">
+        <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="https://www.tiktok.com/@jpmandsons" target="_blank">
+          <ion-icon name="logo-tiktok" href=""></ion-icon>
+        </a>
+
+        <a
+          class="insta-link"
+          href="https://www.instagram.com/jpm_and_sons/"
+          target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+
+      <div id="links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div id="about-us">
+        <h3>About Us</h3>
+        <p>
+          We are a family-owned business where personal involvement matters. Led
+          by our founder, James Moore, and his eldest son, Nick, we ensure each
+          project receives the attention it deserves, guaranteeing top-notch
+          service for our clients.
+        </p>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
 </html>
