@@ -70,7 +70,7 @@ header {
 }
 
 button:not(nav button) {
-  background-color: hsl(208, 94%, 47%);
+  background-color: hsl(208, 94%, 57%);
   padding: 10px 20px;
   font-weight: 600;
   border-radius: 5px;
@@ -79,10 +79,8 @@ button:not(nav button) {
   z-index: 4;
 }
 
-
-
 button:not(nav button):hover {
-  background-color: hsl(208, 94%, 37%);
+  background-color: hsl(208, 94%, 47%);
 }
 
 header h1 {
@@ -246,42 +244,49 @@ header p {
 .services-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
   width: 80%;
   margin: 0 auto 20px;
   justify-content: space-evenly;
 }
 
 .service-section {
-  border: 3px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(0, 0, 0, 0.2);
   border-image: fill;
-  width: 24%;
-  min-width: 370px;
-  background-color:hsl(208, 94%, 67%);
+  width: 20%;
+  min-width: 350px;
+  background-color: hsl(27, 11%, 80%);
 }
 
-.service-section img {
-  border-radius: 10px;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  width: 100%;
-}
+
 
 .service-section h3 {
   color: black;
   font-size: 1.4em;
-  margin: 10px 0px 0px 15px;
   font-weight: 700;
+  padding: 15px 25px;
 }
 
 .service-section a:hover {
   text-decoration: underline black;
 }
 
-.service-section p {
-  padding: 15px;
+.service-section p{
+  padding:10px 30px 20px;
+  font-size: 20px;
+}
+
+.service-section ul{
+  padding: 0px 30px 30px;
+  font-size: 20px;
+}
+
+
+
+.service-section li {
+  list-style:inside;
 }
 
 #gallery-container {
