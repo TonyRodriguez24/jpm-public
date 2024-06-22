@@ -59,14 +59,14 @@ a {
 }
 
 header {
-  height: calc(100vh - 112px);
+  height: 100%;
   width: 46%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-width: 500px;
+  background-color: #08f500;
 }
 
 button:not(nav button) {
@@ -84,33 +84,35 @@ button:not(nav button):hover {
 }
 
 header h1 {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin: 0 auto;
   line-height: 1.3;
   padding-bottom: 30px;
 }
 
 header p {
   font-size: 1.4em;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 100px;
   height: auto;
   text-align: justify;
+}
+
+.text-container {
+  background-color: #bcbcbc;
 }
 
 .carousel-list-container {
   width: 54%;
   height: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
+  background-color: #1877f2;
 }
 
 .carousel {
@@ -124,6 +126,7 @@ header p {
 
 .carousel img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -147,15 +150,15 @@ header p {
   align-items: center;
   flex-direction: column;
   font-size: 20px;
+  background-color: #d1b214;
+  width: 70%;
 }
 
 .carousel-list-container ul li {
-  width: 300px;
-  height: 10px;
-  margin: 10px 0;
+  width: 100%;
   display: flex;
-  justify-content: end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .carousel-list-container ion-icon {
@@ -163,6 +166,10 @@ header p {
   color: hsl(0, 0%, 23%);
   margin: 0 5px;
   border-radius: 50%;
+}
+
+.carousel-list-container button {
+  display: none;
 }
 
 #why-us {
@@ -185,7 +192,7 @@ header p {
   min-width: 380px;
   height: 70%;
   border-radius: 25px;
-  border: 5px solid rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
   background-image: url(/assets/head-photo.jpg);
   background-size: cover;
@@ -199,7 +206,7 @@ header p {
 }
 
 #why-us h2 {
-  font-size: 4em;
+  font-size: 4vw;
   z-index: 2;
   font-weight: 600;
   color: white;
@@ -227,7 +234,7 @@ header p {
 
 #services {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,12 +262,10 @@ header p {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   border: 1px solid rgb(0, 0, 0, 0.2);
   border-image: fill;
-  width: 20%;
-  min-width: 350px;
+  width: 22%;
+  min-width: 300px;
   background-color: hsl(27, 11%, 80%);
 }
-
-
 
 .service-section h3 {
   color: black;
@@ -273,20 +278,18 @@ header p {
   text-decoration: underline black;
 }
 
-.service-section p{
-  padding:10px 30px 20px;
+.service-section p {
+  padding: 10px 30px 20px;
   font-size: 20px;
 }
 
-.service-section ul{
-  padding: 0px 30px 30px;
+.service-section ul {
+  padding: 20px 30px 30px 20px;
   font-size: 20px;
 }
-
-
 
 .service-section li {
-  list-style:inside;
+  list-style: inside;
 }
 
 #gallery-container {
@@ -481,12 +484,95 @@ ion-icon[name="logo-instagram"]:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
+
+
 @media screen and (max-width: 768px) {
-  .service-section {
+  nav img {
+    display: none;
+  }
+
+  #front-page {
+    width: 100dvw;
+    height: 100%;
+  }
+
+  header {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8em;
+    background-color: #6c88ae;
+    margin-bottom: 40px;
+  }
+
+  .text-container {
+    width: 100%;
+    height: 100%;
+    background-color: #9c4940;
+  }
+
+  header h1 {
+    padding: 10px 40px;
+  }
+
+  header p {
+    padding: 10px 20px;
+    background-color: #1877f2;
+  }
+
+  .carousel-list-container {
+    width: 100%;
     height: 380px;
+    background-color: #bc1888;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-list-container button {
+    scale: 0.9;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .carousel {
+    width: 90%;
+    height: 60%;
+  }
+
+  .carousel-list-container ul {
+    font-size: 16px;
+  }
+
+  #why-us {
+    display: none;
+  }
+  .service-section {
+    height: 390px;
+  }
+  #services {
+    padding: 30px 0 0;
   }
 
   .service-section p {
+    display: none;
+  }
+
+  #gallery-container {
+    padding-top: 100px;
+    height: 100%;
+  }
+
+  .gallery img {
+    width: 360px;
+    height: 240px;
+  }
+
+  .f-container {
     display: none;
   }
 

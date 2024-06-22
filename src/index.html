@@ -45,7 +45,7 @@
         <button
           data-collapse-toggle="navbar-dropdown"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 navbar-button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 navbar-button"
           aria-controls="navbar-dropdown"
           aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -70,7 +70,7 @@
             <li>
               <a
                 href="index.html"
-                class="block py-2 px-3 text-red-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
+                class="block py-2 px-3 text-red-500 hover:bg-gray-300 rounded md:bg-transparent md:text-blue-500 md:p-0"
                 >Home</a
               >
             </li>
@@ -78,7 +78,7 @@
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
                 Services<svg
                   class="w-2.5 h-2.5 ms-2.5"
                   aria-hidden="true"
@@ -96,21 +96,21 @@
               <!-- Dropdown menu -->
               <div
                 id="dropdownNavbar"
-                class="z-10 hidden text-black font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
+                class="z-10 hidden text-black font-normal bg-gray-500 divide-y divide-gray-600 rounded-lg shadow md:w-80">
                 <ul
                   class="py-2 text-sm text-gray-900"
                   aria-labelledby="dropdownLargeButton">
                   <li>
                     <a
                       href="masonry.html"
-                      class="block px-4 py-2 hover:bg-gray-600"
+                      class="block px-4 py-2 hover:bg-gray-300"
                       >Masonry</a
                     >
                   </li>
                   <li>
                     <a
                       href="paving-sealing.html"
-                      class="block text-black px-4 py-2 hover:bg-gray-600"
+                      class="block text-black px-4 py-2 hover:bg-gray-300"
                       >Paving and Sealing</a
                     >
                   </li>
@@ -134,21 +134,21 @@
             <li>
               <a
                 href="gallery.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                 >Gallery</a
               >
             </li>
             <li>
               <a
                 href="about.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                 >About</a
               >
             </li>
             <li>
               <a
                 href="contact.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
                 >Contact Us</a
               >
             </li>
@@ -194,6 +194,11 @@
           </li>
           <li>Free Estimates<ion-icon name="checkmark-outline"></ion-icon></li>
         </ul>
+
+        <button class="schedule">
+          <a href="contact.html">Schedule Your Free Quote Today!</a>
+        </button>
+
       </div>
     </section>
 
@@ -296,12 +301,12 @@
     <div id="gallery-container">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="/assets/pool.jpeg" alt="photo" />
-        <img src="/assets/kitchen.jpg" alt="photo" />
-        <img src="/assets/living-area.jpg" alt="photo" />
-        <img src="/assets/home-built.jpg" alt="photo" />
-        <img src="/assets/front.jpg" alt="photo" />
-        <img src="/assets/backyard.jpg" alt="photo" />
+        <img src="/assets/pool.jpeg" alt="photo" loading="lazy"/>
+        <img src="/assets/kitchen.jpg" alt="photo" loading="lazy"/>
+        <img src="/assets/living-area.jpg" alt="photo" loading="lazy"/>
+        <img src="/assets/home-built.jpg" alt="photo" loading="lazy"/>
+        <img src="/assets/front.jpg" alt="photo" loading="lazy" />
+        <img src="/assets/backyard.jpg" alt="photo" loading="lazy" />
       </div>
       <button>
         <a href="gallery.html" class="view-more">View Complete Gallery</a>
