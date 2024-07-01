@@ -14,191 +14,119 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap"
       rel="stylesheet" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-      rel="stylesheet" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
 
     <link rel="stylesheet" href="/css/input.css" />
+    <style>
+      .height-calc {
+        height: calc(100vh - 88px);
+      }
+    </style>
   </head>
 
   <body>
-    <nav class="text-black border-black-700">
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-        <div class="flex items-center space-x-3 rtl:space-x-reverse">
-          <!-- Logo and Slogan -->
-          <img
-            src="/assets/logotransparent.jpg"
-            alt="JPM Logo"
-            class="w-16 h-auto" />
-          <div class="flex flex-col">
-            <span class="text-xl">Proudly Serving Long Island</span>
-            <a
-              href="index.html"
-              class="flex items-center space-x-3 rtl:space-x-reverse">
-              <span
-                class="self-center text-2xl font-semibold whitespace-nowrap text-black"
-                >JPM and Sons</span
-              >
-            </a>
-          </div>
+
+    <nav class="navbar navbar-expand-lg bg-warning">
+      <div class="container bg-primary d-flex align-items-center">
+        <img
+          src="/assets/logo-transparent.png"
+          alt="JPM Logo"
+          width="70"
+          height="70" />
+        <div class="ms-3 d-flex flex-column">
+          <h3 class="mt-3 mb-lg-0">JPM and Sons</h3>
+          <h5 class="mb-2">Proudly Serving Long Island</h5>
         </div>
         <button
-          data-collapse-toggle="navbar-dropdown"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 navbar-button"
-          aria-controls="navbar-dropdown"
-          aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            id="navbarButton"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14">
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
-          </svg>
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-          <ul
-            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900">
-            <li>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <div class="nav-item dropdown">
               <a
-                href="index.html"
-                class="block py-2 px-3 text-red-500 hover:bg-gray-300 rounded md:bg-transparent md:text-blue-500 md:p-0"
-                >Home</a
-              >
-            </li>
-            <li>
-              <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
-                Services<svg
-                  class="w-2.5 h-2.5 ms-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6">
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4" />
-                </svg>
-              </button>
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownNavbar"
-                class="z-10 hidden text-black font-normal bg-gray-500 divide-y divide-gray-600 rounded-lg shadow md:w-80">
-                <ul
-                  class="py-2 text-sm text-gray-900"
-                  aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a
-                      href="masonry.html"
-                      class="block px-4 py-2 hover:bg-gray-300"
-                      >Masonry</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="paving-sealing.html"
-                      class="block text-black px-4 py-2 hover:bg-gray-300"
-                      >Paving and Sealing</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="concrete.html"
-                      class="block px-4 py-2 hover:bg-gray-600"
-                      >Concrete</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="services.html"
-                      class="block px-4 py-2 hover:bg-gray-600"
-                      >Other Services</a
-                    >
-                  </li>
-                </ul>
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="masonry.html">Masonry</a>
+                <a class="dropdown-item" href="paving-sealing.html"
+                  >Paver Sealing</a
+                >
+                <a class="dropdown-item" href="pre">Pressure Washing</a>
+                <a class="dropdown-item" href="#">Other Services</a>
               </div>
-            </li>
-            <li>
-              <a
-                href="gallery.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                >Gallery</a
-              >
-            </li>
-            <li>
-              <a
-                href="about.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
+            </div>
+            <a class="nav-link" href="#">Contact Us Today!</a>
+          </div>
         </div>
       </div>
     </nav>
 
-    <section id="front-page">
-      <header>
-        <div class="text-container">
-          <h1 class="header-name">Craftsmanship You Can Count On</h1>
+    <section class="container-fluid h-100">
+      <div class="row height-calc bg-primary">
+        <div
+          class="col-lg-5 d-flex flex-column p-5 justify-content-center align-items-center bg-secondary">
+          <h1 class="text-center p-3">Craftsmanship You Can Count On</h1>
           <p>
             A trusted family-owned business primarily serving Long Island. We
             specialize in masonry, paver sealing, asphalt paving, concrete work,
-            and offer general contracting services. Our commitment to quality
-            craftsmanship and customer satisfaction has made us a go-to
-            contractor for residential and commercial projects throughout the
-            region.
+            and offer general contracting services. We are committed to creating
+            quality work that lasts and treating our customers like family by
+            guiding them through the process.
           </p>
           <button class="learn-more">
             <a href="about.html">Learn More</a>
           </button>
         </div>
-      </header>
 
-      <div class="carousel-list-container">
-        <div class="carousel">
-          <div class="slides">
-            <img src="/assets/header.jpeg" class="slide active" />
-            <img src="/assets/29.jpg" class="slide" />
-            <img src="/assets/28.jpg" class="slide" />
+        <div
+          class="col-lg-7 d-flex flex-column justify-content-center align-items-center">
+          <div class="my-carousel">
+            <div class="my-slides">
+              <img src="/assets/header.jpeg" class="my-slide my-active" />
+              <img src="/assets/29.jpg" class="my-slide" />
+              <img src="/assets/28.jpg" class="my-slide" />
+            </div>
           </div>
+
+          <ul>
+            <li>
+              Fully Licensed and Insured<ion-icon
+                name="checkmark-outline"></ion-icon>
+            </li>
+            <li>
+              Family Owned and Oiled<ion-icon
+                name="checkmark-outline"></ion-icon>
+            </li>
+            <li>
+              Free Estimates<ion-icon name="checkmark-outline"></ion-icon>
+            </li>
+          </ul>
+
+          <button class="schedule">
+            <a href="contact.html">Schedule Your Free Quote Today!</a>
+          </button>
         </div>
-
-        <ul>
-          <li>
-            Fully Licensed and Insured<ion-icon
-              name="checkmark-outline"></ion-icon>
-          </li>
-          <li>
-            Family Owned and Oiled<ion-icon name="checkmark-outline"></ion-icon>
-          </li>
-          <li>Free Estimates<ion-icon name="checkmark-outline"></ion-icon></li>
-        </ul>
-
-        <button class="schedule">
-          <a href="contact.html">Schedule Your Free Quote Today!</a>
-        </button>
-
       </div>
     </section>
 
@@ -231,17 +159,23 @@
         <div class="service-section">
           <a href="masonry.html">
             <h3 class="masonry-title">Masonry</h3>
-            <img
-              src="/assets/masonry.jpg"
-              alt
-              txt="photo of man laying brick" />
-            
+            <img src="/assets/trowel.jpg" alt txt="photo of man laying brick" />
           </a>
-          <p>We specialize in quality masonry work. Our skilled masons ensure precision and reliability. Let's build something lasting together.</p>
+          <p>
+            We specialize in quality masonry work. Our skilled masons ensure
+            precision and reliability. Let's build something lasting together.
+          </p>
+          <hr />
           <ul>
-            <li>Fireplaces</li>
-            <li>Retaining Walls</li>
+            <li>Bricklaying and Stonework</li>
+            <hr />
+            <li>Concrete Masonry</li>
+            <hr />
             <li>Stone Patios</li>
+            <hr />
+            <li>Retaining Walls</li>
+            <hr>
+            <li>Repairs and Restoration</li>
           </ul>
         </div>
 
@@ -254,28 +188,41 @@
               alt
               txt="photo of man laying brick" />
           </a>
-          <p>We provide reliable asphalt paving and paver sealing. We ensure your pathways and patios are durable and look great.</p>
+          <p>
+            We provide reliable asphalt paving and paver sealing. We ensure your
+            pathways and patios are durable and look great.
+          </p>
+          <hr />
           <ul>
-            <li>Asphalt paving</li>
-            <li>Paver sealing</li>
-            <li>Driveways</li>
+            <li>Surface Cleaning</li>
+            <hr />
+            <li>Joint Sand Stabilization</li>
+            <hr />
+            <li>Sealing Application</li>
+            <hr />
+            <li>Color Enhancement</li>
           </ul>
         </div>
 
         <div class="service-section">
           <a href="homeimprovement.html">
-
             <h3 class="homeimprovement">Concrete</h3>
             <img
               src="/assets/concrete-work.jpg"
               alt
               txt="photo of man laying brick" />
           </a>
-          <p>We deliver quality concrete work for foundations, driveways, and sidewalks. Count on us for precise and strong results.</p>
+          <p>
+            We deliver quality concrete work for foundations, driveways, and
+            sidewalks. Count on us for precise and strong results.
+          </p>
+          <hr />
           <ul>
             <li>Driveways</li>
+            <hr />
+            <li>Patios and Walkways</li>
+            <hr />
             <li>Foundations</li>
-            <li>Sidewalks</li>
           </ul>
         </div>
 
@@ -288,23 +235,30 @@
               alt
               txt="photo of man laying brick" />
           </a>
-          <p>We specialize in new builds and renovations. Our expert project management brings your vision to life.</p>
+          <p>
+            We specialize in new builds and renovations. Our expert project
+            management brings your vision to life.
+          </p>
+          <hr />
           <ul>
             <li>New builds</li>
+            <hr />
             <li>Renovations</li>
+            <hr />
             <li>General contracting</li>
           </ul>
         </div>
+        <span>To learn any more about our services, click here</span>
       </div>
     </section>
 
     <div id="gallery-container">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="/assets/pool.jpeg" alt="photo" loading="lazy"/>
-        <img src="/assets/kitchen.jpg" alt="photo" loading="lazy"/>
-        <img src="/assets/living-area.jpg" alt="photo" loading="lazy"/>
-        <img src="/assets/home-built.jpg" alt="photo" loading="lazy"/>
+        <img src="/assets/pool.jpeg" alt="photo" loading="lazy" />
+        <img src="/assets/kitchen.jpg" alt="photo" loading="lazy" />
+        <img src="/assets/living-area.jpg" alt="photo" loading="lazy" />
+        <img src="/assets/home-built.jpg" alt="photo" loading="lazy" />
         <img src="/assets/front.jpg" alt="photo" loading="lazy" />
         <img src="/assets/backyard.jpg" alt="photo" loading="lazy" />
       </div>
@@ -374,7 +328,8 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
   </body>
 </html>

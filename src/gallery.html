@@ -1,153 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JPM and Sons is a general contracting business
-  located in Levittown, New York and serves many towns on Long Island.">
-  <title>Gallery</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
-  <link rel = "stylesheet" href = "styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JPM and Sons is a general contracting business
+  located in Levittown, New York and serves many towns on Long Island." />
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
 
-  
-</head>
+    <link rel="stylesheet" href="/css/input.css" />
+  </head>
   <body>
-    <script src = "script.js"></script>
+    <nav class="navbar navbar-expand-lg bg-warning">
+      <div class="container bg-primary d-flex align-items-center">
+        <img
+          src="/assets/logo-transparent.png"
+          alt="JPM Logo"
+          width="70"
+          height="70" />
+        <div class="ms-3 d-flex flex-column">
+          <h3 class="mt-3 mb-lg-0">JPM and Sons</h3>
+          <h5 class="mb-2">Proudly Serving Long Island</h5>
+        </div>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav class="bg-gray-900 border-black-700">
-      <div
-          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-          <a
-              href="index.html"
-              class="flex items-center space-x-3 rtl:space-x-reverse">
-              <span
-                  class="self-center text-2xl font-semibold whitespace-nowrap text-white"
-                  >JPM and Sons</span
-              >
-          </a>
-          <button
-              data-collapse-toggle="navbar-dropdown"
-              type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
-              aria-controls="navbar-dropdown"
-              aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 14">
-                  <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 1h15M1 7h15M1 13h15" />
-              </svg>
-          </button>
-          <div
-              class="hidden w-full md:block md:w-auto"
-              id="navbar-dropdown">
-              <ul
-                  class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900">
-                  <li>
-                      <a
-                          href="index.html"
-                          class="block py-2 px-3 text-blue-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
-                          >Home</a
-                      >
-                  </li>
-                  <li>
-                      <button
-                          id="dropdownNavbarLink"
-                          data-dropdown-toggle="dropdownNavbar"
-                          class="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
-                          Services<svg
-                              class="w-2.5 h-2.5 ms-2.5"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 10 6">
-                              <path
-                                  stroke="currentColor"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="m1 1 4 4 4-4" />
-                          </svg>
-                      </button>
-                      <!-- Dropdown menu -->
-                      <div
-                          id="dropdownNavbar"
-                          class="z-10 hidden font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
-                          <ul
-                              class="py-2 text-sm text-white"
-                              aria-labelledby="dropdownLargeButton">
-                              <li>
-                                  <a
-                                      href="masonry.html"
-                                      class="block px-4 py-2 hover:bg-gray-600"
-                                      >Masonry</a
-                                  >
-                              </li>
-                              <li>
-                                  <a
-                                      href="paving-sealing.html"
-                                      class="block px-4 py-2 hover:bg-gray-600"
-                                      >Paving and Sealing</a
-                                  >
-                              </li>
-                              <li>
-                                  <a
-                                      href="concrete.html"
-                                      class="block px-4 py-2 hover:bg-gray-600"
-                                      >Concrete</a
-                                  >
-                              </li>
-                              <li>
-                                  <a
-                                      href="services.html"
-                                      class="block px-4 py-2 hover:bg-gray-600"
-                                      >Other Services</a
-                                  >
-                              </li>
-                          </ul>
-                      </div>
-                  </li>
-                  <li>
-                      <a
-                          href="gallery.html"
-                          class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                          >Gallery</a
-                      >
-                  </li>
-                  <li>
-                      <a
-                          href="about.html"
-                          class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                          >About</a
-                      >
-                  </li>
-                  <li>
-                      <a
-                          href="contact.html"
-                          class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                          >Contact Us</a
-                      >
-                  </li>
-              </ul>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="masonry.html">Masonry</a>
+                <a class="dropdown-item" href="paving-sealing.html"
+                  >Paver Sealing</a
+                >
+                <a class="dropdown-item" href="pre">Pressure Washing</a>
+                <a class="dropdown-item" href="#">Other Services</a>
+              </div>
+            </div>
+            <a class="nav-link" href="#">Contact Us Today!</a>
           </div>
+        </div>
       </div>
-  </nav>
-    
+    </nav>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-</body>
+    <div class="container-fluid bg-primary">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Our Gallery</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <div class="col-md-4">
+          <img src="/assets/2.jpeg" alt="Gallery 1" class="img-fluid" />
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/13.jpeg" alt="Gallery 2" class="img-fluid" />
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/12.jpeg" alt="Gallery 3" class="img-fluid" />
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/11.jpeg" alt="Gallery 4" class="img-fluid" />
+        </div>
+        <div class="col-md-5">
+          <img src="/assets/10.jpeg" alt="Gallery 5" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="connect">
+        <a href="contact-us.html"><h3>Connect With Us</h3></a>
+
+        <a href="tel:516-735-0685"
+          ><ion-icon name="call"></ion-icon>Phone: 516-735-0685</a
+        >
+        <a href="mailto:JPMandSons123@Gmail.com"
+          ><ion-icon name="mail"></ion-icon>JPMandSons123@Gmail.com</a
+        >
+        <a href="address.html"
+          ><ion-icon name="navigate-circle"></ion-icon>150 Spring Lane,
+          Levittown, NY</a
+        >
+      </div>
+
+      <div class="social">
+        <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="https://www.tiktok.com/@jpmandsons" target="_blank">
+          <ion-icon name="logo-tiktok" href=""></ion-icon>
+        </a>
+
+        <a
+          class="insta-link"
+          href="https://www.instagram.com/jpm_and_sons/"
+          target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+
+      <div id="links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div id="about-us">
+        <h3>About Us</h3>
+        <p>
+          We are a family-owned business where personal involvement matters. Led
+          by our founder, James Moore, and his eldest son, Nick, we ensure each
+          project receives the attention it deserves, guaranteeing top-notch
+          service for our clients.
+        </p>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>

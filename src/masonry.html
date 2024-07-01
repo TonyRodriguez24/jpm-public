@@ -1,359 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JPM and Sons is a general contracting business
-  located in Levittown, New York and serves many towns on Long Island.">
-  <title>Masonry</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
-  
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-  <link rel = "stylesheet" href = "/css/services.css">
-
-  
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JPM and Sons is a general contracting business
+  located in Levittown, New York and serves many towns on Long Island." />
+    <title>Masonry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/input.css" />
+  </head>
   <body>
-    
-  <nav class="bg-gray-900 border-black-700">
-    <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-        <a
-            href="index.html"
-            class="flex items-center space-x-3 rtl:space-x-reverse">
-            <span
-                class="self-center text-2xl font-semibold whitespace-nowrap text-white"
-                >JPM and Sons</span
-            >
-        </a>
-        <button
-            data-collapse-toggle="navbar-dropdown"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-dropdown"
-            aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14">
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-        </button>
-        <div
-            class="hidden w-full md:block md:w-auto"
-            id="navbar-dropdown">
-            <ul
-                class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900">
-                <li>
-                    <a
-                        href="index.html"
-                        class="block py-2 px-3 text-blue-500 rounded md:bg-transparent md:text-blue-500 md:p-0"
-                        >Home</a
-                    >
-                </li>
-                <li>
-                    <button
-                        id="dropdownNavbarLink"
-                        data-dropdown-toggle="dropdownNavbar"
-                        class="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 md:w-auto">
-                        Services<svg
-                            class="w-2.5 h-2.5 ms-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6">
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
-                    <!-- Dropdown menu -->
-                    <div
-                        id="dropdownNavbar"
-                        class="z-10 hidden font-normal bg-gray-700 divide-y divide-gray-600 rounded-lg shadow w-45">
-                        <ul
-                            class="py-2 text-sm text-white"
-                            aria-labelledby="dropdownLargeButton">
-                            <li>
-                                <a
-                                    href="masonry.html"
-                                    class="block px-4 py-2 hover:bg-gray-600"
-                                    >Masonry</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="paving-sealing.html"
-                                    class="block px-4 py-2 hover:bg-gray-600"
-                                    >Paving and Sealing</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="concrete.html"
-                                    class="block px-4 py-2 hover:bg-gray-600"
-                                    >Concrete</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="services.html"
-                                    class="block px-4 py-2 hover:bg-gray-600"
-                                    >Other Services</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a
-                        href="gallery.html"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                        >Gallery</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="about.html"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                        >About</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="contact.html"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0"
-                        >Contact Us</a
-                    >
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg bg-warning">
+      <div class="container bg-primary d-flex align-items-center">
+        <img
+          src="/assets/logo-transparent.png"
+          alt="JPM Logo"
+          width="70"
+          height="70" />
+        <div class="ms-3 d-flex flex-column">
+          <h3 class="mt-3 mb-lg-0">JPM and Sons</h3>
+          <h5 class="mb-2">Proudly Serving Long Island</h5>
         </div>
-    </div>
-</nav>
-      
-      <div class = "title-container" style="background: url('../assets/masonry-header.jpg'); background-position: center; background-size: cover;">
-        <div class = "header-container">
-          <h2 class="header-name">Masonry</h2>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >Home</a
+            >
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="masonry.html">Masonry</a>
+                <a class="dropdown-item" href="paving-sealing.html"
+                  >Paver Sealing</a
+                >
+                <a class="dropdown-item" href="pre">Pressure Washing</a>
+                <a class="dropdown-item" href="#">Other Services</a>
+              </div>
+            </div>
+            <a class="nav-link" href="#">Contact Us Today!</a>
+          </div>
         </div>
       </div>
+    </nav>
 
-      <section class="services-section-content">
-        
-        <div id="accordion-open" data-accordion="open" class="bg-gray-800">
-          
-          <h3 id="accordion-open-heading-1">
-            <button type="button" class="flex items-center justify-between w-full p-5 font-small rtl:text-right bg-gray-800 text-white border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200  hover:bg-gray-900  gap-3" data-accordion-target="#accordion-open-body-1" aria-expanded="true" aria-controls="accordion-open-body-1">
-              <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg> What is Masonry?</span>
-              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-              </svg>
-            </button>
-          </h3>
-
-          <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-            <div class="p-5 border border-b-0 border-gray-200 grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-4">
-              <p class="mb-4 text-white md:mb-0"> <!-- Removed flex and added md:mb-0 -->
-                Masonry is the craft of building structures using materials like bricks, stones, concrete blocks, and mortar. It involves creating durable and aesthetically pleasing constructions such as walls, chimneys, foundations, and decorative features through precise arrangement and bonding of these materials.
-              </p>
-              <img src="/assets/masonry.jpg" class="flex align-middle mb-auto justify-end ml-auto mr-auto mt-6"> <!-- Adjusted image alignment -->
-              <ul>
-                <li class="text-white">If you know what you want already that is great! We can <a href="/docs/getting-started/introduction/" class="text-blue-600 hover:underline">get started</a> here.</li>
-              </ul>
-            </div>
-          </div>
-          
-          
-          
-          <div class = "bg-gray-700">
-          <h3 id="accordion-open-heading-2">
-            <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-b-0 bg-gray-800 border-gray-200 focus:ring-4 focus:bg-gray-900 focus:ring-gray-100 hover:bg-gray-900 gap-3" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
-                <span class="flex items-center">
-                    <svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
-                    </svg>
-                    What masonry services do we provide?
-                </span>
-                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                </svg>
-            </button>
-          </h3>
+    <div class="container bg-primary h-100">
+      <div class="row justify-content-center">
+        <div class="col d-flex justify-content-center align-items-center">
+          <h2>Our Masonry Services</h2>
         </div>
-      
-          <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-            <div class="p-5 border border-b-0 border-gray-200">
-              <div id="nested-accordion">
-                <h3 id="nested-accordion-heading">
-                  <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-gray-800 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 focus:bg-gray-900  hover:bg-gray-900 gap-3" data-accordion-target="#nested-accordion-body" aria-expanded="false" aria-controls="nested-accordion-body">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Construction Services</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h3>
-                <div id="nested-accordion-body" class="hidden" aria-labelledby="nested-accordion-heading">
-                  <div class="p-5 border border-b-0 border-gray-200">
-                    <p class="mb-4 text-white ">
-                      Bricklaying and Block Work: From sturdy foundations to intricate brick facades, we specialize in expert bricklaying and block work for residential and commercial projects.
-                      Stone Masonry: Elevate your space with timeless elegance using our stone masonry expertise, encompassing walls, fireplaces, and architectural features.
-                      Concrete Work: We provide high-quality concrete services for driveways, walkways, patios, and structural elements, ensuring strength and longevity.
-                    </p>
-                  </div>
-                </div>
-              </div>
+      </div>
+    </div>
 
-              <div id="nested-accordion2">
-                <h3 id="nested-accordion-heading2">
-                  <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-b-0 bg-gray-800 focus:bg-gray-900 border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-900  gap-3" data-accordion-target="#nested-accordion-body2" aria-expanded="false" aria-controls="nested-accordion-body2">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Paving and Hardscaping</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h3>
-                <div id="nested-accordion-body2" class="hidden" aria-labelledby="nested-accordion-heading2">
-                  <div class="p-5 border border-b-0 border-gray-200 ">
-                    <p class="mb-4 text-white ">Enhance your outdoor spaces with our paving solutions, including driveways, pathways, and outdoor living areas. Our hardscaping expertise extends to retaining walls, steps, and decorative features.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="nested-accordion3">
-                <h3 id="nested-accordion-heading3">
-                  <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-b-0 bg-gray-800 focus:bg-gray-900 border-gray-200 focus:ring-4 focus:ring-gray-200   hover:bg-gray-900  gap-3" data-accordion-target="#nested-accordion-body3" aria-expanded="false" aria-controls="nested-accordion-body3">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Restoration and Preservation</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h3>
-                <div id="nested-accordion-body3" class="hidden" aria-labelledby="nested-accordion-heading3">
-                  <div class="p-5 border border-b-0 border-gray-200">
-                    <p class="mb-4 text-white">
-                      Preserve the beauty and integrity of historical and aging structures with our restoration services. From delicate facade repairs to comprehensive preservation projects, we are dedicated to maintaining the architectural heritage of your property.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-
-              <div id="nested-accordion4">
-                <h3 id="nested-accordion-heading4">
-                  <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white border border-b-0 focus:bg-gray-900 bg-gray-800 border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-900  gap-3" data-accordion-target="#nested-accordion-body4" aria-expanded="false" aria-controls="nested-accordion-body4">
-                    <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>Foundations and Basement Entrances:</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h3>
-                <div id="nested-accordion-body4" class="hidden" aria-labelledby="nested-accordion-heading4">
-                  <div class="p-5 border border-b-0 border-gray-200">
-                    <p class="mb-4 text-white ">
-                      Ensure the stability and functionality of your property with our foundation construction expertise. We specialize in reliable foundations and basement entrances, providing secure access to lower levels.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container-fluid my-4 bg-warning">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h3 class="text-center mt-3">Our Masonry Services</h3>
+          <p class="p-3">
+            At JPM and Sons, we offer a variety of masonry services to help you
+            build and maintain your property. Our team of skilled masons has the
+            experience and expertise to handle any masonry project, big or
+            small. Whether you need a new brick patio, a stone retaining wall,
+            or repairs to your existing masonry, we have you covered. We take
+            pride in our work and strive to deliver exceptional results that
+            exceed our clients' expectations. Contact us today to learn more
+            about our masonry services and how we can help you enhance the
+            beauty and functionality of your property.
+          </p>
         </div>
-      
-      </section>
+      </div>
+    </div>
 
-      
+    <section id="masonry-container">
+      <div class="masonry-service">
+        <h3>Bricklaying and Stonework</h3>
+        <img src="/assets/masonry.jpg" class="card-img-top" alt="..." />
+        <p class="card-text">
+          Crafting durable and aesthetic structures with bricks and stones.
+        </p>
+      </div>
 
-  <section class = "services">
-    <h2 class = "services-header">Other Services</h2>
-    <div class = "services-container">
-            <div class = "service-section">
-              <a href = "remodeling.html">
-                <img src = "/assets/remodeling.jpg" alt txt = "photo of man laying brick">
-                <h3 class = "remodeling-title">Renovations and Remodeling</h3>
-              </a>
-              <p class = "service-section-paragraph">
-                Transform your space with precision and passion. Our remodeling and renovation services are meticulously crafted with attention to detail, ensuring that each project not only meets but exceeds expectations. Let us bring your vision to life with our expertise, dedication, and commitment to excellence.</p>
-              </p>
-            </div>
-          
-            <div class = "service-section">
-              <a href = "homeimprovement.html">
-                <img src = "/assets/homeimprovement.jpg" alt txt = "photo of man laying brick">
-                <h3 class = "homeimprovement">Home Improvement</h3>
-              </a>
-              <p class = "service-section-paragraph">
-                Unlock the full potential of your home with our comprehensive home improvement services. From minor upgrades to major transformations, we tailor each project to suit your needs and exceed your expectations. Experience the difference as we elevate your living spaces with precision and passion.</p>
-              </p>
-            </div>
-          
-            <div class = "service-section">
-              <a href = "construction.html">
-                <img src = "/assets/construction.jpg" alt txt = "photo of man laying brick">
-                <h3 class = "construction">Residential & Commercial Construction</h3>
-              </a> 
-              <p class = "service-section-paragraph">
-                Experience exceptional craftsmanship for both home and business projects. With our dedicated approach, trust us for quality results every time. We bring your vision to life with expertise and care, ensuring your spaces exceed expectations and reflect your unique style and preferences.
-              </p>
-            </div>
+      <div class="masonry-service">
+        <h3>Concrete Masonry</h3>
+        <img src="/assets/masonry.jpg" class="card-img-top" alt="..." />
+        <p class="card-text">
+          Building robust concrete structures for various applications.
+        </p>
+      </div>
+        <div class="masonry-service">
+          <h3>Retaining Walls</h3>
+          <img src="/assets/masonry.jpg" class="card-img-top" alt="..." />
+          <p class="card-text">
+            Constructing strong and functional retaining walls.
+          </p>
+        </div>
+
+          <div class="masonry-service">
+            <h3>Repairs and Restoration</h3>
+            <img src="/assets/masonry.jpg" class="card-img-top" alt="..." />
+            <p class="card-text">
+              Fixing and revitalizing existing masonry structures.
+            </p>
           </div>
+      <!-- <h3 class="card-title text-center">Bricklaying and Stonework</h3> -->
+
+      <!-- <img src="/assets/masonry.jpg" class="card-img-top" alt="..." /> -->
+      <!-- <p class="card-text">
+                Crafting durable and aesthetic structures with bricks and
+                stones.
+              </p> -->
+
+      <!-- <h3 class="card-title">Concrete Masonry</h3> -->
+      <!-- <p class="card-text">
+                Building robust concrete structures for various applications.
+              </p> -->
+
+      <!-- <h3 class="card-title">Retaining Walls</h3> -->
+      <!-- <p class="card-text">
+                Constructing strong and functional retaining walls.
+              </p> -->
+
+      <!-- <h3 class="card-title">Repairs and Restoration</h3>
+              <p class="card-text">
+                Fixing and revitalizing existing masonry structures.
+              </p> -->
     </section>
 
-  
+    <section class = "carousel-container">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/assets/13.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/15.jpeg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/pool-fountain.jpeg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
 
+    <div class="f-container">
+      <h3>JPM and Sons</h3>
+    </div>
 
+    <footer>
+      <div id="connect">
+        <a href="contact-us.html"><h3>Connect With Us</h3></a>
 
-      <footer class="footer">
-          <div class="footer-info-connect">
-            <h3>Connect With Us</h3>
-            <a href = "number.html">Phone: 516-735-0685</a>
-            <a href = "email.html">Email: JPMandSons123@Gmail.com</a>
-            <a href = "address.html">Address: 150 Spring Lane, Levittown, NY</a>
-          </div>
+        <a href="tel:516-735-0685"
+          ><ion-icon name="call"></ion-icon>Phone: 516-735-0685</a
+        >
+        <a href="mailto:JPMandSons123@Gmail.com"
+          ><ion-icon name="mail"></ion-icon>JPMandSons123@Gmail.com</a
+        >
+        <a href="address.html"
+          ><ion-icon name="navigate-circle"></ion-icon>150 Spring Lane,
+          Levittown, NY</a
+        >
+      </div>
 
-            <div class="footer-social">
-              <a class = "fb-link" href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-              <a class = "tiktok-link" href="https://www.tiktok.com/@jpmandsons" target="_blank">
-                <ion-icon name="logo-tiktok"></ion-icon>
-              </a>
-              <a class = "insta-link" href="https://www.instagram.com/jpm_and_sons/" target="_blank">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </div>
-          
-  
-          <div class="footer-info-links">
-              <a href="index.html">Home</a>
-              <a href="gallery.html">Gallery</a>
-              <a href="about.html">About Us</a>
-              <a href="contact.html">Contact Us</a>
-          </div>
-  
-          <div class="footer-info-about-us">
-            <h3>About Us</h3>
-              <p class ="footer-about">
-                We are a family-owned business where personal involvement matters. With James Moore, our founder, and his eldest son, Nick, leading every project and consultation, we ensure that each task receives the attention it deserves. This dedication guarantees top-notch service for our clients.
-              </p>
-          </div>
+      <div class="social">
+        <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="https://www.tiktok.com/@jpmandsons" target="_blank">
+          <ion-icon name="logo-tiktok" href=""></ion-icon>
+        </a>
+
+        <a
+          class="insta-link"
+          href="https://www.instagram.com/jpm_and_sons/"
+          target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+
+      <div id="links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div id="about-us">
+        <h3>About Us</h3>
+        <p>
+          We are a family-owned business where personal involvement matters. Led
+          by our founder, James Moore, and his eldest son, Nick, we ensure each
+          project receives the attention it deserves, guaranteeing top-notch
+          service for our clients.
+        </p>
+      </div>
     </footer>
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
 </html>
