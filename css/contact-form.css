@@ -1,6 +1,6 @@
 .input-container{
     width: 80%;
-    height: 88vh;
+    height: 86vh;
     margin: 20px auto;
     padding: 24px;
     border: 2px solid #535353;
@@ -13,9 +13,9 @@ body{
     font-family: Arial, sans-serif;
 }
 
-img{
-    width: 16%;
-    margin: 0px 399px;
+.input-container img{
+    width: 14%;
+    margin: 0px auto;
     height: auto;
 }
 
@@ -28,8 +28,9 @@ form{
     height: 100%;
 }
 
-h2{
+.input-container h2{
     text-align: center;
+    font-size: 30px;
     margin:20px;
     color: #000000;
 }
