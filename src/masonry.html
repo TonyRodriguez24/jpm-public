@@ -21,54 +21,33 @@
     <link rel="stylesheet" href="/css/input.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-warning">
       <div class="container bg-primary d-flex align-items-center">
-        <img
-          src="/assets/logo-transparent.png"
-          alt="JPM Logo"
-          width="70"
-          height="70" />
+        <img src="/assets/logo-transparent.png" alt="JPM Logo" width="70" height="70" />
         <div class="ms-3 d-flex flex-column">
           <h3 class="mt-3 mb-lg-0">JPM and Sons</h3>
           <h5 class="mb-2">Proudly Serving Long Island</h5>
         </div>
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-link active" aria-current="page" href="index.html"
-              >Home</a
-            >
+  
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             <a class="nav-link" href="gallery.html">Gallery</a>
             <div class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="masonry.html">Masonry</a>
-                <a class="dropdown-item" href="paving-sealing.html"
-                  >Paver Sealing</a
-                >
-                <a class="dropdown-item" href="pre">Pressure Washing</a>
-                <a class="dropdown-item" href="#">Other Services</a>
-              </div>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="masonry.html">Masonry</a></li>
+                <li><a class="dropdown-item" href="paving-sealing.html">Paver Sealing</a></li>
+                <li><a class="dropdown-item" href="powerwashing.html">Pressure Washing</a></li>
+                <li><a class="dropdown-item" href="services.html">Other Services</a></li>
+              </ul>
             </div>
-            <a class="nav-link" href="#">Contact Us Today!</a>
+            <a class="nav-link" href="contact.html">Contact Us Today!</a>
           </div>
         </div>
       </div>
@@ -225,7 +204,7 @@
     </section>
 
     <section class="carousel-container">
-    <h3 class="text-center">Some of our recent masonry projects</h3>
+      <h3 class="text-center">Some of our recent masonry projects</h3>
       <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -257,10 +236,8 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-        
       </div>
       <span class="text-center">Click here to view our full gallery</span>
-
     </section>
 
     <div class="f-container">
@@ -324,10 +301,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
   </body>
 </html>

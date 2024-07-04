@@ -28,9 +28,8 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg bg-warning">
-      <div class="container bg-primary d-flex align-items-center">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container d-flex align-items-center">
         <img
           src="/assets/logo-transparent.png"
           alt="JPM Logo"
@@ -42,9 +41,10 @@
         </div>
         <button
           class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -52,8 +52,8 @@
 
         <div
           class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
+          id="navbarNav">
+          <div class="navbar-nav ms-auto">
             <a class="nav-link active" aria-current="page" href="index.html"
               >Home</a
             >
@@ -62,45 +62,58 @@
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
+                id="navbarDropdown"
                 role="button"
-                data-toggle="dropdown"
+                data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Services
               </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="masonry.html">Masonry</a>
-                <a class="dropdown-item" href="paving-sealing.html"
-                  >Paver Sealing</a
-                >
-                <a class="dropdown-item" href="pre">Pressure Washing</a>
-                <a class="dropdown-item" href="#">Other Services</a>
-              </div>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="masonry.html">Masonry</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="paving-sealing.html"
+                    >Paver Sealing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="powerwashing.html"
+                    >Pressure Washing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="services.html"
+                    >Other Services</a
+                  >
+                </li>
+              </ul>
             </div>
-            <a class="nav-link" href="#">Contact Us Today!</a>
+            <a class="nav-link" href="contact.html">Contact Us Today!</a>
           </div>
         </div>
       </div>
     </nav>
 
     <section class="container-fluid h-100">
-      <div class="row height-calc bg-primary">
+      <div class="row height-calc">
         <div
-          class="col-lg-5 d-flex flex-column p-5 justify-content-center align-items-center bg-secondary">
-          <h1 class="text-center p-3">Craftsmanship You Can Count On</h1>
-          <p>
+          class="col-lg-6 d-flex flex-column p-5 justify-content-center align-items-center">
+          <h1 class="text-center px-5">Craftsmanship You Can Count On</h1>
+          <p class = "p-3">
             A trusted family-owned business primarily serving Long Island. We
             specialize in masonry, paver sealing, asphalt paving, concrete work,
             and offer general contracting services. We are committed to creating
             quality work that lasts and treating our customers like family by
             guiding them through the process.
           </p>
-          <button class="learn-more">
-            <a href="about.html">Learn More</a>
-          </button>
+          <a href="contact.html">
+            <button class="learn-more">Get Started Today</button>
+          </a>
         </div>
 
         <div
-          class="col-lg-7 d-flex flex-column justify-content-center align-items-center">
+          class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
           <div class="my-carousel">
             <div class="my-slides">
               <img src="/assets/header.jpeg" class="my-slide my-active" />
@@ -123,9 +136,9 @@
             </li>
           </ul>
 
-          <button class="schedule">
-            <a href="contact.html">Schedule Your Free Quote Today!</a>
-          </button>
+          <a href="contact.html">
+            <button class="learn-more">Get Started Today</button>
+          </a>
         </div>
       </div>
     </section>
@@ -145,11 +158,9 @@
           and on-time completion, ensuring a stress-free experience. Trust JPM
           and Sons for superior results every time.
         </p>
-        <button>
-          <a href="contact.html" class="schedule">
-            Schedule your free quote today!
-          </a>
-        </button>
+        <a href="contact.html">
+          <button class="learn-more">Get Started Today</button>
+        </a>
       </div>
     </section>
 
@@ -174,7 +185,7 @@
             <li>Stone Patios</li>
             <hr />
             <li>Retaining Walls</li>
-            <hr>
+            <hr />
             <li>Repairs and Restoration</li>
           </ul>
         </div>
@@ -328,8 +339,14 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"></script>
     <script src="/script.js"></script>
   </body>
 </html>

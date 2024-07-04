@@ -23,112 +23,222 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-warning">
       <div class="container bg-primary d-flex align-items-center">
-        <img
-          src="/assets/logo-transparent.png"
-          alt="JPM Logo"
-          width="70"
-          height="70" />
+        <img src="/assets/logo-transparent.png" alt="JPM Logo" width="70" height="70" />
         <div class="ms-3 d-flex flex-column">
           <h3 class="mt-3 mb-lg-0">JPM and Sons</h3>
           <h5 class="mb-2">Proudly Serving Long Island</h5>
         </div>
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-link active" aria-current="page" href="index.html"
-              >Home</a
-            >
+  
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             <a class="nav-link" href="gallery.html">Gallery</a>
             <div class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="masonry.html">Masonry</a>
-                <a class="dropdown-item" href="paving-sealing.html"
-                  >Paver Sealing</a
-                >
-                <a class="dropdown-item" href="pre">Pressure Washing</a>
-                <a class="dropdown-item" href="#">Other Services</a>
-              </div>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="masonry.html">Masonry</a></li>
+                <li><a class="dropdown-item" href="paving-sealing.html">Paver Sealing</a></li>
+                <li><a class="dropdown-item" href="powerwashing.html">Pressure Washing</a></li>
+                <li><a class="dropdown-item" href="services.html">Other Services</a></li>
+              </ul>
             </div>
-            <a class="nav-link" href="#">Contact Us Today!</a>
+            <a class="nav-link" href="contact.html">Contact Us Today!</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="container bg-primary h-100">
+    <div class="container-fluid my-4">
       <div class="row justify-content-center">
-        <div class="col-12 d-flex justify-content-center align-items-center">
-          <h1>Paver Sealing</h1>
+        <div class="col-md-6">
+          <h3 class="text-center mt-3">Our Paver Sealing Work</h3>
+          <p class="p-3">
+            At JPM and Sons, we specialize in paver sealing services that help
+            protect and enhance the beauty of your outdoor living spaces. Whether
+            you have a paver patio, walkway, or driveway, our team of skilled
+            professionals can help you maintain and revitalize your pavers. We
+            use high-quality sealants that provide long-lasting protection
+            against the elements, preventing stains, mold, and other damage. Our
+            paver sealing services are designed to help you keep your pavers
+            looking their best for years to come. Contact us today to learn more
+            about our paver sealing services and how we can help you enhance your
+            outdoor living spaces.
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div class="card">
-            <img src="/assets/6.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h3 class="card-title">Surface Cleaning</h3>
-              <p class="card-text">
-                Preparing pavers by removing debris and stains.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
-            <img src="/assets/6.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h3 class="card-title">Joint Sand Stabilization</h3>
-              <p class="card-text">
-                Filling joints to prevent weed growth and shifting.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
-            <img src="/assets/6.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h3 class="card-title">Sealing Application</h3>
-              <p class="card-text">
-                Applying sealant to protect and enhance pavers.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
-            <img src="/assets/6.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h3 class="card-title">Color Enhancement</h3>
-              <p class="card-text">
-                Using sealants to enhance the natural color of pavers.
-              </p>
-            </div>
-          </div>
-        </div>
+    <h3 class="text-center">Paver Sealing Services</h3>
+    <section id="masonry-container">
+      <div class="masonry-service">
+        <h3>Surface Cleaning</h3>
+        <img
+          src="/assets/bricklaying-icon-ex.jpg"
+          class="card-img-top"
+          alt="..." />
+        <p class="card-text">
+          Preparing pavers by removing debris and stains.        </p>
       </div>
+
+      <div class="masonry-service">
+        <h3>Joint Sand Stabilization</h3>
+        <img
+          src="/assets/concrete-masonry-vector.jpg"
+          class="card-img-top"
+          alt="..." />
+        <p class="card-text">
+          Filling joints to prevent weed growth and shifting.        </p>
+      </div>
+      <div class="masonry-service">
+        <h3>Sealing Application</h3>
+        <img
+          src="/assets/retaining-wall-ex.jpg"
+          class="card-img-top"
+          alt="..." />
+        <p class="card-text">
+          Applying sealant to protect and enhance pavers.      </div>
+
+      <div class="masonry-service">
+        <h3>Color Enhancement</h3>
+        <img
+          src="/assets/reparation-vector.jpg"
+          class="card-img-top"
+          alt="..." />
+        <p class="card-text">
+          Using sealants to enhance the natural color of pavers.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact-us">
+      <h3 class="text-center">Contact Us Today!</h3>
+      <p class="text-center">
+        Ready to get started on your next project? Contact us today to schedule
+        a consultation and receive a free estimate.
+      </p>
+      <a href="contact.html" class="btn btn-primary d-block mx-auto"
+        >Contact Us</a
+      >
+    </section>
+
+    <section id="service-detailed">
+      <h3 class="text-center">Complete Services Information</h3>
+      <div class="full-service-info">
+        <h3 class="bricklaying">Surface Cleaning</h3>
+        <p>
+          Our surface cleaning services are designed to help you prepare your
+          pavers for sealing, ensuring that they are free of debris and stains.
+          We use high-quality cleaning agents and equipment to remove dirt,
+          grime, and other contaminants from your pavers, leaving them looking
+          clean and refreshed. Whether you have a paver patio, walkway, or
+          driveway, our team of skilled professionals can help you maintain and
+          revitalize your outdoor living spaces. Contact us today to learn more
+          about our surface cleaning services and how we can help you enhance
+          the beauty and longevity of your pavers.
+        </p>
+        <img
+          src="/assets/masonry-header.jpg"
+          alt="Bricklaying and Stonework"
+          class="img-fluid" />
+      </div>
+      <hr />
+      <div class="full-service-info">
+        <h3 class="concrete">Joint Sand Stabilization</h3>
+        <p>
+          Our joint sand stabilization services are designed to help you prevent
+          weed growth and shifting in your pavers. We use high-quality joint
+          sand stabilizers that provide long-lasting protection against the
+          elements, preventing weeds from growing between your pavers and
+          keeping them in place. Whether you have a paver patio, walkway, or
+          driveway, our team of skilled professionals can help you maintain and
+          revitalize your outdoor living spaces. Contact us today to learn more
+          about our joint sand stabilization services and how we can help you
+          enhance the beauty and functionality of your pavers.
+        </p>
+        <img
+          src="/assets/concrete-masonry.jpg"
+          alt="Concrete Masonry"
+          class="img-fluid" />
+      </div>
+      <hr />
+      <div class="full-service-info">
+        <h3 class="retaining">Sealing Application</h3>
+        <p>
+          Our sealing application services are designed to help you protect and
+          enhance the beauty of your pavers. We use high-quality sealants that
+          provide long-lasting protection against the elements, preventing
+          stains, mold, and other damage. Whether you have a paver patio,
+          walkway, or driveway, our team of skilled professionals can help you
+          maintain and revitalize your outdoor living spaces. Contact us today
+          to learn more about our sealing application services and how we can
+          help you keep your pavers looking their best for years to come.
+        </p>
+        <img src="/assets/20.jpeg" alt="Retaining Wall" class="img-fluid" />
+      </div>
+      <hr />
+      <div class="full-service-info">
+        <h3 class="repairs">Color Enhancement</h3>
+        <p>
+          Our color enhancement services are designed to help you enhance the
+          natural color of your pavers. We use high-quality sealants that
+          provide long-lasting protection against the elements, preventing
+          stains, mold, and other damage. Whether you have a paver patio,
+          walkway, or driveway, our team of skilled professionals can help you
+          maintain and revitalize your outdoor living spaces. Contact us today
+          to learn more about our color enhancement services and how we can help
+          you keep your pavers looking their best for years to come.
+        </p>
+        <img
+          src="/assets/masonry-restoration.jpeg"
+          alt="Repairs and Restoration"
+          class="img-fluid" />
+      </div>
+    </section>
+
+    <section class="carousel-container">
+      <h3 class="text-center">Some of our recent masonry projects</h3>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/assets/13.jpeg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/15.jpeg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/assets/pool-fountain.jpeg"
+              class="d-block w-100"
+              alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <span class="text-center">Click here to view our full gallery</span>
+    </section>
+
+    <div class="f-container">
+      <h3>JPM and Sons</h3>
     </div>
 
     <footer>
@@ -188,6 +298,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

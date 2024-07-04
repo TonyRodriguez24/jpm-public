@@ -14,15 +14,13 @@ body {
 h1 {
   font-size: 4vw;
   color: rgb(16, 16, 16);
-  z-index: 10;
   font-weight: 800;
 }
 
 h2 {
-  font-size: 3vw;
+  font-size: 2.5vw;
   color: rgb(0, 0, 0);
-  z-index: 10;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 h3 {
@@ -65,19 +63,29 @@ header {
   background-color: #08f500;
 }
 
+.active{
+  font-weight: bold;
+  color: orange !important
+}
+
 button:not(nav button) {
   background-color: hsl(208, 94%, 57%);
   padding: 10px 20px;
   font-weight: 600;
+  font-size: .9em;
   border-radius: 5px;
-  margin: 20px 0px;
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(0, 0, 0, 0.6);
   transition: all 0.3s;
   z-index: 4;
 }
 
+
 button:not(nav button):hover {
-  background-color: hsl(208, 94%, 47%);
+  background-color: hsl(208, 94%,70%);
+  color: white;
 }
+
 
 header h1 {
   width: 100%;
@@ -135,8 +143,8 @@ header p {
   align-items: center;
   flex-direction: column;
   font-size: 20px;
-  background-color: #d1b214;
-  width: 70%;
+  width: 80%;
+  padding: 20px;
 }
 
 .container-fluid ul li {
@@ -203,8 +211,7 @@ button:nth-of-type() {
 }
 
 #why-us a {
-  color: rgb(0, 0, 0);
-  font-weight: 600;
+  z-index: 4;
 }
 
 .why-us-container::after {
