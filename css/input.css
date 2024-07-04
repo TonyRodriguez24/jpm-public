@@ -63,16 +63,16 @@ header {
   background-color: #08f500;
 }
 
-.active{
+.active {
   font-weight: bold;
-  color: orange !important
+  color: orange !important;
 }
 
-button:not(nav button) {
+.button-style {
   background-color: hsl(208, 94%, 57%);
   padding: 10px 20px;
   font-weight: 600;
-  font-size: .9em;
+  font-size: 0.9em;
   border-radius: 5px;
   box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
   border: 2px solid rgb(0, 0, 0, 0.6);
@@ -80,12 +80,10 @@ button:not(nav button) {
   z-index: 4;
 }
 
-
-button:not(nav button):hover {
-  background-color: hsl(208, 94%,70%);
+.button-style:hover {
+  background-color: hsl(208, 94%, 70%);
   color: white;
 }
-
 
 header h1 {
   width: 100%;
@@ -161,7 +159,7 @@ ul ion-icon {
   border-radius: 50%;
 }
 
-button:nth-of-type() {
+.hidden {
   display: none;
 }
 
@@ -251,21 +249,42 @@ button:nth-of-type() {
 }
 
 .service-section {
-  border-radius: 5px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgb(0, 0, 0, 0.3);
   border-image: fill;
   width: 23%;
   height: fit-content;
   min-width: 300px;
-  background-color: hsl(40, 67%, 53%);
+}
+
+.service-section hr {
+  width: 100%;
+  border: 1px solid black;
 }
 
 .service-section img {
-  width: 100%;
+  width: 200px;
   height: 200px;
   object-fit: cover;
   object-position: center;
+  display: flex;
+  margin: 0 auto;
+}
+
+.dropdown-item:hover {
+  background-color: #c8c8c8;
+}
+
+.contact-today {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: hsl(120, 64%, 56%);
+}
+
+.contact-today:hover {
+  background-color: hsl(120, 64%, 70%);
 }
 
 .service-section h3 {
@@ -691,4 +710,3 @@ ion-icon[name="logo-instagram"]:hover {
 .carousel-control-next:hover {
   background-color: transparent;
 }
-
