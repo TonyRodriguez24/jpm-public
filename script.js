@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     
     function showNextSlide() {
-      slides[currentIndex].classList.remove('my-active');
+      slides[currentIndex].classList.remove('.my-active');
       currentIndex = (currentIndex + 1) % slides.length;
       slides[currentIndex].classList.add('my-active');
     }
