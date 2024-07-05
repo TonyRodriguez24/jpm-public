@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-  font-size: 4vw;
+  font-size: 3.6vw;
   color: rgb(16, 16, 16);
   font-weight: 800;
 }
@@ -52,16 +52,6 @@ a {
   flex-wrap: wrap;
 }
 
-header {
-  height: 100%;
-  width: 46%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #08f500;
-}
 
 .active {
   font-weight: bold;
@@ -88,7 +78,8 @@ header {
 
 .my-carousel {
   width: 80%;
-  height: 500px;
+  min-height: 200px;
+  height: 50vh;
   position: relative;
   overflow: hidden;
   border: 3px solid transparent; /* Transparent border for gradient effect */
@@ -596,6 +587,15 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 #contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 80px;
+}
+
+#view-gallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
