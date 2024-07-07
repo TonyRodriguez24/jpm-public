@@ -154,12 +154,12 @@ ul ion-icon {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 60%;
+  width: 60vw;
   margin: 40px auto;
   min-width: 380px;
   height: 70%;
   border-radius: 25px;
-  border: 2px double rgb(96, 96, 96);
+  border: 2px double rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
   background-image: url(/assets/pool3.jpg);
   background-size: cover;
