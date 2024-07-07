@@ -44,12 +44,12 @@ a {
   color: rgb(0, 0, 0);
 }
 
-#front-page {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 112px);
-  display: flex;
-  flex-wrap: wrap;
+.navbar-toggler{
+  background-color: #f27537;
+}
+
+#landing-page{
+  display: none;
 }
 
 .active {
@@ -154,9 +154,8 @@ ul ion-icon {
   position: relative;
   width: 60vw;
   margin: 40px auto;
-  min-width: 380px;
   height: 70%;
-  border-radius: 25px;
+  border-radius: 12px;
   border: 2px double rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
   background-image: url(/assets/pool3.jpg);
@@ -191,7 +190,7 @@ ul ion-icon {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
@@ -274,13 +273,15 @@ ul ion-icon {
 }
 
 .service-section ul {
-  padding: 0px;
+  padding: 0px 20px;
   font-size: 16px;
 }
 
 .service-section li {
   list-style: inside;
-  padding: 0px 20px;
+  list-style-type: square;
+  padding: 0px 10px;
+  width: 100%;
 }
 
 #gallery-container {
@@ -345,7 +346,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  margin: 100px auto 40px;
+  margin: 20px auto 40px;
   width: 80%;
   color: rgb(0, 0, 0);
   font-weight: 600;
@@ -490,6 +491,11 @@ ion-icon[name="logo-instagram"]:hover {
     display: none;
   }
 
+  .contact-today {
+    width: 40%;
+    text-align: center;
+  }
+
   .my-carousel {
     width: 80%;
     height: 220px;
@@ -510,16 +516,52 @@ ion-icon[name="logo-instagram"]:hover {
   }
 
   #why-us {
-    display: none;
+    height: 100%;
+    margin: 0;
+    width: 100%;
   }
 
-  .service-section p {
-    display: none;
+  #why-us h2 {
+    font-size: 2em;
+  }
+
+  .why-us-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  #why-us img {
+    width: 30%;
+  }
+
+  #why-us p {
+    width: 90%;
+    margin: 0px 0px 20px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #why-us a {
+    width: 80%;
+    padding: 10px;
+    margin: 0px 0px 20px;
+  }
+
+  .service-section{
+    width: 90%;
   }
 
   #gallery-container {
     padding-top: 100px;
     height: 100%;
+  }
+
+  #gallery-container h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #000000;
   }
 
   .gallery img {
@@ -529,10 +571,6 @@ ion-icon[name="logo-instagram"]:hover {
 
   .f-container {
     display: none;
-  }
-
-  footer {
-    background-color: #9c4940;
   }
 
   #links {
@@ -714,16 +752,11 @@ ion-icon[name="logo-instagram"]:hover {
   animation: fadeIn ease-in-out 4s;
 }
 
-.block {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
-}
 
 .test {
   animation: slideIn ease-in-out 2s;
   animation-timeline: view();
-  animation-range: entry 1% cover 30%;
+  animation-range: entry 0% cover 50%;
 }
 
 /* contact page */
@@ -854,7 +887,7 @@ button[type="submit"] {
     width: 90%;
   }
 
-.input-container img {
+  .input-container img {
     width: 30%;
   }
 
@@ -866,11 +899,10 @@ button[type="submit"] {
     width: 100%;
   }
 
-  hr{
+  .input-container hr {
     width: 100%;
     border: 1px solid black;
-    opacity: .6;
-
+    opacity: 0.6;
   }
 
   .input-group {
@@ -881,7 +913,7 @@ button[type="submit"] {
     width: 40%;
   }
 
- .input-group:nth-last-of-type(1) {
+  .input-group:nth-last-of-type(1) {
     width: 100%;
   }
 
@@ -893,5 +925,4 @@ button[type="submit"] {
     width: 100%;
     margin: 30px;
   }
-  
 }
