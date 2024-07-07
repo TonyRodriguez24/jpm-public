@@ -52,7 +52,6 @@ a {
   flex-wrap: wrap;
 }
 
-
 .active {
   font-weight: bold;
   color: orange !important;
@@ -74,7 +73,6 @@ a {
   background-color: hsl(208, 94%, 70%);
   color: white;
 }
-
 
 .my-carousel {
   min-width: 420px;
@@ -107,7 +105,7 @@ a {
   opacity: 1;
 }
 
-.container-fluid{
+.container-fluid {
   height: 100%;
 }
 
@@ -315,7 +313,10 @@ ul ion-icon {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Adjust the number of columns as needed */
   grid-gap: 0; /* Adjust gap between images */
   column-gap: 0;
 }
@@ -489,7 +490,7 @@ ion-icon[name="logo-instagram"]:hover {
     display: none;
   }
 
-  .my-carousel{
+  .my-carousel {
     width: 80%;
     height: 220px;
   }
@@ -679,49 +680,218 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 @keyframes appear {
-  from{
+  from {
     opacity: 0;
     scale: 0.5;
   }
-  to{
+  to {
     scale: 1;
     opacity: 1;
   }
 }
 
 @keyframes slideIn {
-  from{
+  from {
     opacity: 0;
     transform: translateX(-300px);
   }
-  to{
+  to {
     scale: 1;
     transform: translateX(0px);
   }
 }
 
 @keyframes fadeIn {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
 
-.fadeIn{
+.fadeIn {
   animation: fadeIn ease-in-out 4s;
 }
 
-
-.block{
+.block {
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0% cover 30%;
 }
 
-.test{
+.test {
   animation: slideIn ease-in-out 2s;
   animation-timeline: view();
   animation-range: entry 1% cover 30%;
+}
+
+/* contact page */
+
+.input-container {
+  width: 90%;
+  height: 100%;
+  margin: 20px auto;
+  padding: 0px;
+  border: 2px solid #535353;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.input-container img {
+  width: 14%;
+  margin: 0px auto;
+  height: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 70%;
+  height: 100%;
+}
+
+.input-container h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0px;
+  color: #000000;
+}
+
+p {
+  font-size: 18px;
+}
+
+.input-group {
+  width: 36%;
+  margin: 0px 10px;
+  padding: 10px;
+}
+
+.input-group label {
+  padding: 4px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+}
+
+.input-group:nth-last-of-type(1) {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-group:nth-last-of-type(1) textarea {
+  width: 70%;
+  height: 120px;
+  padding: 8px;
+  border-radius: 4px;
+  resize: none;
+}
+
+button[type="submit"] {
+  width: 100px;
+  margin: 0px 0px 10px;
+}
+
+.contact-cards {
+  height: 100%;
+  width: 30%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-cards h3 {
+  font-size: 1.6rem;
+}
+
+.contact-cards ion-icon {
+  font-size: 40px;
+  margin: 0 8px;
+  background-color: #20a9ff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.business-socials ion-icon {
+  font-size: 40px;
+  padding: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .input-container {
+    width: 90%;
+  }
+
+.input-container img {
+    width: 30%;
+  }
+
+  .input-container h2 {
+    font-size: 24px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  hr{
+    width: 100%;
+    border: 1px solid black;
+    opacity: .6;
+
+  }
+
+  .input-group {
+    width: 80%;
+  }
+
+  button[type="submit"] {
+    width: 40%;
+  }
+
+ .input-group:nth-last-of-type(1) {
+    width: 100%;
+  }
+
+  .input-group:nth-last-of-type(1) textarea {
+    width: 90%;
+  }
+
+  .contact-cards {
+    width: 100%;
+    margin: 30px;
+  }
+  
 }
