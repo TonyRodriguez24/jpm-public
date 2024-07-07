@@ -159,9 +159,9 @@ ul ion-icon {
   min-width: 380px;
   height: 70%;
   border-radius: 25px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px double rgb(96, 96, 96);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
-  background-image: url(/assets/head-photo.jpg);
+  background-image: url(/assets/pool3.jpg);
   background-size: cover;
   background-position: center;
   color: rgb(255, 255, 255);
@@ -242,7 +242,7 @@ ul ion-icon {
 .service-section img {
   width: 200px;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: flex;
   margin: 0 auto;
@@ -550,6 +550,7 @@ ion-icon[name="logo-instagram"]:hover {
 #masonry-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   margin: auto;
 }
@@ -559,7 +560,8 @@ ion-icon[name="logo-instagram"]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 280px;
+  width: 15vw;
+  min-width: 220px;
   height: 280px;
   border-radius: 3px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -674,4 +676,52 @@ ion-icon[name="logo-instagram"]:hover {
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background-color: transparent;
+}
+
+@keyframes appear {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from{
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to{
+    scale: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.fadeIn{
+  animation: fadeIn ease-in-out 4s;
+}
+
+
+.block{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.test{
+  animation: slideIn ease-in-out 2s;
+  animation-timeline: view();
+  animation-range: entry 1% cover 30%;
 }

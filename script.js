@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     
     function showNextSlide() {
-      slides[currentIndex].classList.remove('.my-active');
+      slides[currentIndex].classList.remove('my-active');
       currentIndex = (currentIndex + 1) % slides.length;
       slides[currentIndex].classList.add('my-active');
     }
     
-    setInterval(showNextSlide, 4000); // Change slide every 3 seconds
+    setInterval(showNextSlide, 3000); // Change slide every 3 seconds
   });
 
