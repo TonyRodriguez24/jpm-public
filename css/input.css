@@ -941,3 +941,16 @@ button[type="submit"] {
     margin: 30px;
   }
 }
+
+.questions-regarding-website {
+  padding-top: 10px;
+  color: #000000;
+}
+
+.questions-regarding-website p {
+  font-size: .9em;
+}
+
+.questions-regarding-website a {
+  color: #20a9ff;
+}
