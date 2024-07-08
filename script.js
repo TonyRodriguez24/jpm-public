@@ -14,4 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-$("#landing-page").fadeIn(2000);
+$(document).ready(function() {
+  $("#landing-page").css("visibility", "visible").animate({opacity: 1}, 2000);
+});
