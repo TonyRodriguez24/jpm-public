@@ -82,8 +82,8 @@ a {
   position: relative;
   height: 40vh;
   overflow: hidden;
-  border: 3px solid transparent; /* Transparent border for gradient effect */
-  border-image: linear-gradient(45deg, rgb(0, 0, 0), #000000) 1; /* Gradient border */
+  border: 2px solid transparent; /* Transparent border for gradient effect */
+  border-image: linear-gradient(45deg, rgb(0, 0, 0), #d03f06) 1; /* Gradient border */
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -652,11 +652,10 @@ ion-icon[name="logo-instagram"]:hover {
 #service-detailed {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin: 0px auto;
+  padding: 20px;
+  gap: 32px;
 }
 
 #service-detailed hr {
@@ -666,10 +665,12 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 #service-detailed img {
-  width: 60%;
-  height: 400px;
-  object-fit: cover;
+  width: 340px;
+  height: 340px;
   object-position: center;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(105, 105, 105, 0.1);
 }
 
 #service-detailed > h3 {
@@ -684,13 +685,17 @@ ion-icon[name="logo-instagram"]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  position: relative;
+  background-color: #e2e2e2;
+  width: 800px;
+  height: 800px;
   gap: 20px;
-  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
-  border: 2px solid rgb(0, 0, 0, 0.2);
-  border-image: fill;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
   padding: 20px;
 }
+
+
 
 .carousel-container {
   width: 700px;

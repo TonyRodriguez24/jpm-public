@@ -17,3 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
 $(document).ready(function() {
   $("#landing-page").css("visibility", "visible").animate({opacity: 1}, 2000);
 });
+
