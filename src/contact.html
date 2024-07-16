@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container d-flex align-items-center">
         <img
-          src="/assets/icons/logo-transparent.png"
+          src="/assets/icons/jpm-logo.png"
           alt="JPM Logo"
           width="70"
           height="70" />
@@ -94,81 +94,89 @@
     </nav>
 
     <div class="input-container">
-      <form
-        id="contact-form"
-        action="https://formspree.io/f/xnqoqzqz"
-        method="POST">
+      <div class="form-container">
         <header>
-          <img
-            src="/assets/icons/logo-transparent.png"
-            alt="JPM Logo"
-            class="logo" />
+          <img src="/assets/icons/jpm-logo.png" alt="JPM Logo" class="logo" />
           <h2>Please fill out this form to find out what we can do for you!</h2>
         </header>
-        <div class="input-group">
-          <label for="name">First Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Enter your name" />
-        </div>
+        <form id="contact-form">
+          <div class="input-group">
+            <label for="name">First Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="number">Phone Number</label>
-          <input
-            id="number"
-            name="number"
-            type="tel"
-            placeholder="ex: (516) 555-5555" />
-        </div>
+          <div class="input-group">
+            <label for="number">Phone Number</label>
+            <input
+              id="number"
+              name="number"
+              type="tel"
+              placeholder="ex: (516) 555-5555"
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="email">Email Address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Enter your email" />
-        </div>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="address">Home Address</label>
-          <input
-            id="address"
-            name="address"
-            type="text"
-            placeholder="ex: 5 Sunset Lane, Levittown, NY 11756" />
-        </div>
+          <div class="input-group">
+            <label for="address">Home Address</label>
+            <input
+              id="address"
+              name="address"
+              type="text"
+              placeholder="ex: 5 Sunset Lane, Levittown, NY 11756"
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="work">Type Of Work</label>
-          <input
-            id="work"
-            name="work"
-            type="text"
-            placeholder="Masonry, Powerwashing, Concrete work, etc." />
-        </div>
+          <div class="input-group">
+            <label for="work">Type Of Work</label>
+            <input
+              id="work"
+              name="work"
+              type="text"
+              placeholder="Masonry, Powerwashing, Concrete work, etc."
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="referral">How'd you hear about us?</label>
-          <input
-            id="referral"
-            name="referral"
-            type="text"
-            placeholder="Google, Instagram, Facebook, etc." />
-        </div>
+          <div class="input-group">
+            <label for="referral">How'd you hear about us?</label>
+            <input
+              id="referral"
+              name="referral"
+              type="text"
+              placeholder="Google, Instagram, Facebook, etc."
+              required />
+          </div>
 
-        <div class="input-group">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Any additional comments"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          <div class="input-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Any additional comments"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
+        <div id="form-success-container">
+          <div class="form-success">
+            <h3>Thank you for reaching out!</h3>
+            <p>We will get back to you as soon as possible.</p>
+          </div>
+        </div>
+      </div>
       <hr />
 
       <div class="contact-cards">
@@ -179,21 +187,33 @@
         </div>
 
         <div class="business-email">
-          <ion-icon name="mail"></ion-icon>
+          <a href="mailto:JPMandSons123@Gmail.com"
+            ><ion-icon name="mail"></ion-icon
+          ></a>
           <h3>Email</h3>
           <p>JPMandSons123@Gmail.com</p>
         </div>
 
         <div class="business-phone">
-          <ion-icon name="call"></ion-icon>
+          <a href="tel:516-735-0685"><ion-icon name="call"></ion-icon></a>
           <h3>Phone</h3>
           <p>516-735-0685</p>
         </div>
 
         <div class="business-socials">
-          <ion-icon name="logo-facebook"></ion-icon>
-          <ion-icon name="logo-tiktok"></ion-icon>
-          <ion-icon name="logo-instagram"></ion-icon>
+          <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="https://www.tiktok.com/@jpmandsons" target="_blank">
+            <ion-icon name="logo-tiktok" href=""></ion-icon>
+          </a>
+
+          <a
+            class="insta-link"
+            href="https://www.instagram.com/jpm_and_sons/"
+            target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
           <h3>Our Socials</h3>
         </div>
 
@@ -220,7 +240,7 @@
       >
     </section>
 
-    <div id = "footer-border">
+    <div id="footer-border">
       <h3>JPM and Sons</h3>
     </div>
 
@@ -233,7 +253,8 @@
         <a href="mailto:JPMandSons123@Gmail.com"
           ><ion-icon name="mail"></ion-icon>JPMandSons123@Gmail.com</a
         >
-        <a href="address.html"
+        <a
+          href="https://www.google.com/maps/place/150+Spring+Ln,+Levittown,+NY+11756/@40.7072685,-73.5188898,17z/data=!3m1!4b1!4m6!3m5!1s0x89c27e49f017d997:0x855bd6b89a4262ac!8m2!3d40.7072685!4d-73.5188898!16s%2Fg%2F11c15nlsgh?entry=ttu" target ="_blank"
           ><ion-icon name="navigate-circle"></ion-icon>150 Spring Lane,
           Levittown, NY</a
         >

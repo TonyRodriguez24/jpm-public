@@ -58,7 +58,7 @@ a {
 
 /* Navigation */
 nav .navbar-toggler {
-  background-color: #f27537;
+  background-color: #d1d1d1;
 }
 
 nav .contact-today {
@@ -485,7 +485,6 @@ ul ion-icon {
   .text-container {
     width: 100%;
     height: 100%;
-    background-color: #9c4940;
   }
 
   .carousel-list-container ul {
@@ -544,6 +543,10 @@ ul ion-icon {
   .gallery img {
     width: 360px;
     height: 240px;
+  }
+
+  #footer-border{
+    display: none;
   }
 
   #links {
@@ -657,11 +660,11 @@ ul ion-icon {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 95%);
   width: 800px;
   height: 800px;
   gap: 20px;
-  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 1);
   border-radius: 20px;
   padding: 20px;
 }
@@ -738,8 +741,7 @@ ul ion-icon {
   height: auto;
 }
 
-
-form {
+.form-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -747,6 +749,45 @@ form {
   gap: 5px;
   width: 70%;
   height: 100%;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+#form-success-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 40px;
+  gap: 5px;
+  width: 70%;
+  height: 100%;
+  display: none;
+  margin: 0 auto;
+}
+
+.form-success{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 5px;
+  width: 70%;
+  height: 120px;
+  margin: 0 auto;
+  background-color: hsl(120, 64%, 56%);
+  border: 2px solid black;
 }
 
 .input-container h2 {
@@ -867,8 +908,24 @@ button[type="submit"] {
     font-size: 24px;
   }
 
-  form {
+.gallery-h2{
+  font-size: 24px;
+}  
+
+  .form-container{
     width: 100%;
+  }
+
+  #form-success-container{
+    width: 100%;
+  }
+
+  .form-success{
+    width: 100%;
+  }
+
+  .form-success h3{
+    font-size: 18px;
   }
 
   .input-container hr {
@@ -899,3 +956,36 @@ button[type="submit"] {
   }
 }
 
+.about-us .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.about-section{
+  width: 100%;
+  text-align: left;
+}
+
+.about-section h2 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #000000;
+
+}
+
+.about-us img {
+  padding: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-images{
+    width: 70%;
+    margin: auto;
+  }
+
+  .about-section h2 {
+    font-size: 2em;
+  }
+  
+}
