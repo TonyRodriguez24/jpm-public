@@ -1,3 +1,4 @@
+/* Global Styles */
 *,
 *::after,
 *::before {
@@ -11,6 +12,7 @@ body {
   background-color: #f8f8f8;
 }
 
+/* Typography */
 h1 {
   font-size: 3.6vw;
   color: rgb(16, 16, 16);
@@ -44,35 +46,187 @@ a {
   color: rgb(0, 0, 0);
 }
 
-.navbar-toggler{
+/* Utility Classes */
+.active {
+  font-weight: bold;
+  color: orange !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Navigation */
+nav .navbar-toggler {
   background-color: #f27537;
 }
+
+nav .contact-today {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: hsl(120, 64%, 56%);
+}
+
+nav .contact-today:hover {
+  background-color: hsl(120, 64%, 70%);
+}
+
+nav .dropdown-item:hover {
+  background-color: #c8c8c8;
+}
+
+#footer-border h3 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+#footer-border h3::before,
+#footer-border h3::after {
+  content: " ";
+  display: flex;
+  height: 2px;
+  background-color: black;
+  width: 30%;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 20px auto 40px;
+  width: 80%;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  gap: 30px;
+}
+
+#connect,
+.social,
+#links,
+#about-us {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Connect Section */
+#connect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100%;
+  line-height: 2;
+}
+
+#connect a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#connect ion-icon {
+  font-size: 1.8rem;
+  margin-right: 6px;
+}
+
+#connect a,
+#links a,
+#about-us {
+  color: black;
+}
+
+#connect a:hover,
+#links a:hover {
+  text-decoration: underline;
+}
+
+/* Social Section */
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.social ion-icon {
+  font-size: 60px;
+  padding: 5px;
+  border-radius: 30%;
+  margin: 0 3px;
+  background-color: hsl(216, 3%, 71%);
+}
+
+ion-icon:hover {
+  transition: 0.4s ease all;
+}
+
+/* Links Section */
+#links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+  color: black;
+}
+
+/* About Us Section */
+#about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-us p {
+  font-size: 16px;
+  margin: 0 40px;
+}
+
+/* Social Media Icon Hover Effects */
+ion-icon[name="logo-facebook"]:hover {
+  color: #1877f2;
+  background-color: hsl(216, 3%, 18%);
+}
+
+ion-icon[name="logo-tiktok"]:hover {
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  border-radius: 20px;
+}
+
+ion-icon[name="logo-instagram"]:hover {
+  color: white;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+/* index.html */
+
 
 #landing-page{
   visibility: hidden;
   opacity: 0;
 }
 
-.active {
-  font-weight: bold;
-  color: orange !important;
-}
-
-.button-style {
-  background-color: hsl(208, 94%, 57%);
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 0.9em;
-  border-radius: 5px;
-  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgb(0, 0, 0, 0.6);
-  transition: all 0.3s;
-  z-index: 4;
-}
-
-.button-style:hover {
-  background-color: hsl(208, 94%, 70%);
-  color: white;
+.height-calc {
+  height: calc(100vh - 88px);
 }
 
 .my-carousel {
@@ -107,11 +261,7 @@ a {
   opacity: 1;
 }
 
-.container-fluid {
-  height: 100%;
-}
-
-.container-fluid ul {
+#landing-page ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +271,7 @@ a {
   padding: 20px;
 }
 
-.container-fluid ul li {
+#landing-page ul li {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -135,9 +285,6 @@ ul ion-icon {
   border-radius: 50%;
 }
 
-.hidden {
-  display: none;
-}
 
 #why-us {
   width: 100%;
@@ -183,9 +330,22 @@ ul ion-icon {
   font-size: 1.3rem;
 }
 
+
 #why-us a {
   z-index: 4;
+  position: relative;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#why-us ion-icon {
+  font-size: 1.5rem;
+  color: white;
+  padding-left: 5px;
+}
+
 
 .why-us-container::after {
   content: "";
@@ -247,21 +407,6 @@ ul ion-icon {
   margin: 0 auto;
 }
 
-.dropdown-item:hover {
-  background-color: #c8c8c8;
-}
-
-.contact-today {
-  border: 1px solid black;
-  border-radius: 5px;
-  font-weight: 600;
-  background-color: hsl(120, 64%, 56%);
-}
-
-.contact-today:hover {
-  background-color: hsl(120, 64%, 70%);
-}
-
 .service-section h3 {
   color: black;
   font-size: 1.4em;
@@ -314,179 +459,9 @@ ul ion-icon {
   object-position: center;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    4,
-    1fr
-  ); /* Adjust the number of columns as needed */
-  grid-gap: 0; /* Adjust gap between images */
-  column-gap: 0;
-}
+/* end of index.html */
 
-.f-container h3 {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  font-size: 24px;
-  margin-top: 40px;
-}
 
-.f-container h3::before,
-.f-container h3::after {
-  content: " ";
-  display: flex;
-  height: 2px;
-  background-color: black;
-  width: 30%;
-  margin: 0 auto; /* Adjust the margin */
-}
-
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  margin: 20px auto 40px;
-  width: 80%;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
-  gap: 30px;
-}
-
-#connect,
-.social,
-#links,
-#about-us {
-  flex: 1;
-  min-width: 300px;
-}
-
-#connect {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100%;
-  line-height: 2;
-}
-
-#connect a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#connect ion-icon {
-  font-size: 1.8rem;
-  margin-right: 6px;
-}
-
-ion-icon:hover {
-  transition: 0.4s ease all;
-}
-
-ion-icon[name="call"]:hover {
-  color: #08f500;
-}
-
-ion-icon[name="mail"]:hover {
-  color: #bcbcbc;
-}
-
-ion-icon[name="navigate-circle"]:hover {
-  color: #d1b214;
-}
-
-#connect a,
-#links a,
-#about-us {
-  color: black;
-}
-
-#connect a:hover,
-#links a:hover {
-  text-decoration: underline;
-}
-
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-}
-
-.social ion-icon {
-  font-size: 60px;
-  padding: 5px;
-  border-radius: 30%;
-  margin: 0 3px;
-  background-color: hsl(216, 3%, 71%);
-}
-
-#links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 2;
-  color: black;
-}
-
-#about-us {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#about-us p {
-  font-size: 16px;
-  margin: 0 40px;
-}
-
-ion-icon[name="logo-facebook"]:hover {
-  color: #1877f2;
-  background-color: hsl(216, 3%, 18%);
-}
-
-ion-icon[name="logo-tiktok"]:hover {
-  color: rgb(255, 255, 255);
-  background-color: #000000;
-  border-radius: 20px;
-}
-
-ion-icon[name="logo-instagram"]:hover {
-  color: white;
-  background: #f09433;
-  background: -moz-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-}
 
 @media screen and (max-width: 768px) {
   nav img {
@@ -571,10 +546,6 @@ ion-icon[name="logo-instagram"]:hover {
     height: 240px;
   }
 
-  .f-container {
-    display: none;
-  }
-
   #links {
     display: flex;
     flex-direction: row;
@@ -586,7 +557,7 @@ ion-icon[name="logo-instagram"]:hover {
   }
 }
 
-/* masonry */
+/* masonry.html */
 
 #masonry-container {
   display: flex;
@@ -686,47 +657,15 @@ ion-icon[name="logo-instagram"]:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #e2e2e2;
+  background-color: hsl(0, 0%, 85%);
   width: 800px;
   height: 800px;
   gap: 20px;
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   padding: 20px;
 }
 
-
-
-.carousel-container {
-  width: 700px;
-  height: 100%;
-  margin: 40px auto;
-  text-align: center;
-  padding: 40px;
-}
-
-.carousel-container h3 {
-  font-size: 1.3em;
-  font-weight: 600;
-  margin: 20px 0px;
-}
-
-.carousel-container img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.carousel-container span {
-  font-size: 1em;
-  padding: 20px;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: transparent;
-}
 
 @keyframes appear {
   from {
@@ -776,17 +715,22 @@ ion-icon[name="logo-instagram"]:hover {
   width: 90%;
   height: 100%;
   margin: 20px auto;
-  padding: 0px;
+  padding: 20px;
   border: 2px solid #535353;
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
 }
 
-body {
-  background-color: #ffffff;
-  font-family: Arial, sans-serif;
+.input-container header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+
 }
+
 
 .input-container img {
   width: 14%;
@@ -794,13 +738,6 @@ body {
   height: auto;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 20px;
-  color: #ffffff;
-}
 
 form {
   display: flex;
@@ -893,6 +830,21 @@ button[type="submit"] {
   padding: 4px;
 }
 
+.questions-regarding-website {
+  padding-top: 10px;
+  color: #000000;
+}
+
+.questions-regarding-website p {
+  font-size: .9em;
+}
+
+.questions-regarding-website a {
+  color: #20a9ff;
+}
+
+/* end of contact page */
+
 @media screen and (max-width: 768px) {
   .input-container {
     width: 90%;
@@ -947,15 +899,3 @@ button[type="submit"] {
   }
 }
 
-.questions-regarding-website {
-  padding-top: 10px;
-  color: #000000;
-}
-
-.questions-regarding-website p {
-  font-size: .9em;
-}
-
-.questions-regarding-website a {
-  color: #20a9ff;
-}
