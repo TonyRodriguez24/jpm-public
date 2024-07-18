@@ -403,6 +403,7 @@ ul ion-icon {
   border-image: fill;
   width: 23%;
   height: fit-content;
+  background-color: white;
 }
 
 .service-section hr {
