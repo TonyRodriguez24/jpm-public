@@ -669,8 +669,12 @@ ul ion-icon {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   gap: 32px;
+}
+
+#info{
+  margin-bottom: 0px;
 }
 
 #service-detailed hr {
