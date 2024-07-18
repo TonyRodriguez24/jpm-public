@@ -235,7 +235,7 @@ ion-icon[name="logo-instagram"]:hover {
 }
 
 .height-calc {
-  height: calc(100vh - 88px);
+  height: calc(100dvh - 88px);
 }
 
 .my-carousel {
