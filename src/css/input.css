@@ -626,7 +626,6 @@ ul ion-icon {
   align-items: center;
   text-align: center;
   width: 15vw;
-  min-width: 220px;
   height: 320px;
   border-radius: 3px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -945,6 +944,26 @@ button[type="submit"] {
     color:#606060
   }
 
+  .masonry-service img {
+    width: 70px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .masonry-service h3{
+    font-size: .9em;
+  }
+
+  .masonry-service{
+    width: 170px;
+    height: 200px;
+    margin: 4px;
+  }
+
+  .masonry-service p{
+    font-size: 14px;
+  }
   
 
   #view-gallery{
