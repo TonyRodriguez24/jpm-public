@@ -314,7 +314,7 @@ ul ion-icon {
   border-radius: 12px;
   border: 2px double rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
-  background-image: url(/src/assets/gallery-pictures/pool3.jpg);
+  background-image: url(assets/gallery-pictures/pool3.jpg);
   background-size: cover;
   background-position: center;
   color: rgb(255, 255, 255);
