@@ -314,8 +314,6 @@ ul ion-icon {
   border-radius: 12px;
   border: 2px double rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
-  background-size: cover;
-  background-position: center;
   color: rgb(255, 255, 255);
 }
 
@@ -335,7 +333,7 @@ ul ion-icon {
 
 #why-us h2 {
   font-size: 4vw;
-  z-index: 2;
+  z-index: 3;
   font-weight: 600;
   color: white;
 }
@@ -369,7 +367,7 @@ ul ion-icon {
   height: 100%;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  z-index: 2;
 }
 
 #services {
