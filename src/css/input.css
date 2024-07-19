@@ -296,7 +296,7 @@ ul ion-icon {
 #why-us {
   width: 100%;
   /* background-color: #08f500; */
-  height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,9 +308,10 @@ ul ion-icon {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 60px;
   width: 60vw;
   margin: 40px auto;
-  height: 70%;
+  height: 100%;
   border-radius: 12px;
   border: 2px double rgb(0, 0, 0);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
@@ -574,7 +575,13 @@ ul ion-icon {
     height: 120px;
   }
 
+  #why-us{
+    margin: 40px auto;
+    width: 95%;
+  }
+
   #contact-us {
+    margin-top: 30px;
     padding: 30px;
   }
 
