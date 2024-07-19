@@ -4,3 +4,5 @@ Disallow:
 
 # Sitemap location
 Sitemap: https://www.jpmandsons.com/sitemap.xml
+
+https://www.jpmandsons.com/showcase
