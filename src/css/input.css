@@ -321,12 +321,10 @@ ul ion-icon {
 }
 
 .why-logo{
-.why-logo{
   width: 18%;
   z-index: 20;
 }
 
-.why-us-img {
 .why-us-img {
   width: 100%;
   height: 100%;
@@ -426,16 +424,7 @@ ul ion-icon {
 }
 
 #services h3 {
-#services img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-#services h3 {
   color: black;
-  font-size: 1.3em;
-  font-weight: 600;
   font-size: 1.3em;
   font-weight: 600;
 }
@@ -1200,7 +1189,4 @@ button[type="submit"] {
   .card-body.custom{
     height: fit-content;
   }
-
-
-  
 }
