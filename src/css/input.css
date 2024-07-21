@@ -230,6 +230,7 @@ ion-icon[name="logo-instagram"]:hover {
 
 
 #landing-page{
+  position: relative;
   visibility: hidden;
   opacity: 0;
 }
@@ -318,18 +319,24 @@ ul ion-icon {
   color: rgb(255, 255, 255);
 }
 
-.why-us-container img {
+.why-logo{
   width: 18%;
   z-index: 20;
 }
 
-#why-us-img {
+.why-us-img {
   width: 100%;
   height: 100%;
   position: absolute;
   object-fit: cover;
   z-index: 1;
   border-radius: 10px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.why-us-container img.active {
+  opacity: 1;
 }
 
 #why-us h2 {
@@ -371,15 +378,6 @@ ul ion-icon {
   z-index: 2;
 }
 
-#services {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
 
 #services h2 {
   font-size: 2em;
@@ -387,62 +385,54 @@ ul ion-icon {
   color: #000000;
 }
 
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  width: 80%;
-  height: fit-content;
-  margin: 0 auto 20px;
-  justify-content: space-evenly;
+.container-fluid.services{
+  width: 90%;
 }
 
-.service-section {
-  border-radius: 3px;
+#services .card {
+  border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-  border: 2px solid rgb(0, 0, 0, 0.3);
+  border: 1px solid rgb(0, 0, 0, 1);
   border-image: fill;
-  width: 23%;
   height: fit-content;
   background-color: white;
 }
 
-.service-section hr {
+#services hr {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid rgb(44, 44, 44);
+  opacity: 0.2  ;
+  margin: 10px 0px;
 }
 
-.service-section img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  object-position: center;
-  display: flex;
-  margin: 0 auto;
+#services img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
 }
 
-.service-section h3 {
+#services h3 {
   color: black;
-  font-size: 1.4em;
-  font-weight: 700;
-  padding: 10px 25px;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 
-.service-section p {
-  padding: 12px 20px;
-  font-size: 18px;
-}
-
-.service-section ul {
-  padding: 0px 20px;
+#services p {
   font-size: 16px;
 }
 
-.service-section li {
-  list-style: inside;
-  list-style-type: square;
-  padding: 0px 10px;
-  width: 100%;
+
+
+#services li {
+  list-style:inside;
+  list-style-type:square;
+}
+
+.card-img-top {
+  transition: filter 0.3s ease;
+}
+.card a:hover .card-img-top {
+  filter: brightness(50%);
 }
 
 #gallery-container {
@@ -532,15 +522,25 @@ ul ion-icon {
     width: 100%;
   }
 
+ #why-us .why-logo{
+  width: 30%;
+ }
+
   #why-us h2 {
     font-size: 2em;
   }
 
   .why-us-container {
-    width: 95%;
-    height: 100%;
+    width: 100%;
+    height: 80dvh;
     margin: 0 auto;
     padding: 10px;
+    border: 0px;
+    box-shadow: none;
+  }
+
+  .test{
+    display: none;
   }
 
 
@@ -556,10 +556,14 @@ ul ion-icon {
   }
 
   #why-us a {
-    width: 80%;
+    width: 60%;
     padding: 10px;
     margin: 0px 0px 20px;
     font-size:14px;
+  }
+
+  #contact-us.home{
+    display: none;
   }
 
   .services-container{
@@ -568,11 +572,6 @@ ul ion-icon {
 
   .service-section{
     width: 90%;
-  }
-
-  .service-section img{
-    width: 100%;
-    height: 120px;
   }
 
   #why-us{
