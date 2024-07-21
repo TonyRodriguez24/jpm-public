@@ -694,8 +694,15 @@ ul ion-icon {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 80px;
+  margin-top: 10px;
 }
+
+#view-gallery a {
+  color: #255878;
+  text-decoration: underline;
+}
+
+
 
 #service-detailed {
   display: flex;
