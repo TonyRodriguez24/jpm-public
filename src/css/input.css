@@ -10,7 +10,10 @@
 
 body {
   background-color: white;
-  
+}
+
+.background-container{
+  display: none;
 }
 
 /* Typography */
@@ -24,6 +27,7 @@ h2 {
   font-size: 2.5vw;
   color: rgb(0, 0, 0);
   font-weight: 800;
+  z-index: 4;
 }
 
 h3 {
@@ -302,6 +306,7 @@ ul ion-icon {
   justify-content: center;
 }
 
+
 .why-us-container {
   display: flex;
   flex-direction: column;
@@ -337,7 +342,6 @@ ul ion-icon {
 .why-us-container img.active {
   opacity: 1;
 }
-
 
 #why-us h2 {
   font-size: 4vw;
@@ -377,13 +381,39 @@ ul ion-icon {
 }
 
 #services h2 {
-  font-size: 2em;
   font-weight: 600;
   color: #000000;
 }
 
+.container-fluid{
+  z-index: 4;
+}
+
+#contact-us, #contact-us h3, #contact-us a{
+  z-index: 4;
+}
+
+#view-gallery a{
+  z-index: 4;
+  color: white;
+}
+
+#view-gallery{
+  padding: 20px;
+}
+
+.row{
+  z-index: 4;
+}
+
+.col-md-6{
+  z-index: 4;
+
+}
+
 .container-fluid.services {
-  width:100%;
+  width: 100%;
+  
 }
 
 #services .card {
@@ -477,6 +507,14 @@ ul ion-icon {
     display: none;
   }
 
+  .container-fluid, .row, .col-md-12{
+    z-index: 4;
+  }
+
+  #services h2{
+    z-index: 432;
+  }
+
   #landing-page ul li {
     font-size: 15px;
   }
@@ -499,10 +537,9 @@ ul ion-icon {
     margin-top: 40px;
   }
 
-  #services img.card-img-top{
+  #services img.card-img-top {
     width: 100%;
     height: 210px;
-
   }
 
   .text-container {
@@ -562,7 +599,6 @@ ul ion-icon {
     display: none;
   }
 
-
   #why-us {
     margin: 40px auto;
     width: 95%;
@@ -604,76 +640,133 @@ ul ion-icon {
   }
 
   body{
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, .3),
-    rgba(0, 0, 0, .8)
-  ),
-  url("background2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
- color: rgb(214, 214, 214);
+    color: rgb(214, 214, 214);
+  }
+
+  .background-container {
+    display: block;
+    position: fixed; /* Position the container absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow from absolutely positioned children */
+    z-index: -1;
+  }
+
+  .background-image {
+    position: absolute; /* Position the image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+  }
+
+  .background-container::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    z-index: 1; /* Ensure the gradient overlay is behind the image */
+  }
+
+.input-container, .form-container, header, form {
+  z-index: 4;
 }
 
-#landing-page h1, #landing-page h2{
-  display: none;
-}
-
-#services h2{
-  color: white;
+.input-container label, .input-container p, .input-container h3, .input-container ion-icon {
+  color:black;
 }
 
 
-#services .card{
+
+.input-container{
   background-image: linear-gradient(
-    180deg,
-    rgba(219, 170, 148, 0.856),
-    rgba(198, 198, 198, 0.95)
-  );
+      90deg,
+      rgba(233, 233, 233, 0.9),
+      rgb(199, 216, 255)
+    );
 }
 
-h1, h2,h3,h5{
-  color: white;
+  #gallery-container, #gallery-container h2 {
+    z-index: 4;
+  }
+
+  .gallery{
+    z-index: 4;
+  }
+
+  #links a{
+    z-index: 4;
+  }
+
+  #connect a {
+    z-index: 4;
+  }
+
+  #landing-page h1,
+  #landing-page h2 {
+    display: none;
+  }
+
+  #services h2 {
+    color: white;
+  }
+
+  #services .card {
+    background-image: linear-gradient(
+      180deg,
+      rgba(219, 170, 148, 0.856),
+      rgba(198, 198, 198, 0.95)
+    );
+  }
+
+  h1,
+  h2,
+  h3,
+  h5 {
+    color: white;
+  }
+
+  #connect a {
+    color: rgb(214, 214, 214);
+  }
+
+  .why-us-container {
+    height: 100%;
+  }
+
+  nav a.nav-link {
+    color: white;
+  }
+
+  #navbarDropdown {
+    color: #e3e3e3;
+  }
+
+  #gallery-container h2 {
+    color: white;
+  }
+
+#view-gallery h3{
+  z-index: 4;
 }
 
-#connect a{
-  color: rgb(214, 214, 214);
+  a.nav-link.contact-today {
+    color: #000000;
+  }
 
-}
+  #links a {
+    color: rgb(214, 214, 214);
+  }
 
-.why-us-container{
-  height: 100%;
-}
-
-nav a.nav-link{
-  color: white;
-}
-
-#navbarDropdown{
-  color: #e3e3e3;
-}
-
-#gallery-container h2{
-  color: white;
-}
-
-#view-gallery a{
-  color: #ffcd37;
-}
-
-a.nav-link.contact-today {
-  color: #000000;
-}
-
-#links a{
-  color: rgb(214, 214, 214);
-}
-
-.card-text{
-  color: rgba(0, 0, 0,1);
-}
+  .card-text {
+    color: rgba(0, 0, 0, 1);
+  }
 }
 /* masonry.html */
 
@@ -683,6 +776,7 @@ a.nav-link.contact-today {
   flex-wrap: wrap;
   width: 100%;
   margin: auto;
+  z-index: 10;
 }
 
 .masonry-service {
@@ -698,8 +792,10 @@ a.nav-link.contact-today {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   border: 2px solid rgb(0, 0, 0, 0.2);
   border-image: fill;
-  background-color: white;
+  background-color: 
+  white;
   margin: 10px;
+  z-index: 4;
 }
 
 .masonry-service img {
@@ -791,7 +887,6 @@ a.nav-link.contact-today {
     opacity: 1;
   }
 }
-
 
 @keyframes fadeIn {
   from {
@@ -981,8 +1076,8 @@ button[type="submit"] {
 }
 /* end of contact page */
 
-#services-h2 {
-  font-size: 28px;
+#services h2 {
+  font-size: 30px;
 }
 
 @media screen and (max-width: 768px) {
@@ -996,8 +1091,6 @@ button[type="submit"] {
     font-size: 16px;
     color: #606060;
   }
-
-
 
   .masonry-service img {
     width: 70px;
@@ -1024,11 +1117,11 @@ button[type="submit"] {
     margin: 10px 0px;
   }
 
-  #view-gallery p{
+  #view-gallery p {
     font-size: 14px;
   }
 
-  #services-h2 {
+  .container-fluid h2 {
     font-size: 24px;
   }
 
