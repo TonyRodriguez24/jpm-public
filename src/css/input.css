@@ -978,6 +978,11 @@ button[type="submit"] {
     color: #606060;
   }
 
+  #services img{
+    width: 100%;
+    height: 210px;
+  }
+
   .masonry-service img {
     width: 70px;
     height: auto;
