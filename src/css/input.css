@@ -9,7 +9,18 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: white;
+  /* background-image: url("/src/assets/unused/pool-fountain.jpeg");
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/src/assets/gallery-pictures/pool3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; */
 }
 
 /* Typography */
@@ -228,8 +239,7 @@ ion-icon[name="logo-instagram"]:hover {
 
 /* index.html */
 
-
-#landing-page{
+#landing-page {
   position: relative;
   position: relative;
   visibility: hidden;
@@ -294,7 +304,6 @@ ul ion-icon {
   border-radius: 50%;
 }
 
-
 #why-us {
   width: 100%;
   /* background-color: #08f500; */
@@ -320,7 +329,7 @@ ul ion-icon {
   color: rgb(255, 255, 255);
 }
 
-.why-logo{
+.why-logo {
   width: 18%;
   z-index: 20;
 }
@@ -358,7 +367,6 @@ ul ion-icon {
   font-size: 1.3rem;
 }
 
-
 #why-us a {
   z-index: 4;
   position: relative;
@@ -374,7 +382,6 @@ ul ion-icon {
   padding-left: 5px;
 }
 
-
 .why-us-container::after {
   content: "";
   position: absolute;
@@ -385,14 +392,13 @@ ul ion-icon {
   z-index: 2;
 }
 
-
 #services h2 {
   font-size: 2em;
   font-weight: 600;
   color: #000000;
 }
 
-.container-fluid.services{
+.container-fluid.services {
   width: 90%;
 }
 
@@ -409,10 +415,10 @@ ul ion-icon {
 #services hr {
   width: 100%;
   border: 1px solid rgb(44, 44, 44);
-  opacity: 0.2  ;
+  opacity: 0.2;
   margin: 10px 0px;
   border: 1px solid rgb(44, 44, 44);
-  opacity: 0.2  ;
+  opacity: 0.2;
   margin: 10px 0px;
 }
 
@@ -433,8 +439,8 @@ ul ion-icon {
 }
 
 #services li {
-  list-style:inside;
-  list-style-type:square;
+  list-style: inside;
+  list-style-type: square;
 }
 
 .card-img-top {
@@ -483,20 +489,16 @@ ul ion-icon {
   transform: translateY(0);
 }
 
-
 /* end of index.html */
-
-
 
 @media screen and (max-width: 768px) {
   nav img {
     display: none;
   }
 
-  
-#landing-page ul li {
-  font-size: 15px;
-}
+  #landing-page ul li {
+    font-size: 15px;
+  }
 
   .contact-today {
     width: 40%;
@@ -531,14 +533,13 @@ ul ion-icon {
     width: 100%;
   }
 
- #why-us .why-logo{
-  width: 30%;
- }
-  
+  #why-us .why-logo {
+    width: 30%;
+  }
 
- #why-us .why-logo{
-  width: 30%;
- }
+  #why-us .why-logo {
+    width: 30%;
+  }
 
   #why-us h2 {
     font-size: 2em;
@@ -555,18 +556,17 @@ ul ion-icon {
     box-shadow: none;
   }
 
-  .test{
+  .test {
     display: none;
     border: 0px;
     box-shadow: none;
   }
 
-  .test{
+  .test {
     display: none;
   }
 
-
-  #why-us-img{
+  #why-us-img {
     width: 100%;
   }
 
@@ -578,30 +578,29 @@ ul ion-icon {
   }
 
   #why-us a {
-    width: 60%;
-    width: 60%;
+    width: 80%;
     padding: 10px;
     margin: 0px 0px 20px;
-    font-size:14px;
+    font-size: 14px;
   }
 
-  #contact-us.home{
+  #contact-us.home {
     display: none;
   }
 
-  #contact-us.home{
+  #contact-us.home {
     display: none;
   }
 
-  .services-container{
+  .services-container {
     width: 100%;
   }
 
-  .service-section{
+  .service-section {
     width: 90%;
   }
 
-  #why-us{
+  #why-us {
     margin: 40px auto;
     width: 95%;
   }
@@ -627,7 +626,7 @@ ul ion-icon {
     height: 240px;
   }
 
-  #footer-border{
+  #footer-border {
     display: none;
   }
 
@@ -686,8 +685,6 @@ ul ion-icon {
   font-size: 16px;
 }
 
-
-
 #view-gallery {
   display: flex;
   flex-direction: column;
@@ -702,8 +699,6 @@ ul ion-icon {
   text-decoration: underline;
 }
 
-
-
 #service-detailed {
   display: flex;
   flex-wrap: wrap;
@@ -713,7 +708,7 @@ ul ion-icon {
   gap: 32px;
 }
 
-#info{
+#info {
   margin-bottom: 0px;
 }
 
@@ -733,11 +728,10 @@ ul ion-icon {
   font-size: 1.7em;
   font-weight: 600;
   color: #000000;
-
 }
 
 .full-service-info {
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -751,7 +745,6 @@ ul ion-icon {
   border-radius: 20px;
   padding: 20px;
 }
-
 
 @keyframes appear {
   from {
@@ -788,7 +781,6 @@ ul ion-icon {
   animation: fadeIn ease-in-out 4s;
 }
 
-
 .test {
   animation: slideIn ease-in-out 2s;
   animation-timeline: view();
@@ -808,15 +800,13 @@ ul ion-icon {
   flex-wrap: wrap;
 }
 
-.input-container header{
+.input-container header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 0px;
-
 }
-
 
 .input-container img {
   width: 14%;
@@ -844,7 +834,7 @@ form {
   height: 100%;
 }
 
-#form-success-container{
+#form-success-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -859,7 +849,7 @@ form {
   margin: 0 auto;
 }
 
-.form-success{
+.form-success {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -960,19 +950,19 @@ button[type="submit"] {
 }
 
 .questions-regarding-website p {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .questions-regarding-website a {
   color: #20a9ff;
 }
 
-.mobile-gallery{
+.mobile-gallery {
   display: none;
 }
 /* end of contact page */
 
-#services-h2{
+#services-h2 {
   font-size: 28px;
 }
 
@@ -981,11 +971,11 @@ button[type="submit"] {
     width: 90%;
   }
 
-  .mobile-gallery{
-    display:contents;
+  .mobile-gallery {
+    display: contents;
     font-style: italic;
     font-size: 16px;
-    color:#606060
+    color: #606060;
   }
 
   .masonry-service img {
@@ -995,31 +985,30 @@ button[type="submit"] {
     object-position: center;
   }
 
-  .masonry-service h3{
-    font-size: .9em;
+  .masonry-service h3 {
+    font-size: 0.9em;
   }
 
-  .masonry-service{
+  .masonry-service {
     width: 170px;
     height: 200px;
     margin: 4px;
   }
 
-  .masonry-service p{
+  .masonry-service p {
     font-size: 14px;
   }
-  
 
-  #view-gallery{
+  #view-gallery {
     margin: 30px 0px;
-    padding: 30px;;
+    padding: 30px;
   }
 
-  #services-h2{
+  #services-h2 {
     font-size: 24px;
   }
 
-  .full-service-info{
+  .full-service-info {
     width: 95%;
   }
 
@@ -1036,23 +1025,23 @@ button[type="submit"] {
     font-size: 20px;
   }
 
-.gallery-h2{
-  font-size: 24px;
-}  
+  .gallery-h2 {
+    font-size: 24px;
+  }
 
-  .form-container{
+  .form-container {
     width: 100%;
   }
 
-  #form-success-container{
+  #form-success-container {
     width: 100%;
   }
 
-  .form-success{
+  .form-success {
     width: 100%;
   }
 
-  .form-success h3{
+  .form-success h3 {
     font-size: 18px;
   }
 
@@ -1062,7 +1051,7 @@ button[type="submit"] {
     opacity: 0.6;
   }
 
-  .input-container{
+  .input-container {
     width: 95%;
     margin: 0px auto;
   }
@@ -1071,8 +1060,8 @@ button[type="submit"] {
     width: 90%;
   }
 
-  form{
-    gap:0px;
+  form {
+    gap: 0px;
   }
 
   button[type="submit"] {
@@ -1099,7 +1088,7 @@ button[type="submit"] {
   gap: 60px;
 }
 
-.about-section{
+.about-section {
   width: 100%;
   text-align: left;
 }
@@ -1108,7 +1097,6 @@ button[type="submit"] {
   font-size: 2.5em;
   font-weight: 600;
   color: #000000;
-
 }
 
 .about-us img {
@@ -1117,32 +1105,30 @@ button[type="submit"] {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-#service-detailed img{
+#service-detailed img {
   width: 100%;
   height: 320px;
 }
 
-
-.card-title{
+.card-title {
   font-size: 1.3em;
   font-weight: 600;
   color: #303030;
 }
 
-
-#service-detailed hr{
+#service-detailed hr {
   width: 90%;
   border: 1px solid black;
   margin: 0px 0px 10px;
   opacity: 0.2;
 }
 
-.card-img-top.custom-{
+.card-img-top.custom- {
   height: 180px;
   object-fit: cover;
 }
 
-.card-body.custom{
+.card-body.custom {
   gap: 10px;
   padding: 20px;
   height: fit-content;
@@ -1159,40 +1145,38 @@ button[type="submit"] {
   border-radius: 5px;
 }
 
-.card{
+.card {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-
-
 @media screen and (max-width: 768px) {
-  .about-images{
+  .about-images {
     width: 70%;
     margin: auto;
   }
 
-  h1{
+  h1 {
     margin-bottom: 2px;
   }
 
-#landing-page h1  {
-  font-size: 1.3em;
+  #landing-page h1 {
+    font-size: 1.3em;
   }
 
   #landing-page h2 {
-    font-size: .9em;
+    font-size: 0.9em;
   }
 
   .about-section h2 {
     font-size: 2em;
   }
 
-  .card.custom{
-    height:100%;
+  .card.custom {
+    height: 100%;
   }
 
-  .card-body.custom{
+  .card-body.custom {
     height: fit-content;
   }
 }
