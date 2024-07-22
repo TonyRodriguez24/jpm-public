@@ -394,10 +394,7 @@ ul ion-icon {
   z-index: 4;
 }
 
-#view-gallery a{
-  z-index: 4;
-  color: white;
-}
+
 
 #view-gallery{
   padding: 20px;
@@ -523,6 +520,15 @@ ul ion-icon {
 
   #services h2{
     z-index: 432;
+  }
+
+  #view-gallery a{
+    z-index: 4;
+    color: rgb(235, 184, 45);
+  }
+
+  #view-gallery .btn{
+    color: #ffffff;
   }
 
   #landing-page ul li {
@@ -1099,7 +1105,7 @@ button[type="submit"] {
     display: contents;
     font-style: italic;
     font-size: 16px;
-    color: #606060;
+    color: #aeaeae;
   }
 
   .masonry-service img {
