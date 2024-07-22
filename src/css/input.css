@@ -609,7 +609,7 @@ ul ion-icon {
     rgba(0, 0, 0, .3),
     rgba(0, 0, 0, .8)
   ),
-  url("assets/background2.jpg");
+  url("background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
