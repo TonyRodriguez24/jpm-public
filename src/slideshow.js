@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.why-us-img');
+  const slides = document.querySelectorAll('.my-slide');
   let currentIndex = 0;
 
   function showNextSlide() {
-    slides[currentIndex].classList.remove('active');
+    slides[currentIndex].classList.remove('my-active');
     currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add('active');
+    slides[currentIndex].classList.add('my-active');
   }
 
   if (slides.length > 0) {
