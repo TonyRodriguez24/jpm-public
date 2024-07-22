@@ -604,17 +604,17 @@ ul ion-icon {
   }
 
   body{
-  background-image: linear-gradient(
+  background: linear-gradient(
     0deg,
     rgba(0, 0, 0, .3),
     rgba(0, 0, 0, .8)
   ),
-  url("assets/background2.jpg");
+  url("/src/assets/background2.jpg");
   background-size: cover;
-  background-position:center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  color: rgb(214, 214, 214);
+  background-attachment: fixed;
+  background-position: center;
+ color: rgb(214, 214, 214);
 }
 
 #landing-page h1, #landing-page h2{
