@@ -241,7 +241,6 @@ ion-icon[name="logo-instagram"]:hover {
 
 #landing-page {
   position: relative;
-  position: relative;
   visibility: hidden;
   opacity: 0;
 }
@@ -401,7 +400,6 @@ ul ion-icon {
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgb(0, 0, 0, 1);
-  border: 1px solid rgb(0, 0, 0, 1);
   border-image: fill;
   height: fit-content;
   background-color: white;
@@ -409,9 +407,6 @@ ul ion-icon {
 
 #services hr {
   width: 100%;
-  border: 1px solid rgb(44, 44, 44);
-  opacity: 0.2;
-  margin: 10px 0px;
   border: 1px solid rgb(44, 44, 44);
   opacity: 0.2;
   margin: 10px 0px;
@@ -537,10 +532,6 @@ ul ion-icon {
     width: 30%;
   }
 
-  #why-us .why-logo {
-    width: 30%;
-  }
-
   #why-us h2 {
     font-size: 2em;
   }
@@ -574,9 +565,6 @@ ul ion-icon {
     display: none;
   }
 
-  #contact-us.home {
-    display: none;
-  }
 
   #why-us {
     margin: 40px auto;
