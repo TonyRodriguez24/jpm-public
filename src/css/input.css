@@ -347,13 +347,8 @@ ul ion-icon {
 
 .why-us-container img.active {
   opacity: 1;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
 }
 
-.why-us-container img.active {
-  opacity: 1;
-}
 
 #why-us h2 {
   font-size: 4vw;
@@ -583,10 +578,6 @@ ul ion-icon {
     display: none;
   }
 
-  .services-container {
-    width: 100%;
-  }
-
   #why-us {
     margin: 40px auto;
     width: 95%;
@@ -744,16 +735,6 @@ ul ion-icon {
   }
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-300px);
-  }
-  to {
-    scale: 1;
-    transform: translateX(0px);
-  }
-}
 
 @keyframes fadeIn {
   from {
@@ -766,12 +747,6 @@ ul ion-icon {
 
 .fadeIn {
   animation: fadeIn ease-in-out 4s;
-}
-
-.test {
-  animation: slideIn ease-in-out 2s;
-  animation-timeline: view();
-  animation-range: entry 0% cover 50%;
 }
 
 /* contact page */
