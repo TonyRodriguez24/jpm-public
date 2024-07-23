@@ -127,7 +127,7 @@ nav .dropdown-item:hover {
   content: " ";
   display: flex;
   height: 2px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   width: 30%;
   margin: 0 auto;
 }
@@ -397,6 +397,10 @@ ul ion-icon {
   z-index: 2;
 }
 
+#services .card{
+  min-width: 280px;
+}
+
 ul.dropdown-menu {
   background-color: hsla(0, 0%, 100%, 0.7);
 }
@@ -412,7 +416,7 @@ ul.dropdown-menu {
 }
 
 #view-gallery {
-  padding: 20px;
+  padding: 0px 0px 20px;
 }
 
 #view-gallery a {
@@ -1135,10 +1139,6 @@ button[type="submit"] {
     font-style: italic;
     font-size: 16px;
     color: #aeaeae;
-  }
-
-  #view-gallery {
-    margin: 30px 0px;
   }
 
   #view-gallery p {

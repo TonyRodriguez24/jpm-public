@@ -15,12 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const observeImages = (selector) => {
     document.querySelectorAll(selector).forEach(img => {
       // Check if the image is already in view
-      if (img.getBoundingClientRect().top < window.innerHeight) {
+      if (isElementInViewport(img)) {
         img.classList.add('fade-in');
       } else {
         observer.observe(img);
       }
     });
+  };
+
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   };
 
   // Observe images in the entire gallery
