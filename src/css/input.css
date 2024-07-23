@@ -22,7 +22,7 @@ h1,
 h2,
 h3,
 h5 {
-  color: rgb(0, 0, 0);
+  color: rgb(222, 222, 222);
 }
 
 h1 {
@@ -54,11 +54,11 @@ li {
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(219, 219, 219);
 }
 
 .nav-link {
-  color: rgb(0, 0, 0);
+  color: rgb(220, 220, 220);
 }
 
 .nav-link:hover {
@@ -191,7 +191,7 @@ footer {
   padding: 5px;
   border-radius: 30%;
   margin: 0 3px;
-  background-color: hsl(0, 0%, 58%);
+  background-color: hsl(0, 0%, 36%);
 }
 
 ion-icon:hover {
@@ -1084,7 +1084,7 @@ button[type="submit"] {
   }
 
   #connect a {
-    color: rgb(0, 0, 0);
+    color: rgb(225, 225, 225);
   }
 
   .why-us-container {
@@ -1112,7 +1112,7 @@ button[type="submit"] {
   }
 
   #links a {
-    color: rgb(0, 0, 0);
+    color: rgb(218, 218, 218);
   }
 
   .card-text {
