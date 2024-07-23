@@ -1265,4 +1265,11 @@ button[type="submit"] {
     height: 100%;
   }
   
+  h1{
+    font-size: 40px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
 }
