@@ -12,14 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll('#entire-gallery img').forEach(img => {
-    // Check if the image is already in view
-    if (img.getBoundingClientRect().top < window.innerHeight) {
-      img.classList.add('fade-in');
-    } else {
-      observer.observe(img);
-    }
-  });
+  const observeImages = (selector) => {
+    document.querySelectorAll(selector).forEach(img => {
+      // Check if the image is already in view
+      if (img.getBoundingClientRect().top < window.innerHeight) {
+        img.classList.add('fade-in');
+      } else {
+        observer.observe(img);
+      }
+    });
+  };
 
-  
+  // Observe images in the entire gallery
+  observeImages('#entire-gallery img');
+
+  // Observe images in the front page gallery
+  observeImages('#gallery-container .gallery img');
 });
