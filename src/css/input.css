@@ -847,6 +847,10 @@ button[type="submit"] {
   gap: 60px;
 }
 
+#view-gallery .btn {
+  color: #ffffff;
+}
+
 .about-section {
   width: 100%;
   text-align: left;
@@ -927,9 +931,7 @@ button[type="submit"] {
     z-index: 4;
   }
 
-  #view-gallery .btn {
-    color: #ffffff;
-  }
+ 
 
   #landing-page ul li {
     font-size: 15px;
