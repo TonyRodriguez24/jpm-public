@@ -10,10 +10,9 @@
 
 body {
   background: linear-gradient(0deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.4)),
-    url(driveway.jpg);
+    url(driveway.jpg) no-repeat center fixed;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   color: rgb(219, 219, 219);
 }
 
