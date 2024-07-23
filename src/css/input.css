@@ -9,8 +9,8 @@
 }
 
 body {
-  background-image: ("/src/css/driveway.jpg");
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+  background-image: ("/css/driveway.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0)),
     url("/src/css/driveway.jpg");
   background-size: cover;
   background-position: center;
