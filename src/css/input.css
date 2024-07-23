@@ -568,6 +568,7 @@ ul.dropdown-menu {
 
 #services img.card-img-top {
   height: 200px;
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -990,7 +991,8 @@ button[type="submit"] {
   }
 
   #services img.card-img-top{
-    height: 210px;
+    height: auto;
+    width: 100%;
     object-fit: contain;
     object-position: center;
   }
