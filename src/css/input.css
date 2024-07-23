@@ -445,17 +445,17 @@ ul.dropdown-menu {
 }
 
 #services .card {
-  background-image: linear-gradient(
-    0deg,
-    rgba(233, 187, 166, 0.856),
-    rgba(198, 198, 198, 0.95)
+  background: linear-gradient(
+    90deg,
+    rgba(247, 248, 255, 0.836),
+    rgba(218, 232, 255, 0.801)
   );
 }
 
 #services hr {
   width: 100%;
-  border: 1px solid rgb(44, 44, 44);
-  opacity: 0.2;
+  border: 1px solid rgb(0, 0, 0);
+  opacity: 0.6;
   margin: 10px 0px;
 }
 
