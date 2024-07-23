@@ -9,11 +9,11 @@
 }
 
 body {
-  background: linear-gradient(0deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url(driveway.jpg);
   background-position: center;
-  background-size: cover ;
- background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
   color: rgb(219, 219, 219);
 }
 
@@ -902,6 +902,13 @@ button[type="submit"] {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+  body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+      url(driveway.jpg);
+    background-position: top;
+    color: rgb(219, 219, 219);
+  }
+
   nav img {
     display: none;
   }
@@ -1243,5 +1250,4 @@ button[type="submit"] {
   .card-body.custom {
     height: fit-content;
   }
-
 }
