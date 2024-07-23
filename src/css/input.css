@@ -14,7 +14,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  color: rgb(219, 219, 219);
+  color: rgb(229, 229, 229);
 }
 
 /* Typography */
@@ -22,7 +22,7 @@ h1,
 h2,
 h3,
 h5 {
-  color: rgb(222, 222, 222);
+  color: rgb(229, 229, 229);
 }
 
 h1 {
@@ -54,11 +54,11 @@ li {
 
 a {
   text-decoration: none;
-  color: rgb(219, 219, 219);
+  color: rgb(228, 228, 228);
 }
 
 .nav-link {
-  color: rgb(220, 220, 220);
+  color: rgb(229, 229, 229);
 }
 
 .nav-link:hover {
@@ -558,9 +558,10 @@ ul.dropdown-menu {
   background-color: rgb(255, 255, 255);
   padding: 20px;
   color: black;
-  height: fit-content;
+  min-height: fit-content;
   text-align: center;
-  height: 270px;
+  max-height: 360px;
+  overflow: hidden;
 }
 
 .service-card h5 {
@@ -901,6 +902,7 @@ button[type="submit"] {
   width: 100%;
   height: 600px;
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.83);
 }
 
 .card {
