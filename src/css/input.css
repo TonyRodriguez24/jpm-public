@@ -1255,3 +1255,14 @@ button[type="submit"] {
     height: fit-content;
   }
 }
+
+@media screen and (max-width:1600px){
+  #about-us{
+    display: none;
+  }
+
+  .row.height-calc{
+    height: 100%;
+  }
+  
+}
