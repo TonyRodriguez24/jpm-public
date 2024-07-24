@@ -9,7 +9,7 @@
 }
 
 body {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url(driveway.jpg);
   background-position: center;
   background-size: cover;
@@ -34,6 +34,11 @@ h2 {
   font-size: 32px;
   font-weight: 600;
   z-index: 4;
+}
+
+#page-headers {
+  font-size: 28px;
+  font-weight: 800;
 }
 
 h3 {
@@ -923,6 +928,10 @@ button[type="submit"] {
     display: none;
   }
 
+  #page-headers{
+    font-size: 1.2em;
+  }
+
   .container-fluid,
   .row,
   .col-md-12 {
@@ -1160,11 +1169,11 @@ button[type="submit"] {
   }
 
   .input-container img {
-    width: 30%;
+    width: 24%;
   }
 
   .input-container h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .gallery-h2 {
