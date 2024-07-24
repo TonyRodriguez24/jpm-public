@@ -9,8 +9,7 @@
 }
 
 body {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
-    url(driveway.jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(driveway.jpg);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -18,13 +17,6 @@ body {
 }
 
 /* Typography */
-h1,
-h2,
-h3,
-h5 {
-  color: rgb(229, 229, 229);
-}
-
 h1 {
   font-size: 52px;
   font-weight: 800;
@@ -66,11 +58,7 @@ a {
   color: rgb(229, 229, 229);
 }
 
-.nav-link:hover {
-  color: rgb(57, 158, 247);
-}
-
-.nav-link:active {
+.nav-link:hover, .nav-link:active {
   color: rgb(57, 158, 247);
 }
 
@@ -108,6 +96,7 @@ nav .dropdown-item:hover {
   background-color: #c8c8c8;
 }
 
+/* Contact Section */
 #contact-us {
   display: flex;
   flex-direction: column;
@@ -117,6 +106,7 @@ nav .dropdown-item:hover {
   padding: 80px;
 }
 
+/* Footer */
 #footer-border h3 {
   display: flex;
   text-align: center;
@@ -137,7 +127,6 @@ nav .dropdown-item:hover {
   margin: 0 auto;
 }
 
-/* Footer */
 footer {
   display: flex;
   flex-wrap: wrap;
@@ -251,7 +240,7 @@ ion-icon[name="logo-instagram"]:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
 }
 
-/* index.html */
+/* Index Page */
 #landing-page {
   position: relative;
   visibility: hidden;
@@ -402,7 +391,8 @@ ul ion-icon {
   z-index: 2;
 }
 
-#services .card{
+/* Services Section */
+#services .card {
   min-width: 280px;
 }
 
@@ -450,11 +440,7 @@ ul.dropdown-menu {
 }
 
 #services .card {
-  background: linear-gradient(
-    90deg,
-    rgba(247, 248, 255, 0.866),
-    rgba(218, 232, 255, 0.831)
-  );
+  background: linear-gradient(90deg, rgba(247, 248, 255, 0.866), rgba(218, 232, 255, 0.831));
 }
 
 #services hr {
@@ -548,7 +534,7 @@ ul.dropdown-menu {
   object-position: center;
 }
 
-/* masonry.html */
+/* Masonry Page */
 #service-container {
   display: flex;
   align-items: center;
@@ -584,7 +570,6 @@ ul.dropdown-menu {
   object-fit: cover;
   object-position: center;
 }
-
 
 #view-gallery {
   display: flex;
@@ -648,7 +633,6 @@ ul.dropdown-menu {
 }
 
 /* Animation */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -672,11 +656,7 @@ ul.dropdown-menu {
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 246, 248, 0.7),
-    rgb(199, 216, 255, 0.9)
-  );
+  background-image: linear-gradient(90deg, rgba(255, 246, 248, 0.7), rgb(199, 216, 255, 0.9));
 }
 
 .input-container header {
@@ -847,7 +827,7 @@ button[type="submit"] {
   display: none;
 }
 
-/* About Us */
+/* About Us Page */
 .about-us .text-container {
   display: flex;
   flex-direction: column;
@@ -918,8 +898,7 @@ button[type="submit"] {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   body {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
-      url(driveway.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url(driveway.jpg);
     background-position: top;
     color: rgb(219, 219, 219);
   }
@@ -928,7 +907,7 @@ button[type="submit"] {
     display: none;
   }
 
-  #page-headers{
+  #page-headers {
     font-size: 1.2em;
   }
 
@@ -941,8 +920,6 @@ button[type="submit"] {
   #services h2 {
     z-index: 4;
   }
-
- 
 
   #landing-page ul li {
     font-size: 15px;
