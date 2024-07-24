@@ -560,11 +560,11 @@ ul.dropdown-menu {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   border: 2px solid rgb(0, 0, 0, 0.6);
   background-color: rgb(255, 255, 255);
-  padding: 5px;
+  padding: 20px;
   color: black;
   min-height: fit-content;
   text-align: center;
-  max-height: 360px;
+  height: 280px;
   overflow: hidden;
 }
 
@@ -949,6 +949,7 @@ button[type="submit"] {
 
   .service-card {
     height: 180px;
+    padding: 5px;
   }
 
   .service-card p {
