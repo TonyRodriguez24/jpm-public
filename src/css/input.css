@@ -576,9 +576,6 @@ ul.dropdown-menu {
   object-position: center;
 }
 
-.service-card.concrete {
-  height: 340px;
-}
 
 #view-gallery {
   display: flex;
@@ -948,10 +945,6 @@ button[type="submit"] {
   }
 
   .service-card {
-    height: 180px;
-  }
-
-  .service-card.concrete {
     height: 180px;
   }
 
