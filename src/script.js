@@ -1,1 +1,4 @@
-$(document).ready(function(){$("#landing-page").css("visibility","visible").animate({opacity:1},2e3)});
+$(document).ready(function () {
+    $("#landing-page").addClass("visible");
+    console.log("Document is ready");
+});

@@ -225,9 +225,14 @@ ion-icon[name="logo-instagram"]:hover {
 }
 #landing-page {
   position: relative;
-  visibility: hidden;
   opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
+
+.visible {
+  opacity: 1 !important;
+}
+
 #landing-page ion-icon {
   font-size: 1.5rem;
   color: #13df00;
