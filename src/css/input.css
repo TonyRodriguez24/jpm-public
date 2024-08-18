@@ -798,10 +798,11 @@ button[type="submit"] {
 
 .input-container h3{
   font-size: 18px;
-}
+ }
 
 .questions-regarding-website p{
   font-size: .7em;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -1018,4 +1019,4 @@ button[type="submit"] {
   .card-body.custom {
     height: fit-content;
   }
-}
+} 
