@@ -731,7 +731,7 @@ button[type="submit"] {
 }
 
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width:768px) and (max-width: 1600px) {
   #about-us {
     display: none;
   }
