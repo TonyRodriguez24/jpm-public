@@ -298,6 +298,7 @@ ul ion-icon {
   padding: 60px;
   width: 60vw;
   margin: 40px auto;
+  gap: 5px;
   height: 100%;
   border-radius: 12px;
   border: 2px double #000;
@@ -329,13 +330,13 @@ ul ion-icon {
   z-index: 4;
 }
 #why-us h2 {
-  font-size: 3.1vw;
+  font-size: 40px;
   z-index: 3;
   color: #fff;
 }
 #why-us p {
-  width: 70%;
-  font-size: 1.3rem;
+  width: 80%;
+  font-size: 1.1rem;
 }
 #why-us a {
   position: relative;
@@ -956,4 +957,52 @@ button[type="submit"] {
   h2 {
     font-size: 24px;
   }
+
+  .why-us-container {
+    width: 80%;
+    height: 100%;
+  }
+
+  .service-card p{
+    display: none
+  }
+
+  .service-card h5 {
+    font-size: 1em;
+  }
+
+  .service-card{
+    height: 200px;
+    width: 200px;
+  }
+
+  /* .col-md-6 {
+    width: 70%;
+  } */
+
+  #page-headers {
+    font-size: 24px;
+  }
+
+  #service-detailed img {
+    height: 200px;
+  }
+
+  .card.custom {
+    height: 500px;
+  }
+
+  p{
+    font-size: 16px;
+  }
+
+  #landing-page ul{
+    font-size: 16px;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 31%;
 }
+}
+
