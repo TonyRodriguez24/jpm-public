@@ -2,6 +2,14 @@
 body {
   color: #e5e5e5;
 }
+
+.nav-link.dropdown-toggle.show:focus{
+  color: rgb(88, 133, 255);
+}
+
+.nav-link.dropdown-toggle.show:active{
+  color: rgb(92, 128, 227);
+}
 .my-slide,
 .why-us-img {
   transition: opacity 2s ease-in-out;
@@ -106,7 +114,7 @@ nav .contact-today:hover {
   background-color: #81e381;
 }
 nav .dropdown-item:hover {
-  background-color: #c8c8c8;
+  background-color: #e3e3e3;
 }
 #contact-us {
   display: flex;
