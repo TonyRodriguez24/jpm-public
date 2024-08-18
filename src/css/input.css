@@ -763,9 +763,9 @@ button[type="submit"] {
     width: 200px;
   }
 
-  /* .col-md-6 {
-    width: 70%;
-  } */
+  #info-pg {
+    width: 80%;
+  }
 
   #page-headers {
     font-size: 24px;
