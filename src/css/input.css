@@ -553,7 +553,7 @@ ul.dropdown-menu {
   gap: 0;
 }
 .input-container img {
-  width: 14%;
+  width: 80px;
   margin: 0 auto;
   height: auto;
 }
@@ -656,7 +656,7 @@ button[type="submit"] {
   font-size: 1.6rem;
 }
 .contact-cards ion-icon {
-  font-size: 40px;
+  font-size: 30px;
   margin: 0 8px;
   background-color: #20a9ff;
   padding: 20px;
@@ -791,6 +791,17 @@ button[type="submit"] {
     flex: 0 0 auto;
     width: 31%;
 }
+
+.input-group{
+  width:40%;
+}
+
+.input-container h3{
+  font-size: 18px;
+}
+
+.questions-regarding-website p{
+  font-size: .7em;
 }
 
 @media screen and (max-width: 768px) {
