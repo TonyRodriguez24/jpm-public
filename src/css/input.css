@@ -375,12 +375,7 @@ ul ion-icon {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid #000;
   height: fit-content;
-  background-color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(247, 248, 255, 0.866),
-    rgba(218, 232, 255, 0.831)
-  );
+  background-color: #ffffff;
 }
 ul.dropdown-menu {
   background-color: hsla(0, 0%, 100%, 0.7);
