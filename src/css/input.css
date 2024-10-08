@@ -371,7 +371,7 @@ ul ion-icon {
 }
 #services .card {
   min-width: 280px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid #000;
   height: fit-content;
