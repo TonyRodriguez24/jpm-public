@@ -5432,7 +5432,7 @@ ul ion-icon {
   margin: 40px auto;
   height: 100%;
   border-radius: 12px;
-  border: 2px double #000;
+  border: 3px solid rgb(58, 146, 91);
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
   color: #fff;
 }

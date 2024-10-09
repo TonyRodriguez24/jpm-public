@@ -3,11 +3,11 @@ body {
   color: #e5e5e5;
 }
 
-.nav-link.dropdown-toggle.show:focus{
+.nav-link.dropdown-toggle.show:focus {
   color: rgb(88, 133, 255);
 }
 
-.nav-link.dropdown-toggle.show:active{
+.nav-link.dropdown-toggle.show:active {
   color: rgb(92, 128, 227);
 }
 .my-slide,
@@ -308,8 +308,8 @@ ul ion-icon {
   margin: 40px auto;
   gap: 5px;
   height: 100%;
-  border-radius: 12px;
-  border: 2px double #000;
+  border-radius: 10px;
+  border: 3px solid white;
   box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.4);
   color: #fff;
 }
@@ -373,7 +373,7 @@ ul ion-icon {
   min-width: 280px;
   border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-  border: 3px solid #59a074;
+  border: 3px solid white;
   height: fit-content;
   background-color: #ffffff;
 }
@@ -733,8 +733,7 @@ button[type="submit"] {
   padding-right: 0;
 }
 
-
-@media screen and (min-width:768px) and (max-width: 1600px) {
+@media screen and (min-width: 768px) and (max-width: 1600px) {
   #about-us {
     display: none;
   }
@@ -753,15 +752,15 @@ button[type="submit"] {
     height: 100%;
   }
 
-  .service-card p{
-    display: none
+  .service-card p {
+    display: none;
   }
 
   .service-card h5 {
     font-size: 1em;
   }
 
-  .service-card{
+  .service-card {
     height: 200px;
     width: 200px;
   }
@@ -782,30 +781,30 @@ button[type="submit"] {
     height: 500px;
   }
 
-  p{
+  p {
     font-size: 16px;
   }
 
-  #landing-page ul{
+  #landing-page ul {
     font-size: 16px;
   }
 
   .serv-card {
     flex: 0 0 auto;
     width: 31%;
-}
+  }
 
-.input-group{
-  width:40%;
-}
+  .input-group {
+    width: 40%;
+  }
 
-.input-container h3{
-  font-size: 18px;
- }
+  .input-container h3 {
+    font-size: 18px;
+  }
 
-.questions-regarding-website p{
-  font-size: .7em;
-}
+  .questions-regarding-website p {
+    font-size: 0.7em;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -815,8 +814,7 @@ button[type="submit"] {
     padding: 10px;
   }
   body {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8))
-        top,
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)) top,
       url(driveway-2.jpg) top;
     color: #dbdbdb;
   }
@@ -1022,4 +1020,4 @@ button[type="submit"] {
   .card-body.custom {
     height: fit-content;
   }
-} 
+}
