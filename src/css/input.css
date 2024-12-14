@@ -818,6 +818,11 @@ button[type="submit"] {
       url(driveway-2.jpg) top;
     color: #dbdbdb;
   }
+
+  .hearth-banner{
+    width: 95vw;
+  }
+
   #about-us,
   #contact-us.home,
   #footer-border,
