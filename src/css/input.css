@@ -297,6 +297,20 @@ ul ion-icon {
   height: fit-content;
   justify-content: center;
 }
+
+.hearth-logo {
+  width: 20vw;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+}
+
+#hearth-container{
+  width: 60%;
+}
+
+
+
 .why-us-container {
   display: flex;
   flex-direction: column;
@@ -455,13 +469,12 @@ ul.dropdown-menu {
   justify-content: center;
   align-items: center;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid;
-  background-color: #fff;
-  padding: 20px;
+  border: 2px solid rgb(221, 221, 221);
+  background-color: #ffffff;
+  padding: 1.3em;
   color: #000;
   min-height: fit-content;
   text-align: center;
-  height: 280px;
   overflow: hidden;
 }
 .about-us img,
@@ -761,7 +774,6 @@ button[type="submit"] {
   }
 
   .service-card {
-    height: 200px;
     width: 200px;
   }
 
@@ -819,7 +831,7 @@ button[type="submit"] {
     color: #dbdbdb;
   }
 
-  .hearth-banner{
+  .hearth-banner {
     width: 95vw;
   }
 
@@ -863,7 +875,7 @@ button[type="submit"] {
   }
   .service-card {
     height: 180px;
-    padding: 5px;
+    padding: 16px;
   }
   .card.custom,
   .height-calc {
@@ -1024,5 +1036,22 @@ button[type="submit"] {
   }
   .card-body.custom {
     height: fit-content;
+  }
+
+  #hearth-container .service-card p {
+    display: flex;
+    font-size: 12px;
+  }
+
+  .hearth-logo{
+    width: 60%;
+  }
+
+  #hearth-container .service-card{
+    height: fit-content;
+  }
+
+  #hearth-container{
+    width: 100%;
   }
 }
