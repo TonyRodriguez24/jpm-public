@@ -4,4 +4,6 @@ __pycache__
 package-lock.json
 package.json
 venv/
+
+# Ignore sensitive configuration files
 config.py
