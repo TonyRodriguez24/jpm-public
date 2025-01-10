@@ -6,4 +6,4 @@ package.json
 venv/
 
 # Ignore sensitive configuration files
-config.py
+secret.py
