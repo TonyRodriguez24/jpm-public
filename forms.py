@@ -1,32 +1,49 @@
-from models import User, Services, Projects, Reviews, Messages
+import email
+from email import contentmanager
+from flask import Flask
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField
+from wtforms import IntegerField, PasswordField, StringField, SelectField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
 
 
 class ContactForm(FlaskForm):
-    first_name = StringField('First Name', 
+    name = StringField('Name', 
                              validators=[DataRequired()],
-                             render_kw={"placeholder": "Enter your first name"})
-    last_name = StringField('Last Name',
-                             validators=[DataRequired()],
-                             render_kw={"placeholder": "Enter your last name"})
+                             render_kw={"placeholder": "Enter your name"})
     phone = StringField('Phone Number', 
                         validators=[DataRequired()],
                         render_kw={"placeholder": "Enter your phone number"})
-    email = StringField('Email Address',
+    email = EmailField('Email Address',
                          validators=[DataRequired()],
                          render_kw={"placeholder": "Enter your email address"})
     address = StringField('Address', 
                           validators=[DataRequired()],
                           render_kw={"placeholder": "Enter your address"})
+    
+    service_type = SelectField("Service needed",
+                               validators=[DataRequired()])
+
+    message = TextAreaField("Message",
+                            render_kw={"placeholder": "Tell us what you need! We are more than happy to help."})
+
 
 class SignUpForm(FlaskForm):
+    username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
+
+    password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
+
+    email = EmailField("Email", validators=[DataRequired()], render_kw= {"placeholder": "Enter your email address"})
+
+class LoginForm(FlaskForm):
+    username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
+
+    password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
 
 
-class LoginForm
+class ReviewForm(FlaskForm):
+    rating = IntegerField("Rating", validators=[DataRequired()])
 
-class ReviewForm
+    message = TextAreaField("Message", render_kw={"placeholder": "Tell us about your experience, your feedback is important to us."})
 
-class MessageForm
+    service_type = SelectField("Select the service you received")
 

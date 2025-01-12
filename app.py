@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, flash
 from database import connect_db
+from forms import ContactForm
 from secret import SECRET_KEY
 
 app = Flask(__name__)
@@ -12,7 +13,18 @@ connect_db(app)
 
 @app.route('/')
 def home():
-    return render_template('home.jinja')
+    form = ContactForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        phone = form.phone.data
+        email = form.email.data
+        address = form.address.data
+        service_type = form.service_type.data
+        message = form.message.data
+
+        flash("Your form has been submitted", "success")
+        return redirect('/thank-you')
+    return render_template('home.jinja', form = form)
 
 
 

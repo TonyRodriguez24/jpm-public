@@ -1,22 +1,12 @@
-from os import name
-from flask_sqlalchemy import SQLAlchemy
 from database import db
 
 class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
-    first_name = db.Column(db.String(50), nullable = False)
-    last_name = db.Column(db.String(50), nullable = False)
-    phone = db.Column(db.String(15), nullable = False)
+    username = db.Column(db.String(50), unique = True, nullable = False)
     email = db.Column(db.String(100), nullable = False, unique = True)
-    address = db.Column(db.String(200), nullable = False)
-    
-    #foreign key
-    service_id = db.Column(db.Integer, db.ForeignKey('services.id'))
-
-    #relationship
-    service = db.relationship('Services', backref = 'users')
+    password = db.Column(db.String(300), nullable = False, unique = True)
 
 #in seed py
 class Services(db.Model):
@@ -51,12 +41,15 @@ class Reviews(db.Model):
     
     service = db.relationship('Services', backref = 'reviews')
 
-class Messages(db.Model):
+class Contact(db.Model):
     __tablename__ = 'messages'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
-    content = db.Column(db.Text, nullable=False)
+    address = db.Column(db.String(100), nullable = False)
+    message = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now())
+
+    #foreign key
+    service_type = db.Column(db.Integer, db.ForeignKey('services.id'))

@@ -1,6 +1,0 @@
-# Allow all user agents to access everything
-User-agent: *
-Disallow: 
-
-# Sitemap location
-Sitemap: https://www.jpmandsons.com/sitemap.xml
