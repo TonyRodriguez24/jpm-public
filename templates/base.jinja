@@ -38,112 +38,33 @@
         />
         <link
             rel="canonical"
-            href="https://www.jpmandsons.com{% block canonical_url %}{% endblock canonical_url %}"
+            href="https://www.jpmandsons.com{% block canonical_url %}
+            {% endblock canonical_url %}"
         />
     </head>
     <body>
-        <nav navbar></nav>
+    {% from "macros.jinja" import navbar %}
+    {{ navbar(active_page)}}
 
-    <div class="container" style="margin-top: 2em">
-  {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for category, message in messages %}
-      <li class="alert alert-{{category}}">{{ message }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
-</div>
+        <div class="container" style="margin-top: 2em">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="alert alert-{{ category }}">
+                                {{ message }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
 
         {% block content %}
         {% endblock content %}
 
-        <div id="footer-border">
-            <h3>JPM and Sons</h3>
-        </div>
-
-        <footer>
-            <!-- Connect Section -->
-            <ul id="connect">
-                <li>
-                    <h3><a href="{{url_for('contact_us')}}">Connect With Us</a></h3>
-                </li>
-                <li>
-                    <a href="tel:516-735-0685">
-                        <ion-icon name="call"></ion-icon>
-                        <span>Phone: 516-735-0685</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:JPMandSons123@Gmail.com">
-                        <ion-icon name="mail"></ion-icon>
-                        <span>JPMandSons123@Gmail.com</span>
-                    </a>
-                </li>
-                <li>
-                        <ion-icon name="navigate-circle"></ion-icon>
-                        <span>150 Spring Lane, Levittown, NY</span>
-                    
-                </li>
-            </ul>
-
-            <!-- Social Links -->
-            <ul class="social">
-                <li>
-                    <a
-                        href="https://www.facebook.com/JPMSonsCorp/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-facebook"></ion-icon>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.tiktok.com/@jpmandsons"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-tiktok"></ion-icon>
-                        <span class="sr-only">TikTok</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.instagram.com/jpmandsonscorp/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-instagram"></ion-icon>
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Navigation Links -->
-            <ul id="links">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
-                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-                <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
-            </ul>
-
-            <!-- About Us Section -->
-            <div id="about-us-footer">
-                <h3>About Us</h3>
-                <p>
-                    We are a family-owned business where personal involvement
-                    matters. Led by our founder,
-                    <strong>James Moore</strong>, and his eldest son,
-                    <strong>Nick</strong>, we ensure each project receives the
-                    attention it deserves, guaranteeing top-notch service for
-                    our clients.
-                </p>
-            </div>
-        </footer>
-
+    {% from "macros.jinja" import footer%}
+    {{ footer() }}
         <!-- 2 bootstrap scripts-->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -4,7 +4,27 @@
     JPM and Sons | Expert General Contractor Services on Long Island
 {% endblock title %}
 
+
 {% block content %}
+
+
+    <form action="/" class="m-3" method="post">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{ field.label }}
+                {{ field(class_='form-control') }}
+                {% if field.errors %}
+                    <div class="text-danger">
+                        {% for error in field.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </p>
+        {% endfor %}
+        <button type="submit" class="btn btn-success">Schedule your free quote today</button>
+    </form>
 {% endblock content %}
 
 <link rel="canonical" href="https://www.jpmandsons.com/" />

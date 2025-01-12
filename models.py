@@ -6,7 +6,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     username = db.Column(db.String(50), unique = True, nullable = False)
     email = db.Column(db.String(100), nullable = False, unique = True)
-    password = db.Column(db.String(300), nullable = False, unique = True)
+    password = db.Column(db.String(300), nullable = False)
 
 #in seed py
 class Services(db.Model):
@@ -14,7 +14,6 @@ class Services(db.Model):
 
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     name = db.Column(db.String(50), nullable = False, unique = True)
-
 
 class Projects(db.Model):
     __tablename__ = 'projects'
@@ -38,18 +37,21 @@ class Reviews(db.Model):
 
     #foreign key
     service_id = db.Column(db.Integer, db.ForeignKey('services.id'))
-    
-    service = db.relationship('Services', backref = 'reviews')
 
 class Contact(db.Model):
     __tablename__ = 'messages'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    phone = db.Column(db.String(30), nullable=False)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(100), nullable = False)
+    #foreign key
+    service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
     message = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=db.func.now())
 
-    #foreign key
-    service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
+    #relationship
+    service = db.relationship('Services', backref='contacts')
+
+
