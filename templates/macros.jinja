@@ -1,180 +1,294 @@
-{% macro navbar (active_page)%} <!-- use to select which link is active -->
+{% macro navbar (active_page) %}
+    <!-- use to select which link is active -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('home') }}">JPM and Sons</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {%if active_page == 'home'%}active{% endif %}"
-                                aria-current="page"
-                                href="{{ url_for('home') }}"
-                                >Home</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {%if active_page == 'financing'%}active{% endif %}" href="{{ url_for('financing') }}">Financing Options</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {%if active_page == 'gallery'%}active{% endif %}" href="{{url_for('gallery')}}">Gallery</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link {%if active_page in ['asphalt', 'concrete','home_improvement', 'masonry', 'paver_sealing', 'pressure_washing']%}active{% endif %} dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Services
-                            </a>
-                            <ul class="dropdown-menu">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}"
+                >JPM and Sons</a
+            >
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'home' %}active{% endif %}"
+                            aria-current="page"
+                            href="{{ url_for('home') }}"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'financing' %}active{% endif %}"
+                            href="{{ url_for('financing') }}"
+                            >Financing Options</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'gallery' %}active{% endif %}"
+                            href="{{ url_for('gallery') }}"
+                            >Gallery</a
+                        >
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link {% if active_page in ['asphalt', 'concrete','home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %} dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
                             <li>
-                                    <a class="dropdown-item" href="{{ url_for('asphalt') }}">Asphalt</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ url_for('concrete') }}">Concrete</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ url_for('home_improvement') }}">Home Improvement</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ url_for('masonry') }}">Masonry</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ url_for('paver_sealing') }}">Paver Sealing</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ url_for('pressure_washing') }}">Pressure Washing</a>
-                                </li>
-                                
-                                
-                    
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {%if active_page == 'contact_us'%}active{% endif %}" href="{{url_for('contact_us')}}">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {%if active_page == 'about_us'%}active{% endif %}" href="{{url_for('about_us')}}">About</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input
-                            class="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button class="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form>
-                </div>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('asphalt') }}"
+                                    >Asphalt</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('concrete') }}"
+                                    >Concrete</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('home_improvement') }}"
+                                    >Home Improvement</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('masonry') }}"
+                                    >Masonry</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('paver_sealing') }}"
+                                    >Paver Sealing</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ url_for('pressure_washing') }}"
+                                    >Pressure Washing</a
+                                >
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'contact_us' %}active{% endif %}"
+                            href="{{ url_for('contact_us') }}"
+                            >Contact</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'about_us' %}active{% endif %}"
+                            href="{{ url_for('about_us') }}"
+                            >About</a
+                        >
+                    </li>
+
+                    {% if 'admin-username' in session %}
+                <li class="nav-item">
+                    <span class="nav-link fw-semibold text-success ">
+                        Logged in as: {{ session['admin-username'] }}
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-success" href="{{ url_for('logout') }}">
+                        Logout
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-success " href="{{ url_for('admin_dashboard') }}">
+                        Admin Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-primary " href="{{ url_for('admin_set_password') }}">
+                        Change password
+                    </a>
+                </li>
+                {% endif %}
+                </ul>
+                <form class="d-flex" role="search">
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                    />
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
             </div>
-        </nav>
+        </div>
+    </nav>
 {% endmacro %}
 
 {% macro footer() %}
-            <div id="footer-border">
-            <h3>JPM and Sons</h3>
-        </div>
+    <footer class="">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <!-- Logo Section -->
+                <div class="col-md-12 my-4 text-center">
+                    <div id="footer-border">
+                        <h3>JPM and Sons</h3>
+                    </div>
+                </div>
 
-        <footer>
-            <!-- Connect Section -->
-            <ul id="connect">
-                <li>
-                    <h3>
-                        <a href="{{ url_for('contact_us') }}"
-                            >Connect With Us</a
-                        >
-                    </h3>
-                </li>
-                <li>
-                    <a href="tel:516-735-0685">
-                        <ion-icon name="call"></ion-icon>
-                        <span>Phone: 516-735-0685</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:JPMandSons123@Gmail.com">
-                        <ion-icon name="mail"></ion-icon>
-                        <span>JPMandSons123@Gmail.com</span>
-                    </a>
-                </li>
-                <li>
-                    <ion-icon name="navigate-circle"></ion-icon>
-                    <span>150 Spring Lane, Levittown, NY</span>
-                </li>
-            </ul>
+                <!-- Connect Section -->
+                <div class="col-md-6 col-lg-3 text-center">
+                    <ul id="connect" class="list-unstyled">
+                        <li>
+                            <h3>
+                                <a
+                                    href="{{ url_for('contact_us') }}"
+                                    class="text-black text-decoration-none"
+                                >
+                                    Connect With Us
+                                </a>
+                            </h3>
+                        </li>
+                        <li>
+                            <a
+                                href="tel:516-735-0685"
+                                class="text-black text-decoration-none"
+                            >
+                                <ion-icon name="call"></ion-icon>
+                                <span>Phone: 516-735-0685</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="mailto:JPMandSons123@Gmail.com"
+                                class="text-black text-decoration-none"
+                            >
+                                <ion-icon name="mail"></ion-icon>
+                                <span>JPMandSons123@Gmail.com</span>
+                            </a>
+                        </li>
+                        <li class="text-black">
+                            <ion-icon name="navigate-circle"></ion-icon>
+                            <span>150 Spring Lane, Levittown, NY</span>
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- Social Links -->
-            <ul class="social">
-                <li>
-                    <a
-                        href="https://www.facebook.com/JPMSonsCorp/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-facebook"></ion-icon>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.tiktok.com/@jpmandsons"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-tiktok"></ion-icon>
-                        <span class="sr-only">TikTok</span>
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.instagram.com/jpmandsonscorp/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <ion-icon name="logo-instagram"></ion-icon>
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-            </ul>
+                <!-- Social Links Section -->
+                <div class="col-md-6 col-lg-3 text-center">
+                    <h3>Follow Us</h3>
+                    <ul class="social list-unstyled gap-3">
+                        <li>
+                            <a
+                                href="https://www.facebook.com/JPMSonsCorp/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-black"
+                            >
+                                <ion-icon name="logo-facebook"></ion-icon>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.tiktok.com/@jpmandsons"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-black"
+                            >
+                                <ion-icon name="logo-tiktok"></ion-icon>
+                                <span class="sr-only">TikTok</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/jpmandsonscorp/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-black"
+                            >
+                                <ion-icon name="logo-instagram"></ion-icon>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- Navigation Links -->
-            <ul id="links">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
-                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-                <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
-            </ul>
+                <!-- Navigation Links -->
+                <div class="col-md-6 col-lg-3 text-center">
+                    <h3>Quick Links</h3>
+                    <ul id="links" class="list-unstyled">
+                        <li>
+                            <a
+                                href="{{ url_for('home') }}"
+                                class="text-black text-decoration-none"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('gallery') }}"
+                                class="text-black text-decoration-none"
+                                >Gallery</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('about_us') }}"
+                                class="text-black text-decoration-none"
+                                >About Us</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('contact_us') }}"
+                                class="text-black text-decoration-none"
+                                >Contact Us</a
+                            >
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- About Us Section -->
-            <div id="about-us-footer">
-                <h3>About Us</h3>
-                <p>
-                    We are a family-owned business where personal involvement
-                    matters. Led by our founder,
-                    <strong>James Moore</strong>, and his eldest son,
-                    <strong>Nick</strong>, we ensure each project receives the
-                    attention it deserves, guaranteeing top-notch service for
-                    our clients.
-                </p>
+                <!-- About Us Section -->
+                <div class="col-md-6 col-lg-3">
+                    <div id="about-us-footer" class="text-left">
+                        <h3 class="text-center">About Us</h3>
+                        <p>
+                            We are a family-owned business where personal
+                            involvement matters. Led by our founder,
+                            <strong>James Moore</strong>, and his eldest son,
+                            <strong>Nick</strong>, we ensure each project
+                            receives the attention it deserves, guaranteeing
+                            top-notch service for our clients.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 {% endmacro %}

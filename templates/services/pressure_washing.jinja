@@ -1,1 +1,11 @@
 {% extends 'base.jinja' %}
+
+{% block content %}
+    <ul>
+        {% for sub_service in service.sub_services %}
+        <li>
+            <strong>{{ sub_service.name }}</strong>: {{ sub_service.description }}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

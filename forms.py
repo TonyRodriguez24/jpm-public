@@ -2,7 +2,7 @@ import email
 from email import contentmanager
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, PasswordField, StringField, SelectField, EmailField, TextAreaField, ValidationError
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Optional
 
 SERVICES = [
     (0, "Please Select A Service"),
@@ -25,14 +25,17 @@ class ContactForm(FlaskForm):
     email = EmailField('Email Address',
                          validators=[DataRequired()],
                          render_kw={"placeholder": "example123@outlook.com"})
+    
     address = StringField('Address', 
-                          validators=[DataRequired()],
+                          validators=[Optional()],
                           render_kw={"placeholder": "239 Cherry Lane, Levittown"})
     
     service_type = SelectField("Which Service Are You Interested In?", 
-                               choices = SERVICES, coerce=int )
-
+                            choices = SERVICES, coerce=int )
+    
+    
     message = TextAreaField("Message",
+                            validators=[Optional()],
                             render_kw={"placeholder": "Tell us what you need! We are more than happy to help."})
     
     def validate_service_type(self, field):
@@ -40,16 +43,8 @@ class ContactForm(FlaskForm):
             raise ValidationError("Please select a valid service")
 
 
-class SignUpForm(FlaskForm):
-    username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
-
-    password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
-
-    email = EmailField("Email", validators=[DataRequired()], render_kw= {"placeholder": "Enter your email address"})
-
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
-
     password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
 
 

@@ -4,27 +4,100 @@
     JPM and Sons | Expert General Contractor Services on Long Island
 {% endblock title %}
 
+{% block custom_css %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}" />
+{% endblock custom_css %}
 
 {% block content %}
+    <div class="container">
+        <form action="/" class="m-3" method="post">
+            {{ form.hidden_tag() }}
+            <li class="list-unstyled">
+                {{ form.name.label }}
+                {{ form.name(class_='form-control') }}
+            </li>
 
+            <li class="list-unstyled">
+                {{ form.phone.label }}
+                {{ form.phone(class_='form-control') }}
+            </li>
 
-    <form action="/" class="m-3" method="post">
-        {{ form.hidden_tag() }}
-        {% for field in form if field.widget.input_type != 'hidden' %}
-            <p>
-                {{ field.label }}
-                {{ field(class_='form-control') }}
-                {% if field.errors %}
-                    <div class="text-danger">
-                        {% for error in field.errors %}
-                            <small>{{ error }}</small>
-                        {% endfor %}
+            <li class="list-unstyled">
+                {{ form.email.label }}
+                {{ form.email(class_='form-control') }}
+            </li>
+
+            <li class="list-unstyled">
+                {{ form.service_type.label }}
+                {{ form.service_type(class_='form-control') }}
+            </li>
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <span>
+                    {% if field.errors %}
+                        <div class="text-danger">
+                            {% for error in field.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </span>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">
+                Schedule your free quote today
+            </button>
+        </form>
+
+        <section id="services" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Our Services</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="custom-card-container">
+                            <div class="custom-card card">
+                                <!-- Front Side -->
+                                <div class="front">
+                                    <img
+                                        src="{{ url_for('static', filename='images/28.jpg') }}"
+                                        class="card-img-top"
+                                        alt="Concrete Service"
+                                    />
+                                    <div class="card-body">
+                                        <h3 class="card-title">Concrete</h3>
+                                        <p class="card-text">
+                                            Reliable and professional concrete
+                                            services.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Back Side -->
+                                <div class="back">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">Concrete</h3>
+                                        <p class="card-text">
+                                            High-quality concrete work for
+                                            patios, sidewalks, and more.
+                                            Durable, reliable, and
+                                            professionally done to meet your
+                                            needs.
+                                        </p>
+                                        <ul class="list-unstyled">
+                                            <li>Driveways</li>
+                                            <li>Patios</li>
+                                            <li>Sidewalks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                {% endif %}
-            </p>
-        {% endfor %}
-        <button type="submit" class="btn btn-success">Schedule your free quote today</button>
-    </form>
+                    <!-- Add more cards below as needed -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
 {% endblock content %}
 
 <link rel="canonical" href="https://www.jpmandsons.com/" />
