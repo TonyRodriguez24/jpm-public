@@ -2,7 +2,7 @@
     <!-- use to select which link is active -->
     <div class="d-flex justify-content-center">
         <nav class="navbar navbar-expand-lg w-100">
-            <div class="container">
+            <div class="container{%if 'admin-username' in session%}-fluid {%endif%}">
                 <a class="navbar-brand" href="{{ url_for('home') }}"
                     >JPM and Sons</a
                 >
@@ -134,7 +134,7 @@
                                     class="nav-link fw-semibold text-success"
                                     href="{{ url_for('admin_dashboard') }}"
                                 >
-                                    Admin Dashboard
+                                    Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -163,6 +163,25 @@
         </nav>
     </div>
 {% endmacro %}
+
+{% macro render_flashes() %}
+    <div class="container" style="margin-top: 2em">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+{% endmacro %}
+
+
 
 {% macro footer() %}
     <footer class="">

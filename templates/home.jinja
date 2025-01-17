@@ -10,55 +10,56 @@
 
 {% block content %}
     <div
-    class="container landing position-relative h-100 p-3 d-flex flex-column"
->
-    <div class="row align-items-center flex-grow-1">
-        <!-- Left Column -->
-        <div class="col-md-6">
-            <h1 class="text-black header mb-4">
-                Get started on building the home of your dreams today
-            </h1>
-            <p class="lead text-black px-1">
-                Long Island's top general contractor, industry leading
-                results for over 35 years.
-            </p>
-            <a href="#services" class="btn btn-primary btn-sm">Learn More</a>
+        class="container landing position-relative h-100 p-3 d-flex flex-column"
+    >
+        <div class="row align-items-center flex-grow-1">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <h1 class="text-black header mb-4">
+                    Get started on building the home of your dreams today
+                </h1>
+                <p class="lead text-black px-1">
+                    Long Island's top general contractor, industry leading
+                    results for over <strong>35 years.</strong>
+                </p>
+                <a href="#services" class="btn btn-primary btn-sm"
+                    >Learn More</a
+                >
+            </div>
+
+            <!-- Right Column with Image -->
+            <div class="col-md-6 text-center">
+                <img
+                    src="/static/images/home_header.png"
+                    class="img-fluid"
+                    alt="Home Header Image"
+                    style="max-width: 100%; height: auto;"
+                />
+            </div>
         </div>
 
-        <!-- Right Column with Image -->
-        <div class="col-md-6 text-center">
-            <img
-                src="/static/images/home_header.png"
-                class="img-fluid"
-                alt="Home Header Image"
-                style="max-width: 100%; height: auto;"
-            />
-        </div>
-    </div>
-
-    <!-- Bottom Links for Services -->
-    <div class="mt-5">
-        <div class="row justify-content-center services-links">
-            <div class="col-12 text-center">
-                <div class="d-flex justify-content-around flex-wrap">
-                    <a href="/asphalt" class="text-black">Asphalt</a>
-                    <a href="/concrete" class="text-black">Concrete</a>
-                    <a href="/home-improvement" class="text-black"
-                        >Home Improvement</a
-                    >
-                    <a href="/masonry" class="text-black">Masonry</a>
-                    <a href="/paver-sealing" class="text-black"
-                        >Paver Sealing</a
-                    >
-                    <a href="/pressure-washing" class="text-black"
-                        >Pressure Washing</a
-                    >
+        <!-- Bottom Links for Services -->
+        <div class="mt-5">
+            <div class="row justify-content-center services-links">
+                <div class="col-12 text-center">
+                    <div class="d-flex justify-content-around flex-wrap">
+                        <a href="/asphalt" class="text-black">Asphalt</a>
+                        <a href="/concrete" class="text-black">Concrete</a>
+                        <a href="/home-improvement" class="text-black"
+                            >Home Improvement</a
+                        >
+                        <a href="/masonry" class="text-black">Masonry</a>
+                        <a href="/paver-sealing" class="text-black"
+                            >Paver Sealing</a
+                        >
+                        <a href="/pressure-washing" class="text-black"
+                            >Pressure Washing</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 
     <div class="container-fluid py-1 mb-5">
         <div
@@ -80,49 +81,40 @@
     <section id="services" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
                 {% for service_key, service in services.items() %}
                     <div class="col">
-                        <div
-                            class="card h-100 {% if service_key == 'pressure_washing' %}position-relative{% endif %}"
+                        <!-- Entire Card is a Clickable Link -->
+                        <a
+                            href="{{ url_for(service_key) }}"
+                            class="text-decoration-none"
                         >
-                            {% if service_key == 'pressure_washing' %}
+                            <div
+                                class="service-card card h-100 position-relative"
+                            >
+                                <!-- Card Image with Header Overlay -->
                                 <div class="card-overlay">
                                     <img
                                         src="{{ url_for('static', filename='images/home_' ~ service_key ~ '.png') }}"
                                         class="card-img-top"
                                         alt="{{ service_key.replace('_', ' ').title() }}"
                                     />
-                                    <div class="overlay-text">
-                                        <h2
-                                            class="text-white fw-bold display-4"
-                                        >
+                                    <div
+                                        class="overlay-text position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
+                                    >
+                                        <h2 class="fw-bold">
                                             {{ service_key.replace('_', ' ').title() }}
                                         </h2>
                                     </div>
                                 </div>
-                            {% else %}
-                                <img
-                                    src="{{ url_for('static', filename='images/home_' ~ service_key ~ '.png') }}"
-                                    class="card-img-top"
-                                    alt="{{ service_key.replace('_', ' ').title() }}"
-                                />
-                            {% endif %}
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    {{ service_key.replace('_', ' ').title() }}
-                                </h4>
-                                <p class="card-text">
-                                    {{ service.less_information }}
-                                </p>
-                                <button
-                                    class="btn btn-sm btn-primary"
-                                    onclick="window.location.href='#';"
-                                >
-                                    Read More
-                                </button>
+                                <!-- Card Body with Description -->
+                                <div class="card-body">
+                                    <p class="p-4 card-text text-black">
+                                        {{ service.less_information }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 {% endfor %}
             </div>
@@ -146,7 +138,11 @@
     <h3 class="mb-4 text-center">
         Ready when you are, let’s bring your ideas to life with ease.
     </h3>
-    <div class="container">
+
+    {% from "macros.jinja" import render_flashes %}
+    {{ render_flashes() }}
+
+    <div class="container" id="quickForm">
         <form
             action="/"
             class="row g-3 align-items-center justify-content-center"
@@ -190,16 +186,79 @@
         </form>
     </div>
 
-    <div class="container-fluid py-5">
-        <div class="row align-items-center text-center bg-info my-5 py-5">
-            <div class="col-md-12">
-                <h1 class="display-4">Testimonials most likely</h1>
-                <p class="lead">
-                    We offer the best services to meet your needs.
-                </p>
-                <a href="#services" class="btn btn-primary btn-sm"
-                    >Learn More</a
-                >
+    <div class="container-fluid py-5" style="background-color: #f9f9f9;">
+        <div class="container">
+            <!-- Heading -->
+            <h3 class="fw-bold text-center mb-2">What Our Clients Say</h3>
+            <p class="text-muted text-center mb-5">
+                Hear from satisfied customers who trusted us with their
+                projects.
+            </p>
+
+            <!-- Testimonials -->
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 text-center">
+                    <img
+                        src="https://via.placeholder.com/60"
+                        alt="Client Photo"
+                        class="img-fluid rounded-circle mb-2"
+                    />
+                    <h6 class="fw-bold mb-1">John D.</h6>
+                    <p class="text-muted small mb-2">
+                        "Hearth made financing simple and stress-free. I got the
+                        funds I needed in no time!"
+                    </p>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 text-center">
+                    <img
+                        src="https://via.placeholder.com/60"
+                        alt="Client Photo"
+                        class="img-fluid rounded-circle mb-2"
+                    />
+                    <h6 class="fw-bold mb-1">Sarah L.</h6>
+                    <p class="text-muted small mb-2">
+                        "The team was professional, timely, and exceeded my
+                        expectations. Highly recommend!"
+                    </p>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4 text-center">
+                    <img
+                        src="/static/images/ol_al.jpg"
+                        alt="Client Photo"
+                        class="img-fluid rounded-circle mb-2"
+                    />
+                    <h6 class="fw-bold mb-1">Nick I</h6>
+                    <p class="text-muted small mb-2">
+                        "Fantastic service! They went above and beyond to
+                        deliver on time and within budget."
+                    </p>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -207,5 +266,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="{{url_for('static', filename='app.js')}}"></script>
 {% endblock content %}
-
-<link rel="canonical" href="https://www.jpmandsons.com/" />

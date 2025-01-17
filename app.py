@@ -21,23 +21,33 @@ connect_db(app)
 def inject_services():
     return dict(services=services, page_information = page_information)
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     quickForm = ContactForm()
+    
     if quickForm.validate_on_submit():
+        # Process the form data
         name = quickForm.name.data
         phone = quickForm.phone.data
         email = quickForm.email.data
         service_type = quickForm.service_type.data
 
-        new_contact = Contact(name = name, phone = phone, email = email, service_type = service_type) # type: ignore
+        # Create a new contact entry in the database
+        new_contact = Contact(name=name, phone=phone, email=email, service_type=service_type)  # type: ignore
         db.session.add(new_contact)
         db.session.commit()
 
-        flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+        # Flash success message
+        flash("Your form has been submitted. We try to get back to you the same day. Expect a phone call or email from us.", "success")
         return redirect('/')
     
-    return render_template('home.jinja', form = quickForm, active_page='home')
+    if quickForm.errors:  # Check if there are validation errors
+        flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
+    
+    # Render the home page with the form and any error messages
+    return render_template('home.jinja', form=quickForm, active_page='home')
+
+
 
 
 

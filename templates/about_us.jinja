@@ -1,13 +1,82 @@
 <!-- Ex. /about_us -->
 {% extends 'base.jinja' %}
 {% block content %}
-    About Us: Discover Our Story and Commitment
-We have been in business since 1988 and have been serving Long Island ever since. We are a family-owned business where personal involvement matters. Led by our founder, James Moore, and his eldest son, Nick, we ensure each project receives the attention it deserves, guaranteeing top-notch service for our clients. We are a general contracting business located in Levittown, New York, and serve many towns on Long Island.
+   <section id="about-us" class="py-5">
+    <div class="container">
+        <!-- About Us Section -->
+        <h2 class="mb-4">About Us: Discover Our Story and Commitment</h2>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <p>
+                    We have been proudly serving <strong>Long Island</strong> since 1988. 
+                    As a <strong>family-owned business</strong>, personal involvement is at the heart of everything we do. 
+                    Led by our founder, <strong>James Moore</strong>, and his eldest son, <strong>Nick</strong>, we ensure every 
+                    project receives the care and attention it deserves. Based in <strong>Levittown, New York</strong>, 
+                    we serve countless towns across Long Island with top-notch general contracting services.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img 
+                    src="https://via.placeholder.com/600x400" 
+                    alt="Family-Owned Business" 
+                    class="img-fluid rounded shadow-sm" />
+            </div>
+        </div>
 
-Our Specializations
-We specialize in Masonry, Paver Sealing, Concrete, and Pressure Washing. We are dedicated to providing the best service possible to our clients. We are fully licensed and insured.
+        <hr class="my-4" />
 
-Our Commitment
-We are proud to be a part of the Long Island community and look forward to working with you. We understand the process can be overwhelming, but we are here to help. We will work with you to make sure your project is completed on time and within budget. We are committed to providing excellent customer service and will work with you every step of the way.
+        <!-- Our Specializations Section -->
+        <h3 class="mb-4">Our Specializations</h3>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 order-md-2">
+                <p>
+                    We specialize in:
+                </p>
+                <ul>
+                    <li><strong>Masonry</strong></li>
+                    <li><strong>Paver Sealing</strong></li>
+                    <li><strong>Concrete</strong></li>
+                    <li><strong>Pressure Washing</strong></li>
+                </ul>
+                <p>
+                    With decades of experience, we are dedicated to delivering the highest quality workmanship to our clients.
+                    Rest assured, we are <strong>fully licensed and insured</strong> to provide you with peace of mind.
+                </p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img 
+                    src="https://via.placeholder.com/600x400" 
+                    alt="Specialized Services" 
+                    class="img-fluid rounded shadow-sm" />
+            </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Our Commitment Section -->
+        <h3 class="mb-4">Our Commitment</h3>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p>
+                    As proud members of the <strong>Long Island community</strong>, we value the trust you place in us. 
+                    We understand that undertaking a project can feel overwhelming, but we are here to help every step of the way. 
+                    Our team is committed to ensuring your project is completed <strong>on time</strong> and <strong>within budget</strong>, 
+                    while delivering excellent customer service.
+                </p>
+                <p>
+                    We look forward to working with you to bring your vision to life!
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img 
+                    src="https://via.placeholder.com/600x400" 
+                    alt="Customer Commitment" 
+                    class="img-fluid rounded shadow-sm" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
 {% endblock content %}
 {% block canonical_url %}/about_us{% endblock canonical_url %}
