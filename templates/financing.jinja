@@ -1,16 +1,27 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <section class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>Financing Made Simple and Stress-Free</h1>
-            <p>
-                Get the funding you need to start your dream project today. No
+    <section class="bg-primary text-white py-2">
+        <div class="container py-1 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class ='header text-start'>Financing made simple and stress free</h1>
+                <p class="lead">
+                    Get the funding you need to start your dream project today. No
                 impact on your credit score to explore your options!
-            </p>
-            <a href="#financing-details" class="btn btn-light mt-3"
-                >Learn More</a
-            >
+                </p>
+                <a href="#services" class="btn bg-white text-black"
+                    >Learn More</a
+                >
+            </div>
+            <div class="col-md-6">
+                <img
+                    src="/static/images/financing.png"
+                    class="img-fluid"
+                    alt="Hero Image"
+                />
+            </div>
         </div>
+    </div>
     </section>
 
     <section id="financing-details" class="py-5">

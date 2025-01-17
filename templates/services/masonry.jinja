@@ -1,13 +1,49 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-    <ul>
-        {% for sub_service in service.sub_services %}
-        <li>
-            <strong>{{ sub_service.name }}</strong>: {{ sub_service.description }}
-        </li>
-        {% endfor %}
-    </ul>
+<div class="container-fluid bg-dark text-white py-5 mb-4">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-4">Masonry Services</h1>
+        <p class="lead">
+            At JPM and Sons, we offer expert masonry services to enhance the beauty and functionality of your property.
+            From custom patios to retaining walls and decorative brickwork, our skilled team provides top-quality craftsmanship
+            tailored to your vision.
+        </p>
+        <a href="#contact" class="btn btn-primary btn-sm mt-3">Get a Free Quote</a>
+    </div>
+</div>
+
+
+     <div class="container">
+    <div class="row">
+        <ul class="ps-0 w-100">
+            {% for sub_service in service.sub_services %}
+                <li class="list-unstyled mb-5">
+                    <div class="row align-items-center g-4 {% if loop.index is even %}flex-row-reverse{% endif %}">
+                        <!-- Image, Name, and Description -->
+                        <div class="col-md-6 d-flex flex-column align-items-start">
+                            <h5 class="fw-bold mb-2">{{ sub_service.name }}</h5>
+                            <p class="text-muted mb-3">{{ sub_service.description }}</p>
+
+                            <img
+                                src="{{ sub_service.image_path }}"
+                                class="img-fluid rounded shadow"
+                                alt="{{ sub_service.name }} image"
+                                style="width:600px; height:400px;"
+                            />
+                        </div>
+
+                        <!-- Long Description -->
+                        <div class="col-md-6">
+                            <p class="text-dark">{{ sub_service.long_description }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 {% endblock content %}
 
 

@@ -1,4 +1,3 @@
-from sqlalchemy import Nullable
 from database import db
 from flask_bcrypt import Bcrypt
 
@@ -15,7 +14,7 @@ class Admin(db.Model):
     @classmethod
     def create_admin(cls, username, password):
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-        return cls(username = username, password = hashed_password, is_admin = True)
+        return cls(username = username, password = hashed_password, is_admin = True) # type: ignore
         
     def set_password(self, new_password):
         if self.is_admin:

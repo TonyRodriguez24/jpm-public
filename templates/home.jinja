@@ -9,93 +9,201 @@
 {% endblock custom_css %}
 
 {% block content %}
-    <div class="container">
-        <form action="/" class="m-3" method="post">
-            {{ form.hidden_tag() }}
-            <li class="list-unstyled">
-                {{ form.name.label }}
-                {{ form.name(class_='form-control') }}
-            </li>
+    <div
+    class="container landing position-relative h-100 p-3 d-flex flex-column"
+>
+    <div class="row align-items-center flex-grow-1">
+        <!-- Left Column -->
+        <div class="col-md-6">
+            <h1 class="text-black header mb-4">
+                Get started on building the home of your dreams today
+            </h1>
+            <p class="lead text-black px-1">
+                Long Island's top general contractor, industry leading
+                results for over 35 years.
+            </p>
+            <a href="#services" class="btn btn-primary btn-sm">Learn More</a>
+        </div>
 
-            <li class="list-unstyled">
-                {{ form.phone.label }}
-                {{ form.phone(class_='form-control') }}
-            </li>
+        <!-- Right Column with Image -->
+        <div class="col-md-6 text-center">
+            <img
+                src="/static/images/home_header.png"
+                class="img-fluid"
+                alt="Home Header Image"
+                style="max-width: 100%; height: auto;"
+            />
+        </div>
+    </div>
 
-            <li class="list-unstyled">
-                {{ form.email.label }}
-                {{ form.email(class_='form-control') }}
-            </li>
+    <!-- Bottom Links for Services -->
+    <div class="mt-5">
+        <div class="row justify-content-center services-links">
+            <div class="col-12 text-center">
+                <div class="d-flex justify-content-around flex-wrap">
+                    <a href="/asphalt" class="text-black">Asphalt</a>
+                    <a href="/concrete" class="text-black">Concrete</a>
+                    <a href="/home-improvement" class="text-black"
+                        >Home Improvement</a
+                    >
+                    <a href="/masonry" class="text-black">Masonry</a>
+                    <a href="/paver-sealing" class="text-black"
+                        >Paver Sealing</a
+                    >
+                    <a href="/pressure-washing" class="text-black"
+                        >Pressure Washing</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <li class="list-unstyled">
-                {{ form.service_type.label }}
-                {{ form.service_type(class_='form-control') }}
-            </li>
-            {% for field in form if field.widget.input_type != 'hidden' %}
-                <span>
-                    {% if field.errors %}
-                        <div class="text-danger">
-                            {% for error in field.errors %}
-                                <small>{{ error }}</small>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </span>
-            {% endfor %}
-            <button type="submit" class="btn btn-success">
-                Schedule your free quote today
-            </button>
-        </form>
 
-        <section id="services" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-4">Our Services</h2>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="container-fluid py-1 mb-5">
+        <div
+            class="row sep align-items-center text-center text-white my-5 py-5"
+        >
+            <div class="col-md-12">
+                <h1 class="display-4">most likely not doing that</h1>
+                <p class="lead">
+                    Long Island's #1 general contractor, industry leading
+                    results for 35+ years.
+                </p>
+                <a href="#services" class="btn btn-primary btn-sm"
+                    >Learn More</a
+                >
+            </div>
+        </div>
+    </div>
+
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for service_key, service in services.items() %}
                     <div class="col">
-                        <div class="custom-card-container">
-                            <div class="custom-card card">
-                                <!-- Front Side -->
-                                <div class="front">
+                        <div
+                            class="card h-100 {% if service_key == 'pressure_washing' %}position-relative{% endif %}"
+                        >
+                            {% if service_key == 'pressure_washing' %}
+                                <div class="card-overlay">
                                     <img
-                                        src="{{ url_for('static', filename='images/28.jpg') }}"
+                                        src="{{ url_for('static', filename='images/home_' ~ service_key ~ '.png') }}"
                                         class="card-img-top"
-                                        alt="Concrete Service"
+                                        alt="{{ service_key.replace('_', ' ').title() }}"
                                     />
-                                    <div class="card-body">
-                                        <h3 class="card-title">Concrete</h3>
-                                        <p class="card-text">
-                                            Reliable and professional concrete
-                                            services.
-                                        </p>
+                                    <div class="overlay-text">
+                                        <h2
+                                            class="text-white fw-bold display-4"
+                                        >
+                                            {{ service_key.replace('_', ' ').title() }}
+                                        </h2>
                                     </div>
                                 </div>
-
-                                <!-- Back Side -->
-                                <div class="back">
-                                    <div class="card-body text-center">
-                                        <h3 class="card-title">Concrete</h3>
-                                        <p class="card-text">
-                                            High-quality concrete work for
-                                            patios, sidewalks, and more.
-                                            Durable, reliable, and
-                                            professionally done to meet your
-                                            needs.
-                                        </p>
-                                        <ul class="list-unstyled">
-                                            <li>Driveways</li>
-                                            <li>Patios</li>
-                                            <li>Sidewalks</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            {% else %}
+                                <img
+                                    src="{{ url_for('static', filename='images/home_' ~ service_key ~ '.png') }}"
+                                    class="card-img-top"
+                                    alt="{{ service_key.replace('_', ' ').title() }}"
+                                />
+                            {% endif %}
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    {{ service_key.replace('_', ' ').title() }}
+                                </h4>
+                                <p class="card-text">
+                                    {{ service.less_information }}
+                                </p>
+                                <button
+                                    class="btn btn-sm btn-primary"
+                                    onclick="window.location.href='#';"
+                                >
+                                    Read More
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more cards below as needed -->
-                </div>
+                {% endfor %}
             </div>
-        </section>
+        </div>
+    </section>
+
+    <div class="container-fluid py-5">
+        <div class="row align-items-center text-center bg-info my-5 py-5">
+            <div class="col-md-12">
+                <h1 class="display-4">Not doing that</h1>
+                <p class="lead">
+                    We offer the best services to meet your needs.
+                </p>
+                <a href="#services" class="btn btn-primary btn-sm"
+                    >Learn More</a
+                >
+            </div>
+        </div>
     </div>
+
+    <h3 class="mb-4 text-center">
+        Ready when you are, let’s bring your ideas to life with ease.
+    </h3>
+    <div class="container">
+        <form
+            action="/"
+            class="row g-3 align-items-center justify-content-center"
+            method="post"
+        >
+            {{ form.hidden_tag() }}
+
+            <div class="col-md-3">
+                <label for="name" class="form-label w-100"
+                    >{{ form.name.label }}</label
+                >
+                {{ form.name(class_='form-control') }}
+            </div>
+
+            <div class="col-md-3">
+                <label for="phone" class="form-label w-100"
+                    >{{ form.phone.label }}</label
+                >
+                {{ form.phone(class_='form-control') }}
+            </div>
+
+            <div class="col-md-3">
+                <label for="email" class="form-label w-100"
+                    >{{ form.email.label }}</label
+                >
+                {{ form.email(class_='form-control') }}
+            </div>
+
+            <div class="col-md-3">
+                <label for="service_type" class="form-label w-100"
+                    >{{ form.service_type.label }}</label
+                >
+                {{ form.service_type(class_='form-select form-control') }}
+            </div>
+
+            <div class="col-md-auto">
+                <button type="submit" class="btn btn-success mt-4">
+                    Schedule your free quote today!
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="row align-items-center text-center bg-info my-5 py-5">
+            <div class="col-md-12">
+                <h1 class="display-4">Testimonials most likely</h1>
+                <p class="lead">
+                    We offer the best services to meet your needs.
+                </p>
+                <a href="#services" class="btn btn-primary btn-sm"
+                    >Learn More</a
+                >
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="{{url_for('static', filename='app.js')}}"></script>
 {% endblock content %}
