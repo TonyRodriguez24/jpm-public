@@ -4,20 +4,44 @@
     font-style: normal;
 }
 
-.nav-link{
+.nav-link {
     color: black;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: rgb(255, 255, 255);
 }
 
 .nav-item .nav-link.active {
-    color: rgb(255, 162, 0);
+    color: rgb(255, 160, 65);
 }
 .dropdown-item:hover {
     background-color: rgb(176, 195, 214); /* Hover background color */
 }
+
+/* Default state */
+.contact-btn {
+    background-color: #007bff; /* Bootstrap Primary Blue */
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state */
+.contact-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+    border-color: #004494; /* Subtle border effect */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Active state */
+.contact-btn.active {
+    background-color: #004494; /* Even darker blue when clicked */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgb(12, 23, 96);
+}
+
+
 
 
 
@@ -47,7 +71,7 @@
     margin: 0 auto;
 }
 
-.footer-social{
+.footer-social {
     font-size: 3em;
 }
 
@@ -56,4 +80,3 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
     border-radius: 10px; /* Optional: Rounded corners for smoother look */
 }
-

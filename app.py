@@ -1,10 +1,37 @@
 from flask import Flask, render_template, redirect, flash, request, session, url_for
+from flask_compress import Compress
+from flask_assets import Environment, Bundle
 from database import connect_db, db
 from forms import ContactForm, LoginForm
 from models import Admin, Contact
 from secret import SECRET_KEY, services, page_information, gallery_and_alt, before_afters
 
 app = Flask(__name__)
+Compress(app)
+assets = Environment(app)
+assets.auto_build = True  # Automatically build bundles on app startup
+assets.debug = False      # Use production mode (minify output)
+
+
+css = Bundle(
+    'about_us.css',
+    'contact_us.css',
+    'gallery.css',
+    'global.css',
+    'home.css',
+    filters='cssmin',
+    output='dist/css/styles.min.css'
+    )
+
+js = Bundle(
+    'app.js',
+    'gallery.js',
+    filters='jsmin',
+    output='dist/scripts.min.js'
+)
+
+assets.register('css_all', css)
+assets.register('js_all', js)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///jpm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -42,7 +69,7 @@ def home():
     
     if quickForm.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
-        return redirect(url_for('home') + '#Form')
+        return redirect(url_for('home') + '#Form-container')
 
     
     # Render the home page with the form and any error messages
@@ -166,7 +193,7 @@ def gallery():
     
     if quickForm.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
-        return redirect(url_for('gallery')  + '#quickForm')
+        return redirect(url_for('gallery')  + '#Form-container')
     
     return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = quickForm)
 

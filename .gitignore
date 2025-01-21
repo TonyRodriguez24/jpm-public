@@ -7,3 +7,4 @@ venv/
 
 # Ignore sensitive configuration files
 secret.py
+.webassets-cache/

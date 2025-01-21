@@ -4,6 +4,9 @@
     JPM and Sons | Expert General Contractor Services on Long Island
 {% endblock title %}
 
+<link rel="preload" href="/static/images-webp/home/home_header.webp" as="image" type="image/webp">
+
+
 {% block custom_css %}
     <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}" />
 {% endblock custom_css %}
@@ -38,7 +41,7 @@
         <!-- Right Column with Image -->
         <div class="col-md-6 text-center">
             <img
-                src="/static/images-webp/home_header.webp"
+                src="/static/images-webp/home/home_header.webp"
                 alt="A beautiful home showcasing contractor expertise"
                 class="img-fluid"
                 width="572"
@@ -54,110 +57,87 @@
 
     <!-- Bottom Links for Services -->
     <div class="my-1">
-        <div class="row justify-content-center services-links">
-            <div class="col-12 text-center">
-                <div class="d-flex justify-content-evenly flex-wrap">
-                    <!-- Service Links -->
-                    <a
-                        href="/asphalt"
-                        class="service-link text-black text-center col-4 col-lg-2 py-4"
-                    >
+    <div class="row justify-content-center services-links">
+        <div class="col-12 text-center">
+            <div class="row row-cols-3 row-cols-md-3 row-cols-lg-6 g-3">
+                <!-- Service Links -->
+                <div class="col">
+                    <a href="/asphalt" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/asphalt.webp"
                                 alt="Asphalt Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
                         <span class="d-block mt-2">Asphalt</span>
                     </a>
-                    <a
-                        href="/concrete"
-                        class="service-link text-center col-4 col-lg-2 py-4"
-                    >
+                </div>
+                <div class="col">
+                    <a href="/concrete" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/concrete.webp"
                                 alt="Concrete Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
-                        <span class="text-black d-block mt-2">Concrete</span>
+                        <span class="d-block mt-2">Concrete</span>
                     </a>
-                    <a
-                        href="/home-improvement"
-                        class="service-link text-center col-4 col-lg-2 py-4"
-                    >
+                </div>
+                <div class="col">
+                    <a href="/home-improvement" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/home_improvement.webp"
                                 alt="Home Improvement Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
-                        <span class="text-black d-block mt-2">Home Improvement</span>
+                        <span class="d-block mt-2">Home Improvement</span>
                     </a>
-                    <a
-                        href="/masonry"
-                        class="service-link text-center col-4 col-lg-2 py-4"
-                    >
+                </div>
+                <div class="col">
+                    <a href="/masonry" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/masonry.webp"
                                 alt="Masonry Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
-                        <span class="text-black d-block mt-2">Masonry</span>
+                        <span class="d-block mt-2">Masonry</span>
                     </a>
-                    <a
-                        href="/paver-sealing"
-                        class="service-link text-center col-4 col-lg-2 py-4"
-                    >
+                </div>
+                <div class="col">
+                    <a href="/paver-sealing" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/paver_sealing.webp"
                                 alt="Paver Sealing Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
-                        <span class="text-black d-block mt-2">Paver Sealing</span>
+                        <span class="d-block mt-2">Paver Sealing</span>
                     </a>
-                    <a
-                        href="/pressure-washing"
-                        class="service-link text-center col-4 col-lg-2 py-4"
-                    >
+                </div>
+                <div class="col">
+                    <a href="/pressure-washing" class="service-link text-black text-center d-block py-4">
                         <div class="icon-container">
                             <img
                                 src="/static/images-webp/icons/pressure_washing.webp"
                                 alt="Pressure Washing Icon"
-                                class="service-icon"
-                                width="60"
-                                height="60"
-                                style="max-width: 100%; height: auto;"
+                                class="service-icon img-fluid"
                             />
                         </div>
-                        <span class="text-black d-block mt-2">Pressure Washing</span>
+                        <span class="d-block mt-2">Pressure Washing</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 </section>
 
 
@@ -183,7 +163,7 @@
                             aria-label="Learn more about {{ service_key.replace('_', ' ').title() }}"
                         >
                             <img
-                                src="{{ url_for('static', filename='images-webp/home_' ~ service_key ~ '.webp') }}"
+                                src="{{ url_for('static', filename='images-webp/home/service-cards-resized/home_' ~ service_key ~ '.webp') }}"
                                 class="card-img-top img-fluid"
                                 alt="{{ service_key.replace('_', ' ').title() }} Service"                      
                             />
@@ -252,7 +232,7 @@
     <div class="row g-4">
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/backyard-pavers-and-siding.webp"
+                src="/static/images-webp/home/front-page-gallery/backyard-pavers-and-siding.webp"
                 alt="Beautiful backyard with pavers and siding"
                 class="img-fluid rounded shadow-sm"
             />
@@ -260,7 +240,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/beautiful-modern-bathroom.webp"
+                src="/static/images-webp/home/front-page-gallery/beautiful-modern-bathroom.webp"
                 alt="Modern bathroom renovation with stylish fixtures"
                 class="img-fluid rounded shadow-sm"
             />
@@ -268,7 +248,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/beautiful-paver-backyard.webp"
+                src="/static/images-webp/home/front-page-gallery/beautiful-paver-backyard.webp"
                 alt="Elegant backyard with sealed pavers"
                 class="img-fluid rounded shadow-sm"
             />
@@ -276,7 +256,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/clean-pavers-by-pool.webp"
+                src="/static/images-webp/home/front-page-gallery/clean-pavers-by-pool.webp"
                 alt="Clean and polished pavers around a swimming pool"
                 class="img-fluid rounded shadow-sm"
             />
@@ -284,7 +264,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/countertop-modern-design.webp"
+                src="/static/images-webp/home/front-page-gallery/countertop-modern-design.webp"
                 alt="Modern countertop design in a kitchen"
                 class="img-fluid rounded shadow-sm"
             />
@@ -292,7 +272,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/kitchen-floors-and-granite.webp"
+                src="/static/images-webp/home/front-page-gallery/kitchen-floors-and-granite.webp"
                 alt="Elegant kitchen floors with granite finishes"
                 class="img-fluid rounded shadow-sm"
             />
@@ -300,7 +280,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/beautiful-home-and-yard.webp"
+                src="/static/images-webp/home/front-page-gallery/beautiful-home-and-yard.webp"
                 alt="Beautiful home showcasing modern design"
                 class="img-fluid rounded shadow-sm"
             />
@@ -308,7 +288,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/backyard-asthetic-pavers.webp"
+                src="/static/images-webp/home/front-page-gallery/backyard-asthetic-pavers.webp"
                 alt="Backyard with aesthetic pavers installation"
                 class="img-fluid rounded shadow-sm"
             />
@@ -316,7 +296,7 @@
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
-                src="/static/images-webp/front-page-gallery/pavers-walkway-steps.webp"
+                src="/static/images-webp/home/front-page-gallery/pavers-walkway-steps.webp"
                 alt="Walkway and steps with pavers"
                 class="img-fluid rounded shadow-sm"
             />
@@ -347,7 +327,7 @@
         <article class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="card shadow-sm border-0 w-100 h-100 text-center p-4">
                 <img
-                    src="/static/images-webp/google-review.webp"
+                    src="/static/images-webp/icons/google-review.webp"
                     alt="Photo of Marty G."
                     class="img-fluid rounded-circle mx-auto mb-3"
                     style="width: 60px; height: 60px; object-fit: cover;"
@@ -399,7 +379,7 @@
         <article class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="card shadow-sm border-0 w-100 h-100 text-center p-4">
                 <img
-                    src="/static/images-webp/icons/female-avatar.webp"
+                    src="/static/images-webp/icons/avatar-female.webp"
                     alt="Placeholder avatar for Deanna."
                     class="img-fluid rounded-circle mx-auto mb-3"
                     style="width: 60px; height: 60px; object-fit: cover;"
@@ -466,7 +446,7 @@
             action="/"
             method="post"
             class="row g-3 align-items-center justify-content-center"
-            aria-labelledby="quickForm-heading"
+            aria-labelledby="Form-container-heading"
         >
             {{ form.hidden_tag() }}
 

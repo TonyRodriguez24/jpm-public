@@ -61,10 +61,7 @@
             rel="canonical"
             href="https://www.jpmandsons.com/{% if active_page != 'home' %}{{ active_page }}{% endif %}"
         />
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='global.css') }}"
-        />
+       <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.min.css') }}">
 
         <!-- custom css -->
         {% block custom_css %}

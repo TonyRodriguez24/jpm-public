@@ -1,6 +1,6 @@
 {% macro navbar(active_page) %}
-    <div class="d-flex bg-success">
-        <nav class="navbar navbar-expand-lg w-100">
+    <div class="d-flex">
+        <nav class="navbar navbar-expand-lg bg-success border-bottom border-dark w-100">
             <div
                 class="container{% if 'admin-username' in session %}-fluid{% endif %}"
             >
@@ -116,13 +116,7 @@
                         </li>
 
                         <!-- Contact Link -->
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {% if active_page == 'contact_us' %}active{% endif %}"
-                                href="{{ url_for('contact_us') }}"
-                                >Contact</a
-                            >
-                        </li>
+                        
 
                         <!-- About Link -->
                         <li class="nav-item">
@@ -132,6 +126,21 @@
                                 >About</a
                             >
                         </li>
+
+                        <li class="nav-item">
+    <a
+        class="btn bg-primary text-white contact-btn mx-3 {% if active_page == 'contact_us' %}active{% endif %}"
+        href="{{ url_for('contact_us') }}"
+    >
+        Contact
+    </a>
+</li>
+
+
+
+
+
+
 
                         <!-- Admin Links (if logged in) -->
                         {% if 'admin-username' in session %}
