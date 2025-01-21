@@ -1,0 +1,37 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+   <div id="not-found" class="container text-center py-5">
+    <!-- 404 Error Card -->
+    <div class="card border-0 shadow mx-auto p-4" style="max-width: 700px; border-radius: 15px; background-color: #f8f9fa;">
+        <div class="text-center">
+            <!-- 404 Image -->
+            <img src="/static/images-webp/404.png" alt="404 Error" 
+                 class="img-fluid mb-4" 
+                 style="width: 450px; max-width: 100%; height: auto;">
+
+            <!-- Title -->
+            <h2 class="fw-bold text-danger mb-3">Oops! Looks Like This Page Needs a New Foundation</h2>
+
+            <!-- Subtitle -->
+            <p class="fs-5 text-muted">
+                The page you’re looking for might have been moved, renamed, or no longer exists.
+            </p>
+
+            <!-- Call-to-Action Buttons -->
+            <div class="d-flex justify-content-center mt-4 gap-3">
+                <a href="/" class="btn btn-outline-primary btn-md">
+                    <i class="fas fa-home"></i> Return to Home
+                </a>
+                <a href="/gallery" class="btn btn-success btn-md">
+                    <i class="fas fa-images"></i> View Our Work
+                </a>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -21,7 +21,7 @@
     <div class="row align-items-center">
         <!-- Left Side: Paragraph -->
         <div class="col-lg-6 text-start">
-            <h1 class="fw-bold mb-3">Our Gallery</h1>
+            <h1 class="fw-bold my-3">Our Gallery</h1>
             <p class="text-muted">
                 Explore our gallery showcasing a wide range of completed projects, from stunning paver installations and meticulous
                 pressure washing transformations to professional sealing and elegant home renovations. Each project reflects our commitment
@@ -277,16 +277,16 @@
 
     <!-- Form Container -->
     <div
-        class="container p-4 p-lg-5" id="Form-container"
+        class="container p-4 p-lg-5 col-11" id="Form-container"
     >
         <!-- Section Header -->
         <header class="text-start mb-4">
             <h3 class="fw-bold">
                 Ready when you are, let’s bring your ideas to life with ease.
             </h3>
-            <p class="text-muted">
+            <small class="text-muted">
                 Rest assured, we respect your privacy—no spam or junk emails, just timely updates and professional communication.
-            </p>
+            </small>
         </header>
 
         <!-- Form Section -->
@@ -299,26 +299,26 @@
             {{ form.hidden_tag() }}
 
             <!-- Name Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="name" class="form-label">{{ form.name.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="name" class="form-label mb-0">{{ form.name.label }}</label>
                 {{ form.name(class_="form-control", id="name") }}
             </div>
 
             <!-- Phone Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="phone" class="form-label">{{ form.phone.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="phone" class="form-label mb-0">{{ form.phone.label }}</label>
                 {{ form.phone(class_="form-control", id="phone") }}
             </div>
 
             <!-- Email Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="email" class="form-label">{{ form.email.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="email" class="form-label mb-0">{{ form.email.label }}</label>
                 {{ form.email(class_="form-control", id="email") }}
             </div>
 
             <!-- Service Type Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="service_type" class="form-label">{{ form.service_type.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="service_type" class="form-label mb-0">{{ form.service_type.label }}</label>
                 {{ form.service_type(class_="form-select form-control", id="service_type") }}
             </div>
 

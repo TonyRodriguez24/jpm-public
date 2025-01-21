@@ -7,10 +7,6 @@
 <link rel="preload" href="/static/images-webp/home/home_header.webp" as="image" type="image/webp">
 
 
-{% block custom_css %}
-    <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}" />
-{% endblock custom_css %}
-
 {% block content %}
 
 
@@ -154,8 +150,8 @@
         <!-- Services Grid -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for service_key, service in services.items() %}
-                <article class="col d-flex">
-                    <div class="service-card card h-100 w-100 position-relative">
+                <article class="col-11 d-flex mx-auto">
+                    <div class="service-card card h-100 w-lg-100 position-relative">
                         <!-- Image Link -->
                         <a
                             href="{{ url_for(service_key) }}"
@@ -221,15 +217,15 @@
 
     <section id="gallery" class="container py-5">
     <!-- Gallery Heading -->
-    <header class="text-center mb-5">
+    <header class="text-center mb-2 mb-lg-5">
         <h2 class="fw-bold">Our Gallery</h2>
-        <p class="text-muted">
+        <p class="text-muted text-start text-lg-center">
             Explore our recent projects, from paver patios to stunning masonry and more. See how we’ve transformed outdoor and indoor spaces for our clients.
         </p>
     </header>
 
     <!-- Gallery Grid -->
-    <div class="row g-4">
+    <div class="row g-0 g-lg-4">
         <figure class="col-md-4 gallery-item">
             <img
                 src="/static/images-webp/home/front-page-gallery/backyard-pavers-and-siding.webp"
@@ -429,16 +425,16 @@
 
     <!-- Form Container -->
     <div
-        class="container p-4 p-lg-5" id = "Form-container"
+        class="container p-4 p-lg-5 col-11" id = "Form-container"
     >
         <!-- Section Header -->
         <header class="text-start mb-4">
             <h3 class="fw-bold">
                 Ready when you are, let’s bring your ideas to life with ease.
             </h3>
-            <p class="text-muted">
+            <small class="text-muted">
                 Rest assured, we respect your privacy—no spam or junk emails, just timely updates and professional communication.
-            </p>
+            </small>
         </header>
 
         <!-- Form Section -->
@@ -451,26 +447,26 @@
             {{ form.hidden_tag() }}
 
             <!-- Name Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="name" class="form-label">{{ form.name.label }}</label>
-                {{ form.name(class_="form-control", id="name") }}
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="name" class="form-label mb-0">{{ form.name.label }}</label>
+                {{ form.name(class_="form-control ", id="name") }}
             </div>
 
             <!-- Phone Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="phone" class="form-label">{{ form.phone.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="phone" class="form-label mb-0">{{ form.phone.label }}</label>
                 {{ form.phone(class_="form-control", id="phone") }}
             </div>
 
             <!-- Email Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="email" class="form-label">{{ form.email.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="email" class="form-label mb-0">{{ form.email.label }}</label>
                 {{ form.email(class_="form-control", id="email") }}
             </div>
 
             <!-- Service Type Field -->
-            <div class="col-md-3 col-sm-6">
-                <label for="service_type" class="form-label">{{ form.service_type.label }}</label>
+            <div class="col-md-3 col-sm-6 mb-2">
+                <label for="service_type" class="form-label mb-0">{{ form.service_type.label }}</label>
                 {{ form.service_type(class_="form-select form-control", id="service_type") }}
             </div>
 

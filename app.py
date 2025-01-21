@@ -322,4 +322,8 @@ Sitemap: https://jpmandsons.com/sitemap.xml
 """
     return Response(response, mimetype='text/plain')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # Render the 404 template with a 404 status code
+    return render_template('404.jinja'), 404
 
