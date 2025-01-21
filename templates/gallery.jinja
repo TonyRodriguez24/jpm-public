@@ -1,1 +1,263 @@
 {% extends 'base.jinja' %}
+
+{% block custom_css %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='gallery.css') }}"
+    />
+{% endblock custom_css %}
+
+{% block content %}
+
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    
+<section id="gallery" class="container-fluid p-lg-5">
+    <div class="row align-items-center">
+        <!-- Left Side: Paragraph -->
+        <div class="col-lg-6 text-start">
+            <h1 class="fw-bold mb-3">Our Gallery</h1>
+            <p class="text-muted">
+                Explore our gallery showcasing a wide range of completed projects, from stunning paver installations and meticulous
+                pressure washing transformations to professional sealing and elegant home renovations. Each project reflects our commitment
+                to quality, precision, and creating spaces that are both functional and visually striking. Whether it's enhancing outdoor
+                areas or modernizing interiors, our work is designed to exceed expectations and bring your vision to life.
+            </p>
+        </div>
+
+        <!-- Right Side: Stats -->
+        <div class="col-lg-6">
+            <div class="row text-center g-3">
+                <!-- Stat 1: Towns Served -->
+                <div class="col-4">
+                    <div class="p-4 shadow rounded">
+                        <ion-icon name="location-outline" size="large" class="text-success"></ion-icon>
+                        <h3 class="fw-bold my-2">100+</h3>
+                        <p class="text-muted">Towns Served on Long Island</p>
+                    </div>
+                </div>
+
+                <!-- Stat 2: Same-Day Inquiries -->
+                <div class="col-4">
+                    <div class="p-4 shadow rounded">
+                        <ion-icon name="chatbubbles-outline" size="large" class="text-success"></ion-icon>
+                        <h3 class="fw-bold my-2">Same-Day</h3>
+                        <p class="text-muted">Response to Inquiries</p>
+                    </div>
+                </div>
+
+                <!-- Stat 3: Years of Experience -->
+                <div class="col-4">
+                    <div class="p-4 shadow rounded">
+                        <ion-icon name="calendar-outline" size="large" class="text-success"></ion-icon>
+                        <h3 class="fw-bold my-2">35+</h3>
+                        <p class="text-muted">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="d-flex my-4 my-lg-5 w-100 w-lg-75 m-auto" />
+
+    <!-- Home Improvement Work Section -->
+    <section>
+        <h3 class="text-start mb-2">Home Improvement Work</h3>
+        <p class="text-muted text-start mb-4">
+            Featuring home improvement projects, including kitchens, bathrooms, living spaces, and other modern upgrades.
+        </p>
+        <div class="row g-2">
+            <!-- Gallery Items -->
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <figure class="mb-0">
+                    <img
+                        src="/static/images-webp/gallery-pictures/backyard-patio.webp"
+                        class="img-fluid shadow-1-strong"
+                        alt="A beautifully designed backyard patio with outdoor furniture."
+                    />
+                </figure>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <figure class="mb-0">
+                    <img
+                        src="/static/images-webp/gallery-pictures/bathroom-modern.webp"
+                        class="img-fluid shadow-1-strong"
+                        alt="A modern bathroom with sleek fixtures and a large mirror."
+                    />
+                </figure>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <figure class="mb-0">
+                    <img
+                        src="/static/images-webp/gallery-pictures/bathtub-white.webp"
+                        class="img-fluid shadow-1-strong"
+                        alt="An elegant white freestanding bathtub with a stylish faucet."
+                    />
+                </figure>
+            </div>
+            <!-- Add additional gallery items here -->
+        </div>
+    </section>
+
+    <!-- Before and After Section -->
+    <section class="mb-0">
+        <h3 class="text-start mt-5 mb-2">Before and After</h3>
+        <p class="text-muted text-start mb-4">
+            Showcasing our pavers and pressure washing work: from stained and dull surfaces to vibrant, clean, and sealed finishes.
+        </p>
+        <div class="row g-2">
+            {% for pair in before_afters %}
+            <div class="col-lg-6 col-md-12">
+                <div class="row align-items-center">
+                    <!-- Before Image -->
+                    <div class="col-6">
+                        <figure class="mb-0 text-center">
+                            <img
+                                src="/static/images-webp/gallery-pictures/before-afters/{{ pair.before.file }}"
+                                class="img-fluid shadow-sm"
+                                alt="{{ pair.before.alt }}"
+                            />
+                            <figcaption class="mt-2 text-muted">Before</figcaption>
+                        </figure>
+                    </div>
+                    <!-- After Image -->
+                    <div class="col-6">
+                        <figure class="mb-0 text-center">
+                            <img
+                                src="/static/images-webp/gallery-pictures/before-afters/{{ pair.after.file }}"
+                                class="img-fluid shadow-sm"
+                                alt="{{ pair.after.alt }}"
+                            />
+                            <figcaption class="mt-2 text-muted">After</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="my-5" />
+
+    <!-- General Gallery Section -->
+    <section>
+        <h3 class="mb-2">Some Extra Pavers and Sealing Work</h3>
+        <p class="text-muted mb-4">
+            Highlighting paver installations, sealing, and maintenance work that ensures durability and beauty for years to come.
+        </p>
+        <div class="row g-2">
+            {% for image in gallery_and_alt %}
+            {% if not image.stackable %}
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <figure class="text-center mb-0">
+                    <img
+                        src="/static/images-webp/gallery-pictures/{{ image.file }}"
+                        class="img-fluid shadow-1-strong"
+                        alt="{{ image.alt }}"
+                    />
+                </figure>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</section>
+
+
+       <section class="py-5 my-5">
+    <!-- Flash Messages -->
+    <div id="alert-danger" class="container mt-2">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        {% if category == 'danger' %}
+                            <li
+                                class="alert alert-{{ category }} alert-dismissible fade show"
+                                role="alert"
+                            >
+                                {{ message }}
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="alert"
+                                    aria-label="Close"
+                                ></button>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Form Container -->
+    <div
+        class="container p-4 p-lg-5" id="Form-container"
+    >
+        <!-- Section Header -->
+        <header class="text-start mb-4">
+            <h3 class="fw-bold">
+                Ready when you are, let’s bring your ideas to life with ease.
+            </h3>
+            <p class="text-muted">
+                Rest assured, we respect your privacy—no spam or junk emails, just timely updates and professional communication.
+            </p>
+        </header>
+
+        <!-- Form Section -->
+        <form
+            action="/gallery"
+            method="post"
+            class="row g-3 align-items-center justify-content-center"
+            aria-labelledby="quickForm-heading"
+        >
+            {{ form.hidden_tag() }}
+
+            <!-- Name Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="name" class="form-label">{{ form.name.label }}</label>
+                {{ form.name(class_="form-control", id="name") }}
+            </div>
+
+            <!-- Phone Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="phone" class="form-label">{{ form.phone.label }}</label>
+                {{ form.phone(class_="form-control", id="phone") }}
+            </div>
+
+            <!-- Email Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="email" class="form-label">{{ form.email.label }}</label>
+                {{ form.email(class_="form-control", id="email") }}
+            </div>
+
+            <!-- Service Type Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="service_type" class="form-label">{{ form.service_type.label }}</label>
+                {{ form.service_type(class_="form-select form-control", id="service_type") }}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12 text-center mt-4">
+                <button
+                    type="submit"
+                    class="btn btn-success btn-md px-4"
+                    aria-label="Schedule your free quote today"
+                >
+                    Schedule your free quote today
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+    <script src="/static/gallery.js"></script>
+{% endblock content %}

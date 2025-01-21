@@ -68,6 +68,7 @@ class Contact(db.Model):
     address = db.Column(db.String(100))
     #foreign key
     service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
+    referral = db.Column(db.String(50))
     message = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=db.func.now())
 

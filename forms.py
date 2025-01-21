@@ -14,6 +14,17 @@ SERVICES = [
     (6, 'Pressure Washing'),
 ]
 
+REFERRAL_OPTIONS = [
+    ("google_search", "Google Ads"),
+    ("facebook_ads", "Facebook Ads"),
+    ("social_media", "Social Media (Facebook, Instagram, TikTok, etc.)"),
+    ("search_engine", "Search Engine (Google)"),
+    ("friend_family", "Friend or Family Referral"),
+    ("return_customer", "I’m a Returning Customer"),
+    ("other", "Other"),
+]
+
+
 
 class ContactForm(FlaskForm):
     name = StringField('Name', 
@@ -31,16 +42,16 @@ class ContactForm(FlaskForm):
                           render_kw={"placeholder": "239 Cherry Lane, Levittown"})
     
     service_type = SelectField("Which Service Are You Interested In?", 
-                            choices = SERVICES, coerce=int )
+                            choices = SERVICES, coerce=int, validators=[DataRequired()] )
+    
+    referral = SelectField("How did you hear about us", 
+                            choices = REFERRAL_OPTIONS, validators=[Optional()] )
     
     
     message = TextAreaField("Message",
                             validators=[Optional()],
                             render_kw={"placeholder": "Tell us what you need! We are more than happy to help."})
     
-    def validate_service_type(self, field):
-        if field.data == 0:
-            raise ValidationError("Please select a valid service")
 
 
 class LoginForm(FlaskForm):

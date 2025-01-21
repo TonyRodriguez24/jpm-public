@@ -1,9 +1,8 @@
-from os import cpu_count
-from flask import Flask, render_template, redirect, flash, session
+from flask import Flask, render_template, redirect, flash, request, session, url_for
 from database import connect_db, db
 from forms import ContactForm, LoginForm
 from models import Admin, Contact
-from secret import SECRET_KEY, services, page_information
+from secret import SECRET_KEY, services, page_information, gallery_and_alt, before_afters
 
 app = Flask(__name__)
 
@@ -39,10 +38,12 @@ def home():
 
         # Flash success message
         flash("Your form has been submitted. We try to get back to you the same day. Expect a phone call or email from us.", "success")
-        return redirect('/')
+        return redirect('/thank-you')
     
     if quickForm.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
+        return redirect(url_for('home') + '#Form')
+
     
     # Render the home page with the form and any error messages
     return render_template('home.jinja', form=quickForm, active_page='home')
@@ -122,19 +123,52 @@ def contact_us():
         service_type = fullForm.service_type.data
         address = fullForm.address.data
         message = fullForm.message.data
+        referral = fullForm.referral.data
 
-        new_contact = Contact(name = name, phone = phone, email = email, service_type = service_type, address = address, message = message) # type: ignore
+        new_contact = Contact(name = name, phone = phone, email = email, service_type = service_type, address = address, referral =referral, message = message) # type: ignore
         db.session.add(new_contact)
         db.session.commit()
 
         flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
-        return redirect('/')
+        return redirect('/thank-you')
+    
+    if fullForm.errors:  # Check if there are validation errors
+        flash("There was an error with your submission. Please fill out required fields", "danger")
+        return redirect('/contact-us')
 
     return render_template('contact_us.jinja', active_page = 'contact_us', form = fullForm)
 
-@app.route('/gallery')
+
+
+@app.route('/thank-you')
+def thank_you():
+    return render_template('thank_you.jinja',active_page = 'thank_you')
+
+@app.route('/gallery', methods = ['GET', 'POST'])
 def gallery():
-    return render_template('gallery.jinja', active_page = 'gallery')
+    quickForm = ContactForm()
+    
+    if quickForm.validate_on_submit():
+        # Process the form data
+        name = quickForm.name.data
+        phone = quickForm.phone.data
+        email = quickForm.email.data
+        service_type = quickForm.service_type.data
+
+        # Create a new contact entry in the database
+        new_contact = Contact(name=name, phone=phone, email=email, service_type=service_type)  # type: ignore
+        db.session.add(new_contact)
+        db.session.commit()
+
+        # Flash success message
+        flash("Your form has been submitted. We try to get back to you the same day. Expect a phone call or email from us.", "success")
+        return redirect('/thank-you')
+    
+    if quickForm.errors:  # Check if there are validation errors
+        flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
+        return redirect(url_for('gallery')  + '#quickForm')
+    
+    return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = quickForm)
 
 @app.route('/admin', methods = ['GET', 'POST'])
 def admin():
@@ -144,6 +178,8 @@ def admin():
         username = form.username.data
         password = form.password.data
 
+    
+
         admin = Admin.authenticate_admin(username = username, password = password)
 
         if admin:
@@ -151,7 +187,7 @@ def admin():
             session['admin-username'] = admin.username
             return redirect('/admin-dashboard')
         else:
-            flash('You do not have access', 'danger')
+            flash('Incorrect password/username', 'danger')
 
     return render_template('admin.jinja', form = form, active_page = 'admin')
 

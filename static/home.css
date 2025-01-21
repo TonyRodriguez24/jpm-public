@@ -1,0 +1,86 @@
+.overlay-text:hover {
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay on hover */
+}
+
+form > li > label {
+    font-size: 16px;
+}
+
+.landing {
+    height: 80vh;
+}
+
+.service-card {
+    background-color: #d5d5d5; /* Soft Gray with Blue Tint */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+.service-card .card-img-top {
+    height: 300px; /* Set a consistent height for all images */
+    width: 100%; /* Keep images responsive */
+    object-fit: cover; /* Crop images to fill the height and width */
+    display: block; /* Prevent inline image rendering issues */
+}
+
+
+
+
+/* General container styling */
+.service-link {
+    border-radius: 10px; /* Rounded corners for modern design */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-decoration: none;
+}
+
+/* Hover effects for the service block */
+.service-link:hover {
+    box-shadow: 4px 4px 12px rgba(47, 0, 255, 0.6); /* Slightly stronger shadow */
+    background-color: #ffffff; /* Slightly brighter background */
+}
+
+/* Icon container for consistent icon sizing */
+
+/* Icon styling */
+.service-icon {
+    max-width: 100%;
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Service link text styling */
+.service-link a {
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    text-decoration: none;
+}
+
+/* Hover effect for text */
+
+#hero-heading {
+    font-weight: 600;
+}
+
+.service-header-link {
+    color: #107745;
+}
+
+#services .card .card-body {
+    padding: 5px 0px;
+}
+
+/* Initial State for Images */
+#gallery img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Fade-In Animation */
+#gallery img.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input, select, textarea {
+    border: 2px solid rgba(0, 0, 0, 0.3) !important;
+}

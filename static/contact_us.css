@@ -1,0 +1,39 @@
+ion-icon {
+    font-size: 30px;
+     margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    vertical-align: middle; /* Ensure icons align properly */
+}
+
+#connect ion-icon{
+font-size: 1em;;
+}
+
+
+input, select, textarea {
+    border: 2px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+
+
+
+a:hover ion-icon {
+    transform: scale(1.1); /* Slightly enlarge the icon */
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+a:hover {
+    text-decoration: none; /* Ensure no underline appears on hover */
+}
+
+ion-icon[name="business"] {
+    color: #000000; /* Set a specific color */
+    
+}
+
+
+
+ion-icon[name="call"] {
+    color: #00c45c; /* Set a specific color */
+}
+

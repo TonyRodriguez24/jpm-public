@@ -1,72 +1,76 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<div class="table-responsive d-none d-md-block">
-    <table class="table table-hover table-bordered table-striped align-middle">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Service Type</th>
-                <th>Message</th>
-                <th>Created At</th>
-                <th>Phone</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.name }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.address }}</td>
-                <td>
-                    {% for key, val in services.items() %}
-                        {% if val.id == contact.service_type %}
-                            {{ key.capitalize() }}
-                        {% endif %}
-                    {% endfor %}
-                </td>
-                <td>{{ contact.message }}</td>
-                <td>{{ contact.created_at.strftime('%m/%d/%y') }}</td>
-                <td>{{ contact.phone }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-
-<div class="d-block d-md-none">
-    {% for contact in contacts %}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">{{ contact.name }}</h5>
-            <p class="card-text"><strong>Email:</strong> {{ contact.email }}</p>
-            <p class="card-text"><strong>Address:</strong> {{ contact.address }}</p>
-            <p class="card-text">
-                <strong>Service Type:</strong>
-                {% for key, val in services.items() %}
-                    {% if val.id == contact.service_type %}
-                        {{ key.capitalize() }}
-                    {% endif %}
+    <div class="table-responsive d-none d-md-block">
+        <table
+            class="table table-hover table-bordered table-striped align-middle"
+        >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Service Type</th>
+                    <th>Message</th>
+                    <th>Created At</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.address }}</td>
+                        <td>
+                            {% for key, val in services.items() %}
+                                {% if val.id == contact.service_type %}
+                                    {{ key.capitalize() }}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>{{ contact.message }}</td>
+                        <td>{{ contact.created_at.strftime('%m/%d/%y') }}</td>
+                        <td>{{ contact.phone }}</td>
+                    </tr>
                 {% endfor %}
-            </p>
-            <p class="card-text"><strong>Message:</strong> {{ contact.message }}</p>
-            <p class="card-text"><strong>Created At:</strong> {{ contact.created_at.strftime('%m/%d/%y') }}</p>
-            <p class="card-text"><strong>Phone:</strong> {{ contact.phone }}</p>
-        </div>
+            </tbody>
+        </table>
     </div>
-    {% endfor %}
-</div>
 
+    <div class="d-block d-md-none">
+        {% for contact in contacts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ contact.name }}</h5>
+                    <p class="card-text">
+                        <strong>Email:</strong> {{ contact.email }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Address:</strong> {{ contact.address }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Service Type:</strong>
+                        {% for key, val in services.items() %}
+                            {% if val.id == contact.service_type %}
+                                {{ key.capitalize() }}
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p class="card-text">
+                        <strong>Message:</strong> {{ contact.message }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Created At:</strong>
+                        {{ contact.created_at.strftime('%m/%d/%y') }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Phone:</strong> {{ contact.phone }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
-
-
-
-
-
-
-<h2>good morning {{admin.username}}</h2>
-
+    <h2>good morning {{ admin.username }}</h2>
 {% endblock content %}

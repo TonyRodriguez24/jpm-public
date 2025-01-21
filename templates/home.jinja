@@ -9,260 +9,506 @@
 {% endblock custom_css %}
 
 {% block content %}
-    <div
-        class="container landing position-relative h-100 p-3 d-flex flex-column"
-    >
-        <div class="row align-items-center flex-grow-1">
-            <!-- Left Column -->
-            <div class="col-md-6">
-                <h1 class="text-black header mb-4">
-                    Get started on building the home of your dreams today
-                </h1>
-                <p class="lead text-black px-1">
-                    Long Island's top general contractor, industry leading
-                    results for over <strong>35 years.</strong>
-                </p>
-                <a href="#services" class="btn btn-primary btn-sm"
-                    >Learn More</a
-                >
-            </div>
 
-            <!-- Right Column with Image -->
-            <div class="col-md-6 text-center">
-                <img
-                    src="/static/images/home_header.png"
-                    class="img-fluid"
-                    alt="Home Header Image"
-                    style="max-width: 100%; height: auto;"
-                />
-            </div>
+
+
+<!-- Floating Specks -->
+
+<section
+    id="hero-section"
+    class="container landing position-relative h-100 p-3 d-flex flex-column"
+    aria-labelledby="hero-heading"
+>
+    <div class="row align-items-center flex-grow-1">
+        <!-- Left Column -->
+        <div class="col-md-6">
+            <h1 class="d-block d-lg-none text-black my-3">
+                Get started on building the home of your dreams today
+            </h1>
+            <h1 id="hero-heading" class="text-black header mb-4 d-none d-lg-block">
+                Get started on building the home of your dreams today
+            </h1>
+            <p class="lead text-black px-1">
+                Long Island's top general contractor, industry-leading
+                results for over <strong>35 years.</strong>
+            </p>
+            <a href="#services" class="btn btn-md btn-success">Discover More</a>
         </div>
 
-        <!-- Bottom Links for Services -->
-        <div class="mt-5">
-            <div class="row justify-content-center services-links">
-                <div class="col-12 text-center">
-                    <div class="d-flex justify-content-around flex-wrap">
-                        <a href="/asphalt" class="text-black">Asphalt</a>
-                        <a href="/concrete" class="text-black">Concrete</a>
-                        <a href="/home-improvement" class="text-black"
-                            >Home Improvement</a
-                        >
-                        <a href="/masonry" class="text-black">Masonry</a>
-                        <a href="/paver-sealing" class="text-black"
-                            >Paver Sealing</a
-                        >
-                        <a href="/pressure-washing" class="text-black"
-                            >Pressure Washing</a
-                        >
-                    </div>
+        <!-- Right Column with Image -->
+        <div class="col-md-6 text-center">
+            <img
+                src="/static/images-webp/home_header.webp"
+                alt="A beautiful home showcasing contractor expertise"
+                class="img-fluid"
+                width="572"
+                height="572"
+                style="
+                    max-width: 100%;
+                    height: auto;
+                    aspect-ratio: 1 / 1; /* Ensures square space is reserved */
+                "
+            />
+        </div>
+    </div>
+
+    <!-- Bottom Links for Services -->
+    <div class="my-1">
+        <div class="row justify-content-center services-links">
+            <div class="col-12 text-center">
+                <div class="d-flex justify-content-evenly flex-wrap">
+                    <!-- Service Links -->
+                    <a
+                        href="/asphalt"
+                        class="service-link text-black text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/asphalt.webp"
+                                alt="Asphalt Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="d-block mt-2">Asphalt</span>
+                    </a>
+                    <a
+                        href="/concrete"
+                        class="service-link text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/concrete.webp"
+                                alt="Concrete Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="text-black d-block mt-2">Concrete</span>
+                    </a>
+                    <a
+                        href="/home-improvement"
+                        class="service-link text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/home_improvement.webp"
+                                alt="Home Improvement Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="text-black d-block mt-2">Home Improvement</span>
+                    </a>
+                    <a
+                        href="/masonry"
+                        class="service-link text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/masonry.webp"
+                                alt="Masonry Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="text-black d-block mt-2">Masonry</span>
+                    </a>
+                    <a
+                        href="/paver-sealing"
+                        class="service-link text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/paver_sealing.webp"
+                                alt="Paver Sealing Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="text-black d-block mt-2">Paver Sealing</span>
+                    </a>
+                    <a
+                        href="/pressure-washing"
+                        class="service-link text-center col-4 col-lg-2 py-4"
+                    >
+                        <div class="icon-container">
+                            <img
+                                src="/static/images-webp/icons/pressure_washing.webp"
+                                alt="Pressure Washing Icon"
+                                class="service-icon"
+                                width="60"
+                                height="60"
+                                style="max-width: 100%; height: auto;"
+                            />
+                        </div>
+                        <span class="text-black d-block mt-2">Pressure Washing</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="container-fluid py-1 mb-5">
-        <div
-            class="row sep align-items-center text-center text-white my-5 py-5"
-        >
-            <div class="col-md-12">
-                <h1 class="display-4">most likely not doing that</h1>
-                <p class="lead">
-                    Long Island's #1 general contractor, industry leading
-                    results for 35+ years.
-                </p>
-                <a href="#services" class="btn btn-primary btn-sm"
-                    >Learn More</a
-                >
-            </div>
-        </div>
-    </div>
 
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
-                {% for service_key, service in services.items() %}
-                    <div class="col">
-                        <!-- Entire Card is a Clickable Link -->
+ <section id="services" class="py-2 py-lg-5">
+    <div class="container">
+        <!-- Section Heading -->
+        <header class="text-center mb-4">
+            <h2 class="fw-bold">Our Services</h2>
+            <p class="text-muted">
+                Explore the range of expert services we offer to transform your space.
+            </p>
+        </header>
+
+        <!-- Services Grid -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for service_key, service in services.items() %}
+                <article class="col d-flex">
+                    <div class="service-card card h-100 w-100 position-relative">
+                        <!-- Image Link -->
                         <a
                             href="{{ url_for(service_key) }}"
                             class="text-decoration-none"
+                            aria-label="Learn more about {{ service_key.replace('_', ' ').title() }}"
                         >
-                            <div
-                                class="service-card card h-100 position-relative"
-                            >
-                                <!-- Card Image with Header Overlay -->
-                                <div class="card-overlay">
-                                    <img
-                                        src="{{ url_for('static', filename='images/home_' ~ service_key ~ '.png') }}"
-                                        class="card-img-top"
-                                        alt="{{ service_key.replace('_', ' ').title() }}"
-                                    />
-                                    <div
-                                        class="overlay-text position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
-                                    >
-                                        <h2 class="fw-bold">
-                                            {{ service_key.replace('_', ' ').title() }}
-                                        </h2>
-                                    </div>
-                                </div>
-                                <!-- Card Body with Description -->
-                                <div class="card-body">
-                                    <p class="p-4 card-text text-black">
-                                        {{ service.less_information }}
-                                    </p>
-                                </div>
-                            </div>
+                            <img
+                                src="{{ url_for('static', filename='images-webp/home_' ~ service_key ~ '.webp') }}"
+                                class="card-img-top img-fluid"
+                                alt="{{ service_key.replace('_', ' ').title() }} Service"                      
+                            />
                         </a>
+                        <!-- Card Body -->
+                        <div class="card-body p-4">
+                            <!-- Header Link -->
+                            <a
+                                href="{{ url_for(service_key) }}"
+                                class="text-decoration-none service-header-link"
+                                aria-label="Learn more about {{ service_key.replace('_', ' ').title() }}"
+                            >
+                                <h3 class="fw-bold text-start service-header">
+                                    {{ service_key.replace('_', ' ').title() }}
+                                </h3>
+                            </a>
+                            <p class="card-text text-black fw-normal">
+                                {{ service.less_information }}
+                            </p>
+                        </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <div class="container-fluid py-5">
-        <div class="row align-items-center text-center bg-info my-5 py-5">
-            <div class="col-md-12">
-                <h1 class="display-4">Not doing that</h1>
-                <p class="lead">
-                    We offer the best services to meet your needs.
-                </p>
-                <a href="#services" class="btn btn-primary btn-sm"
-                    >Learn More</a
-                >
-            </div>
+                </article>
+            {% endfor %}
         </div>
     </div>
+</section>
 
-    <h3 class="mb-4 text-center">
-        Ready when you are, let’s bring your ideas to life with ease.
-    </h3>
 
-    {% from "macros.jinja" import render_flashes %}
+
+
+   <div
+        class="my-4"
+        style="background: url('/static/images-webp/home.webp') no-repeat center center; background-size: cover;"
+    >
+        <div
+            class="container-fluid d-flex flex-column align-items-center justify-content-center text-center py-5"
+            style="background-color: rgba(0, 0, 0, 0.7);"
+        >
+        <div class="col-md-12 text-white">
+            <h3 class="fw-bold text-white">
+                We’re Here to Make It Easy
+            </h3>
+            <p class="text-white">
+                Whether you’re starting a new project or just have a question, we are here to help.
+            </p>
+            <a
+                href="#quickForm"
+                class="btn btn-success btn-md mt-2"
+                >Reach Out to Us</a
+            >
+        </div>
+    </div>
+</div>
+
+
+    <section id="gallery" class="container py-5">
+    <!-- Gallery Heading -->
+    <header class="text-center mb-5">
+        <h2 class="fw-bold">Our Gallery</h2>
+        <p class="text-muted">
+            Explore our recent projects, from paver patios to stunning masonry and more. See how we’ve transformed outdoor and indoor spaces for our clients.
+        </p>
+    </header>
+
+    <!-- Gallery Grid -->
+    <div class="row g-4">
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/backyard-pavers-and-siding.webp"
+                alt="Beautiful backyard with pavers and siding"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Backyard Pavers & Siding</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/beautiful-modern-bathroom.webp"
+                alt="Modern bathroom renovation with stylish fixtures"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Modern Bathroom Renovation</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/beautiful-paver-backyard.webp"
+                alt="Elegant backyard with sealed pavers"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Sealed Backyard Pavers</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/clean-pavers-by-pool.webp"
+                alt="Clean and polished pavers around a swimming pool"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Poolside Pavers</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/countertop-modern-design.webp"
+                alt="Modern countertop design in a kitchen"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Modern Countertop Design</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/kitchen-floors-and-granite.webp"
+                alt="Elegant kitchen floors with granite finishes"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Granite Kitchen Floors</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/beautiful-home-and-yard.webp"
+                alt="Beautiful home showcasing modern design"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Modern Home Design</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/backyard-asthetic-pavers.webp"
+                alt="Backyard with aesthetic pavers installation"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Aesthetic Backyard Pavers</figcaption>
+        </figure>
+        <figure class="col-md-4 gallery-item">
+            <img
+                src="/static/images-webp/front-page-gallery/pavers-walkway-steps.webp"
+                alt="Walkway and steps with pavers"
+                class="img-fluid rounded shadow-sm"
+            />
+            <figcaption class="text-center mt-2">Paver Walkway & Steps</figcaption>
+        </figure>
+    </div>
+</section>
+
+
+    <section
+    id="testimonials"
+    class="container-fluid py-5"
+    style="background-color: #d5d5d5;"
+>
+
+<div class="container">
+    <!-- Section Heading -->
+    <header class="text-center mb-4">
+        <h2 class="fw-bold">What Our Clients Say</h2>
+        <p class="text-muted">
+            Hear from satisfied customers who trusted us with their projects.
+        </p>
+    </header>
+
+    <!-- Testimonials Grid -->
+    <div class="row g-4">
+        <!-- Testimonial Cards -->
+        <article class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card shadow-sm border-0 w-100 h-100 text-center p-4">
+                <img
+                    src="/static/images-webp/google-review.webp"
+                    alt="Photo of Marty G."
+                    class="img-fluid rounded-circle mx-auto mb-3"
+                    style="width: 60px; height: 60px; object-fit: cover;"
+                />
+                <h3 class="fw-bold mb-2">Marty G.</h3>
+                <p class="text-muted small mb-2">
+                    From Google Reviews • 6 months ago • 13 reviews
+                </p>
+                <blockquote class="text-muted text-start small mb-3">
+                    I cannot say enough about Jimmy, his sons, and his team. I had a contractor disappear in the middle of the job. Jimmy jumped in and finished the job within days. Look no farther than JPN for any of your masonry needs. You will not be disappointed. They are a hardworking, family-owned business.
+                </blockquote>
+                <div class="text-warning">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="visually-hidden">Rating: 5 out of 5 stars</span>
+            </div>
+        </article>
+
+        <article class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card shadow-sm border-0 w-100 h-100 text-center p-4">
+                <img
+                    src="/static/images-webp/icons/avatar.webp"
+                    alt="Placeholder avatar for James C."
+                    class="img-fluid rounded-circle mx-auto mb-3"
+                    style="width: 60px; height: 60px; object-fit: cover;"
+                />
+                <h3 class="fw-bold mb-2">James C.</h3>
+                <p class="text-muted small mb-2">
+                    From Google Reviews • 6 months ago • 10 reviews
+                </p>
+                <blockquote class="text-muted text-start small mb-3">
+                    Jim and his team did a great job on my sidewalk that needed repair due to root damage from a tree that was removed. They were on time, worked quickly, and did a very neat job. You would never know they were here other than noticing a new sidewalk. Very friendly crew that works well together. I highly recommend them for any project for your home.
+                </blockquote>
+                <div class="text-warning">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="visually-hidden">Rating: 5 out of 5 stars</span>
+            </div>
+        </article>
+
+        <article class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="card shadow-sm border-0 w-100 h-100 text-center p-4">
+                <img
+                    src="/static/images-webp/icons/female-avatar.webp"
+                    alt="Placeholder avatar for Deanna."
+                    class="img-fluid rounded-circle mx-auto mb-3"
+                    style="width: 60px; height: 60px; object-fit: cover;"
+                />
+                <h3 class="fw-bold mb-2">Deanna</h3>
+                <p class="text-muted small mb-2">
+                    From Google Reviews • A year ago • 5 reviews
+                </p>
+                <blockquote class="text-muted text-start small mb-3">
+                    I cannot recommend JPM & Sons enough! They are truly incredible, and I am so pleased with how everything came out. Our driveway and walkways look brand new! They are very professional, and their work certainly speaks for itself. Our neighbors even came up to us asking for their information because they liked what they saw. Great job!
+                </blockquote>
+                <div class="text-warning">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="visually-hidden">Rating: 5 out of 5 stars</span>
+            </div>
+        </article>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-5" />
+
+    <!-- Google Reviews Icon Section -->
+    <div class="text-center mt-2">
+        <img
+            src="/static/images-webp/icons/Google_Review_logo.webp"
+            alt="Google Reviews Badge"
+            class="img-fluid"
+            style="max-width: 200px;"
+        />
+    </div>
+</div>
+
+    
+</section>
+
+
+
+   <section class="py-5 my-5">
+    <!-- Flash Messages -->
+   {% from "macros.jinja" import render_flashes %}
     {{ render_flashes() }}
 
-    <div class="container" id="quickForm">
+    <!-- Form Container -->
+    <div
+        class="container p-4 p-lg-5" id = "Form-container"
+    >
+        <!-- Section Header -->
+        <header class="text-start mb-4">
+            <h3 class="fw-bold">
+                Ready when you are, let’s bring your ideas to life with ease.
+            </h3>
+            <p class="text-muted">
+                Rest assured, we respect your privacy—no spam or junk emails, just timely updates and professional communication.
+            </p>
+        </header>
+
+        <!-- Form Section -->
         <form
             action="/"
-            class="row g-3 align-items-center justify-content-center"
             method="post"
+            class="row g-3 align-items-center justify-content-center"
+            aria-labelledby="quickForm-heading"
         >
             {{ form.hidden_tag() }}
 
-            <div class="col-md-3">
-                <label for="name" class="form-label w-100"
-                    >{{ form.name.label }}</label
-                >
-                {{ form.name(class_='form-control') }}
+            <!-- Name Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="name" class="form-label">{{ form.name.label }}</label>
+                {{ form.name(class_="form-control", id="name") }}
             </div>
 
-            <div class="col-md-3">
-                <label for="phone" class="form-label w-100"
-                    >{{ form.phone.label }}</label
-                >
-                {{ form.phone(class_='form-control') }}
+            <!-- Phone Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="phone" class="form-label">{{ form.phone.label }}</label>
+                {{ form.phone(class_="form-control", id="phone") }}
             </div>
 
-            <div class="col-md-3">
-                <label for="email" class="form-label w-100"
-                    >{{ form.email.label }}</label
-                >
-                {{ form.email(class_='form-control') }}
+            <!-- Email Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="email" class="form-label">{{ form.email.label }}</label>
+                {{ form.email(class_="form-control", id="email") }}
             </div>
 
-            <div class="col-md-3">
-                <label for="service_type" class="form-label w-100"
-                    >{{ form.service_type.label }}</label
-                >
-                {{ form.service_type(class_='form-select form-control') }}
+            <!-- Service Type Field -->
+            <div class="col-md-3 col-sm-6">
+                <label for="service_type" class="form-label">{{ form.service_type.label }}</label>
+                {{ form.service_type(class_="form-select form-control", id="service_type") }}
             </div>
 
-            <div class="col-md-auto">
-                <button type="submit" class="btn btn-success mt-4">
-                    Schedule your free quote today!
+            <!-- Submit Button -->
+            <div class="col-12 text-center mt-4">
+                <button
+                    type="submit"
+                    class="btn btn-success btn-md px-4"
+                    aria-label="Schedule your free quote today"
+                >
+                    Schedule your free quote today
                 </button>
             </div>
         </form>
     </div>
-
-    <div class="container-fluid py-5" style="background-color: #f9f9f9;">
-        <div class="container">
-            <!-- Heading -->
-            <h3 class="fw-bold text-center mb-2">What Our Clients Say</h3>
-            <p class="text-muted text-center mb-5">
-                Hear from satisfied customers who trusted us with their
-                projects.
-            </p>
-
-            <!-- Testimonials -->
-            <div class="row g-4">
-                <!-- Testimonial 1 -->
-                <div class="col-md-4 text-center">
-                    <img
-                        src="https://via.placeholder.com/60"
-                        alt="Client Photo"
-                        class="img-fluid rounded-circle mb-2"
-                    />
-                    <h6 class="fw-bold mb-1">John D.</h6>
-                    <p class="text-muted small mb-2">
-                        "Hearth made financing simple and stress-free. I got the
-                        funds I needed in no time!"
-                    </p>
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="col-md-4 text-center">
-                    <img
-                        src="https://via.placeholder.com/60"
-                        alt="Client Photo"
-                        class="img-fluid rounded-circle mb-2"
-                    />
-                    <h6 class="fw-bold mb-1">Sarah L.</h6>
-                    <p class="text-muted small mb-2">
-                        "The team was professional, timely, and exceeded my
-                        expectations. Highly recommend!"
-                    </p>
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="col-md-4 text-center">
-                    <img
-                        src="/static/images/ol_al.jpg"
-                        alt="Client Photo"
-                        class="img-fluid rounded-circle mb-2"
-                    />
-                    <h6 class="fw-bold mb-1">Nick I</h6>
-                    <p class="text-muted small mb-2">
-                        "Fantastic service! They went above and beyond to
-                        deliver on time and within budget."
-                    </p>
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="{{url_for('static', filename='gallery.js')}}"></script>
 {% endblock content %}

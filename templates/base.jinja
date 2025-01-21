@@ -54,7 +54,7 @@
 
         <link
             rel="icon"
-            href="assets/icons/logo-transparent.png"
+            href="assets/icons/logo-transparent.webp"
             type="image/png"
         />
         <link
@@ -74,9 +74,11 @@
         {% from "macros.jinja" import navbar %}
         {{ navbar(active_page) }}
 
+        {% block content %}
+       
         
 
-        {% block content %}
+
         {% endblock content %}
         {% from "macros.jinja" import footer %}
         {{ footer() }}
@@ -91,6 +93,13 @@
             integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
             crossorigin="anonymous"
         ></script>
-
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
     </body>
 </html>

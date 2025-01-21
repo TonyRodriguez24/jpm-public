@@ -1,11 +1,15 @@
-{% macro navbar (active_page) %}
-    <!-- use to select which link is active -->
-    <div class="d-flex justify-content-center">
+{% macro navbar(active_page) %}
+    <div class="d-flex bg-success">
         <nav class="navbar navbar-expand-lg w-100">
-            <div class="container{%if 'admin-username' in session%}-fluid {%endif%}">
-                <a class="navbar-brand" href="{{ url_for('home') }}"
-                    >JPM and Sons</a
-                >
+            <div
+                class="container{% if 'admin-username' in session %}-fluid{% endif %}"
+            >
+                <!-- Brand -->
+                <a class="navbar-brand" href="{{ url_for('home') }}">
+                    JPM and Sons
+                </a>
+
+                <!-- Toggle Button for Mobile -->
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -17,11 +21,16 @@
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Navbar Links -->
                 <div
                     class="collapse navbar-collapse"
                     id="navbarSupportedContent"
                 >
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul
+                        class="navbar-nav w-100 d-flex justify-content-end justify-content-lg-center"
+                    >
+                        <!-- Home Link -->
                         <li class="nav-item">
                             <a
                                 class="nav-link {% if active_page == 'home' %}active{% endif %}"
@@ -30,6 +39,8 @@
                                 >Home</a
                             >
                         </li>
+
+                        <!-- Financing Link -->
                         <li class="nav-item">
                             <a
                                 class="nav-link {% if active_page == 'financing' %}active{% endif %}"
@@ -37,6 +48,8 @@
                                 >Financing Options</a
                             >
                         </li>
+
+                        <!-- Gallery Link -->
                         <li class="nav-item">
                             <a
                                 class="nav-link {% if active_page == 'gallery' %}active{% endif %}"
@@ -44,9 +57,11 @@
                                 >Gallery</a
                             >
                         </li>
+
+                        <!-- Services Dropdown -->
                         <li class="nav-item dropdown">
                             <a
-                                class="nav-link {% if active_page in ['asphalt', 'concrete','home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %} dropdown-toggle"
+                                class="nav-link dropdown-toggle {% if active_page in ['asphalt', 'concrete', 'home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %}"
                                 href="#"
                                 role="button"
                                 data-bs-toggle="dropdown"
@@ -99,6 +114,8 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <!-- Contact Link -->
                         <li class="nav-item">
                             <a
                                 class="nav-link {% if active_page == 'contact_us' %}active{% endif %}"
@@ -106,6 +123,8 @@
                                 >Contact</a
                             >
                         </li>
+
+                        <!-- About Link -->
                         <li class="nav-item">
                             <a
                                 class="nav-link {% if active_page == 'about_us' %}active{% endif %}"
@@ -114,11 +133,11 @@
                             >
                         </li>
 
+                        <!-- Admin Links (if logged in) -->
                         {% if 'admin-username' in session %}
                             <li class="nav-item">
                                 <span class="nav-link fw-semibold text-success">
-                                    Logged in as:
-                                    {{ session['admin-username'] }}
+                                    Logged in as: {{ session['admin-username'] }}
                                 </span>
                             </li>
                             <li class="nav-item">
@@ -142,38 +161,29 @@
                                     class="nav-link fw-semibold text-primary"
                                     href="{{ url_for('admin_set_password') }}"
                                 >
-                                    Change password
+                                    Change Password
                                 </a>
                             </li>
                         {% endif %}
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input
-                            class="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button class="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form>
                 </div>
             </div>
         </nav>
     </div>
 {% endmacro %}
 
+
 {% macro render_flashes() %}
-    <div class="container" style="margin-top: 2em">
+    <div class="container mt-2">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <ul class="flashes">
                     {% for category, message in messages %}
-                        <li class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </li>
+                        <li
+                            class="alert alert-{{ category }} alert-dismissible fade show"
+                            role="alert"
+                        >
+                            {{message}}
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -181,32 +191,34 @@
     </div>
 {% endmacro %}
 
-
-
 {% macro footer() %}
-    <footer class="">
-        <div class="container-fluid px-5">
-            <div class="row">
-                <!-- Logo Section -->
-                <div class="col-md-12 my-4 text-center">
-                    <div id="footer-border">
-                        <h3>JPM and Sons</h3>
-                    </div>
+    <footer class="py-4 bg-light">
+        <div class="container">
+            <!-- Header Row -->
+            <div class="row text-center mb-3 mb-lg-0">
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Connect With Us</h3>
                 </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Follow Us</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Quick Links</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Ready to Build?</h3>
+                </div>
+            </div>
 
+            <!-- Content Row -->
+            <div
+                class="row text-center d-flex justify-content-center align-items-center"
+            >
                 <!-- Connect Section -->
-                <div class="col-md-6 col-lg-3 text-center">
+                <div
+                    class="col-lg-3 d-flex flex-column text-start justify-content-center align-items-center"
+                >
                     <ul id="connect" class="list-unstyled">
-                        <li>
-                            <h3>
-                                <a
-                                    href="{{ url_for('contact_us') }}"
-                                    class="text-black text-decoration-none"
-                                >
-                                    Connect With Us
-                                </a>
-                            </h3>
-                        </li>
                         <li>
                             <a
                                 href="tel:516-735-0685"
@@ -222,7 +234,7 @@
                                 class="text-black text-decoration-none"
                             >
                                 <ion-icon name="mail"></ion-icon>
-                                <span>JPMandSons123@Gmail.com</span>
+                                <span>Email: JPMandSons123@Gmail.com</span>
                             </a>
                         </li>
                         <li class="text-black">
@@ -233,71 +245,71 @@
                 </div>
 
                 <!-- Social Links Section -->
-                <div class="col-md-6 col-lg-3 text-center">
-                    <h3>Follow Us</h3>
-                    <ul class="social list-unstyled gap-3">
-                        <li>
-                            <a
-                                href="https://www.facebook.com/JPMSonsCorp/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-black"
-                            >
-                                <ion-icon name="logo-facebook"></ion-icon>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.tiktok.com/@jpmandsons"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-black"
-                            >
-                                <ion-icon name="logo-tiktok"></ion-icon>
-                                <span class="sr-only">TikTok</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://www.instagram.com/jpmandsonscorp/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-black"
-                            >
-                                <ion-icon name="logo-instagram"></ion-icon>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="col-lg-3">
+                    <div
+                        class="d-flex justify-content-center align-items-center text-center"
+                    >
+                        <a
+                            href="https://www.facebook.com/JPMSonsCorp/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit JPM and Sons on Facebook"
+                        >
+                            <ion-icon
+                                class="footer-social"
+                                name="logo-facebook"
+                            ></ion-icon>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@jpmandsons"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit JPM and Sons on TikTok"
+                        >
+                            <ion-icon
+                                class="footer-social"
+                                name="logo-tiktok"
+                            ></ion-icon>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/jpmandsonscorp/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit JPM and Sons on Instagram"
+                        >
+                            <ion-icon
+                                class="footer-social"
+                                name="logo-instagram"
+                            ></ion-icon>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="col-md-6 col-lg-3 text-center">
-                    <h3>Quick Links</h3>
+                <!-- Quick Links Section -->
+                <div class="col-lg-3 d-flex flex-column align-items-center">
                     <ul id="links" class="list-unstyled">
-                        <li>
+                        <li class="">
                             <a
                                 href="{{ url_for('home') }}"
                                 class="text-black text-decoration-none"
                                 >Home</a
                             >
                         </li>
-                        <li>
+                        <li class="">
                             <a
                                 href="{{ url_for('gallery') }}"
                                 class="text-black text-decoration-none"
                                 >Gallery</a
                             >
                         </li>
-                        <li>
+                        <li class="">
                             <a
                                 href="{{ url_for('about_us') }}"
                                 class="text-black text-decoration-none"
                                 >About Us</a
                             >
                         </li>
-                        <li>
+                        <li class="">
                             <a
                                 href="{{ url_for('contact_us') }}"
                                 class="text-black text-decoration-none"
@@ -307,19 +319,13 @@
                     </ul>
                 </div>
 
-                <!-- About Us Section -->
-                <div class="col-md-6 col-lg-3">
-                    <div id="about-us-footer" class="text-left">
-                        <h3 class="text-center">About Us</h3>
-                        <p>
-                            We are a family-owned business where personal
-                            involvement matters. Led by our founder,
-                            <strong>James Moore</strong>, and his eldest son,
-                            <strong>Nick</strong>, we ensure each project
-                            receives the attention it deserves, guaranteeing
-                            top-notch service for our clients.
-                        </p>
-                    </div>
+                <!-- Ready to Build Section -->
+                <div class="col-lg-3 d-flex flex-column align-items-center">
+                    <p>
+                        Let’s bring your ideas to life! Contact us for a free
+                        consultation today and discover how JPM and Sons can
+                        help.
+                    </p>
                 </div>
             </div>
         </div>
