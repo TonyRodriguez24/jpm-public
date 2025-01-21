@@ -4,8 +4,11 @@ from flask_assets import Environment, Bundle
 from database import connect_db, db
 from forms import ContactForm, LoginForm
 from models import Admin, Contact
-from secret import SECRET_KEY, services, page_information, gallery_and_alt, before_afters
+from info import services, page_information, gallery_and_alt, before_afters
+import os 
 
+SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
+ 
 
 app = Flask(__name__)
 Compress(app)
