@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect, flash, request, session, url_for
+from flask import Flask, render_template, redirect, flash, Response, session, url_for
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
 from database import connect_db, db
 from forms import ContactForm, LoginForm
 from models import Admin, Contact
 from secret import SECRET_KEY, services, page_information, gallery_and_alt, before_afters
+
 
 app = Flask(__name__)
 Compress(app)
@@ -46,6 +47,12 @@ connect_db(app)
 @app.context_processor
 def inject_services():
     return dict(services=services, page_information = page_information)
+
+
+
+
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -265,3 +272,54 @@ def logout():
     return redirect('/')
 
 ### end misc routes ###
+
+
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    from flask import Response
+    import datetime
+
+    # Correct endpoint names for excluded routes
+    excluded_routes = ['admin', 'admin_dashboard', 'admin_set_password', 'logout', 'robots_txt', 'sitemap']
+    sitemap_xml = ['<?xml version="1.0" encoding="utf-8"?>']
+    sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    try:
+        # Generate sitemap entries
+        for rule in app.url_map.iter_rules():
+            # Only include GET methods and routes without arguments
+            if rule.methods and "GET" in rule.methods and not rule.arguments:
+                if rule.endpoint not in excluded_routes:
+                    try:
+                        url = url_for(rule.endpoint, _external=True)
+                        last_modified = datetime.datetime.now().date()
+                        sitemap_xml.append(
+                            f'<url><loc>{url}</loc><lastmod>{last_modified}</lastmod></url>'
+                        )
+                    except Exception as e:
+                        print(f"Error adding URL for rule {rule}: {e}")
+
+        sitemap_xml.append('</urlset>')
+        sitemap_content = '\n'.join(sitemap_xml)
+
+        # Return the generated sitemap
+        return Response(sitemap_content, mimetype='application/xml')
+
+    except Exception as e:
+        print(f"Error generating sitemap: {e}")
+        return Response("Error generating sitemap", status=500, mimetype='text/plain')
+
+@app.route('/robots.txt')
+def robots_txt():
+    response = """User-agent: *
+Disallow: /admin
+Disallow: /admin-dashboard
+Disallow: /admin/set-password
+Disallow: /logout
+Allow: /
+
+Sitemap: https://jpmandsons.com/sitemap.xml
+"""
+    return Response(response, mimetype='text/plain')
+
+
