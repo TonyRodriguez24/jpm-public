@@ -6,7 +6,6 @@ bcrypt = Bcrypt()
 def get_column_names(cls):
         return [column.name for column in cls.__table__.columns] # type: ignore
 
-
 class Admin(db.Model):
     __tablename__ = 'admins'
 
@@ -34,7 +33,6 @@ class Admin(db.Model):
         else:
             return None
 
-
 #in seed py
 class Services(db.Model):
     __tablename__ = 'services'
@@ -50,7 +48,6 @@ class Projects(db.Model):
 
     #foreign keys
     service_id = db.Column(db.Integer, db.ForeignKey('services.id'))
-
 
 class Reviews(db.Model):
     __tablename__ = 'reviews'

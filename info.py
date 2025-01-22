@@ -48,8 +48,6 @@ page_information = {
     }
 }
 
-
-
 services = {
     "asphalt": {
     "id": 1,
@@ -631,7 +629,6 @@ services = {
 
 }
 
-
 gallery_and_alt = [
     {"file": "backyard-patio.webp", "alt": "A beautifully designed backyard patio with outdoor furniture.", "stackable": True},
     {"file": "backyard-patio-pavers.webp", "alt": "Backyard area with freshly sealed decorative pavers."},
@@ -664,7 +661,6 @@ gallery_and_alt = [
     {"file": "windows-large.webp", "alt": "Large windows with a clear view of the outdoor landscape.", "stackable": True}
 ]
 
-  
 before_afters = [
     {
         "before": {"file": "before-washing-and-sealant.webp", "alt": "Before washing and sealant: dirt and grime on surface"},
@@ -708,6 +704,24 @@ before_afters = [
     }
 ]
 
+SERVICES = [
+    (0, "Please Select A Service"),
+    (1, 'Asphalt'),
+    (2, 'Concrete'),
+    (3, 'Home Improvement'),
+    (4, 'Masonry Work'),
+    (5, 'Paver Sealing'),
+    (6, 'Pressure Washing'),
+]
 
+REFERRAL_OPTIONS = [
+    ("google_search", "Google Ads"),
+    ("facebook_ads", "Facebook Ads"),
+    ("social_media", "Social Media (Facebook, Instagram, TikTok, etc.)"),
+    ("search_engine", "Search Engine (Google)"),
+    ("friend_family", "Friend or Family Referral"),
+    ("return_customer", "I’m a Returning Customer"),
+    ("other", "Other"),
+]
 
 

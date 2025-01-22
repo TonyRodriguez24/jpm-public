@@ -1,29 +1,9 @@
 import email
 from email import contentmanager
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, PasswordField, StringField, SelectField, EmailField, TextAreaField, ValidationError
+from wtforms import IntegerField, PasswordField, StringField, SelectField, EmailField, TextAreaField
 from wtforms.validators import DataRequired, Optional
-
-SERVICES = [
-    (0, "Please Select A Service"),
-    (1, 'Asphalt'),
-    (2, 'Concrete'),
-    (3, 'Home Improvement'),
-    (4, 'Masonry Work'),
-    (5, 'Paver Sealing'),
-    (6, 'Pressure Washing'),
-]
-
-REFERRAL_OPTIONS = [
-    ("google_search", "Google Ads"),
-    ("facebook_ads", "Facebook Ads"),
-    ("social_media", "Social Media (Facebook, Instagram, TikTok, etc.)"),
-    ("search_engine", "Search Engine (Google)"),
-    ("friend_family", "Friend or Family Referral"),
-    ("return_customer", "I’m a Returning Customer"),
-    ("other", "Other"),
-]
-
+from info import SERVICES, REFERRAL_OPTIONS
 
 
 class ContactForm(FlaskForm):
@@ -52,12 +32,9 @@ class ContactForm(FlaskForm):
                             validators=[Optional()],
                             render_kw={"placeholder": "Tell us what you need! We are more than happy to help."})
     
-
-
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
     password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
-
 
 class ReviewForm(FlaskForm):
     rating = IntegerField("Rating", validators=[DataRequired()])
@@ -72,7 +49,6 @@ class ReviewForm(FlaskForm):
         if field.data == 0:  # Check if placeholder is selected
             raise ValueError("Please select a valid service.")
         
-
 class ProjectForm(FlaskForm):
     type_of_work = StringField(
         'Type of Work',
