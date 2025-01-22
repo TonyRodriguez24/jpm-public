@@ -5,9 +5,14 @@ from database import connect_db, db
 from forms import ContactForm, LoginForm
 from models import Admin, Contact
 from info import services, page_information, gallery_and_alt, before_afters
-import os 
+import os
+import hashlib
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
+DATABASE_URI = os.environ.get("postgresql://postgres:02zT5xzUolTdCBgi@db.pgiyrdpglyslmmmztwwi.supabase.co:5432/postgres")
+
+hashed_key = hashlib.sha256(SECRET_KEY.encode()).hexdigest()
+print(f"SECRET_KEY hash: {hashed_key[:8]}...")  # Logs only the first 8 characters of the hash
  
 
 app = Flask(__name__)
