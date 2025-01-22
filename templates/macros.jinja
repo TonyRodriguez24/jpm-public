@@ -145,13 +145,13 @@
                         <!-- Admin Links (if logged in) -->
                         {% if 'admin-username' in session %}
                             <li class="nav-item">
-                                <span class="nav-link fw-semibold text-success">
+                                <span class="nav-link fw-semibold text-dark">
                                     Logged in as: {{ session['admin-username'] }}
                                 </span>
                             </li>
                             <li class="nav-item">
                                 <a
-                                    class="nav-link fw-semibold text-success"
+                                    class="nav-link fw-semibold text-dark"
                                     href="{{ url_for('logout') }}"
                                 >
                                     Logout
@@ -159,7 +159,7 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    class="nav-link fw-semibold text-success"
+                                    class="nav-link fw-semibold text-dark"
                                     href="{{ url_for('admin_dashboard') }}"
                                 >
                                     Dashboard
@@ -167,7 +167,7 @@
                             </li>
                             <li class="nav-item">
                                 <a
-                                    class="nav-link fw-semibold text-primary"
+                                    class="nav-link fw-semibold text-white"
                                     href="{{ url_for('admin_set_password') }}"
                                 >
                                     Change Password
@@ -192,13 +192,21 @@
                             class="alert alert-{{ category }} alert-dismissible fade show"
                             role="alert"
                         >
-                            {{message}}
+                            {{ message }}
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                                aria-label="Close"
+                            ></button>
+                        </li>
                     {% endfor %}
                 </ul>
             {% endif %}
         {% endwith %}
     </div>
 {% endmacro %}
+
 
 {% macro footer() %}
     <footer class="py-4 bg-light">

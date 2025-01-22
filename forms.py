@@ -71,4 +71,16 @@ class ReviewForm(FlaskForm):
     def validate_service_type(self, field):
         if field.data == 0:  # Check if placeholder is selected
             raise ValueError("Please select a valid service.")
+        
 
+class ProjectForm(FlaskForm):
+    type_of_work = StringField(
+        'Type of Work',
+        validators=[DataRequired()],
+        render_kw={"placeholder": "e.g., Residential Masonry"}
+    )
+    service_id = SelectField(
+        'Service',
+        choices = SERVICES,coerce=int,  # Expect an integer (foreign key)
+        validators=[DataRequired()]
+    )

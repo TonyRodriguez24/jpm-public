@@ -2,182 +2,102 @@ from flask import Flask, render_template, redirect, flash, Response, session, ur
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
 from database import connect_db, db
-from forms import ContactForm, LoginForm
-from models import Admin, Contact
+from forms import ContactForm, LoginForm, ProjectForm
+from models import Admin, Contact, get_column_names, Projects
 from info import services, page_information, gallery_and_alt, before_afters
 import os
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
 DATABASE_URI = os.environ.get("DATABASE_URI")
 
- 
-
 app = Flask(__name__)
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///jpm'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = SECRET_KEY
+
+
 Compress(app)
 assets = Environment(app)
 assets.auto_build = True  # Automatically build bundles on app startup
 assets.debug = False      # Use production mode (minify output)
 
 
-css = Bundle(
-    'about_us.css',
-    'contact_us.css',
-    'gallery.css',
-    'global.css',
-    'home.css',
-    filters='cssmin',
-    output='dist/css/styles.min.css'
-    )
-
-js = Bundle(
-    'app.js',
-    'gallery.js',
-    filters='jsmin',
-    output='dist/scripts.min.js'
-)
-
+css = Bundle('about_us.css', 'contact_us.css', 'gallery.css', 'global.css', 'home.css', filters='cssmin', output='dist/css/styles.min.css')
+js = Bundle('app.js', 'gallery.js', filters='jsmin', output='dist/scripts.min.js')
 assets.register('css_all', css)
 assets.register('js_all', js)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = SECRET_KEY
 
 connect_db(app)
 
-
-
-
-
-@app.context_processor
+@app.context_processor #makes info global across all pages
 def inject_services():
     return dict(services=services, page_information = page_information)
 
-
-
-
-
-
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    quickForm = ContactForm()
+    form = ContactForm()
     
-    if quickForm.validate_on_submit():
-        # Process the form data
-        name = quickForm.name.data
-        phone = quickForm.phone.data
-        email = quickForm.email.data
-        service_type = quickForm.service_type.data
+    if form.validate_on_submit():
+        if Contact.create_contact(form):
+            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+            return redirect('/thank-you')
+        else:
+            flash('An error occurred while processing the form.')
 
-        # Create a new contact entry in the database
-        new_contact = Contact(name=name, phone=phone, email=email, service_type=service_type)  # type: ignore
-        db.session.add(new_contact)
-        db.session.commit()
+    if form.errors:  # Check if there are validation errors
+        flash("There was an error with your submission. Please fill out required fields", "danger")
+        return redirect(url_for('home')  + '#Form-container')
 
-        # Flash success message
-        flash("Your form has been submitted. We try to get back to you the same day. Expect a phone call or email from us.", "success")
-        return redirect('/thank-you')
-    
-    if quickForm.errors:  # Check if there are validation errors
-        flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
-        return redirect(url_for('home') + '#Form-container')
-
-    
     # Render the home page with the form and any error messages
-    return render_template('home.jinja', form=quickForm, active_page='home')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render_template('home.jinja', form=form, active_page='home')
 
 ### service routes ###
 @app.route('/asphalt')
 def asphalt():
-
     return render_template('services/asphalt.jinja', active_page = 'asphalt', service = services.get('asphalt'))
-
 @app.route('/concrete')
 def concrete():
-
     return render_template('services/concrete.jinja', active_page = 'concrete', service = services.get('concrete'))
-
 @app.route('/home-improvement')
 def home_improvement():
-
     return render_template('services/home_improvement.jinja', active_page = 'home_improvement', service = services.get('home_improvement'))
-
 @app.route('/masonry')
 def masonry():
-
     return render_template('services/masonry.jinja', active_page = 'masonry', service = services.get('masonry'))
-
 @app.route('/paver-sealing')
 def paver_sealing():
-
     return render_template('services/paver_sealing.jinja', active_page = 'paver_sealing', service = services.get('paver_sealing'))
-
 @app.route('/pressure-washing')
 def pressure_washing():
-
     return render_template('services/pressure_washing.jinja',active_page = 'pressure_washing', service = services.get('pressure_washing'))
-
 ### end service routes ###
 
-##misc routes###
 
+##misc routes###
 @app.route('/about-us')
 def about_us():
-
     return render_template('about_us.jinja', active_page = 'about_us')
-
 @app.route('/financing')
 def financing():
-
     return render_template('financing.jinja', active_page = 'financing')
 
 @app.route('/contact-us', methods = ['GET', 'POST'])
 def contact_us():
-
-    fullForm = ContactForm()
-    if fullForm.validate_on_submit():
-        name = fullForm.name.data
-        phone = fullForm.phone.data
-        email = fullForm.email.data
-        service_type = fullForm.service_type.data
-        address = fullForm.address.data
-        message = fullForm.message.data
-        referral = fullForm.referral.data
-
-        new_contact = Contact(name = name, phone = phone, email = email, service_type = service_type, address = address, referral =referral, message = message) # type: ignore
-        db.session.add(new_contact)
-        db.session.commit()
-
-        flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
-        return redirect('/thank-you')
-    
-    if fullForm.errors:  # Check if there are validation errors
+    form = ContactForm()
+    if form.validate_on_submit():
+        if Contact.create_complete_contact(form):
+            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+            return redirect('/thank-you')
+        else:
+            flash('An error occurred while processing the form.')
+    if form.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please fill out required fields", "danger")
         return redirect('/contact-us')
 
-    return render_template('contact_us.jinja', active_page = 'contact_us', form = fullForm)
-
-
+    return render_template('contact_us.jinja', active_page = 'contact_us', form = form)
 
 @app.route('/thank-you')
 def thank_you():
@@ -185,30 +105,24 @@ def thank_you():
 
 @app.route('/gallery', methods = ['GET', 'POST'])
 def gallery():
-    quickForm = ContactForm()
+    form = ContactForm()
     
-    if quickForm.validate_on_submit():
-        # Process the form data
-        name = quickForm.name.data
-        phone = quickForm.phone.data
-        email = quickForm.email.data
-        service_type = quickForm.service_type.data
+    if form.validate_on_submit():
+        if Contact.create_contact(form):
+            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+            return redirect('/thank-you')
+        else:
+            flash('An error occurred while processing the form.')
 
-        # Create a new contact entry in the database
-        new_contact = Contact(name=name, phone=phone, email=email, service_type=service_type)  # type: ignore
-        db.session.add(new_contact)
-        db.session.commit()
-
-        # Flash success message
-        flash("Your form has been submitted. We try to get back to you the same day. Expect a phone call or email from us.", "success")
-        return redirect('/thank-you')
-    
-    if quickForm.errors:  # Check if there are validation errors
-        flash("There was an error with your submission. Please make sure you have selected a service.", "danger")
+    if form.errors:  # Check if there are validation errors
+        flash("There was an error with your submission. Please fill out required fields", "danger")
         return redirect(url_for('gallery')  + '#Form-container')
     
-    return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = quickForm)
+    return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = form)
 
+
+
+### beginning admin routes ###
 @app.route('/admin', methods = ['GET', 'POST'])
 def admin():
     form = LoginForm()
@@ -217,35 +131,40 @@ def admin():
         username = form.username.data
         password = form.password.data
 
-    
-
         admin = Admin.authenticate_admin(username = username, password = password)
 
         if admin:
             flash('You are successfully logged in', 'success')
             session['admin-username'] = admin.username
-            return redirect('/admin-dashboard')
+            return redirect(url_for('admin_dashboard'))
         else:
             flash('Incorrect password/username', 'danger')
 
-    return render_template('admin.jinja', form = form, active_page = 'admin')
+    return render_template('admin/login.jinja', form = form, active_page = 'admin')
+
+def ensure_admin_logged_in():
+    """Ensure an admin is logged in, otherwise redirect."""
+    if 'admin-username' not in session:
+        flash('You must be logged in as an admin to access this page.', 'danger')
+        return redirect(url_for('admin'))
 
 @app.route('/admin-dashboard', methods = ['GET','POST'])
 def admin_dashboard():
-    if 'admin-username' not in session:
-        flash('You are not allowed to view this page' , 'danger')
-        return redirect('/')
-    
+    ensure_admin_logged_in()   
+
     admin = Admin.query.filter_by(username= session['admin-username']).first()
     contacts = Contact.query.all()
+    contact_table_headers = get_column_names(Contact)
+    projects = Projects.query.all()
 
-    return render_template('admin_dashboard.jinja', active_page = 'admin-dashboard', admin = admin, contacts = contacts)
+    
+
+    return render_template('admin/dashboard.jinja', active_page = 'admin-dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
 @app.route('/admin/set-password', methods = ['GET', 'POST'])
 def admin_set_password():
-    if 'admin-username' not in session:
-        flash('You are not allowed to view this page' , 'danger')
-        return redirect('/')
+    ensure_admin_logged_in()   
+
 
     form = LoginForm()
     if form.validate_on_submit():
@@ -257,13 +176,128 @@ def admin_set_password():
             admin.set_password(new_password)
             db.session.commit()
             flash('Password successfully updated' , 'success')
-            return redirect('/admin-dashboard')
+            return redirect(url_for('admin_dashboard'))
         else:
             flash('An error occurred. Admin not found.', 'danger')
 
-        return redirect('/admin_dashboard')
+        return redirect(url_for('admin_dashboard'))
     
-    return render_template('admin_set_password.jinja', form = form, active_page = 'admin_set_password')
+    return render_template('admin/set_password.jinja', form = form, active_page = 'admin_set_password')
+
+
+@app.route('/admin/add-contact', methods=['GET', 'POST'])
+def add_contact():
+    ensure_admin_logged_in()   
+
+
+
+
+    form = ContactForm()
+    if form.validate_on_submit():
+        # Create a new Contact instance
+        new_contact = Contact(
+            name=form.name.data,phone=form.phone.data,email=form.email.data,address=form.address.data,service_type=form.service_type.data,message=form.message.data # type: ignore
+        )
+
+        # Save the new contact to the database
+        db.session.add(new_contact)
+        db.session.commit()
+
+        flash('New contact added successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin/contacts/add_contact.jinja', form=form)
+
+
+
+@app.route('/admin/edit-contact/<int:id>', methods=['GET', 'POST'])
+def edit_contact(id):
+    ensure_admin_logged_in()   
+
+
+    contact = Contact.query.get_or_404(id)
+
+    # Prepopulate the form with the contact's existing data
+    form = ContactForm(obj=contact)
+
+    if form.validate_on_submit():
+        # Update contact with form data
+        contact.name = form.name.data
+        contact.email = form.email.data
+        contact.address = form.address.data
+        contact.service_type = form.service_type.data
+        contact.message = form.message.data
+        contact.phone = form.phone.data
+
+        # Save changes to the database
+        db.session.commit()
+        flash('Contact updated successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin/contacts/edit_contact.jinja', form=form)
+
+
+@app.route('/admin/delete-contact/<int:id>', methods = ['POST'])
+def delete_contact(id):
+    ensure_admin_logged_in() 
+
+    contact = Contact.query.get_or_404(id)
+    db.session.delete(contact)
+    db.session.commit()
+    flash('Contact succesfully removed', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin/add-project', methods=['GET', 'POST'])
+def add_project():
+    ensure_admin_logged_in()   
+
+
+    form = ProjectForm()
+    if form.validate_on_submit():
+        # Create a new project
+        new_project = Projects(
+            type_of_work=form.type_of_work.data, # type: ignore
+            service_id=form.service_id.data # type: ignore
+        )
+        db.session.add(new_project)
+        db.session.commit()
+        flash('New project added successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin/projects/add_project.jinja', form=form, title='Add Project')
+
+
+@app.route('/admin/edit-project/<int:id>', methods=['GET', 'POST'])
+def edit_project(id):
+    ensure_admin_logged_in()   
+
+
+    project = Projects.query.get_or_404(id)
+    form = ProjectForm(obj=project)
+
+    if form.validate_on_submit():
+        # Update the project with form data
+        project.type_of_work = form.type_of_work.data
+        project.service_id = form.service_id.data
+
+        db.session.commit()
+        flash('Project updated successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin/projects/edit_project.jinja', form=form, title='Edit Project', project=project)
+
+
+@app.route('/admin/delete-project/<int:id>', methods=['POST'])
+def delete_project(id):
+    ensure_admin_logged_in()   
+
+
+    project = Projects.query.get_or_404(id)
+    db.session.delete(project)
+    db.session.commit()
+    flash('Project deleted successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
 
 
 @app.route('/logout', methods = ['GET', 'POST'])
@@ -273,12 +307,12 @@ def logout():
         flash('You have successfully been logged out' , 'info')
     else:
         flash('You are not logged in' , 'danger')
-        return redirect('/admin')
+        return redirect(url_for('admin'))
     return redirect('/')
+### end admin routes ###
 
-### end misc routes ###
 
-
+#sitemap, robots.txt, and 404 routes
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     from flask import Response

@@ -3,6 +3,10 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
 
+def get_column_names(cls):
+        return [column.name for column in cls.__table__.columns] # type: ignore
+
+
 class Admin(db.Model):
     __tablename__ = 'admins'
 
@@ -59,7 +63,7 @@ class Reviews(db.Model):
     service_id = db.Column(db.Integer, db.ForeignKey('services.id'))
 
 class Contact(db.Model):
-    __tablename__ = 'messages'
+    __tablename__ = 'contacts'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     phone = db.Column(db.String(30), nullable=False)
@@ -75,4 +79,26 @@ class Contact(db.Model):
     #relationship
     service = db.relationship('Services', backref='contacts')
 
-
+    @classmethod
+    def create_complete_contact(cls, form):
+        try:
+            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data,service_type = form.service_type.data, address = form.address.data, message = form.message.data, referral = form.referral.data) # type: ignore
+            db.session.add(new_contact)
+            db.session.commit()
+            return True
+        
+        except Exception as error:
+            print(f'Error creating contact: {error}')
+            return False
+        
+    @classmethod
+    def create_contact(cls, form):
+        try:
+            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data,service_type = form.service_type.data) # type: ignore
+            db.session.add(new_contact)
+            db.session.commit()
+            return True
+        
+        except Exception as error:
+            print(f'Error creating contact: {error}')
+            return False

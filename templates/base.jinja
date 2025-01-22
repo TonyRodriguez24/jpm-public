@@ -70,7 +70,8 @@
     <body>
         {% from "macros.jinja" import navbar %}
         {{ navbar(active_page) }}
-
+        {% from "macros.jinja" import render_flashes %}
+        {{ render_flashes() }}
         {% block content %}
        
         

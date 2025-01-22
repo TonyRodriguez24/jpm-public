@@ -665,7 +665,6 @@ gallery_and_alt = [
 ]
 
   
-
 before_afters = [
     {
         "before": {"file": "before-washing-and-sealant.webp", "alt": "Before washing and sealant: dirt and grime on surface"},
