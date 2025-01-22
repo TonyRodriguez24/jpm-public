@@ -6,13 +6,10 @@ from forms import ContactForm, LoginForm
 from models import Admin, Contact
 from info import services, page_information, gallery_and_alt, before_afters
 import os
-import hashlib
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
-DATABASE_URI = os.environ.get("postgresql://postgres:02zT5xzUolTdCBgi@db.pgiyrdpglyslmmmztwwi.supabase.co:5432/postgres")
+DATABASE_URI = os.environ.get("DATABASE_URI")
 
-hashed_key = hashlib.sha256(SECRET_KEY.encode()).hexdigest()
-print(f"SECRET_KEY hash: {hashed_key[:8]}...")  # Logs only the first 8 characters of the hash
  
 
 app = Flask(__name__)
@@ -42,7 +39,7 @@ js = Bundle(
 assets.register('css_all', css)
 assets.register('js_all', js)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///jpm'
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = SECRET_KEY
 
