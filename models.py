@@ -120,28 +120,33 @@ class Contact(db.Model):
 
     @staticmethod
     def send_emails(form, complete):
-     # Get the service name from the SERVICES dictionary
-     service_name = Contact.get_service_name(form.service_type.data)
+        # Get the service name from the SERVICES dictionary
+        service_name = Contact.get_service_name(form.service_type.data)
 
-     # Generate the email content for both business and customer
-     content_to_business = Contact.generate_business_email(form, service_name, complete)
-     content_to_customer = Contact.generate_customer_email(form, service_name, complete)
+    # Generate the email content for both business and customer
+        content_to_business = Contact.generate_business_email(form, service_name, complete)
+        content_to_customer = Contact.generate_customer_email(form, service_name, complete)
 
-     # Debug the customer email address
-     print(f"Sending confirmation email to: {form.email.data}")  # Debug the customer email
-
+    # Debug the customer email address
+        print(f"Sending confirmation email to: {form.email.data}")  # Debug the customer email
+ # Debug the email addresses and content
+        print(f"Debugging Email to Business:")
+        print(f"From Email: {MAIL_DEFAULT_SENDER}")
+        print(f"To Email: {MAIL_DEFAULT_SENDER}")
+        print(f"Subject: Form submission from {form.name.data}")
+        print(f"Content: {content_to_business}")
      # Send business email
-     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=MAIL_DEFAULT_SENDER, subject=f"Form submission from {form.name.data}", content=content_to_business):
-         print("Failed to send business email.")
-         return False
+        if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=MAIL_DEFAULT_SENDER, subject=f"Form submission from {form.name.data}", content=content_to_business):
+            print("Failed to send business email.")
+            return False
 
      # Send confirmation email to the customer
-     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=form.email.data, subject="Thank you for contacting JPM and Sons", content=content_to_customer):
-         print("Failed to send confirmation email to customer.")
-         return False
+        if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=form.email.data, subject="Thank you for contacting JPM and Sons", content=content_to_customer):
+            print("Failed to send confirmation email to customer.")
+            return False
 
-     print("Emails sent successfully.")
-     return True
+        print("Emails sent successfully.")
+        return True
 
 
     @staticmethod
