@@ -251,6 +251,18 @@ def delete_contact(id):
     flash('Contact succesfully removed', 'success')
     return redirect(url_for('admin_dashboard'))
 
+@app.route('/admin/delete-all-contacts', methods=['POST'])
+def delete_all_contacts():
+    ensure_admin_logged_in()
+
+    # Delete all contacts
+    Contact.query.delete()
+    db.session.commit()
+
+    # Redirect with a success message
+    flash('All contacts have been deleted.', 'success')
+    return redirect(url_for('admin_dashboard'))
+
 
 @app.route('/admin/add-project', methods=['GET', 'POST'])
 def add_project():
