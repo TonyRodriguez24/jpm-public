@@ -172,21 +172,25 @@ class Contact(db.Model):
     @staticmethod
     def generate_customer_email(form, service_name, complete):
         content = f"""
-              <p>Dear {form.name.data},</p>
-              <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
-              <p><strong>Summary of your submission:</strong></p>
-              <span><strong>Service Type:</strong> {service_name}</span>
-              <span><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</span>
-          """
+            <p>Dear {form.name.data},</p>
+            <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+            <p><strong>Summary of your submission:</strong></p>
+            <p><strong>Service Type:</strong> {service_name}</p>
+        """
 
+        # Only include the message if it's provided (no need for "No message provided")
         if form.message.data:
-             content += f"<span><strong>Message:</strong> {form.message.data}</span>"
+            content += f"<p><strong>Message:</strong> {form.message.data}</p>"
 
         if complete:
-              content += f"<span><strong>Address:</strong> {form.address.data}</span>"
+            content += f"<p><strong>Address:</strong> {form.address.data}</p>"
 
-        content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
+        content += """
+            <p>We look forward to assisting you with your needs.</p>
+            <p>Best regards,<br/>JPM and Sons Team</p>
+        """
 
+        # Debugging content for checking
         print(f"Content to customer: {content}")  # Add a debug print to check the content
-        return content
 
+        return content
