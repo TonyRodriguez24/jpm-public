@@ -10,6 +10,7 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER")
 
 
+
 bcrypt = Bcrypt()
 
 def get_column_names(cls):
@@ -88,13 +89,19 @@ class Contact(db.Model):
     @classmethod
     def create_complete_contact(cls, form):
         try:
-        # Step 1: Validate form data
+            # Step 1: Validate form data
             if not form.name.data or not form.email.data:
                 raise ValueError("Name and Email are required.")
 
-        # Step 2: Save to the database
+            # Debug form data
+            print("Form Data:")
+            print(f"Name: {form.name.data}, Email: {form.email.data}, Phone: {form.phone.data}")
+            print(f"Service Type: {form.service_type.data}, Address: {form.address.data}")
+            print(f"Message: {form.message.data}, Referral: {form.referral.data}")
+
+            # Step 2: Save to the database
             new_contact = cls(
-                name=form.name.data, # type: ignore
+                name=form.name.data,
                 phone=form.phone.data,
                 email=form.email.data,
                 service_type=form.service_type.data,
@@ -106,7 +113,7 @@ class Contact(db.Model):
             db.session.commit()
             print(f"Contact saved: {form.name.data}, {form.email.data}")
 
-        # Step 3: Send the email
+            # Step 3: Debug email parameters
             subject = f"New Complete Contact Form Submission from {form.name.data}"
             content = f"""
                 <h2>New Form Submission</h2>
@@ -118,11 +125,18 @@ class Contact(db.Model):
                 <p><strong>Message:</strong> {form.message.data}</p>
                 <p><strong>Referral:</strong> {form.referral.data}</p>
             """
+            print("Debugging Email Parameters:")
+            print(f"From Email: {MAIL_DEFAULT_SENDER}")
+            print(f"To Email: tonyrodriguez2497@gmail.com")
+            print(f"Subject: {subject}")
+            print(f"Content: {content}")
+
+            # Step 4: Send the email
             try:
                 response = send_email(
                     api_key=SENDGRID_API_KEY,
                     from_email=MAIL_DEFAULT_SENDER,
-                    to_email='tonyrodriguez2497@gmail.com',
+                    to_email="tonyrodriguez2497@gmail.com",
                     subject=subject,
                     content=content
                 )
@@ -136,6 +150,11 @@ class Contact(db.Model):
 
         except ValueError as val_err:
             print(f"Validation error: {val_err}")
+            return False
+
+        except Exception as error:
+            print(f"Error creating contact: {error}")
+            db.session.rollback()  # Rollback the database session
             return False
 
 
