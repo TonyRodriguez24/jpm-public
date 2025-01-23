@@ -85,43 +85,61 @@ class Contact(db.Model):
     #relationship
     service = db.relationship('Services', backref='contacts')
 
-    @classmethod
-    def create_complete_contact(cls, form):
+@classmethod
+def create_complete_contact(cls, form):
+    try:
+        # Debug: Log form data
+        print(f"Form data: name={form.name.data}, email={form.email.data}, phone={form.phone.data}, "
+              f"service_type={form.service_type.data}, address={form.address.data}, message={form.message.data}, "
+              f"referral={form.referral.data}")
+
+        # Save to the database
+        new_contact = cls(
+            name=form.name.data,
+            phone=form.phone.data,
+            email=form.email.data,
+            service_type=form.service_type.data,
+            address=form.address.data,
+            message=form.message.data,
+            referral=form.referral.data
+        )
+        db.session.add(new_contact)
+        db.session.commit()
+        print("Contact saved successfully to the database.")
+
+        # Send the email
+        subject = f"New Complete Contact Form Submission from {form.name.data}"
+        content = f"""
+            <h2>New Form Submission</h2>
+            <p><strong>Name:</strong> {form.name.data}</p>
+            <p><strong>Email:</strong> {form.email.data}</p>
+            <p><strong>Phone:</strong> {form.phone.data}</p>
+            <p><strong>Service Type:</strong> {form.service_type.data}</p>
+            <p><strong>Address:</strong> {form.address.data}</p>
+            <p><strong>Message:</strong> {form.message.data}</p>
+            <p><strong>Referral:</strong> {form.referral.data}</p>
+        """
         try:
-            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data,service_type = form.service_type.data, address = form.address.data, message = form.message.data, referral = form.referral.data) # type: ignore
-            db.session.add(new_contact)
-            db.session.commit()
-        
-            
-
-            subject = f"New Complete Contact Form Submission from {form.name.data}"
-            content = f"""
-                    <h2>New Form Submission</h2>
-                    <p>Name {form.name.data}</p>
-                    <p>Email {form.email.data}</p>
-                    <p>Service_type {form.service_type.data}</p>
-                    <p>Address {form.address.data}</p>
-                    <p>Message {form.message.data}</p>
-                    <p>Referral {form.referral.data}</p>"""
-            
-            try:
-                response = send_email(api_key = SENDGRID_API_KEY, from_email = MAIL_DEFAULT_SENDER, to_email = 'tonyrodriguez2497@gmail.com', subject = subject, content = content)
-                if response != 202: #checks response code from sendgrid
-                    raise Exception(f'Email failed sending {response}')
-            except Exception as email_err: # handles any error that occurs during send email call
-                print(f"Email sending failed: {email_err}")
-                return False
+            response = send_email(
+                api_key=SENDGRID_API_KEY,
+                from_email=MAIL_DEFAULT_SENDER,
+                to_email='tonyrodriguez2497@gmail.com',
+                subject=subject,
+                content=content
+            )
+            if response != 202:
+                raise Exception(f"Email failed with response code: {response}")
+            print("Email sent successfully.")
             return True
-
-
-
-
-
-
-        
-        except Exception as error:
-            print(f'Error creating contact: {error}')
+        except Exception as email_err:
+            print(f"Email sending failed: {email_err}")
             return False
+
+    except Exception as error:
+        print(f"Error in create_complete_contact: {error}")
+        db.session.rollback()
+        return False
+
         
         
         
