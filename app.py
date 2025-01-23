@@ -5,8 +5,11 @@ from database import connect_db, db
 from forms import ContactForm, LoginForm, ProjectForm
 from models import Admin, Contact, get_column_names, Projects
 from info import services, page_information, gallery_and_alt, before_afters
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
 DATABASE_URI = os.environ.get("DATABASE_URI")
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
