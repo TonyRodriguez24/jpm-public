@@ -1,3 +1,4 @@
+from re import sub
 from database import db
 from flask_bcrypt import Bcrypt
 from dotenv import load_dotenv
@@ -118,25 +119,29 @@ class Contact(db.Model):
 
     @staticmethod
     def send_emails(form, complete):
-        # Get the service name from the SERVICES dictionary
-        service_name = Contact.get_service_name(form.service_type.data)
+     # Get the service name from the SERVICES dictionary
+     service_name = Contact.get_service_name(form.service_type.data)
 
-        # Generate the email content for both business and customer
-        content_to_business = Contact.generate_business_email(form, service_name, complete)
-        content_to_customer = Contact.generate_customer_email(form, service_name, complete)
+     # Generate the email content for both business and customer
+     content_to_business = Contact.generate_business_email(form, service_name, complete)
+     content_to_customer = Contact.generate_customer_email(form, service_name, complete)
 
-        # Send business email
-        if not Contact.send_email(MAIL_DEFAULT_SENDER, "tonyrodriguez2497@gmail.com", f"Form submission from {form.name.data}", content_to_business):
-            print("Failed to send business email.")
-            return False
+     # Debug the customer email address
+     print(f"Sending confirmation email to: {form.email.data}")  # Debug the customer email
 
-        # Send confirmation email to the customer
-        if not Contact.send_email(MAIL_DEFAULT_SENDER, form.email.data, "Thank you for contacting JPM and Sons", content_to_customer):
-            print("Failed to send confirmation email to customer.")
-            return False
+     # Send business email
+     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email="tonyrodriguez2497@gmail.com", subject=f"Form submission from {form.name.data}", content=content_to_business):
+         print("Failed to send business email.")
+         return False
 
-        print("Emails sent successfully.")
-        return True
+     # Send confirmation email to the customer
+     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=form.email.data, subject="Thank you for contacting JPM and Sons", content=content_to_customer):
+         print("Failed to send confirmation email to customer.")
+         return False
+
+     print("Emails sent successfully.")
+     return True
+
 
     @staticmethod
     def get_service_name(service_type):
@@ -165,37 +170,22 @@ class Contact(db.Model):
         return content
 
     @staticmethod
-    def generate_customer_email(form, service_name, complete):
-        # Generate the content for the customer confirmation email
-        content = f"""
-            <h2>We Have Received Your Message</h2>
-            <p>Dear {form.name.data},</p>
-            <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
-            <p><strong>Summary of your submission:</strong></p>
-            <p><strong>Service Type:</strong> {service_name}</p>
-            <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-        """
-
-        if complete:
-            content += f"<p><strong>Referral:</strong> {form.referral.data}</p>"
-
-        content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
-        return content
-
     @staticmethod
-    def send_email(from_email, to_email, subject, content):
-        try:
-            response = send_email(
-                api_key=SENDGRID_API_KEY,
-                from_email=from_email,
-                to_email=to_email,
-                subject=subject,
-                content=content
-            )
-            if response != 202:
-                raise Exception(f"Email failed to send with status code: {response}")
-            print(f"Email sent successfully to {to_email}.")
-            return True
-        except Exception as e:
-            print(f"Error sending email: {e}")
-            return False
+    def generate_customer_email(form, service_name, complete):
+     content = f"""
+         <h2>We Have Received Your Message</h2>
+         <p>Dear {form.name.data},</p>
+         <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+         <p><strong>Summary of your submission:</strong></p>
+         <p><strong>Service Type:</strong> {service_name}</p>
+         <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
+     """
+
+     if complete:
+         content += f"<p><strong>Referral:</strong> {form.referral.data}</p>"
+
+     content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
+
+     print(f"Content to customer: {content}")  # Add a debug print to check the content
+     return content
+
