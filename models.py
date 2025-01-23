@@ -3,6 +3,7 @@ from flask_bcrypt import Bcrypt
 from dotenv import load_dotenv
 from emails import send_email
 import os
+from info import SERVICES
 
 # Load the .env file
 load_dotenv()
@@ -111,25 +112,28 @@ class Contact(db.Model):
             )
             db.session.add(new_contact)
             db.session.commit()
-            print(f"Contact saved: {form.name.data}, {form.email.data}")
+
+
+            service_type_dict = dict(SERVICES)
+
+            # Get the service name from the dictionary
+            service_name = service_type_dict.get(form.service_type.data, "Unknown Service Type")
 
             # Step 3: Debug email parameters
-            subject = f"New Complete Contact Form Submission from {form.name.data}"
+            subject = f"Form submission from {form.name.data}"
+            # Construct the email content
             content = f"""
-                <h2>New Form Submission</h2>
+                <h2>New Complete Contact Form</h2>
                 <p><strong>Name:</strong> {form.name.data}</p>
                 <p><strong>Email:</strong> {form.email.data}</p>
                 <p><strong>Phone:</strong> {form.phone.data}</p>
-                <p><strong>Service Type:</strong> {form.service_type.data}</p>
+                <p><strong>Service Type:</strong> {service_name}</p>
                 <p><strong>Address:</strong> {form.address.data}</p>
-                <p><strong>Message:</strong> {form.message.data}</p>
-                <p><strong>Referral:</strong> {form.referral.data}</p>
-            """
-            print("Debugging Email Parameters:")
-            print(f"****From Email: {MAIL_DEFAULT_SENDER}")
-            print(f"To Email: tonyrodriguez2497@gmail.com")
-            print(f"Subject: {subject}")
-            print(f"Content: {content}")
+                """
+
+            # Add message if it's provided
+            if form.message.data:
+                content += f"<p><strong>Message:</strong> {form.message.data}</p>"
 
             # Step 4: Send the email
             try:
