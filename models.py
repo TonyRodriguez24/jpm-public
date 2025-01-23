@@ -134,7 +134,6 @@ class Contact(db.Model):
                 <p><strong>Summary of your submission:</strong></p>
                 <p><strong>Service Type:</strong> {service_name}</p>
                 <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-                <p><strong>Referral:</strong> {form.referral.data}</p>
                 <p>We look forward to assisting you with your needs.</p>
                 <p>Best regards,<br/>JPM and Sons Team</p>
             """

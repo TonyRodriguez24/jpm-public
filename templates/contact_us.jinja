@@ -1,39 +1,5 @@
 {% extends 'base.jinja' %}
-
-{% block custom_css %}
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static',filename='contact_us.css') }}"
-    />
-{% endblock custom_css %}
-
 {% block content %}
-<div id="alert-danger" class="container mt-5">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul class="flashes">
-                {% for category, message in messages %}
-                    {% if category == 'danger' %}
-                        <li
-                            class="alert alert-{{ category }} alert-dismissible fade show"
-                            role="alert"
-                        >
-                            {{ message }}
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="alert"
-                                aria-label="Close"
-                            ></button>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-</div>
-
-
 
 <div class="container p-lg-5 mb-5" id="Form-container">
 <h2
@@ -156,6 +122,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock content %}
