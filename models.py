@@ -171,20 +171,22 @@ class Contact(db.Model):
 
     @staticmethod
     def generate_customer_email(form, service_name, complete):
-     content = f"""
-         <h2>We Have Received Your Message</h2>
-         <p>Dear {form.name.data},</p>
-         <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
-         <p><strong>Summary of your submission:</strong></p>
-         <p><strong>Service Type:</strong> {service_name}</p>
-         <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-     """
+        content = f"""
+              <p>Dear {form.name.data},</p>
+              <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+              <p><strong>Summary of your submission:</strong></p>
+              <span><strong>Service Type:</strong> {service_name}</span>
+              <span><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</span>
+          """
 
-     if complete:
-         content += f"<p><strong>Referral:</strong> {form.referral.data}</p>"
+        if form.message.data:
+             content += f"<span><strong>Message:</strong> {form.message.data}</span>"
 
-     content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
+        if complete:
+              content += f"<span><strong>Address:</strong> {form.address.data}</span>"
 
-     print(f"Content to customer: {content}")  # Add a debug print to check the content
-     return content
+        content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
+
+        print(f"Content to customer: {content}")  # Add a debug print to check the content
+        return content
 
