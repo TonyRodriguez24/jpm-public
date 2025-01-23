@@ -130,7 +130,7 @@ class Contact(db.Model):
      print(f"Sending confirmation email to: {form.email.data}")  # Debug the customer email
 
      # Send business email
-     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email="tonyrodriguez2497@gmail.com", subject=f"Form submission from {form.name.data}", content=content_to_business):
+     if not send_email(api_key=SENDGRID_API_KEY, from_email=MAIL_DEFAULT_SENDER, to_email=MAIL_DEFAULT_SENDER, subject=f"Form submission from {form.name.data}", content=content_to_business):
          print("Failed to send business email.")
          return False
 

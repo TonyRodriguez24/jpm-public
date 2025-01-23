@@ -11,19 +11,21 @@ def send_email(api_key, from_email, to_email, subject, content):
     )  # type: ignore
 
     try:
+        # Send the email and get the response
         response = sg.send(email)
         
         # Log detailed response for debugging
-        print("Status Code:", response.status_code)
-        print("Response Body:", response.body.decode("utf-8") if response.body else "No body content")
-        print("Headers:", response.headers)
+        print(f"Status Code: {response.status_code}")
+        print(f"Response Body: {response.body.decode('utf-8') if response.body else 'No body content'}")
+        print(f"Headers: {response.headers}")
 
-        if response.status_code != 202:  # 202 is the expected success code
-            raise Exception(f"Email failed with status code: {response.status_code}")
+        # Check if the status code is 202 (success)
+        if response.status_code != 202:
+            raise Exception(f"Email failed to send with status code: {response.status_code}")
         
-        return response.status_code
+        return response  # Return the full response object
 
     except Exception as err:
-        # Log the error and return it for further debugging
+        # Log the error and return None for further debugging
         print(f"An error has occurred: {err}")
-        return f"An error has occurred: {err}"
+        return None  # Return None if an error occurs
