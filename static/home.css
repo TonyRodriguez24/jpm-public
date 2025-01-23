@@ -11,7 +11,7 @@ form > li > label {
 }
 
 .service-card {
-    background-color: #d5d5d5; /* Soft Gray with Blue Tint */
+    background-color: #ececec; /* Soft Gray with Blue Tint */
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-radius: 8px; /* Rounded corners for a softer look */
 }
