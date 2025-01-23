@@ -45,7 +45,7 @@ def home():
     form = ContactForm()
     
     if form.validate_on_submit():
-        if Contact.create_contact(form):
+        if Contact.create_contact(form, complete=False):
             flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
             return redirect('/thank-you')
         else:
@@ -92,14 +92,14 @@ def financing():
 def contact_us():
     form = ContactForm()
     if form.validate_on_submit():
-        if Contact.create_complete_contact(form):
+        if Contact.create_contact(form, complete=True):
             flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
             return redirect('/thank-you')
         else:
             flash('An error occurred while processing the form.', 'danger')
     if form.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please fill out required fields", "danger")
-        return redirect('/contact-us')
+        return render_template('contact_us.jinja', active_page='contact_us', form=form) 
 
     return render_template('contact_us.jinja', active_page = 'contact_us', form = form)
 
@@ -112,7 +112,7 @@ def gallery():
     form = ContactForm()
     
     if form.validate_on_submit():
-        if Contact.create_contact(form):
+        if Contact.create_contact(form, complete=False):
             flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
             return redirect('/thank-you')
         else:

@@ -85,111 +85,117 @@ class Contact(db.Model):
     service = db.relationship('Services', backref='contacts')
 
     @classmethod
-    def create_complete_contact(cls, form):
+    def create_contact(cls, form, complete=False):
+        # Step 1: Validate form data
+        contact_info = {
+            'name': form.name.data,
+            'phone': form.phone.data,
+            'email': form.email.data,
+            'service_type': form.service_type.data
+        }
+
+        # Step 2: Add extra fields if it's the complete form
+        if complete:
+            contact_info['address'] = form.address.data
+            contact_info['message'] = form.message.data
+            contact_info['referral'] = form.referral.data
+
+        # Step 3: Create and save the contact to the database
         try:
-            # Step 1: Validate form data
-            if not form.name.data or not form.email.data:
-                raise ValueError("Name and Email are required.")
-
-            # Debug form data
-            print("Form Data:")
-            print(f"Name: {form.name.data}, Email: {form.email.data}, Phone: {form.phone.data}")
-            print(f"Service Type: {form.service_type.data}, Address: {form.address.data}")
-            print(f"Message: {form.message.data}, Referral: {form.referral.data}")
-
-            # Step 2: Save to the database
-            new_contact = cls(
-                name=form.name.data,
-                phone=form.phone.data,
-                email=form.email.data,
-                service_type=form.service_type.data,
-                address=form.address.data,
-                message=form.message.data,
-                referral=form.referral.data
-            )
+            new_contact = cls(**contact_info)
             db.session.add(new_contact)
             db.session.commit()
+
             print(f"Contact saved: {form.name.data}, {form.email.data}")
 
-            # Get the service name from the SERVICES dictionary
-            service_type_dict = dict(SERVICES)
-            service_name = service_type_dict.get(form.service_type.data, "Unknown Service Type")
+            # Step 4: Send the emails
+            return cls.send_emails(form, complete)
 
-            # Step 3: Construct the content for both business and customer emails
-            content_to_business = f"""
-                <h2>New Complete Contact Form</h2>
-                <p><strong>Name:</strong> {form.name.data}</p>
-                <p><strong>Email:</strong> {form.email.data}</p>
-                <p><strong>Phone:</strong> {form.phone.data}</p>
-                <p><strong>Service Type:</strong> {service_name}</p>
-                <p><strong>Address:</strong> {form.address.data}</p>
-                <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-                <p><strong>Referral:</strong> {form.referral.data}</p>
-            """
-
-            content_to_customer = f"""
-                <h2>We Have Received Your Message</h2>
-                <p>Dear {form.name.data},</p>
-                <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
-                <p><strong>Summary of your submission:</strong></p>
-                <p><strong>Service Type:</strong> {service_name}</p>
-                <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-                <p>We look forward to assisting you with your needs.</p>
-                <p>Best regards,<br/>JPM and Sons Team</p>
-            """
-
-            # Step 4: Send the email to the business
-            try:
-                response = send_email(
-                    api_key=SENDGRID_API_KEY,
-                    from_email=MAIL_DEFAULT_SENDER,
-                    to_email="tonyrodriguez2497@gmail.com",  # Replace with your business email
-                    subject=f"Form submission from {form.name.data}",
-                    content=content_to_business
-                )
-                if response != 202:
-                    raise Exception(f"Email failed to send with status code: {response}")
-                print("Email sent to the business successfully.")
-            except Exception as email_err:
-                print(f"Email sending to business failed: {email_err}")
-                return False
-
-            # Step 5: Send confirmation email to the customer
-            try:
-                response = send_email(
-                    api_key=SENDGRID_API_KEY,
-                    from_email=MAIL_DEFAULT_SENDER,
-                    to_email=form.email.data,  # Send to the customer's email
-                    subject="Thank you for contacting JPM and Sons",
-                    content=content_to_customer
-                )
-                if response != 202:
-                    raise Exception(f"Confirmation email failed to send with status code: {response}")
-                print("Confirmation email sent to customer successfully.")
-                return True
-            except Exception as email_err:
-                print(f"Confirmation email sending failed: {email_err}")
-                return False
-
-        except ValueError as val_err:
-            print(f"Validation error: {val_err}")
-            return False
-
-        except Exception as error:
-            print(f"Error creating contact: {error}")
+        except Exception as e:
+            print(f"Error creating contact: {e}")
             db.session.rollback()  # Rollback the database session if an error occurs
             return False
 
+    @staticmethod
+    def send_emails(form, complete):
+        # Get the service name from the SERVICES dictionary
+        service_name = Contact.get_service_name(form.service_type.data)
 
+        # Generate the email content for both business and customer
+        content_to_business = Contact.generate_business_email(form, service_name, complete)
+        content_to_customer = Contact.generate_customer_email(form, service_name, complete)
 
-    @classmethod
-    def create_contact(cls, form):
+        # Send business email
+        if not Contact.send_email(MAIL_DEFAULT_SENDER, "tonyrodriguez2497@gmail.com", f"Form submission from {form.name.data}", content_to_business):
+            print("Failed to send business email.")
+            return False
+
+        # Send confirmation email to the customer
+        if not Contact.send_email(MAIL_DEFAULT_SENDER, form.email.data, "Thank you for contacting JPM and Sons", content_to_customer):
+            print("Failed to send confirmation email to customer.")
+            return False
+
+        print("Emails sent successfully.")
+        return True
+
+    @staticmethod
+    def get_service_name(service_type):
+        # Get service name from dictionary
+        service_type_dict = dict(SERVICES)
+        return service_type_dict.get(service_type, "Unknown Service Type")
+
+    @staticmethod
+    def generate_business_email(form, service_name, complete):
+        # Generate the content for the business email
+        content = f"""
+            <h2>New Complete Contact Form</h2>
+            <p><strong>Name:</strong> {form.name.data}</p>
+            <p><strong>Email:</strong> {form.email.data}</p>
+            <p><strong>Phone:</strong> {form.phone.data}</p>
+            <p><strong>Service Type:</strong> {service_name}</p>
+        """
+
+        if complete:
+            content += f"""
+                <p><strong>Address:</strong> {form.address.data}</p>
+                <p><strong>Referral:</strong> {form.referral.data}</p>
+            """
+
+        content += f"<p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>"
+        return content
+
+    @staticmethod
+    def generate_customer_email(form, service_name, complete):
+        # Generate the content for the customer confirmation email
+        content = f"""
+            <h2>We Have Received Your Message</h2>
+            <p>Dear {form.name.data},</p>
+            <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+            <p><strong>Summary of your submission:</strong></p>
+            <p><strong>Service Type:</strong> {service_name}</p>
+            <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
+        """
+
+        if complete:
+            content += f"<p><strong>Referral:</strong> {form.referral.data}</p>"
+
+        content += "<p>We look forward to assisting you with your needs.</p><p>Best regards,<br/>JPM and Sons Team</p>"
+        return content
+
+    @staticmethod
+    def send_email(from_email, to_email, subject, content):
         try:
-            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data, service_type = form.service_type.data) # type: ignore
-            db.session.add(new_contact)
-            db.session.commit()
+            response = send_email(
+                api_key=SENDGRID_API_KEY,
+                from_email=from_email,
+                to_email=to_email,
+                subject=subject,
+                content=content
+            )
+            if response != 202:
+                raise Exception(f"Email failed to send with status code: {response}")
+            print(f"Email sent successfully to {to_email}.")
             return True
-        
-        except Exception as error:
-            print(f'Error creating contact: {error}')
+        except Exception as e:
+            print(f"Error sending email: {e}")
             return False
