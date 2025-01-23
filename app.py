@@ -158,6 +158,7 @@ def admin_dashboard():
     ensure_admin_logged_in()
 
     admin_username = session.get('admin-username') 
+    
     admin = Admin.query.filter_by(username= admin_username).first()
 
     contacts = Contact.query.all()
