@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, PasswordField, StringField, SelectField, EmailField, TextAreaField
-from wtforms.validators import DataRequired, Optional
+from wtforms import PasswordField, StringField, SelectField, EmailField, TextAreaField
+from wtforms.validators import DataRequired, Optional, EqualTo, Length
 from info import SERVICES, REFERRAL_OPTIONS
 
 
@@ -34,18 +34,28 @@ class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
     password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
 
-class ReviewForm(FlaskForm):
-    rating = IntegerField("Rating", validators=[DataRequired()])
 
-    message = TextAreaField("Message", render_kw={"placeholder": "Tell us about your experience, your feedback is important to us."})
+class SetPasswordForm(FlaskForm):
+    new_password = PasswordField(
+        'New Password', 
+        validators=[DataRequired(), Length(min=8, message="Password must be at least 8 characters long.")]
+    )
+    confirm_password = PasswordField(
+        'Confirm New Password', 
+        validators=[DataRequired(), EqualTo('new_password', message="Passwords must match.")]
+    )
+# class ReviewForm(FlaskForm):
+#     rating = IntegerField("Rating", validators=[DataRequired()])
 
-    service_type = SelectField("Select the service you received",
-                               validators=[DataRequired()],
-                               choices = SERVICES, coerce=int )
+#     message = TextAreaField("Message", render_kw={"placeholder": "Tell us about your experience, your feedback is important to us."})
 
-    def validate_service_type(self, field):
-        if field.data == 0:  # Check if placeholder is selected
-            raise ValueError("Please select a valid service.")
+#     service_type = SelectField("Select the service you received",
+#                                validators=[DataRequired()],
+#                                choices = SERVICES, coerce=int )
+
+#     def validate_service_type(self, field):
+#         if field.data == 0:  # Check if placeholder is selected
+#             raise ValueError("Please select a valid service.")
         
 class ProjectForm(FlaskForm):
     type_of_work = StringField(

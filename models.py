@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from emails import send_email
 import os
 from info import SERVICES
+from flask_login import UserMixin
 
 # Load the .env file
 load_dotenv()
@@ -18,7 +19,7 @@ bcrypt = Bcrypt()
 def get_column_names(cls):
         return [column.name for column in cls.__table__.columns] # type: ignore
 
-class Admin(db.Model):
+class Admin(UserMixin, db.Model):
     __tablename__ = 'admins'
 
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)

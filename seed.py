@@ -27,8 +27,8 @@ def seed_database():
             db.session.commit()
 
             # Add admins
-            admin1 = Admin.create_admin(username="nmoore99", password="sds.edu")
-            admin2 = Admin.create_admin(username="tonyrodriguez24", password="sds.edu")
+            admin1 = Admin.create_admin(username="nmoore99", password="jpm@sds.edu")
+            admin2 = Admin.create_admin(username="tonyrodriguez24", password="jpm@sds.edu")
             db.session.add(admin1)
             db.session.add(admin2)
             db.session.commit()

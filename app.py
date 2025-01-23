@@ -2,11 +2,12 @@ from flask import Flask, render_template, redirect, flash, Response, session, ur
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
 from database import connect_db, db
-from forms import ContactForm, LoginForm, ProjectForm
+from forms import ContactForm, LoginForm, ProjectForm, SetPasswordForm
 from models import Admin, Contact, get_column_names, Projects
 from info import services, page_information, gallery_and_alt, before_afters
 from dotenv import load_dotenv
 import os
+from flask_login import LoginManager
 
 load_dotenv()
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
@@ -16,11 +17,9 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
 app = Flask(__name__)
 
-
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI #'postgresql:///jpm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = SECRET_KEY
-
 
 Compress(app)
 assets = Environment(app)
@@ -126,6 +125,19 @@ def gallery():
 
 
 
+# Initialize Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'admin'  # type: ignore # Redirect to 'admin' login route for unauthenticated users
+login_manager.login_message = 'Please log in as an admin to access this page.'
+login_manager.login_message_category = 'danger'
+
+@login_manager.user_loader
+def load_user(admin_id):
+    return Admin.query.get(int(admin_id))
+
+from flask_login import login_user, login_required, logout_user, current_user
+
 ### beginning admin routes ###
 @app.route('/admin', methods = ['GET', 'POST'])
 def admin():
@@ -138,28 +150,19 @@ def admin():
         admin = Admin.authenticate_admin(username = username, password = password)
 
         if admin:
+            login_user(admin)
             flash('You are successfully logged in', 'success')
-            session['admin-username'] = admin.username
             return redirect(url_for('admin_dashboard'))
         else:
             flash('Incorrect password/username', 'danger')
 
     return render_template('admin/login.jinja', form = form, active_page = 'admin')
 
-def ensure_admin_logged_in():
-    """Ensure an admin is logged in, otherwise redirect."""
-    if 'admin-username' not in session:
-        flash('You must be logged in as an admin to access this page.', 'danger')
-        return redirect(url_for('admin'))
-    return True
 
 @app.route('/admin/dashboard', methods = ['GET','POST'])
+@login_required
 def admin_dashboard():
-    ensure_admin_logged_in()
-
-    admin_username = session.get('admin-username') 
-    
-    admin = Admin.query.filter_by(username= admin_username).first()
+    admin = current_user
 
     contacts = Contact.query.all()
     contact_table_headers = get_column_names(Contact)
@@ -169,39 +172,32 @@ def admin_dashboard():
 
     return render_template('admin/dashboard.jinja', active_page = 'admin-dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
-@app.route('/admin/set-password', methods = ['GET', 'POST'])
+@app.route('/admin/set-password', methods=['GET', 'POST'])
+@login_required
 def admin_set_password():
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))
-
-
-    form = LoginForm()
+    """
+    Allow the logged-in admin to update their password.
+    """
+    form = SetPasswordForm()
     if form.validate_on_submit():
-        username = form.username.data
-        new_password = form.password.data
+        new_password = form.new_password.data
 
-        admin = Admin.query.filter_by(username = username).first()
-        if admin:
-            admin.set_password(new_password)
+        try:
+            current_user.set_password(new_password)
             db.session.commit()
-            flash('Password successfully updated' , 'success')
+            flash('Password successfully updated.', 'success')
             return redirect(url_for('admin_dashboard'))
-        else:
-            flash('An error occurred. Admin not found.', 'danger')
+        except Exception as e:
+            db.session.rollback()
+            flash(f'An error occurred: {str(e)}', 'danger')
 
-        return redirect(url_for('admin_dashboard'))
-    
-    return render_template('admin/set_password.jinja', form = form, active_page = 'admin_set_password')
+    return render_template('admin/set_password.jinja', form=form, active_page='admin_set_password')
+
 
 
 @app.route('/admin/add-contact', methods=['GET', 'POST'])
+@login_required
 def add_contact():
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin')) 
-
-
-
-
     form = ContactForm()
     if form.validate_on_submit():
         # Create a new Contact instance
@@ -221,11 +217,8 @@ def add_contact():
 
 
 @app.route('/admin/edit-contact/<int:id>', methods=['GET', 'POST'])
+@login_required
 def edit_contact(id):
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin')) 
-
-
     contact = Contact.query.get_or_404(id)
 
     # Prepopulate the form with the contact's existing data
@@ -249,9 +242,8 @@ def edit_contact(id):
 
 
 @app.route('/admin/delete-contact/<int:id>', methods = ['POST'])
+@login_required
 def delete_contact(id):
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))
 
     contact = Contact.query.get_or_404(id)
     db.session.delete(contact)
@@ -260,9 +252,8 @@ def delete_contact(id):
     return redirect(url_for('admin_dashboard'))
 
 @app.route('/admin/delete-all-contacts', methods=['POST'])
+@login_required
 def delete_all_contacts():
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))
 
     # Delete all contacts
     Contact.query.delete()
@@ -274,9 +265,8 @@ def delete_all_contacts():
 
 
 @app.route('/admin/add-project', methods=['GET', 'POST'])
+@login_required
 def add_project():
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))
 
 
     form = ProjectForm()
@@ -295,9 +285,8 @@ def add_project():
 
 
 @app.route('/admin/edit-project/<int:id>', methods=['GET', 'POST'])
+@login_required
 def edit_project(id):
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))   
 
 
     project = Projects.query.get_or_404(id)
@@ -316,9 +305,9 @@ def edit_project(id):
 
 
 @app.route('/admin/delete-project/<int:id>', methods=['POST'])
+@login_required
 def delete_project(id):
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin')) 
+
 
 
     project = Projects.query.get_or_404(id)
@@ -329,14 +318,12 @@ def delete_project(id):
 
 
 @app.route('/logout', methods = ['GET', 'POST'])
+@login_required
 def logout():
-    if 'admin-username' in session:
-        session.pop('admin-username')
-        flash('You have successfully been logged out' , 'info')
-    else:
-        flash('You are not logged in' , 'danger')
-        return redirect(url_for('admin'))
-    return redirect('/')
+    logout_user()
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('admin'))
+
 ### end admin routes ###
 
 
@@ -380,7 +367,7 @@ def sitemap():
 def robots_txt():
     response = """User-agent: *
 Disallow: /admin
-Disallow: /admin-dashboard
+Disallow: /admin/dashboard
 Disallow: /admin/set-password
 Disallow: /logout
 Allow: /
