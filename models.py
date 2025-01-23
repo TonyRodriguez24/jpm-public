@@ -105,7 +105,7 @@ class Contact(db.Model):
                     <p>Referral {form.referral.data}</p>"""
             
             try:
-                response = send_email(api_key = SENDGRID_API_KEY, from_email = MAIL_DEFAULT_SENDER, to_email = 'jpmandsons123@gmail.com', subject = subject, content = content)
+                response = send_email(api_key = SENDGRID_API_KEY, from_email = MAIL_DEFAULT_SENDER, to_email = 'tonyrodriguez2497@gmail.com', subject = subject, content = content)
                 if response != 202: #checks response code from sendgrid
                     raise Exception(f'Email failed sending {response}')
             except Exception as email_err: # handles any error that occurs during send email call
