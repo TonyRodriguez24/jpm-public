@@ -78,23 +78,6 @@ class Contact(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(100))
-    #foreign key
-    service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
-    referral = db.Column(db.String(50))
-    message = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, default=db.func.now())
-
-    #relationship
-    service = db.relationship('Services', backref='contacts')
-
-class Contact(db.Model):
-    __tablename__ = 'contacts'
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    phone = db.Column(db.String(30), nullable=False)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    address = db.Column(db.String(100))
     service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
     referral = db.Column(db.String(50))
     message = db.Column(db.Text)
@@ -203,7 +186,7 @@ class Contact(db.Model):
     @classmethod
     def create_contact(cls, form):
         try:
-            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data,service_type = form.service_type.data) # type: ignore
+            new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data, service_type = form.service_type.data) # type: ignore
             db.session.add(new_contact)
             db.session.commit()
             return True
