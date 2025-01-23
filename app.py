@@ -14,7 +14,7 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 app = Flask(__name__)
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///jpm'
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI #'postgresql:///jpm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = SECRET_KEY
 
