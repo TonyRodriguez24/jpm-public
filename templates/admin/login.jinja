@@ -1,8 +1,6 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-    {% from "macros.jinja" import render_flashes %}
-    {{ render_flashes() }}
     <form action="{{ url_for(active_page) }}" class="m-3" method="post">
         {{ form.hidden_tag() }}
         {% for field in form if field.widget.input_type != 'hidden' %}

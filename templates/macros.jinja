@@ -1,185 +1,149 @@
 {% macro navbar(active_page) %}
-    <div class="d-flex">
-        <nav class="navbar navbar-expand-lg bg-success border-bottom border-dark w-100">
-            <div
-                class="container{% if 'admin-username' in session %}-fluid{% endif %}"
+<div class="d-flex">
+    <nav class="navbar navbar-expand-lg bg-success border-bottom border-dark w-100">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                JPM and Sons
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
             >
-                <!-- Brand -->
-                <a class="navbar-brand" href="{{ url_for('home') }}">
-                    JPM and Sons
-                </a>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Toggle Button for Mobile -->
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100 d-flex justify-content-end justify-content-lg-center">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'home' %}active{% endif %}"
+                            href="{{ url_for('home') }}"
+                        >
+                            Home
+                        </a>
+                    </li>
 
-                <!-- Navbar Links -->
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul
-                        class="navbar-nav w-100 d-flex justify-content-end justify-content-lg-center"
-                    >
-                        <!-- Home Link -->
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {% if active_page == 'home' %}active{% endif %}"
-                                aria-current="page"
-                                href="{{ url_for('home') }}"
-                                >Home</a
-                            >
-                        </li>
+                    <!-- Financing Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'financing' %}active{% endif %}"
+                            href="{{ url_for('financing') }}"
+                        >
+                            Financing Options
+                        </a>
+                    </li>
 
-                        <!-- Financing Link -->
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {% if active_page == 'financing' %}active{% endif %}"
-                                href="{{ url_for('financing') }}"
-                                >Financing Options</a
-                            >
-                        </li>
+                    <!-- Gallery Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'gallery' %}active{% endif %}"
+                            href="{{ url_for('gallery') }}"
+                        >
+                            Gallery
+                        </a>
+                    </li>
 
-                        <!-- Gallery Link -->
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {% if active_page == 'gallery' %}active{% endif %}"
-                                href="{{ url_for('gallery') }}"
-                                >Gallery</a
-                            >
-                        </li>
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle {% if active_page in ['asphalt', 'concrete', 'home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %}"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('asphalt') }}">Asphalt</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('concrete') }}">Concrete</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('home_improvement') }}">Home Improvement</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('masonry') }}">Masonry</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('paver_sealing') }}">Paver Sealing</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('pressure_washing') }}">Pressure Washing</a></li>
+                        </ul>
+                    </li>
 
-                        <!-- Services Dropdown -->
+                    <!-- About Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'about_us' %}active{% endif %}"
+                            href="{{ url_for('about_us') }}"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <!-- Contact Link -->
+                    <li class="nav-item">
+                        <a
+                            class="btn bg-primary text-white contact-btn mx-3 {% if active_page == 'contact_us' %}active{% endif %}"
+                            href="{{ url_for('contact_us') }}"
+                        >
+                            Contact
+                        </a>
+                    </li>
+
+                    <!-- Admin Links -->
+                    {% if 'is_admin' in session%}
+                        <!-- Admin Dropdown -->
                         <li class="nav-item dropdown">
                             <a
-                                class="nav-link dropdown-toggle {% if active_page in ['asphalt', 'concrete', 'home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %}"
+                                class="nav-link dropdown-toggle text-muted small"
                                 href="#"
+                                id="adminDropdown"
                                 role="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Services
+                                Admin:
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
                                 <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('asphalt') }}"
-                                        >Asphalt</a
-                                    >
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('admin_dashboard') }}">
+                                        Dashboard
+                                    </a>
                                 </li>
                                 <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('concrete') }}"
-                                        >Concrete</a
-                                    >
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('admin_set_password') }}">
+                                        Change Password
+                                    </a>
                                 </li>
                                 <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('home_improvement') }}"
-                                        >Home Improvement</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('masonry') }}"
-                                        >Masonry</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('paver_sealing') }}"
-                                        >Paver Sealing</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="{{ url_for('pressure_washing') }}"
-                                        >Pressure Washing</a
-                                    >
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('logout') }}">
+                                        Logout
+                                    </a>
                                 </li>
                             </ul>
                         </li>
-
-                        <!-- Contact Link -->
-                        
-
-                        <!-- About Link -->
-                        <li class="nav-item">
+                    {% else %}
+                        <!-- Admin Login for Non-Logged-In Users -->
+                        <li class="nav-item ms-auto">
                             <a
-                                class="nav-link {% if active_page == 'about_us' %}active{% endif %}"
-                                href="{{ url_for('about_us') }}"
-                                >About</a
+                                class="nav-link text-muted small"
+                                href="{{ url_for('admin') }}"
                             >
+                                Admin Login
+                            </a>
                         </li>
-
-                        <li class="nav-item">
-    <a
-        class="btn bg-primary text-white contact-btn mx-3 {% if active_page == 'contact_us' %}active{% endif %}"
-        href="{{ url_for('contact_us') }}"
-    >
-        Contact
-    </a>
-</li>
-
-
-
-
-
-
-
-                        <!-- Admin Links (if logged in) -->
-                        {% if 'admin-username' in session %}
-                            <li class="nav-item">
-                                <span class="nav-link fw-semibold text-dark">
-                                    Logged in as: {{ session['admin-username'] }}
-                                </span>
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link fw-semibold text-dark"
-                                    href="{{ url_for('logout') }}"
-                                >
-                                    Logout
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link fw-semibold text-dark"
-                                    href="{{ url_for('admin_dashboard') }}"
-                                >
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link fw-semibold text-white"
-                                    href="{{ url_for('admin_set_password') }}"
-                                >
-                                    Change Password
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
+                    {% endif %}
+                </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 {% endmacro %}
+
 
 
 {% macro render_flashes() %}

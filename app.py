@@ -35,9 +35,40 @@ assets.register('js_all', js)
 
 connect_db(app)
 
-@app.context_processor #makes info global across all pages
-def inject_services():
-    return dict(services=services, page_information = page_information)
+# Initialize Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'admin'  # type: ignore # Redirect to 'admin' login route for unauthenticated users
+login_manager.login_message = 'Please log in as an admin to access this page.'
+login_manager.login_message_category = 'danger'
+
+@login_manager.user_loader
+def load_user(admin_id):
+    return Admin.query.get(int(admin_id))
+
+from flask_login import login_user, login_required, logout_user, current_user
+
+
+@app.context_processor
+def inject_globals():
+    from flask import has_request_context
+    # Safely get `current_user` only if there's a valid request
+
+    # Debug to see what's happening in the logs
+
+    return {
+        'services': services,
+        'page_information': page_information,
+        'current_user': current_user
+    }
+
+@app.route('/debug_user')
+def debug_user():
+    if current_user.is_authenticated:
+        return f"Current User: {current_user.username}, Admin: {current_user.is_admin}"
+    else:
+        return "No user logged in."
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -125,18 +156,7 @@ def gallery():
 
 
 
-# Initialize Flask-Login
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'admin'  # type: ignore # Redirect to 'admin' login route for unauthenticated users
-login_manager.login_message = 'Please log in as an admin to access this page.'
-login_manager.login_message_category = 'danger'
 
-@login_manager.user_loader
-def load_user(admin_id):
-    return Admin.query.get(int(admin_id))
-
-from flask_login import login_user, login_required, logout_user, current_user
 
 ### beginning admin routes ###
 @app.route('/admin', methods = ['GET', 'POST'])
@@ -150,6 +170,7 @@ def admin():
         admin = Admin.authenticate_admin(username = username, password = password)
 
         if admin:
+            session['is_admin'] = True
             login_user(admin)
             flash('You are successfully logged in', 'success')
             return redirect(url_for('admin_dashboard'))
@@ -320,6 +341,7 @@ def delete_project(id):
 @app.route('/logout', methods = ['GET', 'POST'])
 @login_required
 def logout():
+    session.pop('is_admin', None)
     logout_user()
     flash('You have been logged out.', 'success')
     return redirect(url_for('admin'))
@@ -379,5 +401,5 @@ Sitemap: https://jpmandsons.com/sitemap.xml
 @app.errorhandler(404)
 def page_not_found(e):
     # Render the 404 template with a 404 status code
-    return render_template('404.jinja'), 404
+    return render_template('404.jinja', current_user=current_user), 404
 
