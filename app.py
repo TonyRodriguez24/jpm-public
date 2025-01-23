@@ -9,6 +9,7 @@ import os
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
 DATABASE_URI = os.environ.get("DATABASE_URI")
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
 app = Flask(__name__)
 

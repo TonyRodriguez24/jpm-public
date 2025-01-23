@@ -1,5 +1,14 @@
 from database import db
 from flask_bcrypt import Bcrypt
+from dotenv import load_dotenv
+from emails import send_email
+import os
+
+# Load the .env file
+load_dotenv()
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER")
+
 
 bcrypt = Bcrypt()
 
@@ -82,11 +91,39 @@ class Contact(db.Model):
             new_contact = cls(  name = form.name.data, phone = form.phone.data, email = form.email.data,service_type = form.service_type.data, address = form.address.data, message = form.message.data, referral = form.referral.data) # type: ignore
             db.session.add(new_contact)
             db.session.commit()
+        
+            
+
+            subject = f"New Complete Contact Form Submission from {form.name.data}"
+            content = f"""
+                    <h2>New Form Submission</h2>
+                    <p>Name {form.name.data}</p>
+                    <p>Email {form.email.data}</p>
+                    <p>Service_type {form.service_type.data}</p>
+                    <p>Address {form.address.data}</p>
+                    <p>Message {form.message.data}</p>
+                    <p>Referral {form.referral.data}</p>"""
+            
+            try:
+                response = send_email(api_key = SENDGRID_API_KEY, from_email = MAIL_DEFAULT_SENDER, to_email = 'jpmandsons123@gmail.com', subject = subject, content = content)
+                if response != 202: #checks response code from sendgrid
+                    raise Exception(f'Email failed sending {response}')
+            except Exception as email_err: # handles any error that occurs during send email call
+                print(f"Email sending failed: {email_err}")
+                return False
             return True
+
+
+
+
+
+
         
         except Exception as error:
             print(f'Error creating contact: {error}')
             return False
+        
+        
         
     @classmethod
     def create_contact(cls, form):
