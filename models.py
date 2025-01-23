@@ -126,7 +126,7 @@ class Contact(db.Model):
                 <p><strong>Referral:</strong> {form.referral.data}</p>
             """
             print("Debugging Email Parameters:")
-            print(f"From Email: {MAIL_DEFAULT_SENDER}")
+            print(f"****From Email: {MAIL_DEFAULT_SENDER}")
             print(f"To Email: tonyrodriguez2497@gmail.com")
             print(f"Subject: {subject}")
             print(f"Content: {content}")
