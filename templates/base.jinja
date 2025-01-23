@@ -61,11 +61,8 @@
             rel="canonical"
             href="https://www.jpmandsons.com/{% if active_page != 'home' %}{{ active_page }}{% endif %}"
         />
-       <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.min.css') }}">
+       <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.min.css') }}?v=2">
 
-        <!-- custom css -->
-        {% block custom_css %}
-        {% endblock custom_css %}
     </head>
     <body>
         {% from "macros.jinja" import navbar %}

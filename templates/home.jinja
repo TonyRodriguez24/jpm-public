@@ -21,13 +21,13 @@
     <div class="row align-items-center flex-grow-1">
         <!-- Left Column -->
         <div class="col-md-6">
-            <h1 class="d-block d-lg-none text-black my-3">
+            <h1 class="d-block d-lg-none text-black my-1">
                 Get started on building the home of your dreams today
             </h1>
             <h1 id="hero-heading" class="text-black header mb-4 d-none d-lg-block">
                 Get started on building the home of your dreams today
             </h1>
-            <p class="lead text-black px-1">
+            <p class="lead text-black">
                 Long Island's top general contractor, industry-leading
                 results for over <strong>35 years.</strong>
             </p>
@@ -39,7 +39,7 @@
             <img
                 src="/static/images-webp/home/home_header.webp"
                 alt="A beautiful home showcasing contractor expertise"
-                class="img-fluid"
+                class="img-fluid my-2 m-lg-0 "
                 width="572"
                 height="572"
                 style="
@@ -52,87 +52,30 @@
     </div>
 
     <!-- Bottom Links for Services -->
-    <div class="my-1">
-    <div class="row justify-content-center services-links">
+   <div class="container mt-lg-3 my-3 my-lg-0 py-1">
+    <div class="row d-flex justify-content-center">
         <div class="col-12 text-center">
-            <div class="row row-cols-3 row-cols-md-3 row-cols-lg-6 g-3">
-                <!-- Service Links -->
-                <div class="col">
-                    <a href="/asphalt" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-2 g-lg-4 ">
+                <!-- Dynamic Service Links -->
+                {% for key, service in services.items() %}
+                <div class="col my-2">
+                    <a href="/{{ key }}" class="d-flex flex-column justify-content-center align-items-center service-link text-decoration-none text-dark text-center">
+                        <div class="icon-container p-lg-3 py-3 p-0">
                             <img
-                                src="/static/images-webp/icons/asphalt.webp"
-                                alt="Asphalt Icon"
-                                class="service-icon img-fluid"
+                                src="{{ url_for('static', filename='images-webp/icons/' ~ service['name'].replace(' ', '_') ~ '.webp') }}"
+                                alt="{{ service['name'].replace('_', ' ').title() }} Icon"
+                                class="service-icon"
                             />
+                            <small class="d-block mt-2">{{ service['name'].replace('_', ' ').title() }}</small>
                         </div>
-                        <span class="d-block mt-2">Asphalt</span>
                     </a>
                 </div>
-                <div class="col">
-                    <a href="/concrete" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
-                            <img
-                                src="/static/images-webp/icons/concrete.webp"
-                                alt="Concrete Icon"
-                                class="service-icon img-fluid"
-                            />
-                        </div>
-                        <span class="d-block mt-2">Concrete</span>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/home-improvement" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
-                            <img
-                                src="/static/images-webp/icons/home_improvement.webp"
-                                alt="Home Improvement Icon"
-                                class="service-icon img-fluid"
-                            />
-                        </div>
-                        <span class="d-block mt-2">Home Improvement</span>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/masonry" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
-                            <img
-                                src="/static/images-webp/icons/masonry.webp"
-                                alt="Masonry Icon"
-                                class="service-icon img-fluid"
-                            />
-                        </div>
-                        <span class="d-block mt-2">Masonry</span>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/paver-sealing" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
-                            <img
-                                src="/static/images-webp/icons/paver_sealing.webp"
-                                alt="Paver Sealing Icon"
-                                class="service-icon img-fluid"
-                            />
-                        </div>
-                        <span class="d-block mt-2">Paver Sealing</span>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="/pressure-washing" class="service-link text-black text-center d-block py-4">
-                        <div class="icon-container">
-                            <img
-                                src="/static/images-webp/icons/pressure_washing.webp"
-                                alt="Pressure Washing Icon"
-                                class="service-icon img-fluid"
-                            />
-                        </div>
-                        <span class="d-block mt-2">Pressure Washing</span>
-                    </a>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
 
 </section>
 
@@ -140,11 +83,11 @@
  <section id="services" class="py-2 py-lg-5">
     <div class="container">
         <!-- Section Heading -->
-        <header class="text-center mb-4">
-            <h2 class="fw-bold">Our Services</h2>
-            <p class="text-muted">
+        <header class="text-center mb-5 mb-lg-4 d-flex flex-column justify-content-center align-items-center">
+            <h2 class="fw-bold mb-1 ">Our Services</h2>
+            <span class="text-muted text-start">
                 Explore the range of expert services we offer to transform your space.
-            </p>
+            </span>
         </header>
 
         <!-- Services Grid -->
@@ -272,7 +215,7 @@
                 alt="Elegant kitchen floors with granite finishes"
                 class="img-fluid rounded shadow-sm"
             />
-            <figcaption class="text-center mt-2">Granite Kitchen Floors</figcaption>
+            <figcaption class="text-center mt-2">Kitchen Floors</figcaption>
         </figure>
         <figure class="col-md-4 gallery-item">
             <img
@@ -418,7 +361,7 @@
 
 
 
-   <section class="py-5 my-5">
+   <section class="py-5 my-lg-5">
     <!-- Flash Messages -->
    {% from "macros.jinja" import render_flashes %}
     {{ render_flashes() }}
@@ -477,7 +420,7 @@
                     class="btn btn-success btn-md px-4"
                     aria-label="Schedule your free quote today"
                 >
-                    Schedule your free quote today
+                    Send Request
                 </button>
             </div>
         </form>

@@ -28,31 +28,18 @@ form > li > label {
 
 /* General container styling */
 .service-link {
-    border-radius: 10px; /* Rounded corners for modern design */
+    border-radius: 5px; /* Rounded corners for modern design */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-decoration: none;
 }
 
 /* Hover effects for the service block */
 .service-link:hover {
-    box-shadow: 4px 4px 12px rgba(47, 0, 255, 0.6); /* Slightly stronger shadow */
+    box-shadow: 4px 4px 5px rgba(47, 0, 255, 0.6); /* Slightly stronger shadow */
     background-color: #ffffff; /* Slightly brighter background */
 }
 
 /* Icon container for consistent icon sizing */
-
-/* Icon styling */
-.service-icon {
-    max-width: 100%;
-    object-fit: contain; /* Preserve aspect ratio */
-}
-
-/* Service link text styling */
-.service-link a {
-    font-weight: bold;
-    color: #333; /* Dark text color */
-    text-decoration: none;
-}
 
 /* Hover effect for text */
 
