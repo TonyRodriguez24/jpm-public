@@ -94,7 +94,7 @@ class Contact(db.Model):
 
         # Step 2: Save to the database
             new_contact = cls(
-                name=form.name.data,
+                name=form.name.data, # type: ignore
                 phone=form.phone.data,
                 email=form.email.data,
                 service_type=form.service_type.data,

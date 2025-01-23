@@ -96,7 +96,7 @@ def contact_us():
             flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
             return redirect('/thank-you')
         else:
-            flash('An error occurred while processing the form.')
+            flash('An error occurred while processing the form.', 'danger')
     if form.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please fill out required fields", "danger")
         return redirect('/contact-us')
