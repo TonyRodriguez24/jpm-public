@@ -151,10 +151,12 @@ def ensure_admin_logged_in():
     if 'admin-username' not in session:
         flash('You must be logged in as an admin to access this page.', 'danger')
         return redirect(url_for('admin'))
+    return True
 
 @app.route('/admin-dashboard', methods = ['GET','POST'])
 def admin_dashboard():
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))
 
     admin = Admin.query.filter_by(username= session['admin-username']).first()
     contacts = Contact.query.all()
@@ -167,7 +169,8 @@ def admin_dashboard():
 
 @app.route('/admin/set-password', methods = ['GET', 'POST'])
 def admin_set_password():
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))
 
 
     form = LoginForm()
@@ -191,7 +194,8 @@ def admin_set_password():
 
 @app.route('/admin/add-contact', methods=['GET', 'POST'])
 def add_contact():
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin')) 
 
 
 
@@ -216,7 +220,8 @@ def add_contact():
 
 @app.route('/admin/edit-contact/<int:id>', methods=['GET', 'POST'])
 def edit_contact(id):
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin')) 
 
 
     contact = Contact.query.get_or_404(id)
@@ -243,7 +248,8 @@ def edit_contact(id):
 
 @app.route('/admin/delete-contact/<int:id>', methods = ['POST'])
 def delete_contact(id):
-    ensure_admin_logged_in() 
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))
 
     contact = Contact.query.get_or_404(id)
     db.session.delete(contact)
@@ -253,7 +259,8 @@ def delete_contact(id):
 
 @app.route('/admin/delete-all-contacts', methods=['POST'])
 def delete_all_contacts():
-    ensure_admin_logged_in()
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))
 
     # Delete all contacts
     Contact.query.delete()
@@ -266,7 +273,8 @@ def delete_all_contacts():
 
 @app.route('/admin/add-project', methods=['GET', 'POST'])
 def add_project():
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))
 
 
     form = ProjectForm()
@@ -286,7 +294,8 @@ def add_project():
 
 @app.route('/admin/edit-project/<int:id>', methods=['GET', 'POST'])
 def edit_project(id):
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin'))   
 
 
     project = Projects.query.get_or_404(id)
@@ -306,7 +315,8 @@ def edit_project(id):
 
 @app.route('/admin/delete-project/<int:id>', methods=['POST'])
 def delete_project(id):
-    ensure_admin_logged_in()   
+    if not ensure_admin_logged_in():
+        return redirect(url_for('admin')) 
 
 
     project = Projects.query.get_or_404(id)
