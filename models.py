@@ -170,7 +170,6 @@ class Contact(db.Model):
         return content
 
     @staticmethod
-    @staticmethod
     def generate_customer_email(form, service_name, complete):
      content = f"""
          <h2>We Have Received Your Message</h2>
