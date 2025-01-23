@@ -87,6 +87,20 @@ class Contact(db.Model):
     #relationship
     service = db.relationship('Services', backref='contacts')
 
+class Contact(db.Model):
+    __tablename__ = 'contacts'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    phone = db.Column(db.String(30), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(100))
+    service_type = db.Column(db.Integer, db.ForeignKey('services.id'))
+    referral = db.Column(db.String(50))
+    message = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=db.func.now())
+    service = db.relationship('Services', backref='contacts')
+
     @classmethod
     def create_complete_contact(cls, form):
         try:
@@ -112,16 +126,13 @@ class Contact(db.Model):
             )
             db.session.add(new_contact)
             db.session.commit()
+            print(f"Contact saved: {form.name.data}, {form.email.data}")
 
-
+            # Get the service name from the SERVICES dictionary
             service_type_dict = dict(SERVICES)
-
-            # Get the service name from the dictionary
             service_name = service_type_dict.get(form.service_type.data, "Unknown Service Type")
 
-            # Step 3: Debug email parameters
-            subject = f"Form submission from {form.name.data}"
-            # Construct the email content
+            # Step 3: Construct the content for both business and customer emails
             content_to_business = f"""
                 <h2>New Complete Contact Form</h2>
                 <p><strong>Name:</strong> {form.name.data}</p>
@@ -129,8 +140,10 @@ class Contact(db.Model):
                 <p><strong>Phone:</strong> {form.phone.data}</p>
                 <p><strong>Service Type:</strong> {service_name}</p>
                 <p><strong>Address:</strong> {form.address.data}</p>
-                """
-            
+                <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
+                <p><strong>Referral:</strong> {form.referral.data}</p>
+            """
+
             content_to_customer = f"""
                 <h2>We Have Received Your Message</h2>
                 <p>Dear {form.name.data},</p>
@@ -141,28 +154,25 @@ class Contact(db.Model):
                 <p><strong>Referral:</strong> {form.referral.data}</p>
                 <p>We look forward to assisting you with your needs.</p>
                 <p>Best regards,<br/>JPM and Sons Team</p>
-                """
+            """
 
-            # Add message if it's provided
-            if form.message.data:
-                content_to_business += f"<p><strong>Message:</strong> {form.message.data}</p>"
-
-            # Step 4: Send the email
+            # Step 4: Send the email to the business
             try:
                 response = send_email(
                     api_key=SENDGRID_API_KEY,
                     from_email=MAIL_DEFAULT_SENDER,
-                    to_email="tonyrodriguez2497@gmail.com",
-                    subject=subject,
+                    to_email="tonyrodriguez2497@gmail.com",  # Replace with your business email
+                    subject=f"Form submission from {form.name.data}",
                     content=content_to_business
                 )
                 if response != 202:
                     raise Exception(f"Email failed to send with status code: {response}")
-                print("Email sent successfully.")
+                print("Email sent to the business successfully.")
             except Exception as email_err:
-                print(f"Email sending failed: {email_err}")
+                print(f"Email sending to business failed: {email_err}")
                 return False
-            
+
+            # Step 5: Send confirmation email to the customer
             try:
                 response = send_email(
                     api_key=SENDGRID_API_KEY,
@@ -176,47 +186,18 @@ class Contact(db.Model):
                 print("Confirmation email sent to customer successfully.")
                 return True
             except Exception as email_err:
-                    print(f"Confirmation email sending failed: {email_err}")
-                    return False
+                print(f"Confirmation email sending failed: {email_err}")
+                return False
 
-                    
         except ValueError as val_err:
             print(f"Validation error: {val_err}")
             return False
 
         except Exception as error:
             print(f"Error creating contact: {error}")
-            db.session.rollback()  # Rollback the database session
+            db.session.rollback()  # Rollback the database session if an error occurs
             return False
-        
-        content_to_customer = f"""
-        <h2>We Have Received Your Message</h2>
-        <p>Dear {form.name.data},</p>
-        <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
-        <p><strong>Summary of your submission:</strong></p>
-        <p><strong>Service Type:</strong> {service_name}</p>
-        <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
-        <p><strong>Referral:</strong> {form.referral.data}</p>
-         <p>We look forward to assisting you with your needs.</p>
-        <p>Best regards,<br/>JPM and Sons Team</p>
-        """
 
-# Send the email to the customer
-            try:
-                response = send_email(
-                    api_key=SENDGRID_API_KEY,
-                    from_email=MAIL_DEFAULT_SENDER,
-                    to_email=form.email.data,  # Send to the customer's email
-                    subject="Thank you for contacting JPM and Sons",
-                    content=content_to_customer
-                )
-                if response != 202:
-                    raise Exception(f"Confirmation email failed to send with status code: {response}")
-                print("Confirmation email sent to customer successfully.")
-                return True
-         except Exception as email_err:
-                print(f"Confirmation email sending failed: {email_err}")
-                return False
 
 
     @classmethod
