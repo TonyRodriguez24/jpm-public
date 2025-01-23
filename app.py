@@ -153,7 +153,7 @@ def ensure_admin_logged_in():
         return redirect(url_for('admin'))
     return True
 
-@app.route('/admin-dashboard', methods = ['GET','POST'])
+@app.route('/admin/dashboard', methods = ['GET','POST'])
 def admin_dashboard():
     if not ensure_admin_logged_in():
         return redirect(url_for('admin'))
