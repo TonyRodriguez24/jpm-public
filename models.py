@@ -122,7 +122,7 @@ class Contact(db.Model):
             # Step 3: Debug email parameters
             subject = f"Form submission from {form.name.data}"
             # Construct the email content
-            content = f"""
+            content_to_business = f"""
                 <h2>New Complete Contact Form</h2>
                 <p><strong>Name:</strong> {form.name.data}</p>
                 <p><strong>Email:</strong> {form.email.data}</p>
@@ -130,10 +130,22 @@ class Contact(db.Model):
                 <p><strong>Service Type:</strong> {service_name}</p>
                 <p><strong>Address:</strong> {form.address.data}</p>
                 """
+            
+            content_to_customer = f"""
+                <h2>We Have Received Your Message</h2>
+                <p>Dear {form.name.data},</p>
+                <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+                <p><strong>Summary of your submission:</strong></p>
+                <p><strong>Service Type:</strong> {service_name}</p>
+                <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
+                <p><strong>Referral:</strong> {form.referral.data}</p>
+                <p>We look forward to assisting you with your needs.</p>
+                <p>Best regards,<br/>JPM and Sons Team</p>
+                """
 
             # Add message if it's provided
             if form.message.data:
-                content += f"<p><strong>Message:</strong> {form.message.data}</p>"
+                content_to_business += f"<p><strong>Message:</strong> {form.message.data}</p>"
 
             # Step 4: Send the email
             try:
@@ -142,16 +154,32 @@ class Contact(db.Model):
                     from_email=MAIL_DEFAULT_SENDER,
                     to_email="tonyrodriguez2497@gmail.com",
                     subject=subject,
-                    content=content
+                    content=content_to_business
                 )
                 if response != 202:
                     raise Exception(f"Email failed to send with status code: {response}")
                 print("Email sent successfully.")
-                return True
             except Exception as email_err:
                 print(f"Email sending failed: {email_err}")
                 return False
+            
+            try:
+                response = send_email(
+                    api_key=SENDGRID_API_KEY,
+                    from_email=MAIL_DEFAULT_SENDER,
+                    to_email=form.email.data,  # Send to the customer's email
+                    subject="Thank you for contacting JPM and Sons",
+                    content=content_to_customer
+                )
+                if response != 202:
+                    raise Exception(f"Confirmation email failed to send with status code: {response}")
+                print("Confirmation email sent to customer successfully.")
+                return True
+            except Exception as email_err:
+                    print(f"Confirmation email sending failed: {email_err}")
+                    return False
 
+                    
         except ValueError as val_err:
             print(f"Validation error: {val_err}")
             return False
@@ -160,6 +188,35 @@ class Contact(db.Model):
             print(f"Error creating contact: {error}")
             db.session.rollback()  # Rollback the database session
             return False
+        
+        content_to_customer = f"""
+        <h2>We Have Received Your Message</h2>
+        <p>Dear {form.name.data},</p>
+        <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+        <p><strong>Summary of your submission:</strong></p>
+        <p><strong>Service Type:</strong> {service_name}</p>
+        <p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>
+        <p><strong>Referral:</strong> {form.referral.data}</p>
+         <p>We look forward to assisting you with your needs.</p>
+        <p>Best regards,<br/>JPM and Sons Team</p>
+        """
+
+# Send the email to the customer
+            try:
+                response = send_email(
+                    api_key=SENDGRID_API_KEY,
+                    from_email=MAIL_DEFAULT_SENDER,
+                    to_email=form.email.data,  # Send to the customer's email
+                    subject="Thank you for contacting JPM and Sons",
+                    content=content_to_customer
+                )
+                if response != 202:
+                    raise Exception(f"Confirmation email failed to send with status code: {response}")
+                print("Confirmation email sent to customer successfully.")
+                return True
+         except Exception as email_err:
+                print(f"Confirmation email sending failed: {email_err}")
+                return False
 
 
     @classmethod
