@@ -168,6 +168,8 @@ class Contact(db.Model):
             """
 
         content += f"<p><strong>Message:</strong> {form.message.data if form.message.data else 'No message provided'}</p>"
+        print(f"Content to BUSINESS: {content}")  # Add a debug print to check the content
+
         return content
 
     @staticmethod
