@@ -155,12 +155,11 @@ def ensure_admin_logged_in():
 
 @app.route('/admin/dashboard', methods = ['GET','POST'])
 def admin_dashboard():
-    if not ensure_admin_logged_in():
-        return redirect(url_for('admin'))
+    ensure_admin_logged_in()
 
     admin_username = session.get('admin-username') 
     admin = Admin.query.filter_by(username= admin_username).first()
-    
+
     contacts = Contact.query.all()
     contact_table_headers = get_column_names(Contact)
     projects = Projects.query.all()
