@@ -62,13 +62,6 @@ def inject_globals():
         'current_user': current_user
     }
 
-@app.route('/debug_user')
-def debug_user():
-    if current_user.is_authenticated:
-        return f"Current User: {current_user.username}, Admin: {current_user.is_admin}"
-    else:
-        return "No user logged in."
-
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -182,7 +175,7 @@ def admin():
 
 @app.route('/admin/dashboard', methods = ['GET','POST'])
 @login_required
-def admin_dashboard():
+def dashboard():
     admin = current_user
 
     contacts = Contact.query.all()
@@ -195,7 +188,7 @@ def admin_dashboard():
 
 @app.route('/admin/set-password', methods=['GET', 'POST'])
 @login_required
-def admin_set_password():
+def set_password():
     """
     Allow the logged-in admin to update their password.
     """
@@ -338,7 +331,7 @@ def delete_project(id):
     return redirect(url_for('admin_dashboard'))
 
 
-@app.route('/logout', methods = ['GET', 'POST'])
+@app.route('/admin/logout', methods = ['GET', 'POST'])
 @login_required
 def logout():
     session.pop('is_admin', None)
@@ -356,7 +349,7 @@ def sitemap():
     import datetime
 
     # Correct endpoint names for excluded routes
-    excluded_routes = ['admin', 'admin_dashboard', 'admin_set_password', 'logout', 'robots_txt', 'sitemap']
+    excluded_routes = ['admin', 'dashboard', 'set_password', 'add_contact', 'add_project' 'logout', 'robots_txt', 'sitemap']
     sitemap_xml = ['<?xml version="1.0" encoding="utf-8"?>']
     sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
@@ -391,7 +384,11 @@ def robots_txt():
 Disallow: /admin
 Disallow: /admin/dashboard
 Disallow: /admin/set-password
-Disallow: /logout
+Disallow: /admin/add-contact
+Disallow: /admin/edit-contact/*
+Disallow: /admin/add-project
+Disallow: /admin/edit-project/*
+Disallow: /admin/logout
 Allow: /
 
 Sitemap: https://jpmandsons.com/sitemap.xml
