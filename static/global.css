@@ -76,7 +76,7 @@
     font-size: 3em;
 }
 
-#Form-container {
+#ContactForm {
     background: linear-gradient(135deg, #9acdffca, #fad0c4c6 50%, #fbc2eb78);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
     border-radius: 10px; /* Optional: Rounded corners for smoother look */

@@ -76,7 +76,7 @@ def home():
 
     if form.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please fill out required fields", "danger")
-        return redirect(url_for('home')  + '#Form-container')
+        return redirect(url_for('home')  + '#ContactForm')
 
     # Render the home page with the form and any error messages
     return render_template('home.jinja', form=form, active_page='home')
@@ -143,7 +143,7 @@ def gallery():
 
     if form.errors:  # Check if there are validation errors
         flash("There was an error with your submission. Please fill out required fields", "danger")
-        return redirect(url_for('gallery')  + '#Form-container')
+        return redirect(url_for('gallery')  + '#ContactForm')
     
     return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = form)
 
@@ -184,7 +184,7 @@ def dashboard():
 
     
 
-    return render_template('admin/dashboard.jinja', active_page = 'admin-dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
+    return render_template('admin/dashboard.jinja', active_page = 'dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
 @app.route('/admin/set-password', methods=['GET', 'POST'])
 @login_required

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.hash === "#Form-container") {
+    if (window.location.hash === "#ContactForm") {
         const form = document.getElementById("Form");
         if (form) {
             const headerHeight = document.querySelector("header")?.offsetHeight || 0;
