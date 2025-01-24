@@ -61,8 +61,10 @@
             rel="canonical"
             href="https://www.jpmandsons.com/{% if active_page != 'home' %}{{ active_page }}{% endif %}"
         />
-       <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.min.css') }}?v=2">
-
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='dist/css/styles.min.css') }}?v=3"
+        />
     </head>
     <body>
         {% from "macros.jinja" import navbar %}
@@ -70,10 +72,6 @@
         {% from "macros.jinja" import render_flashes %}
         {{ render_flashes() }}
         {% block content %}
-       
-        
-
-
         {% endblock content %}
         {% from "macros.jinja" import footer %}
         {{ footer() }}
