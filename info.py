@@ -3,47 +3,47 @@
 
 page_information = {
     "home": {
-        "title": "JPM and Sons | Expert General Contractor Services on Long Island",
+        "title": "JPM and Sons - Expert General Contractor Services on Long Island",
         "meta_description": "JPM and Sons offers general contracting services throughout Long Island. Specializing in masonry, concrete, asphalt paving, paver sealing, pressure washing, and home improvement. Get a free estimate today!"
     },
     "about_us": {
-        "title": "About Us | JPM and Sons | General Contracting Services on Long Island",
+        "title": "About Us - JPM and Sons - General Contracting Services on Long Island",
         "meta_description": "Learn about JPM and Sons, your trusted general contractor serving Long Island. Dedicated to quality and professionalism in every project."
     },
     "contact_us": {
-        "title": "Contact Us | JPM and Sons | Contracting Services in Long Island",
+        "title": "Contact Us - JPM and Sons - Contracting Services in Long Island",
         "meta_description": "Contact JPM and Sons for a free estimate on your next project. We proudly serve Long Island with expert general contracting services."
     },
     "financing": {
-        "title": "********",
+        "title": "Financing Options on Long Island - Flexible Payment Plans with JPM and Sons",
         "meta_description": "Explore financing options with JPM and Sons. Affordable solutions for your masonry, concrete, asphalt, and home improvement projects."
     },
     "gallery": {
-        "title": "Gallery | JPM and Sons | Masonry, Paver Sealing, Concrete, Pressure Washing",
+        "title": "Gallery - JPM and Sons - Masonry, Paver Sealing, Concrete, Pressure Washing",
         "meta_description": "Browse our gallery to see completed projects by JPM and Sons. We showcase masonry, concrete, asphalt paving, and more."
     },
     "asphalt": {
-        "title": "Asphalt on Long Island | Driveways, Installation, Borders, Walkways",
+        "title": "Asphalt on Long Island - Driveways, Installation, Borders, Walkways",
         "meta_description": "JPM and Sons provides expert asphalt paving services for residential and commercial properties in Long Island. Durable and professional results."
     },
     "concrete": {
-        "title": "Concrete on Long Island | Driveways, Patios, Walkways, Foundations",
+        "title": "Concrete on Long Island - Driveways, Patios, Walkways, Foundations",
         "meta_description": "High-quality concrete services by JPM and Sons, including driveways, patios, and foundations. Serving Long Island with excellence."
     },
     "home_improvement": {
-        "title": "Home Improvement on Long Island | Kitchens, Roofing, Siding, Windows, Decks",
+        "title": "Home Improvement on Long Island - Kitchens, Roofing, Siding, Windows, Decks",
         "meta_description": "Enhance your living spaces with JPM and Sons’ professional home improvement services. Transform your home with expert craftsmanship."
     },
     "masonry": {
-        "title": "Masonry on Long Island | Bricklaying, Stone, Retaining Walls, Repairs",
+        "title": "Masonry on Long Island - Bricklaying, Stone, Retaining Walls, Repairs",
         "meta_description": "Expert masonry services by JPM and Sons, including brick, stone, and concrete work. Durable and aesthetic solutions for your property."
     },
     "paver_sealing": {
-        "title": "Paver Sealing on Long Island | Cleaning, Sealing, Color Enhancement",
+        "title": "Paver Sealing on Long Island - Cleaning, Sealing, Color Enhancement",
         "meta_description": "Protect and enhance your pavers with JPM and Sons’ premium paver sealing services. Serving Long Island with care."
     },
     "pressure_washing": {
-        "title": "Pressure-washing on Long Island | Residential, Commercial, Decks, Fences",
+        "title": "Pressure-washing on Long Island - Residential, Commercial, Decks, Fences",
         "meta_description": "Professional pressure washing services by JPM and Sons for decks, driveways, and exteriors. Refresh your property today!"
     }
 }
