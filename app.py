@@ -166,7 +166,7 @@ def admin():
             session['is_admin'] = True
             login_user(admin)
             flash('You are successfully logged in', 'success')
-            return redirect(url_for('admin_dashboard'))
+            return redirect(url_for('dashboard'))
         else:
             flash('Incorrect password/username', 'danger')
 
@@ -200,12 +200,12 @@ def set_password():
             current_user.set_password(new_password)
             db.session.commit()
             flash('Password successfully updated.', 'success')
-            return redirect(url_for('admin_dashboard'))
+            return redirect(url_for('dashboard'))
         except Exception as e:
             db.session.rollback()
             flash(f'An error occurred: {str(e)}', 'danger')
 
-    return render_template('admin/set_password.jinja', form=form, active_page='admin_set_password')
+    return render_template('admin/set_password.jinja', form=form, active_page='set_password')
 
 
 
@@ -224,7 +224,7 @@ def add_contact():
         db.session.commit()
 
         flash('New contact added successfully!', 'success')
-        return redirect(url_for('admin_dashboard'))
+        return redirect(url_for('dashboard'))
 
     return render_template('admin/contacts/add_contact.jinja', form=form)
 
@@ -250,7 +250,7 @@ def edit_contact(id):
         # Save changes to the database
         db.session.commit()
         flash('Contact updated successfully!', 'success')
-        return redirect(url_for('admin_dashboard'))
+        return redirect(url_for('dashboard'))
 
     return render_template('admin/contacts/edit_contact.jinja', form=form)
 
@@ -263,7 +263,7 @@ def delete_contact(id):
     db.session.delete(contact)
     db.session.commit()
     flash('Contact succesfully removed', 'success')
-    return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('dashboard'))
 
 @app.route('/admin/delete-all-contacts', methods=['POST'])
 @login_required
@@ -275,7 +275,7 @@ def delete_all_contacts():
 
     # Redirect with a success message
     flash('All contacts have been deleted.', 'success')
-    return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('dashboard'))
 
 
 @app.route('/admin/add-project', methods=['GET', 'POST'])
@@ -293,7 +293,7 @@ def add_project():
         db.session.add(new_project)
         db.session.commit()
         flash('New project added successfully!', 'success')
-        return redirect(url_for('admin_dashboard'))
+        return redirect(url_for('dashboard'))
 
     return render_template('admin/projects/add_project.jinja', form=form, title='Add Project')
 
@@ -313,7 +313,7 @@ def edit_project(id):
 
         db.session.commit()
         flash('Project updated successfully!', 'success')
-        return redirect(url_for('admin_dashboard'))
+        return redirect(url_for('dashboard'))
 
     return render_template('admin/projects/edit_project.jinja', form=form, title='Edit Project', project=project)
 
@@ -328,7 +328,7 @@ def delete_project(id):
     db.session.delete(project)
     db.session.commit()
     flash('Project deleted successfully!', 'success')
-    return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('dashboard'))
 
 
 @app.route('/admin/logout', methods = ['GET', 'POST'])
