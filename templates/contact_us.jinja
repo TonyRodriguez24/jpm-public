@@ -1,7 +1,7 @@
 {% extends 'base.jinja' %}
 {% block content %}
-<div class="container p-lg-5 mb-5" id="ContactForm">
-    <h2 class="text-center text-dark mb-1 fw-bold">
+<div class="container p-lg-5 p-4 mb-5 my-5 col-11" id="ContactForm">
+    <h2 class="text-center text-dark pt-5 fw-bold">
         How Can We Help?
     </h2>
     <p class="text-center text-muted mb-lg-4" style="font-size: 0.9rem;">
@@ -14,7 +14,7 @@
                 {{ form.hidden_tag() }}
                 <div class="row d-flex align-items-center justify-content-center">
                     <!-- Left Column Fields -->
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-11 col-md-5 col-sm-12">
                         <div class="mb-2">
                             <label for="name" class="form-label mb-0">{{ form.name.label }}</label>
                             {{ form.name(class_='form-control') }}
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <!-- Right Column Fields -->
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-11 col-md-5 col-sm-12">
                         <div class="mb-2">
                             <label for="service_type" class="form-label mb-0">{{ form.service_type.label }}</label>
                             {{ form.service_type(class_='form-select form-control') }}
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="row mb-3 justify-content-center">
-                    <div class="col-md-10 col-12">
+                    <div class="col-11 col-md-10">
                         <label for="message" class="form-label">{{ form.message.label }}</label>
                         {{ form.message(class_='form-message form-control', rows=5) }}
                         {% if form.message.errors %}

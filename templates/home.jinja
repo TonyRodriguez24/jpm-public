@@ -419,7 +419,7 @@
         {{ render_flashes() }}
 
         <!-- Form Container -->
-        <div class="container p-4 p-lg-5 col-11" id="ContactForm">
+        <div class="container p-4 p-lg-5 col-11 " id="ContactForm">
             <!-- Section Header -->
             <header class="text-start mb-4">
                 <h3 class="fw-bold">
@@ -436,13 +436,13 @@
             <form
                 action="/"
                 method="post"
-                class="row g-3 align-items-center justify-content-center"
                 aria-labelledby="ContactForm-heading"
+                class="row g-0 g-lg-3 align-items-center justify-content-start""
             >
                 {{ form.hidden_tag() }}
 
                 <!-- Name Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="name" class="form-label mb-0"
                         >{{ form.name.label }}</label
                     >
@@ -450,7 +450,7 @@
                 </div>
 
                 <!-- Phone Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="phone" class="form-label mb-0"
                         >{{ form.phone.label }}</label
                     >
@@ -458,7 +458,7 @@
                 </div>
 
                 <!-- Email Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-3 mb-2">
                     <label for="email" class="form-label mb-0"
                         >{{ form.email.label }}</label
                     >
@@ -466,7 +466,7 @@
                 </div>
 
                 <!-- Service Type Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="service_type" class="form-label mb-0"
                         >{{ form.service_type.label }}</label
                     >
@@ -477,7 +477,7 @@
                 <div class="col-12 text-center mt-4">
                     <button
                         type="submit"
-                        class="btn btn-success btn-md px-4"
+                        class="btn btn-success btn-md"
                         aria-label="Schedule your free quote today"
                     >
                         Get Started

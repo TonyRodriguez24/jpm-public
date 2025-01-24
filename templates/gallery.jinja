@@ -23,32 +23,32 @@
         </div>
 
         <!-- Right Side: Stats -->
-        <div class="col-lg-6">
+        <div class="d-none d-md-block col-lg-6">
             <div class="row text-center g-3">
                 <!-- Stat 1: Towns Served -->
-                <div class="col-4">
-                    <div class="p-4 shadow rounded">
-                        <ion-icon name="location-outline" size="large" class="text-success"></ion-icon>
-                        <h3 class="fw-bold my-2">50+</h3>
-                        <p class="text-muted">Towns Served on Long Island</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 shadow rounded">
+                        <ion-icon name="location-outline" class="text-success"></ion-icon>
+                        <h4 class="fw-bold my-1">50+</h4>
+                        <small class="text-muted">Towns Served on Long Island</small>
                     </div>
                 </div>
 
                 <!-- Stat 2: Same-Day Inquiries -->
-                <div class="col-4">
-                    <div class="p-4 shadow rounded">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 shadow rounded">
                         <ion-icon name="chatbubbles-outline" size="large" class="text-success"></ion-icon>
-                        <h3 class="fw-bold my-2">Same-Day</h3>
-                        <p class="text-muted">Response to Inquiries</p>
+                        <h4 class="fw-bold my-1">Same-Day</h4>
+                        <small class="text-muted">Response to Inquiries</small>
                     </div>
                 </div>
 
                 <!-- Stat 3: Years of Experience -->
-                <div class="col-4">
-                    <div class="p-4 shadow rounded">
+                <div class="col-md col-lg-4">
+                    <div class="p-3 shadow rounded">
                         <ion-icon name="calendar-outline" size="large" class="text-success"></ion-icon>
-                        <h3 class="fw-bold my-2">35+</h3>
-                        <p class="text-muted">Years of Experience</p>
+                        <h4 class="fw-bold my-1">35+</h4>
+                        <small class="text-muted">Years of Experience</small>
                     </div>
                 </div>
             </div>
@@ -242,64 +242,72 @@
 
        <section class="py-5 my-5">
     <!-- Form Container -->
-    <div
-        class="container p-4 p-lg-5 col-11" id="ContactForm"
-    >
-        <!-- Section Header -->
-        <header class="text-start mb-4">
-            <h3 class="fw-bold">
-                Ready when you are, let’s bring your ideas to life with ease.
-            </h3>
-            <small class="text-muted">
-                Rest assured, we respect your privacy—no spam or junk emails, just timely updates and professional communication.
-            </small>
-        </header>
+    <div class="container p-4 p-lg-5 col-11" id="ContactForm">
+            <!-- Section Header -->
+            <header class="text-start mb-4">
+                <h3 class="fw-bold">
+                    Ready when you are, let’s bring your ideas to life with
+                    ease.
+                </h3>
+                <small class="text-muted">
+                    Rest assured, we respect your privacy—no spam or junk
+                    emails, just timely updates and professional communication.
+                </small>
+            </header>
 
-        <!-- Form Section -->
-        <form
-            action="/gallery"
-            method="post"
-            class="row g-3 align-items-center justify-content-center"
-            aria-labelledby="quickForm-heading"
-        >
-            {{ form.hidden_tag() }}
+            <!-- Form Section -->
+            <form
+                action="/gallery"
+                method="post"
+                class="row g-3 align-items-center justify-content-center"
+                aria-labelledby="ContactForm-heading"
+            >
+                {{ form.hidden_tag() }}
 
-            <!-- Name Field -->
-            <div class="col-md-3 col-sm-6 mb-2">
-                <label for="name" class="form-label mb-0">{{ form.name.label }}</label>
-                {{ form.name(class_="form-control", id="name") }}
-            </div>
+                <!-- Name Field -->
+                <div class="col-md-3 col-sm-6 mb-2">
+                    <label for="name" class="form-label mb-0"
+                        >{{ form.name.label }}</label
+                    >
+                    {{ form.name(class_="form-control ", id="name") }}
+                </div>
 
-            <!-- Phone Field -->
-            <div class="col-md-3 col-sm-6 mb-2">
-                <label for="phone" class="form-label mb-0">{{ form.phone.label }}</label>
-                {{ form.phone(class_="form-control", id="phone") }}
-            </div>
+                <!-- Phone Field -->
+                <div class="col-md-3 col-sm-6 mb-2">
+                    <label for="phone" class="form-label mb-0"
+                        >{{ form.phone.label }}</label
+                    >
+                    {{ form.phone(class_="form-control", id="phone") }}
+                </div>
 
-            <!-- Email Field -->
-            <div class="col-md-3 col-sm-6 mb-2">
-                <label for="email" class="form-label mb-0">{{ form.email.label }}</label>
-                {{ form.email(class_="form-control", id="email") }}
-            </div>
+                <!-- Email Field -->
+                <div class="col-md-3 col-sm-6 mb-2">
+                    <label for="email" class="form-label mb-0"
+                        >{{ form.email.label }}</label
+                    >
+                    {{ form.email(class_="form-control", id="email") }}
+                </div>
 
-            <!-- Service Type Field -->
-            <div class="col-md-3 col-sm-6 mb-2">
-                <label for="service_type" class="form-label mb-0">{{ form.service_type.label }}</label>
-                {{ form.service_type(class_="form-select form-control", id="service_type") }}
-            </div>
+                <!-- Service Type Field -->
+                <div class="col-md-3 col-sm-6 mb-2">
+                    <label for="service_type" class="form-label mb-0"
+                        >{{ form.service_type.label }}</label
+                    >
+                    {{ form.service_type(class_="form-select form-control", id="service_type") }}
+                </div>
 
-            <!-- Submit Button -->
-            <div class="col-12 text-center mt-4">
-                <button
-                    type="submit"
-                    class="btn btn-success btn-md px-4"
-                    aria-label="Schedule your free quote today"
-                >
-                    Schedule your free quote today
-                </button>
-            </div>
-        </form>
-    </div>
+                <!-- Submit Button -->
+                <div class="col-12 text-center mt-4">
+                    <button
+                        type="submit"
+                        class="btn btn-success btn-md px-4"
+                        aria-label="Schedule your free quote today"
+                    >
+                        Get Started
+                    </button>
+                </div>
+            </form>
+        </div>
 </section>
 
     <script src="/static/gallery.js"></script>
