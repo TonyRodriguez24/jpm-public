@@ -4,7 +4,7 @@ from flask_assets import Environment, Bundle
 from database import connect_db, db
 from forms import ContactForm, LoginForm, ProjectForm, SetPasswordForm
 from models import Admin, Contact, get_column_names, Projects
-from info import services, page_information, gallery_and_alt, before_afters
+from info import services, page_information, gallery_and_alt, before_afters, buttons
 from dotenv import load_dotenv
 import os
 from flask_login import LoginManager
@@ -84,22 +84,22 @@ def home():
 ### service routes ###
 @app.route('/asphalt')
 def asphalt():
-    return render_template('services/asphalt.jinja', active_page = 'asphalt', service = services.get('asphalt'))
+    return render_template('services/asphalt.jinja', active_page = 'asphalt', service = services.get('asphalt'), buttons = buttons)
 @app.route('/concrete')
 def concrete():
-    return render_template('services/concrete.jinja', active_page = 'concrete', service = services.get('concrete'))
+    return render_template('services/concrete.jinja', active_page = 'concrete', service = services.get('concrete'), buttons = buttons)
 @app.route('/home-improvement')
 def home_improvement():
-    return render_template('services/home_improvement.jinja', active_page = 'home_improvement', service = services.get('home_improvement'))
+    return render_template('services/home_improvement.jinja', active_page = 'home_improvement', service = services.get('home_improvement'), buttons = buttons)
 @app.route('/masonry')
 def masonry():
-    return render_template('services/masonry.jinja', active_page = 'masonry', service = services.get('masonry'))
+    return render_template('services/masonry.jinja', active_page = 'masonry', service = services.get('masonry'), buttons = buttons)
 @app.route('/paver-sealing')
 def paver_sealing():
-    return render_template('services/paver_sealing.jinja', active_page = 'paver_sealing', service = services.get('paver_sealing'))
+    return render_template('services/paver_sealing.jinja', active_page = 'paver_sealing', service = services.get('paver_sealing'), buttons = buttons)
 @app.route('/pressure-washing')
 def pressure_washing():
-    return render_template('services/pressure_washing.jinja',active_page = 'pressure_washing', service = services.get('pressure_washing'))
+    return render_template('services/pressure_washing.jinja',active_page = 'pressure_washing', service = services.get('pressure_washing'), buttons = buttons)
 ### end service routes ###
 
 

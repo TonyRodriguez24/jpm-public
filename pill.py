@@ -2,12 +2,12 @@ from PIL import Image, ImageOps
 import os
 
 # Specify the directory containing the .webp images
-input_directory = "/mnt/c/Users/TonyR/OneDrive/Documents/GitHub/jpm/static/images-webp/home/service-cards"
-output_directory = "/mnt/c/Users/TonyR/OneDrive/Documents/GitHub/jpm/static/images-webp/home/service-cards-resized"
+input_directory = "/mnt/c/Users/TonyR/OneDrive/Documents/jpm/static/images-webp/home/home-banner"
+output_directory = "/mnt/c/Users/TonyR/OneDrive/Documents/jpm/static/images-webp/home/home-banner-resized"
 
 # Target dimensions
-target_width = 600
-target_height = 600
+target_width = 1000
+target_height = 1000
 
 # Ensure the output directory exists
 os.makedirs(output_directory, exist_ok=True)
@@ -21,8 +21,8 @@ for file_name in os.listdir(input_directory):
         try:
             # Open the .webp image
             with Image.open(input_path) as img:
-                # Preserve aspect ratio and resize
-                img = ImageOps.contain(img, (target_width, target_height), Image.Resampling.LANCZOS)
+                # Resize and crop to exact dimensions
+                img = ImageOps.fit(img, (target_width, target_height), Image.Resampling.LANCZOS)
 
                 # Save the resized image to the output directory
                 img.save(output_path, "WEBP", quality=100)

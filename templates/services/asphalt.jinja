@@ -40,7 +40,7 @@
                             style="background-color: {% if loop.index is even %}#f8f9fa{% else %}#ffffff{% endif %}; border-radius: 15px;"
                         >
                             <!-- Left Section: Image, Name, and Highlights -->
-                            <div class="col-md-6 p-lg-4">
+                            <div class="col-md-5 p-lg-4">
                                 <div
                                     class="card border-0 shadow-lg hover-shadow"
                                 >
@@ -69,8 +69,7 @@
                                                 >
                                                     <span
                                                         class="badge border border-dark 
-                text-dark py-2 px-3"
-                                                        style="background-color: #bebebe;"
+                text-dark py-2 px-3 bg-warning"
                                                     >
                                                         <i
                                                             class="bi 
@@ -115,15 +114,26 @@
                                 </div>
 
                                 <!-- Call-to-Action Buttons -->
-                                <div class="mt-4 d-flex justify-content-center">
-                                    {% for button in sub_service.buttons %}
-                                        <a
-                                            href="{{ button.link }}"
-                                            class="btn {{ button.style }} me-2"
-                                        >
-                                            {{ button.label }}
-                                        </a>
-                                    {% endfor %}
+                                <div
+                                    class="mt-4 d-flex justify-content-center flex-wrap"
+                                >
+                                    <!-- Render One Random Contact Button -->
+                                    {% set contact_button = buttons.contact | random %}
+                                    <a
+                                        href="{{ contact_button.link }}"
+                                        class="btn {{ contact_button.style }} me-2 mb-2"
+                                    >
+                                        {{ contact_button.label }}
+                                    </a>
+
+                                    <!-- Render One Random Gallery Button -->
+                                    {% set gallery_button = buttons.gallery | random %}
+                                    <a
+                                        href="{{ gallery_button.link }}"
+                                        class="btn {{ gallery_button.style }} me-2 mb-2"
+                                    >
+                                        {{ gallery_button.label }}
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.getElementById("gallery");
 
     // Ensure the spinner is removed and the gallery is displayed after DOM is loaded
-    setTimeout(() => {
-        loadingScreen.style.display = "none"; // Completely hide the loading screen
-        gallery.classList.remove("hidden"); // Remove 'hidden' class to show the gallery
-    }, 1000); // Optional delay for better UX, adjust as needed
+    if (loadingScreen && gallery) {
+        setTimeout(() => {
+            loadingScreen.style.display = "none"; // Completely hide the loading screen
+            gallery.classList.remove("hidden"); // Remove 'hidden' class to show the gallery
+        }, 1000); // Optional delay for better UX, adjust as needed
+    }
 
     const options = { threshold: 0.1 };
 
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, options);
 
     // Initialize the observer for images in the gallery
-    const images = document.querySelectorAll("#gallery img");
-    images.forEach((img) => observer.observe(img));
+    if (gallery) {
+        const images = document.querySelectorAll("#gallery img");
+        images.forEach((img) => observer.observe(img));
+    }
 });

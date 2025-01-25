@@ -69,11 +69,7 @@ services = {
                 "Weather-Resistant Materials",
                 "Smooth and Polished Finish"
             ],
-            "image_path": "/static/images-webp/asphalt/asphalt_driveway_installation.webp",
-            "buttons": [
-                {"label": "Request Estimate", "link": "/contact-us", "style": "btn-primary"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-outline-success"}
-            ]
+            "image_path": "/static/images-webp/asphalt/asphalt_driveway_installation.webp"
         },
         {
             "name": "Commercial Asphalt Installation",
@@ -89,11 +85,7 @@ services = {
                 "Precision Grading for Drainage",
                 "Scalable for Large Areas"
             ],
-            "image_path": "/static/images-webp/asphalt/asphalt_commercial_installation.webp",
-            "buttons": [
-                {"label": "View Gallery", "link": "/gallery", "style": "btn-outline-success"},
-                {"label": "Schedule Consultation", "link": "/contact-us", "style": "btn-primary"}
-            ]
+            "image_path": "/static/images-webp/asphalt/asphalt_commercial_installation.webp"
         },
         {
             "name": "Belgium Block Borders",
@@ -109,11 +101,7 @@ services = {
                 "High-Quality Belgium Blocks",
                 "Customizable for Any Project"
             ],
-            "image_path": "/static/images-webp/asphalt/asphalt_belgium_block_borders.webp",
-            "buttons": [
-                {"label": "Get a Quote", "link": "/contact-us", "style": "btn-primary"},
-                {"label": "View our work", "link": "/gallery", "style": "btn-outline-success"}
-            ]
+            "image_path": "/static/images-webp/asphalt/asphalt_belgium_block_borders.webp"
         },
         {
             "name": "Paver Walkways",
@@ -129,15 +117,10 @@ services = {
                 "Enhanced Accessibility",
                 "Customizable Designs"
             ],
-            "image_path": "/static/images-webp/asphalt/asphalt_paver_walkways.webp",
-            "buttons": [
-                {"label": "Request a Free Quote", "link": "contact-us", "style": "btn-primary"},
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-success"}
-            ]
+            "image_path": "/static/images-webp/asphalt/asphalt_paver_walkways.webp"
         }
     ]
 },
-
 
 "concrete": {
     "id": 2,
@@ -159,11 +142,7 @@ services = {
                 "Weather-Resistant Finish",
                 "Seamless, Polished Look"
             ],
-            "image_path": "/static/images-webp/concrete/concrete_driveway_installation.webp",
-            "buttons": [
-                {"label": "Request Estimate", "link": "/contact-us", "style": "btn-outline-primary"},
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-secondary"}
-            ]
+            "image_path": "/static/images-webp/concrete/concrete_driveway_installation.webp"
         },
         {
             "name": "Patios and Walkways",
@@ -179,11 +158,7 @@ services = {
                 "Slip-Resistant Surface",
                 "Seamlessly Integrated with Landscaping"
             ],
-            "image_path": "/static/images-webp/concrete/concrete_patios.webp",
-            "buttons": [
-                {"label": "Get a Quote", "link": "/estimate/2", "style": "btn-outline-dark"},
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/concrete/concrete_patios.webp"
         },
         {
             "name": "Sidewalks and Aprons",
@@ -199,11 +174,7 @@ services = {
                 "Durable Concrete Construction",
                 "Integrated Drainage Solutions"
             ],
-            "image_path": "/static/images-webp/concrete/concrete_walkway.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact", "style": "btn-primary"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/concrete/concrete_walkway.webp"
         },
         {
             "name": "Steps, Stoops, and Foundation",
@@ -219,11 +190,7 @@ services = {
                 "Customizable Designs",
                 "Weather-Resistant Materials"
             ],
-            "image_path": "/static/images-webp/concrete/concrete_stoops.webp",
-            "buttons": [
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-primary"},
-                {"label": "Request a Free Estimate", "link": "/estimate/2", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/concrete/concrete_stoops.webp"
         }
     ]
 },
@@ -248,11 +215,7 @@ services = {
                 "Energy-Efficient Appliances",
                 "Modern Lighting Solutions"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_kitchen_remodel.webp",
-            "buttons": [
-                {"label": "Get a Free Quote", "link": "/estimate/3", "style": "btn-outline-primary"},
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-secondary"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_kitchen_remodel.webp"
         },
         {
             "name": "Bathroom Renovation",
@@ -268,11 +231,7 @@ services = {
                 "Water-Saving Fixtures",
                 "Heated Flooring Options"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_bathroom_renovation.webp",
-            "buttons": [
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_bathroom_renovation.webp"
         },
         {
             "name": "Roofing Services",
@@ -288,11 +247,7 @@ services = {
                 "Weather-Resistant Construction",
                 "Comprehensive Warranty"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_roofing.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact", "style": "btn-primary"},
-                {"label": "Request Estimate", "link": "/contact-us", "style": "btn-outline-dark"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_roofing.webp"
         },
         {
             "name": "Siding Installation",
@@ -308,11 +263,7 @@ services = {
                 "Fade-Resistant Colors",
                 "Professional Installation"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_siding.webp",
-            "buttons": [
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"},
-                {"label": "View Our Work", "link": "/gallery", "style": "btn-outline-primary"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_siding.webp"
         },
         {
             "name": "Window Replacement",
@@ -328,11 +279,7 @@ services = {
                 "Customizable Designs",
                 "Secure Locking Mechanisms"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_window_installation.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact", "style": "btn-primary"},
-                {"label": "Request a Quote", "link": "/estimate/3", "style": "btn-outline-dark"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_window_installation.webp"
         },
         {
             "name": "Flooring Installation",
@@ -348,11 +295,7 @@ services = {
                 "Precision Installation",
                 "Scratch and Stain Resistant Options"
             ],
-            "image_path": "/static/images-webp/home_improvement/home_improvement_flooring_installation.webp",
-            "buttons": [
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-primary"},
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/home_improvement/home_improvement_flooring_installation.webp"
         }
     ]
 },
@@ -377,11 +320,7 @@ services = {
                 "Weather-Resistant Materials",
                 "Polished and Seamless Finish"
             ],
-            "image_path": "/static/images-webp/masonry/masonry_custom_brickwork.webp",
-            "buttons": [
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-primary"},
-                {"label": "Request a Quote", "link": "/estimate/4", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/masonry/masonry_custom_brickwork.webp"
         },
         {
             "name": "Stone Veneer and Cultured Stone",
@@ -397,11 +336,7 @@ services = {
                 "Wide Variety of Styles",
                 "Increased Property Value"
             ],
-            "image_path": "/static/images-webp/masonry/masonry_stone_veneers.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact", "style": "btn-primary"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/masonry/masonry_stone_veneers.webp"
         },
         {
             "name": "Outdoor Barbecues",
@@ -417,11 +352,7 @@ services = {
                 "Durable and Weather-Resistant Materials",
                 "Expert Craftsmanship for a Polished Look"
             ],
-            "image_path": "/static/images-webp/masonry/masonry_outdoor_barbecues.webp",
-            "buttons": [
-                {"label": "Get a Free Quote", "link": "/estimate/4", "style": "btn-outline-dark"},
-                {"label": "View Our Work", "link": "/gallery", "style": "btn-outline-secondary"}
-            ]
+            "image_path": "/static/images-webp/masonry/masonry_outdoor_barbecues.webp"
         },
         {
             "name": "Retaining Walls and Stoops",
@@ -437,11 +368,7 @@ services = {
                 "Customizable Designs for Any Space",
                 "Low Maintenance and Long-Lasting"
             ],
-            "image_path": "/static/images-webp/masonry/masonry_retaining_walls.webp",
-            "buttons": [
-                {"label": "Request Estimate", "link": "/contact-us", "style": "btn-outline-primary"},
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/masonry/masonry_retaining_walls.webp"
         }
     ]
 },
@@ -466,11 +393,7 @@ services = {
                 "Eco-Friendly and Safe Methods",
                 "Quick and Thorough Cleaning"
             ],
-            "image_path": "/static/images-webp/paver_sealing/paver_sealing_hot_water_washing.webp",
-            "buttons": [
-                {"label": "Request a Quote", "link": "/estimate/5", "style": "btn-outline-primary"},
-                {"label": "Contact Us", "link": "/contact", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/paver_sealing/paver_sealing_hot_water_washing.webp"
         },
         {
             "name": "Polymeric Sand Application",
@@ -486,11 +409,7 @@ services = {
                 "Weed Prevention and Stability",
                 "Long-Lasting Joint Sealing"
             ],
-            "image_path": "/static/images-webp/paver_sealing/paver_sealing_sand_application.webp",
-            "buttons": [
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/paver_sealing/paver_sealing_sand_application.webp"
         },
         {
             "name": "Sealing Application",
@@ -506,11 +425,7 @@ services = {
                 "Weatherproof and UV-Resistant Coating",
                 "Enhances Color and Texture"
             ],
-            "image_path": "/static/images-webp/paver_sealing/paver_sealing_sealing_application.webp",
-            "buttons": [
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-secondary"},
-                {"label": "Request a Free Quote", "link": "/estimate/5", "style": "btn-outline-dark"}
-            ]
+            "image_path": "/static/images-webp/paver_sealing/paver_sealing_sealing_application.webp"
         },
         {
             "name": "Paver Repair",
@@ -526,11 +441,7 @@ services = {
                 "Stability and Safety Improvements",
                 "Seamless Restoration of Appearance"
             ],
-            "image_path": "/static/images-webp/paver_sealing/paver_sealing_paver_repair.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact", "style": "btn-primary"},
-                {"label": "Schedule Service", "link": "/estimate/5", "style": "btn-danger"}
-            ]
+            "image_path": "/static/images-webp/paver_sealing/paver_sealing_paver_repair.webp"
         }
     ]
 },
@@ -555,11 +466,7 @@ services = {
                 "Eco-Friendly Cleaning Solutions",
                 "Fast and Thorough Service"
             ],
-            "image_path": "/static/images-webp/pressure_washing/pressure_washing_residential.webp",
-            "buttons": [
-                {"label": "Request a Free Quote", "link": "/estimate/6", "style": "btn-outline-primary"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/pressure_washing/pressure_washing_residential.webp"
         },
         {
             "name": "Commercial Pressure Washing",
@@ -575,11 +482,7 @@ services = {
                 "Tailored Solutions for Businesses",
                 "Improves Safety and Cleanliness"
             ],
-            "image_path": "/static/images-webp/pressure_washing/pressure_washing_commercial.webp",
-            "buttons": [
-                {"label": "Schedule Consultation", "link": "/contact", "style": "btn-danger"},
-                {"label": "View Portfolio", "link": "/gallery", "style": "btn-outline-secondary"}
-            ]
+            "image_path": "/static/images-webp/pressure_washing/pressure_washing_commercial.webp"
         },
         {
             "name": "Surface Preparation",
@@ -595,11 +498,7 @@ services = {
                 "Safe for All Surfaces",
                 "Prepares for Long-Lasting Coatings"
             ],
-            "image_path": "/static/images-webp/pressure_washing/pressure_washing_surface_preparation.webp",
-            "buttons": [
-                {"label": "Contact Us", "link": "/contact-us", "style": "btn-primary"},
-                {"label": "Request Estimate", "link": "/estimate/6", "style": "btn-outline-dark"}
-            ]
+            "image_path": "/static/images-webp/pressure_washing/pressure_washing_surface_preparation.webp"
         },
         {
             "name": "Deck and Fence Cleaning",
@@ -615,17 +514,10 @@ services = {
                 "Preserves Wood Integrity",
                 "Eco-Friendly Cleaning Options"
             ],
-            "image_path": "/static/images-webp/pressure_washing/pressure_washing_deck.webp",
-            "buttons": [
-                {"label": "Request a Quote", "link": "/estimate/6", "style": "btn-outline-primary"},
-                {"label": "Read Reviews", "link": "/reviews", "style": "btn-success"}
-            ]
+            "image_path": "/static/images-webp/pressure_washing/pressure_washing_deck.webp"
         }
     ]
-}
-
-
-
+},
 
 }
 
@@ -703,6 +595,39 @@ before_afters = [
         "after": {"file": "before-and-after-sealant.webp", "alt": "Side-by-side comparison of before and after sealant application"}
     }
 ]
+
+
+buttons = {
+    "contact": [
+        {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Request a Free Quote", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Schedule a Consultation", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Talk to Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Get in Touch", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Request Assistance", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Ask a Question", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Start Your Project", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Get a Free Estimate", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Reach Out to Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Schedule an Appointment", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Send Us a Message", "link": "/contact-us", "style": "btn-outline-primary"}
+    ],
+    "gallery": [
+        {"label": "View Our Work", "link": "/gallery", "style": "btn-success"},
+        {"label": "See Portfolio", "link": "/gallery", "style": "btn-success"},
+        {"label": "Explore Our Projects", "link": "/gallery", "style": "btn-success"},
+        {"label": "Browse the Gallery", "link": "/gallery", "style": "btn-success"},
+        {"label": "Check Out Our Work", "link": "/gallery", "style": "btn-success"},
+        {"label": "Discover Our Projects", "link": "/gallery", "style": "btn-success"},
+        {"label": "Explore Completed Work", "link": "/gallery", "style": "btn-success"},
+        {"label": "See Our Creations", "link": "/gallery", "style": "btn-success"},
+        {"label": "View Past Projects", "link": "/gallery", "style": "btn-success"},
+        {"label": "Check Our Portfolio", "link": "/gallery", "style": "btn-success"},
+        {"label": "Explore Design Ideas", "link": "/gallery", "style": "btn-success"},
+        {"label": "See Our Expertise", "link": "/gallery", "style": "btn-success"}
+    ]
+}
+
 
 SERVICES = [
     (0, "Please Select A Service"),

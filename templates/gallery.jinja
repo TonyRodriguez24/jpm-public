@@ -241,6 +241,8 @@
 
 
        <section class="py-5 my-5">
+       {% from "macros.jinja" import render_flashes %}
+        {{ render_flashes() }}
     <!-- Form Container -->
     <div class="container p-4 p-lg-5 col-11" id="ContactForm">
             <!-- Section Header -->

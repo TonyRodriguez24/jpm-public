@@ -16,7 +16,7 @@
 
     <section
         id="hero-section"
-        class="container landing position-relative h-100 p-3 d-flex flex-column"
+        class="container landing position-relative h-100 p-3 d-flex flex-column "
         aria-labelledby="hero-heading"
     >
         <div class="row align-items-center flex-grow-1">
@@ -68,8 +68,8 @@
                         {% for key, service in services.items() %}
                             <div class="col my-2">
                                 <a
-                                    href="/{{ key }}"
-                                    class="d-flex flex-column justify-content-center align-items-center service-link text-decoration-none text-dark text-center"
+                                    href="{{ url_for(key) }}"
+                                    class="d-flex flex-column justify-content-center align-items-center service-link text-decoration-none text-dark text-center "
                                 >
                                     <div class="icon-container p-lg-3 py-3 p-0">
                                         <img
@@ -108,7 +108,7 @@
                 {% for service_key, service in services.items() %}
                     <article class="col-11 d-flex mx-auto">
                         <div
-                            class="service-card card h-100 w-lg-100 position-relative"
+                            class="service-card bg-light card h-100 w-lg-100 position-relative"
                         >
                             <!-- Image Link -->
                             <a
@@ -149,7 +149,7 @@
 
     <div
         class="my-4"
-        style="background: url('/static/images-webp/home.webp') no-repeat center center; background-size: cover;"
+        style="background: url('/static/images-webp/home/home-banner-resized/home.webp') no-repeat center center; background-size: cover;"
     >
         <div
             class="container-fluid d-flex flex-column align-items-center justify-content-center text-center py-5"
@@ -183,7 +183,7 @@
         <div class="row g-0 g-lg-4">
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/backyard-pavers-and-siding.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/backyard-pavers-and-siding.webp"
                     alt="Beautiful backyard with pavers and siding"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -193,7 +193,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/beautiful-modern-bathroom.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/beautiful-modern-bathroom.webp"
                     alt="Modern bathroom renovation with stylish fixtures"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -203,7 +203,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/beautiful-paver-backyard.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/beautiful-paver-backyard.webp"
                     alt="Elegant backyard with sealed pavers"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -213,7 +213,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/clean-pavers-by-pool.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/clean-pavers-by-pool.webp"
                     alt="Clean and polished pavers around a swimming pool"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -223,7 +223,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/countertop-modern-design.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/countertop-modern-design.webp"
                     alt="Modern countertop design in a kitchen"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -233,7 +233,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/kitchen-floors-and-granite.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/kitchen-floors-and-granite.webp"
                     alt="Elegant kitchen floors with granite finishes"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -241,7 +241,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/beautiful-home-and-yard.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/beautiful-home-and-yard.webp"
                     alt="Beautiful home showcasing modern design"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -251,7 +251,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/backyard-asthetic-pavers.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/backyard-asthetic-pavers.webp"
                     alt="Backyard with aesthetic pavers installation"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -261,7 +261,7 @@
             </figure>
             <figure class="col-md-4 gallery-item">
                 <img
-                    src="/static/images-webp/home/front-page-gallery/pavers-walkway-steps.webp"
+                    src="/static/images-webp/home/front-page-gallery-resized/pavers-walkway-steps.webp"
                     alt="Walkway and steps with pavers"
                     class="img-fluid rounded shadow-sm"
                 />
@@ -274,8 +274,7 @@
 
     <section
         id="testimonials"
-        class="container-fluid py-5"
-        style="background-color: #d5d5d5;"
+        class="container-fluid py-5 bg-light border-shadow-lg"
     >
         <div class="container">
             <!-- Section Heading -->

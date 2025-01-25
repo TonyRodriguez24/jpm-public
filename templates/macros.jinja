@@ -148,9 +148,12 @@
 
 
 {% macro render_flashes() %}
-    <div class="container mt-2">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+
+
+            <div class="container mt-2">
                 <ul class="flashes">
                     {% for category, message in messages %}
                         <li
@@ -167,10 +170,11 @@
                         </li>
                     {% endfor %}
                 </ul>
-            {% endif %}
-        {% endwith %}
-    </div>
+            </div>
+        {% endif %}
+    {% endwith %}
 {% endmacro %}
+
 
 
 {% macro footer() %}
