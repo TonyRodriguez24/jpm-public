@@ -69,7 +69,7 @@ services = {
                 "Weather-Resistant Materials",
                 "Smooth and Polished Finish"
             ],
-            "image_path": "/static/images-webp/asphalt/asphalt_driveway_installation.webp"
+            "image_path": "/static/images-webp/asphalt/driveway_installation.png"
         },
         {
             "name": "Commercial Asphalt Installation",
