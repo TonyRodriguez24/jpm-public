@@ -6,7 +6,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 admin = Blueprint('admin', __name__, url_prefix = '/admin')
 
-@admin.route('/admin-login', methods = ['GET', 'POST'])
+@admin.route('/login', methods = ['GET', 'POST'])
 def login():
     """Login form and adding is_admin to session for navbar purposes of current_user.is_authenticated not working"""
     form = LoginForm()
@@ -27,8 +27,7 @@ def login():
 
     return render_template('admin/login.jinja', form = form, active_page = 'admin.login')
 
-
-@admin.route('/admin/dashboard', methods = ['GET','POST'])
+@admin.route('/dashboard', methods = ['GET','POST'])
 @login_required
 def dashboard():
     """Dashboard of all contacts and projects for an admin user to interact with"""
@@ -41,8 +40,7 @@ def dashboard():
 
     return render_template('admin/dashboard.jinja', active_page = 'admin.dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
-
-@admin.route('/admin/set-password', methods=['GET', 'POST'])
+@admin.route('/set-password', methods=['GET', 'POST'])
 @login_required
 def set_password():
     """ Allow the logged-in admin to update password """
@@ -62,8 +60,7 @@ def set_password():
 
     return render_template('admin/set_password.jinja', form=form, active_page='admin.set_password')
 
-
-@admin.route('/admin/add-contact', methods=['GET', 'POST'])
+@admin.route('/add-contact', methods=['GET', 'POST'])
 @login_required
 def add_contact():
     """Form for admin adding a contact instead of through form submission"""
@@ -84,8 +81,7 @@ def add_contact():
 
     return render_template('admin/contacts/add_contact.jinja', form=form)
 
-
-@admin.route('/admin/edit-contact/<int:id>', methods=['GET', 'POST'])
+@admin.route('/edit-contact/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_contact(id):
     """Edit contact form for admin"""
@@ -110,8 +106,7 @@ def edit_contact(id):
 
     return render_template('admin/contacts/edit_contact.jinja', form=form)
 
-
-@admin.route('/admin/delete-contact/<int:id>', methods = ['POST'])
+@admin.route('/delete-contact/<int:id>', methods = ['POST'])
 @login_required
 def delete_contact(id):
     """Deleting contact for admin, post route only"""
@@ -122,8 +117,7 @@ def delete_contact(id):
     flash('Contact succesfully removed', 'success')
     return redirect(url_for('admin.dashboard'))
 
-
-@admin.route('/admin/delete-all-contacts', methods=['POST'])
+@admin.route('/delete-all-contacts', methods=['POST'])
 @login_required
 def delete_all_contacts():
     """Deleting all contacts for admin, post route only"""
@@ -135,8 +129,7 @@ def delete_all_contacts():
     flash('All contacts have been deleted.', 'success')
     return redirect(url_for('admin.dashboard'))
 
-
-@admin.route('/admin/add-project', methods=['GET', 'POST'])
+@admin.route('/add-project', methods=['GET', 'POST'])
 @login_required
 def add_project():
     """Form for admin adding a project *needs to be fleshed out"""
@@ -155,8 +148,7 @@ def add_project():
 
     return render_template('admin/projects/add_project.jinja', form=form, title='Add Project')
 
-
-@admin.route('/admin/edit-project/<int:id>', methods=['GET', 'POST'])
+@admin.route('/edit-project/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_project(id):
     """Form for admin editing a project"""
@@ -175,8 +167,7 @@ def edit_project(id):
 
     return render_template('admin/projects/edit_project.jinja', form=form, title='Edit Project', project=project)
 
-
-@admin.route('/admin/delete-project/<int:id>', methods=['POST'])
+@admin.route('/delete-project/<int:id>', methods=['POST'])
 @login_required
 def delete_project(id):
     """Form for admin deleting a project"""
@@ -187,8 +178,7 @@ def delete_project(id):
     flash('Project deleted successfully!', 'success')
     return redirect(url_for('admin.dashboard'))
 
-
-@admin.route('/admin/logout', methods = ['GET', 'POST'])
+@admin.route('/logout', methods = ['GET', 'POST'])
 @login_required
 def logout():
     """Logging out, pop is_admin from session and use flask login to log user out"""
