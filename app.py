@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, flash, Response, session, url_for
+from flask import Flask, jsonify, render_template, redirect, flash, Response, session, url_for, request
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
 from database import connect_db, db
@@ -7,6 +7,7 @@ from models import Admin, Contact, get_column_names, Projects
 from info import services, page_information, gallery_and_alt, before_afters, buttons
 from dotenv import load_dotenv
 import os
+import requests
 from flask_login import LoginManager
 
 load_dotenv()
@@ -14,6 +15,7 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
 DATABASE_URI = os.environ.get("DATABASE_URI")
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
 
 app = Flask(__name__)
 
@@ -61,15 +63,29 @@ def inject_globals():
 @app.route('/', methods=['GET', 'POST'])
 def home():
     """Rendering home template and handling (quick) form on home page"""
+    #gets the reCAPTCHA token from the form submission
+    
 
     form = ContactForm()
     
     if form.validate_on_submit():
-        if Contact.create_contact(form, complete=False):
-            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
-            return redirect('/thank-you')
+        recaptcha_response = request.form.get('g-recaptcha-response')
+
+        #verify the token with reCAPTCHA API
+        verify_url = 'https://www.google.com/recaptcha/api/siteverify'
+        payload = {'secret': RECAPTCHA_SECRET_KEY, 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        result = requests.post(verify_url, data = payload).json()
+
+        if result.get('success'):
+            if Contact.create_contact(form, complete=False):
+                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+                return redirect('/thank-you')
+            else:
+                flash('An error occurred while processing the form.')
         else:
-            flash('An error occurred while processing the form.')
+            flash("Invalid reCAPTCHA. Please try again.", "danger")
+            return redirect(url_for('home') + '#ContactForm')
+
 
     #validation errors
     if form.errors:
@@ -115,14 +131,29 @@ def contact_us():
 
     form = ContactForm()
     if form.validate_on_submit():
-        if Contact.create_contact(form, complete=True):
-            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
-            return redirect('/thank-you')
+        recaptcha_response = request.form.get('g-recaptcha-response')
+
+        app.logger.info(f"Received reCAPTCHA response: {recaptcha_response}")
+
+        #verify the token with reCAPTCHA API
+        verify_url = 'https://www.google.com/recaptcha/api/siteverify'
+        payload = {'secret': RECAPTCHA_SECRET_KEY, 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        result = requests.post(verify_url, data = payload).json()
+
+        if result.get('success'):
+            if Contact.create_contact(form, complete=True):
+                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+                return redirect('/thank-you')
+            else:
+                flash('An error occurred while processing the form.')
         else:
-            flash('An error occurred while processing the form.', 'danger')
-    if form.errors:  # Check if there are validation errors
-        flash("There was an error with your submission. Please fill out required fields", "danger")
-        return render_template('contact_us.jinja', active_page='contact_us', form=form) 
+            flash("Invalid reCAPTCHA. Please try again.", "danger")
+            return redirect(url_for('contact_us') + '#ContactForm')
+        
+        #validation errors
+        if form.errors:
+            flash("There was an error with your submission. Please fill out required fields", "danger")
+            return redirect(url_for('contact_us')  + '#ContactForm')
 
     return render_template('contact_us.jinja', active_page = 'contact_us', form = form)
 
@@ -137,15 +168,27 @@ def gallery():
     form = ContactForm()
     
     if form.validate_on_submit():
-        if Contact.create_contact(form, complete=False):
-            flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
-            return redirect('/thank-you')
-        else:
-            flash('An error occurred while processing the form.')
+        recaptcha_response = request.form.get('g-recaptcha-response')
 
-    if form.errors:  # Check if there are validation errors
-        flash("There was an error with your submission. Please fill out required fields", "danger")
-        return redirect(url_for('gallery')  + '#ContactForm')
+        #verify the token with reCAPTCHA API
+        verify_url = 'https://www.google.com/recaptcha/api/siteverify'
+        payload = {'secret': RECAPTCHA_SECRET_KEY, 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        result = requests.post(verify_url, data = payload).json()
+
+        if result.get('success'):
+            if Contact.create_contact(form, complete=False):
+                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
+                return redirect('/thank-you')
+            else:
+                flash('An error occurred while processing the form.')
+        else:
+            flash("Invalid reCAPTCHA. Please try again.", "danger")
+            return redirect(url_for('gallery') + '#ContactForm')
+        
+        #validation errors
+        if form.errors:
+            flash("There was an error with your submission. Please fill out required fields", "danger")
+            return redirect(url_for('gallery')  + '#ContactForm')
     
     return render_template('gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = form)
 

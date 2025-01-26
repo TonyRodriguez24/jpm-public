@@ -259,6 +259,8 @@
 
             <!-- Form Section -->
             <form
+                id="#form"
+            
                 action="/gallery"
                 method="post"
                 class="row g-3 align-items-center justify-content-center"
@@ -302,8 +304,11 @@
                 <div class="col-12 text-center mt-4">
                     <button
                         type="submit"
-                        class="btn btn-success btn-md px-4"
+                        class="btn btn-success btn-md px-4 g-recaptcha"
                         aria-label="Schedule your free quote today"
+                        data-sitekey="6LfOt8MqAAAAAB9DF-RVFtjT6xjZNalwfenaUHbQ"
+                        data-callback="onSubmit"
+                        data-action="submit"
                     >
                         Get Started
                     </button>

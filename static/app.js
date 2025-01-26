@@ -22,3 +22,4 @@ document.addEventListener("DOMContentLoaded", () => {
         console.info("Error in delete modal setup:", error);
     }
 });
+

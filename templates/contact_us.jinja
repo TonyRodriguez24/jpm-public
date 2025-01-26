@@ -1,144 +1,234 @@
 {% extends 'base.jinja' %}
 {% block content %}
-<div class="container p-lg-5 p-4 mb-5 my-5 col-11" id="ContactForm">
-    <h2 class="text-center text-dark pt-5 fw-bold">
-        How Can We Help?
-    </h2>
-    <p class="text-center text-muted mb-lg-4" style="font-size: 0.9rem;">
-        Reach out to us with any questions or concerns—your satisfaction is our priority!
-    </p>
-    <div class="row d-flex justify-content-center align-items-start">
-        <!-- Form Section (Left Side) -->
-        <div class="col-md-8 col-12">
-            <form action="/contact-us" method="post">
-                {{ form.hidden_tag() }}
-                <div class="row d-flex align-items-center justify-content-center">
-                    <!-- Left Column Fields -->
-                    <div class="col-11 col-md-5 col-sm-12">
-                        <div class="mb-2">
-                            <label for="name" class="form-label mb-0">{{ form.name.label }}</label>
-                            {{ form.name(class_='form-control') }}
-                            {% if form.name.errors %}
-                                <small class="text-danger">{{ form.name.errors[0] }}</small>
-                            {% endif %}
+    <div class="container p-lg-5 p-4 mb-5 my-5 col-11" id="ContactForm">
+        <h2 class="text-center text-dark pt-5 fw-bold">How Can We Help?</h2>
+        <p class="text-center text-muted mb-lg-4" style="font-size: 0.9rem;">
+            Reach out to us with any questions or concerns—your satisfaction is
+            our priority!
+        </p>
+        <div class="row d-flex justify-content-center align-items-start">
+            <!-- Form Section (Left Side) -->
+            <div class="col-md-8 col-12">
+                <form action="/contact-us" method="post" id="#form">
+                    {{ form.hidden_tag() }}
+                    <div
+                        class="row d-flex align-items-center justify-content-center"
+                    >
+                        <!-- Left Column Fields -->
+                        <div class="col-11 col-md-5 col-sm-12">
+                            <div class="mb-2">
+                                <label for="name" class="form-label mb-0"
+                                    >{{ form.name.label }}</label
+                                >
+                                {{ form.name(class_='form-control') }}
+                                {% if form.name.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.name.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
+                            <div class="mb-2">
+                                <label for="phone" class="form-label mb-0"
+                                    >{{ form.phone.label }}</label
+                                >
+                                {{ form.phone(class_='form-control') }}
+                                {% if form.phone.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.phone.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
+                            <div class="mb-2">
+                                <label for="email" class="form-label mb-0"
+                                    >{{ form.email.label }}</label
+                                >
+                                {{ form.email(class_='form-control') }}
+                                {% if form.email.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.email.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
                         </div>
-                        <div class="mb-2">
-                            <label for="phone" class="form-label mb-0">{{ form.phone.label }}</label>
-                            {{ form.phone(class_='form-control') }}
-                            {% if form.phone.errors %}
-                                <small class="text-danger">{{ form.phone.errors[0] }}</small>
-                            {% endif %}
+                        <!-- Right Column Fields -->
+                        <div class="col-11 col-md-5 col-sm-12">
+                            <div class="mb-2">
+                                <label
+                                    for="service_type"
+                                    class="form-label mb-0"
+                                    >{{ form.service_type.label }}</label
+                                >
+                                {{ form.service_type(class_='form-select form-control') }}
+                                {% if form.service_type.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.service_type.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
+                            <div class="mb-2">
+                                <label for="address" class="form-label mb-0"
+                                    >{{ form.address.label }}</label
+                                >
+                                {{ form.address(class_='form-control') }}
+                                {% if form.address.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.address.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="referral" class="form-label mb-0"
+                                    >{{ form.referral.label }}</label
+                                >
+                                {{ form.referral(class_='form-select form-control') }}
+                                {% if form.referral.errors %}
+                                    <small class="text-danger"
+                                        >{{ form.referral.errors[0] }}</small
+                                    >
+                                {% endif %}
+                            </div>
                         </div>
-                        <div class="mb-2">
-                            <label for="email" class="form-label mb-0">{{ form.email.label }}</label>
-                            {{ form.email(class_='form-control') }}
-                            {% if form.email.errors %}
-                                <small class="text-danger">{{ form.email.errors[0] }}</small>
+                    </div>
+
+                    <div class="row mb-3 justify-content-center">
+                        <div class="col-11 col-md-10">
+                            <label for="message" class="form-label"
+                                >{{ form.message.label }}</label
+                            >
+                            {{ form.message(class_='form-message form-control', rows=5) }}
+                            {% if form.message.errors %}
+                                <small class="text-danger"
+                                    >{{ form.message.errors[0] }}</small
+                                >
                             {% endif %}
                         </div>
                     </div>
-                    <!-- Right Column Fields -->
-                    <div class="col-11 col-md-5 col-sm-12">
-                        <div class="mb-2">
-                            <label for="service_type" class="form-label mb-0">{{ form.service_type.label }}</label>
-                            {{ form.service_type(class_='form-select form-control') }}
-                            {% if form.service_type.errors %}
-                                <small class="text-danger">{{ form.service_type.errors[0] }}</small>
-                            {% endif %}
-                        </div>
-                        <div class="mb-2">
-                            <label for="address" class="form-label mb-0">{{ form.address.label }}</label>
-                            {{ form.address(class_='form-control') }}
-                            {% if form.address.errors %}
-                                <small class="text-danger">{{ form.address.errors[0] }}</small>
-                            {% endif %}
-                        </div>
 
-                        <div class="mb-2">
-                            <label for="referral" class="form-label mb-0">{{ form.referral.label }}</label>
-                            {{ form.referral(class_='form-select form-control') }}
-                            {% if form.referral.errors %}
-                                <small class="text-danger">{{ form.referral.errors[0] }}</small>
-                            {% endif %}
-                        </div>
+                    <div class="text-center">
+                        <button
+                            type="submit"
+                            class="btn btn-success btn-md g-recaptcha"
+                            data-sitekey="6LfOt8MqAAAAAB9DF-RVFtjT6xjZNalwfenaUHbQ"
+                            data-callback="onSubmit"
+                            data-action="submit"
+                        >
+                            Get started today
+                        </button>
                     </div>
+                </form>
+            </div>
+
+            <!-- Contact Cards Section (Right Side) -->
+            <div
+                class="col-md-4 col-12 d-flex flex-column justify-content-start align-items-center text-center px-2 my-5 my-lg-0"
+            >
+                <!-- Business Info -->
+                <div class="mb-2">
+                    <a href="/" class="text-decoration-none text-dark">
+                        <ion-icon
+                            name="business"
+                            size="large"
+                            class="mb-1"
+                        ></ion-icon>
+                        <h4 class="mb-1 fw-bold">JPM and Sons</h4>
+                        <p class="text-muted mb-0">
+                            150 Spring Lane, Levittown, NY
+                        </p>
+                    </a>
                 </div>
 
-                <div class="row mb-3 justify-content-center">
-                    <div class="col-11 col-md-10">
-                        <label for="message" class="form-label">{{ form.message.label }}</label>
-                        {{ form.message(class_='form-message form-control', rows=5) }}
-                        {% if form.message.errors %}
-                            <small class="text-danger">{{ form.message.errors[0] }}</small>
-                        {% endif %}
+                <!-- Email -->
+                <div class="my-2">
+                    <a
+                        href="mailto:contact@jpmandsons.com"
+                        class="text-decoration-none text-dark"
+                    >
+                        <ion-icon
+                            name="mail"
+                            size="large"
+                            class="mb-1"
+                        ></ion-icon>
+                        <h4 class="mb-1 fw-bold">Email</h4>
+                        <p class="text-muted mb-0">contact@JPMandSons.com</p>
+                    </a>
+                </div>
+
+                <!-- Phone -->
+                <div class="my-2">
+                    <a
+                        href="tel:516-735-0685"
+                        class="text-decoration-none text-dark"
+                    >
+                        <ion-icon
+                            name="call"
+                            size="large"
+                            class="mb-1"
+                        ></ion-icon>
+                        <h4 class="mb-1 fw-bold">Phone</h4>
+                        <p class="text-muted mb-0">516-735-0685</p>
+                    </a>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="my-2">
+                    <div
+                        class="d-flex justify-content-center align-items-center gap-2"
+                    >
+                        <a
+                            href="https://www.facebook.com/JPMSonsCorp/"
+                            target="_blank"
+                            class="text-dark"
+                        >
+                            <ion-icon
+                                name="logo-facebook"
+                                size="large"
+                                class="social-icon"
+                            ></ion-icon>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@jpmandsons"
+                            target="_blank"
+                            class="text-dark"
+                        >
+                            <ion-icon
+                                name="logo-tiktok"
+                                size="large"
+                                class="social-icon"
+                            ></ion-icon>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/jpmandsonscorp/"
+                            target="_blank"
+                            class="text-dark"
+                        >
+                            <ion-icon
+                                name="logo-instagram"
+                                size="large"
+                                class="social-icon"
+                            ></ion-icon>
+                        </a>
                     </div>
+                    <h4 class="mt-2 fw-bold">Our Socials</h4>
                 </div>
 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-success btn-md">Get in touch</button>
+                <!-- Developer Contact -->
+                <div class="mb-2">
+                    <h6 class="fw-bold">
+                        Questions or concerns regarding the website?
+                    </h6>
+                    <small class="text-muted">
+                        Feel free to reach out to the developer
+                        <a
+                            href="mailto:tonyrodriguez26@outlook.com"
+                            target="_blank"
+                            class="text-decoration-none text-primary fw-bold"
+                        >
+                            here</a
+                        >
+                    </small>
                 </div>
-            </form>
-        </div>
-
-        <!-- Contact Cards Section (Right Side) -->
-        <div class="col-md-4 col-12 d-flex flex-column justify-content-start align-items-center text-center px-2 my-5 my-lg-0">
-            <!-- Business Info -->
-            <div class="mb-2">
-                <a href="/" class="text-decoration-none text-dark">
-                    <ion-icon name="business" size="large" class="mb-1"></ion-icon>
-                    <h4 class="mb-1 fw-bold">JPM and Sons</h4>
-                    <p class="text-muted mb-0">150 Spring Lane, Levittown, NY</p>
-                </a>
-            </div>
-
-            <!-- Email -->
-            <div class="my-2">
-                <a href="mailto:contact@jpmandsons.com" class="text-decoration-none text-dark">
-                    <ion-icon name="mail" size="large" class="mb-1"></ion-icon>
-                    <h4 class="mb-1 fw-bold">Email</h4>
-                    <p class="text-muted mb-0">contact@JPMandSons.com</p>
-                </a>
-            </div>
-
-            <!-- Phone -->
-            <div class="my-2">
-                <a href="tel:516-735-0685" class="text-decoration-none text-dark">
-                    <ion-icon name="call" size="large" class="mb-1"></ion-icon>
-                    <h4 class="mb-1 fw-bold">Phone</h4>
-                    <p class="text-muted mb-0">516-735-0685</p>
-                </a>
-            </div>
-
-            <!-- Social Media Links -->
-            <div class="my-2">
-                <div class="d-flex justify-content-center align-items-center gap-2">
-                    <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank" class="text-dark">
-                        <ion-icon name="logo-facebook" size="large" class="social-icon"></ion-icon>
-                    </a>
-                    <a href="https://www.tiktok.com/@jpmandsons" target="_blank" class="text-dark">
-                        <ion-icon name="logo-tiktok" size="large" class="social-icon"></ion-icon>
-                    </a>
-                    <a href="https://www.instagram.com/jpmandsonscorp/" target="_blank" class="text-dark">
-                        <ion-icon name="logo-instagram" size="large" class="social-icon"></ion-icon>
-                    </a>
-                </div>
-                <h4 class="mt-2 fw-bold">Our Socials</h4>
-            </div>
-
-            <!-- Developer Contact -->
-            <div class="mb-2">
-                <h6 class="fw-bold">Questions or concerns regarding the website?</h6>
-                <small class="text-muted">
-                    Feel free to reach out to the developer
-                    <a href="mailto:tonyrodriguez26@outlook.com" target="_blank" class="text-decoration-none text-primary fw-bold">
-                        here</a>
-                </small>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
 {% endblock content %}

@@ -169,8 +169,11 @@
         </div>
     </div>
 
-    <section id="gallery" class="container my-3
-     py-5">
+    <section
+        id="gallery"
+        class="container my-3
+     py-5"
+    >
         <!-- Gallery Heading -->
         <header class="text-center mb-2 mb-lg-5">
             <h2 class="fw-bold">Our Gallery</h2>
@@ -436,10 +439,11 @@
 
             <!-- Form Section -->
             <form
+                id="#form"
                 action="/"
                 method="post"
                 aria-labelledby="ContactForm-heading"
-                class="row g-0 g-lg-3 align-items-center justify-content-start""
+                class="row g-0 g-lg-3 align-items-center justify-content-start"
             >
                 {{ form.hidden_tag() }}
 
@@ -479,8 +483,11 @@
                 <div class="col-12 text-center mt-4">
                     <button
                         type="submit"
-                        class="btn btn-success btn-md"
+                        class="btn btn-success btn-md g-recaptcha"
                         aria-label="Schedule your free quote today"
+                        data-sitekey="6LfOt8MqAAAAAB9DF-RVFtjT6xjZNalwfenaUHbQ"
+                        data-callback="onSubmit"
+                        data-action="submit"
                     >
                         Get Started
                     </button>
