@@ -2,6 +2,8 @@ import sendgrid
 from sendgrid.helpers.mail import Mail
 
 def send_email(api_key, from_email, to_email, subject, content):
+    """This handles the sending of an email through sendgrids API client"""
+
     sg = sendgrid.SendGridAPIClient(api_key=api_key)
     email = Mail(
         from_email=from_email,

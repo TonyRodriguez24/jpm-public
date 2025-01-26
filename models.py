@@ -12,11 +12,10 @@ load_dotenv()
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER")
 
-
-
 bcrypt = Bcrypt()
 
 def get_column_names(cls):
+        """Getting column names for admin dashboard"""
         return [column.name for column in cls.__table__.columns] # type: ignore
 
 class Admin(UserMixin, db.Model):
@@ -29,10 +28,12 @@ class Admin(UserMixin, db.Model):
 
     @classmethod
     def create_admin(cls, username, password):
+        """Creates admin with hashed pw"""
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         return cls(username = username, password = hashed_password, is_admin = True) # type: ignore
         
     def set_password(self, new_password):
+        """Function for setting a new password"""
         if self.is_admin:
             self.password = bcrypt.generate_password_hash(new_password).decode('utf-8')
             return True
@@ -40,6 +41,7 @@ class Admin(UserMixin, db.Model):
     
     @classmethod
     def authenticate_admin(cls, username, password):
+        """Authenticating if type in password matches password in db"""
         admin = Admin.query.filter_by(username = username).first()
         if admin and bcrypt.check_password_hash(admin.password,  password):
             return admin
@@ -88,7 +90,9 @@ class Contact(db.Model):
 
     @classmethod
     def create_contact(cls, form, complete=False):
-        # Step 1: Validate form data
+        """Creating a contact, ones that are complete can pass in 3 more fields, 
+        then turn that into a new contact"""
+
         contact_info = {
             'name': form.name.data,
             'phone': form.phone.data,
@@ -120,7 +124,7 @@ class Contact(db.Model):
 
     @staticmethod
     def send_emails(form, complete):
-        # Get the service name from the SERVICES dictionary
+        """Sending emails on form submission"""
         service_name = Contact.get_service_name(form.service_type.data)
 
     # Generate the email content for both business and customer
@@ -157,9 +161,10 @@ class Contact(db.Model):
 
     @staticmethod
     def generate_business_email(form, service_name, complete):
+        """Function for generating businesss email template"""
         # Generate the content for the business email
         content = f"""
-            <h2>New Complete Contact Form</h2>
+            <h3>Contact Form</h3>
             <p><strong>Name:</strong> {form.name.data}</p>
             <p><strong>Email:</strong> {form.email.data}</p>
             <p><strong>Phone:</strong> {form.phone.data}</p>
@@ -179,6 +184,8 @@ class Contact(db.Model):
 
     @staticmethod
     def generate_customer_email(form, service_name, complete):
+        """Function for generating customer email template"""
+
         content = f"""
             <p>Dear {form.name.data},</p>
             <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>

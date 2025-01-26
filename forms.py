@@ -5,6 +5,8 @@ from info import SERVICES, REFERRAL_OPTIONS
 
 
 class ContactForm(FlaskForm):
+    """Creates contact form: address, referral, message are left optional to create a quick version of form"""
+
     name = StringField('Name', 
                              validators=[DataRequired()],
                              render_kw={"placeholder": "John Smith"})
@@ -31,11 +33,15 @@ class ContactForm(FlaskForm):
                             render_kw={"placeholder": "Tell us what you need! We are more than happy to help."})
     
 class LoginForm(FlaskForm):
+    """Form for logging admin in"""
+
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "Enter your username"})
     password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "Enter your password"})
 
 
 class SetPasswordForm(FlaskForm):
+    """Form for admin changing a password"""
+
     new_password = PasswordField(
         'New Password', 
         validators=[DataRequired(), Length(min=8, message="Password must be at least 8 characters long.")]
@@ -44,6 +50,7 @@ class SetPasswordForm(FlaskForm):
         'Confirm New Password', 
         validators=[DataRequired(), EqualTo('new_password', message="Passwords must match.")]
     )
+
 # class ReviewForm(FlaskForm):
 #     rating = IntegerField("Rating", validators=[DataRequired()])
 
@@ -58,6 +65,8 @@ class SetPasswordForm(FlaskForm):
 #             raise ValueError("Please select a valid service.")
         
 class ProjectForm(FlaskForm):
+    """Form for adding a project *needs to be fleshed out"""
+
     type_of_work = StringField(
         'Type of Work',
         validators=[DataRequired()],

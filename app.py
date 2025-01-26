@@ -21,18 +21,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI #'postgresql:///jpm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = SECRET_KEY
 
+
+#compressing css and js
 Compress(app)
 assets = Environment(app)
 assets.auto_build = True  # Automatically build bundles on app startup
 assets.debug = False      # Use production mode (minify output)
-
-
 css = Bundle('about_us.css', 'contact_us.css', 'gallery.css', 'global.css', 'home.css', filters='cssmin', output='dist/css/styles.min.css')
 js = Bundle('app.js', 'gallery.js', filters='jsmin', output='dist/scripts.min.js')
 assets.register('css_all', css)
 assets.register('js_all', js)
 
-
+#connect app and database
 connect_db(app)
 
 # Initialize Flask-Login
@@ -48,14 +48,9 @@ def load_user(admin_id):
 
 from flask_login import login_user, login_required, logout_user, current_user
 
-
+#injects info want across all pages
 @app.context_processor
 def inject_globals():
-    from flask import has_request_context
-    # Safely get `current_user` only if there's a valid request
-
-    # Debug to see what's happening in the logs
-
     return {
         'services': services,
         'page_information': page_information,
@@ -65,6 +60,8 @@ def inject_globals():
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    """Rendering home template and handling (quick) form on home page"""
+
     form = ContactForm()
     
     if form.validate_on_submit():
@@ -74,14 +71,15 @@ def home():
         else:
             flash('An error occurred while processing the form.')
 
-    if form.errors:  # Check if there are validation errors
+    #validation errors
+    if form.errors:
         flash("There was an error with your submission. Please fill out required fields", "danger")
         return redirect(url_for('home')  + '#ContactForm')
 
     # Render the home page with the form and any error messages
     return render_template('home.jinja', form=form, active_page='home')
 
-### service routes ###
+### service routes - setting active page, getting service from services object, getting buttons from buttons object ###
 @app.route('/asphalt')
 def asphalt():
     return render_template('services/asphalt.jinja', active_page = 'asphalt', service = services.get('asphalt'), buttons = buttons)
@@ -103,7 +101,7 @@ def pressure_washing():
 ### end service routes ###
 
 
-##misc routes###
+## other routes ###
 @app.route('/about-us')
 def about_us():
     return render_template('about_us.jinja', active_page = 'about_us')
@@ -113,6 +111,8 @@ def financing():
 
 @app.route('/contact-us', methods = ['GET', 'POST'])
 def contact_us():
+    """Handling full contact form, redirect to thank you if successful """
+
     form = ContactForm()
     if form.validate_on_submit():
         if Contact.create_contact(form, complete=True):
@@ -128,10 +128,12 @@ def contact_us():
 
 @app.route('/thank-you')
 def thank_you():
+    """Thank you page for successful form submission"""
     return render_template('thank_you.jinja',active_page = 'thank_you')
 
 @app.route('/gallery', methods = ['GET', 'POST'])
 def gallery():
+    """Process (Quick) contact form on this page"""
     form = ContactForm()
     
     if form.validate_on_submit():
@@ -150,10 +152,10 @@ def gallery():
 
 
 
-
 ### beginning admin routes ###
 @app.route('/admin', methods = ['GET', 'POST'])
 def admin():
+    """Login form and adding is_admin to session for navbar purposes of current_user.is_authenticated not working"""
     form = LoginForm()
 
     if form.validate_on_submit():
@@ -176,22 +178,21 @@ def admin():
 @app.route('/admin/dashboard', methods = ['GET','POST'])
 @login_required
 def dashboard():
+    """Dashboard of all contacts and projects for an admin user to interact with"""
+
     admin = current_user
 
     contacts = Contact.query.all()
     contact_table_headers = get_column_names(Contact)
     projects = Projects.query.all()
 
-    
-
     return render_template('admin/dashboard.jinja', active_page = 'dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
 @app.route('/admin/set-password', methods=['GET', 'POST'])
 @login_required
 def set_password():
-    """
-    Allow the logged-in admin to update their password.
-    """
+    """ Allow the logged-in admin to update password """
+
     form = SetPasswordForm()
     if form.validate_on_submit():
         new_password = form.new_password.data
@@ -212,6 +213,8 @@ def set_password():
 @app.route('/admin/add-contact', methods=['GET', 'POST'])
 @login_required
 def add_contact():
+    """Form for admin adding a contact instead of through form submission"""
+
     form = ContactForm()
     if form.validate_on_submit():
         # Create a new Contact instance
@@ -228,11 +231,10 @@ def add_contact():
 
     return render_template('admin/contacts/add_contact.jinja', form=form)
 
-
-
 @app.route('/admin/edit-contact/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_contact(id):
+    """Edit contact form for admin"""
     contact = Contact.query.get_or_404(id)
 
     # Prepopulate the form with the contact's existing data
@@ -258,6 +260,7 @@ def edit_contact(id):
 @app.route('/admin/delete-contact/<int:id>', methods = ['POST'])
 @login_required
 def delete_contact(id):
+    """Deleting contact for admin, post route only"""
 
     contact = Contact.query.get_or_404(id)
     db.session.delete(contact)
@@ -268,7 +271,7 @@ def delete_contact(id):
 @app.route('/admin/delete-all-contacts', methods=['POST'])
 @login_required
 def delete_all_contacts():
-
+    """Deleting all contacts for admin, post route only"""
     # Delete all contacts
     Contact.query.delete()
     db.session.commit()
@@ -281,7 +284,7 @@ def delete_all_contacts():
 @app.route('/admin/add-project', methods=['GET', 'POST'])
 @login_required
 def add_project():
-
+    """Form for admin adding a project *needs to be fleshed out"""
 
     form = ProjectForm()
     if form.validate_on_submit():
@@ -301,7 +304,7 @@ def add_project():
 @app.route('/admin/edit-project/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_project(id):
-
+    """Form for admin editing a project"""
 
     project = Projects.query.get_or_404(id)
     form = ProjectForm(obj=project)
@@ -321,8 +324,7 @@ def edit_project(id):
 @app.route('/admin/delete-project/<int:id>', methods=['POST'])
 @login_required
 def delete_project(id):
-
-
+    """Form for admin deleting a project"""
 
     project = Projects.query.get_or_404(id)
     db.session.delete(project)
@@ -334,6 +336,8 @@ def delete_project(id):
 @app.route('/admin/logout', methods = ['GET', 'POST'])
 @login_required
 def logout():
+    """Logging out, pop is_admin from session and use flask login to log user out"""
+
     session.pop('is_admin', None)
     logout_user()
     flash('You have been logged out.', 'success')
@@ -345,6 +349,7 @@ def logout():
 #sitemap, robots.txt, and 404 routes
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
+    """Builds sitemap xml, excludes routes that aren't available without password or ones that shouldn't be on there"""
     from flask import Response
     import datetime
 
@@ -380,23 +385,26 @@ def sitemap():
 
 @app.route('/robots.txt')
 def robots_txt():
-    response = """User-agent: *
-Disallow: /admin
-Disallow: /admin/dashboard
-Disallow: /admin/set-password
-Disallow: /admin/add-contact
-Disallow: /admin/edit-contact/*
-Disallow: /admin/add-project
-Disallow: /admin/edit-project/*
-Disallow: /admin/logout
-Allow: /
+    """Robots.txt file"""
 
-Sitemap: https://jpmandsons.com/sitemap.xml
-"""
+    response = """User-agent: *
+                Disallow: /admin
+                Disallow: /admin/dashboard
+                Disallow: /admin/set-password
+                Disallow: /admin/add-contact
+                Disallow: /admin/edit-contact/*
+                Disallow: /admin/add-project
+                Disallow: /admin/edit-project/*
+                Disallow: /admin/logout
+                Allow: /
+
+                Sitemap: https://jpmandsons.com/sitemap.xml
+            """
     return Response(response, mimetype='text/plain')
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """404 page"""
     # Render the 404 template with a 404 status code
     return render_template('404.jinja', current_user=current_user), 404
 

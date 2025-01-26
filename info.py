@@ -1,6 +1,8 @@
 # FLASK_ENV = production   Options: development, production
 # FLASK_DEBUG=1            Enable debug mode (useful for development)
 
+
+#title and meta descriptions for pages
 page_information = {
     "home": {
         "title": "JPM and Sons - Expert General Contractor Services on Long Island",
@@ -48,6 +50,9 @@ page_information = {
     }
 }
 
+
+
+#contains all information regarding services
 services = {
     "asphalt": {
     "id": 1,
@@ -521,6 +526,9 @@ services = {
 
 }
 
+
+
+#defining which images are stackable in a row, some can fit 2 in a row while some only one image takes up entire height
 gallery_and_alt = [
     {"file": "backyard-patio.webp", "alt": "A beautifully designed backyard patio with outdoor furniture.", "stackable": True},
     {"file": "backyard-patio-pavers.webp", "alt": "Backyard area with freshly sealed decorative pavers."},
@@ -553,6 +561,9 @@ gallery_and_alt = [
     {"file": "windows-large.webp", "alt": "Large windows with a clear view of the outdoor landscape.", "stackable": True}
 ]
 
+
+
+#matching before and afters for main gallery
 before_afters = [
     {
         "before": {"file": "before-washing-and-sealant.webp", "alt": "Before washing and sealant: dirt and grime on surface"},
@@ -597,6 +608,8 @@ before_afters = [
 ]
 
 
+
+#list of CTA buttons for contacting us and gallery
 buttons = {
     "contact": [
         {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-primary"},
@@ -629,6 +642,8 @@ buttons = {
 }
 
 
+
+#for dropdown use in forms
 SERVICES = [
     (0, "Please Select A Service"),
     (1, 'Asphalt'),
@@ -638,7 +653,7 @@ SERVICES = [
     (5, 'Paver Sealing'),
     (6, 'Pressure Washing'),
 ]
-
+#for dropdown use in forms
 REFERRAL_OPTIONS = [
     ("google_search", "Google Ads"),
     ("facebook_ads", "Facebook Ads"),
