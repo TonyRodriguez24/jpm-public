@@ -1,0 +1,324 @@
+{% macro navbar(active_page) %}
+<div class="d-flex">
+    <nav class="navbar navbar-expand-lg bg-success border-bottom border-dark w-100">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="{{ url_for('public.home') }}">
+                JPM and Sons
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100 d-flex justify-content-lg-center flex-wrap">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'public.home' %}active{% endif %}"
+                            href="{{ url_for('public.home') }}"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <!-- Financing Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'financing' %}active{% endif %}"
+                            href="{{ url_for('public.financing') }}"
+                        >
+                            Financing Options
+                        </a>
+                    </li>
+
+                    <!-- Gallery Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'gallery' %}active{% endif %}"
+                            href="{{ url_for('public.gallery') }}"
+                        >
+                            Gallery
+                        </a>
+                    </li>
+
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle {% if active_page in ['asphalt', 'concrete', 'home_improvement', 'masonry', 'paver_sealing', 'pressure_washing'] %}active{% endif %}"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url_for('public.asphalt') }}">Asphalt</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('public.concrete') }}">Concrete</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('public.home_improvement') }}">Home Improvement</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('public.masonry') }}">Masonry</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('public.paver_sealing') }}">Paver Sealing</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('public.pressure_washing') }}">Pressure Washing</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- About Link -->
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {% if active_page == 'about_us' %}active{% endif %}"
+                            href="{{ url_for('public.about_us') }}"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <!-- Admin Links -->
+                    {% if 'is_admin' in session %}
+                        <!-- Admin Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle text-muted small"
+                                href="#"
+                                id="adminDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Admin:
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+                                <li>
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('admin.dashboard') }}">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('admin.set_password') }}">
+                                        Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-muted small" href="{{ url_for('admin.logout') }}">
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <!-- Admin Login for Non-Logged-In Users -->
+                        <li class="nav-item">
+                            <a
+                                class="nav-link text-muted small"
+                                href="{{ url_for('admin.login') }}"
+                            >
+                                Admin Login
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <!-- Contact Link (Far Right) -->
+                    <li class="nav-item ms-lg-auto ms-0">
+                        <a
+                            class="btn bg-primary text-white contact-btn mx-lg-3 {% if active_page == 'contact_us' %}active{% endif %}"
+                            href="{{ url_for('public.contact_us') }}"
+                        >
+                            Contact Us Today
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+{% endmacro %}
+
+
+
+
+{% macro render_flashes() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+
+
+            <div class="container mt-2">
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li
+                            class="alert alert-{{ category }} alert-dismissible fade show"
+                            role="alert"
+                        >
+                            {{ message }}
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                                aria-label="Close"
+                            ></button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+{% endmacro %}
+
+
+
+{% macro footer() %}
+<footer class="py-4 bg-light">
+    <div class="container">
+        <!-- Mobile Layout -->
+        <div class="d-block d-lg-none">
+            <!-- Connect With Us Header -->
+            <div class="text-center mb-3">
+                <h3 class="text-uppercase fw-bold">Connect With Us</h3>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-4 text-center">
+                <ul id="connect" class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="tel:516-735-0685" class="text-black text-decoration-none">
+                            <ion-icon name="call"></ion-icon>
+                            <span>Phone: 516-735-0685</span>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="mailto:contact@jpmandsons.com" class="text-black text-decoration-none">
+                            <ion-icon name="mail"></ion-icon>
+                            <span>Email: contact@JPMandSons.com</span>
+                        </a>
+                    </li>
+                    <li class="text-black">
+                        <ion-icon name="navigate-circle"></ion-icon>
+                        <span>150 Spring Lane, Levittown, NY</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="my-5 text-center">
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on Facebook">
+                        <ion-icon class="footer-social" name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@jpmandsons" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on TikTok">
+                        <ion-icon class="footer-social" name="logo-tiktok"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/jpmandsonscorp/" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on Instagram">
+                        <ion-icon class="footer-social" name="logo-instagram"></ion-icon>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="text-center">
+                <h3 class="text-uppercase fw-bold mb-2">Quick Links</h3>
+                <ul id="links" class="list-unstyled mt-3 d-flex flex-row justify-content-center gap-3">
+                    <li>
+                        <a href="{{ url_for('public.home') }}" class="text-black text-decoration-none">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('public.gallery') }}" class="text-black text-decoration-none">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('public.about_us') }}" class="text-black text-decoration-none">About Us</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('public.contact_us') }}" class="text-black text-decoration-none">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div class="d-none d-lg-block">
+            <!-- Header Row -->
+            <div class="row text-center mb-3 mb-lg-0">
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Connect With Us</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Follow Us</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Quick Links</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="text-uppercase fw-bold">Ready to Build?</h3>
+                </div>
+            </div>
+
+            <!-- Content Row -->
+            <div class="row text-center d-flex justify-content-center align-items-center">
+                <!-- Connect Section -->
+                <div class="col-lg-3 d-flex flex-column text-start justify-content-center align-items-center">
+                    <ul id="connect" class="list-unstyled">
+                        <li>
+                            <a href="tel:516-735-0685" class="text-black text-decoration-none">
+                                <ion-icon name="call"></ion-icon>
+                                <span>Phone: 516-735-0685</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contact@jpmandsons.com" class="text-black text-decoration-none">
+                                <ion-icon name="mail"></ion-icon>
+                                <span>Email: contact@JPMandSons.com</span>
+                            </a>
+                        </li>
+                        <li class="text-black">
+                            <ion-icon name="navigate-circle"></ion-icon>
+                            <span>150 Spring Lane, Levittown, NY</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Links Section -->
+                <div class="col-lg-3">
+                    <div class="d-flex justify-content-center align-items-center text-center gap-3">
+                        <a href="https://www.facebook.com/JPMSonsCorp/" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on Facebook">
+                            <ion-icon class="footer-social" name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="https://www.tiktok.com/@jpmandsons" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on TikTok">
+                            <ion-icon class="footer-social" name="logo-tiktok"></ion-icon>
+                        </a>
+                        <a href="https://www.instagram.com/jpmandsonscorp/" target="_blank" rel="noopener noreferrer" aria-label="Visit JPM and Sons on Instagram">
+                            <ion-icon class="footer-social" name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-lg-3 d-flex flex-column align-items-center">
+                    <ul id="links" class="list-unstyled">
+                        <li><a href="{{ url_for('public.home') }}" class="text-black text-decoration-none">Home</a></li>
+                        <li><a href="{{ url_for('public.gallery') }}" class="text-black text-decoration-none">Gallery</a></li>
+                        <li><a href="{{ url_for('public.about_us') }}" class="text-black text-decoration-none">About Us</a></li>
+                        <li><a href="{{ url_for('public.contact_us') }}" class="text-black text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Ready to Build Section -->
+                <div class="col-lg-3 d-flex flex-column align-items-center">
+                    <p>
+                        Let’s bring your ideas to life! Contact us for a free consultation today and discover how JPM and Sons can help.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endmacro %}

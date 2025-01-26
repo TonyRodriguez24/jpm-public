@@ -1,0 +1,33 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style = 'height:50vh;'>
+    <div class="row w-100">
+        <div class="col-12 col-md-8 col-lg-4 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4">Login</h3>
+                    <form action="{{ url_for(active_page) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {% for field in form if field.widget.input_type != 'hidden' %}
+                            <div class="mb-3">
+                                {{ field.label(class_='form-label') }}
+                                {{ field(class_='form-control') }}
+                                {% if field.errors %}
+                                    <div class="text-danger">
+                                        {% for error in field.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-success w-auto">Login</button>
+                        <a href = "{{url_for('public.home')}}" class="btn btn-outline-secondary">Return Home</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
