@@ -5,7 +5,6 @@ from app.models import Admin
 
 
 login_manager = LoginManager()
-
 Compress()
 assets = Environment()
 

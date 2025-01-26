@@ -6,7 +6,6 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 admin = Blueprint('admin', __name__, url_prefix = '/admin')
 
-
 @admin.route('/admin-login', methods = ['GET', 'POST'])
 def login():
     """Login form and adding is_admin to session for navbar purposes of current_user.is_authenticated not working"""

@@ -7,8 +7,6 @@ seo = Blueprint('seo', __name__)
 @seo.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     """Builds sitemap xml, excludes routes that aren't available without password or ones that shouldn't be on there"""
-   
-
     # Correct endpoint names for excluded routes
     excluded_routes = ['admin', 'dashboard', 'set_password', 'add_contact', 'add_project' 'logout', 'robots_txt', 'sitemap']
     sitemap_xml = ['<?xml version="1.0" encoding="utf-8"?>']

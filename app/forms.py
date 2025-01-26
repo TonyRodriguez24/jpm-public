@@ -3,7 +3,6 @@ from wtforms import PasswordField, StringField, SelectField, EmailField, TextAre
 from wtforms.validators import DataRequired, Optional, EqualTo, Length
 from app.info import SERVICES, REFERRAL_OPTIONS
 
-
 class ContactForm(FlaskForm):
     """Creates contact form: address, referral, message are left optional to create a quick version of form"""
 
