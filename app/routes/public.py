@@ -20,6 +20,7 @@ def home():
         #verify the token with reCAPTCHA API
         verify_url = 'https://www.google.com/recaptcha/api/siteverify'
         payload = {'secret': current_app.config.get('RECAPTCHA_SECRET_KEY'), 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        current_app.logger.debug(f"reCAPTCHA payload: {{'secret': '*****', 'response': {payload['response']}, 'remoteip': {payload['remoteip']}}}")
         result = requests.post(verify_url, data = payload).json()
 
         if result.get('success'):
@@ -81,6 +82,7 @@ def contact_us():
         #verify the token with reCAPTCHA API
         verify_url = 'https://www.google.com/recaptcha/api/siteverify'
         payload = {'secret': current_app.config.get('RECAPTCHA_SECRET_KEY'), 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        current_app.logger.debug(f"reCAPTCHA payload: {{'secret': '*****', 'response': {payload['response']}, 'remoteip': {payload['remoteip']}}}")
         result = requests.post(verify_url, data = payload).json()
 
         if result.get('success'):
@@ -115,6 +117,7 @@ def gallery():
         #verify the token with reCAPTCHA API
         verify_url = 'https://www.google.com/recaptcha/api/siteverify'
         payload = {'secret': current_app.config.get('RECAPTCHA_SECRET_KEY'), 'response': recaptcha_response, 'remoteip': request.remote_addr}
+        current_app.logger.debug(f"reCAPTCHA payload: {{'secret': '*****', 'response': {payload['response']}, 'remoteip': {payload['remoteip']}}}")
         result = requests.post(verify_url, data = payload).json()
 
         if result.get('success'):
