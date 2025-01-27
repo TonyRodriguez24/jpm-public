@@ -25,7 +25,7 @@ def create_app():
 
 # Configure logging
     logging.basicConfig(
-        level=logging.DEBUG,  
+        level=logging.WARNING,  
         format='%(asctime)s [%(levelname)s] %(message)s',  # time stamps , level name, and message
         handlers=[ #where it gets logged to 
             logging.FileHandler("error.log"),  # Log to a file
