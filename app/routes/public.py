@@ -24,10 +24,9 @@ def home():
 
         if result.get('success'):
             if Contact.create_contact(form, complete=False):
-                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
                 return redirect('/thank-you')
             else:
-                flash('An error occurred while processing the form.')
+                flash('An error occurred while processing the form.', 'danger')
         else:
             flash("Invalid reCAPTCHA. Please try again.", "danger")
             return redirect(url_for('public.home') + '#ContactForm')
@@ -86,7 +85,6 @@ def contact_us():
 
         if result.get('success'):
             if Contact.create_contact(form, complete=True):
-                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
                 return redirect('/thank-you')
             else:
                 flash('An error occurred while processing the form.')
@@ -121,7 +119,6 @@ def gallery():
 
         if result.get('success'):
             if Contact.create_contact(form, complete=False):
-                flash("Your form has been submitted. We try to get back to you the same day, expect a phone call or email from us.", "success")
                 return redirect('/thank-you')
             else:
                 flash('An error occurred while processing the form.')
