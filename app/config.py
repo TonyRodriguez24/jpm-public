@@ -9,4 +9,5 @@ class Config:
     RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ASSETS_DEBUG = False
+    ENV = 'production'
 

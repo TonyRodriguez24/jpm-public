@@ -9,3 +9,4 @@ venv/
 secret.py
 .webassets-cache/
 .env
+error.log
