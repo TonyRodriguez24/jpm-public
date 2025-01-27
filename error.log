@@ -342,3 +342,146 @@
 2025-01-27 10:51:15,077 [INFO]  * Restarting with stat
 2025-01-27 10:51:16,810 [WARNING]  * Debugger is active!
 2025-01-27 10:51:16,813 [INFO]  * Debugger PIN: 428-015-517
+2025-01-27 10:51:38,118 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "GET / HTTP/1.1" 200 -
+2025-01-27 10:51:38,157 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/home_header.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,158 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/asphalt.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,158 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,159 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/masonry.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,159 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/home_improvement.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,159 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/concrete.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,167 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,169 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/gallery.js HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,173 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/paver_sealing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,176 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/pressure_washing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,177 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_asphalt.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,178 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_concrete.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,180 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_home_improvement.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,183 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_masonry.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,194 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_paver_sealing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,194 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/service-cards-resized/home_pressure_washing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,196 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/backyard-pavers-and-siding.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,197 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-paver-backyard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,198 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/clean-pavers-by-pool.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,201 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-modern-bathroom.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,216 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/countertop-modern-design.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,218 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/kitchen-floors-and-granite.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,218 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/backyard-asthetic-pavers.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,218 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-home-and-yard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,218 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/front-page-gallery-resized/pavers-walkway-steps.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,221 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/google-review.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,227 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/avatar.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,228 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/avatar-female.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,230 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/Google_Review_logo.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,235 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/home/home-banner-resized/home.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:38,418 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:38] "[36mGET /static/images-webp/icons/logo-transparent.png HTTP/1.1[0m" 304 -
+2025-01-27 10:51:46,549 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:46] "GET /financing HTTP/1.1" 200 -
+2025-01-27 10:51:46,571 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:46] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:46,574 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:46] "[36mGET /static/images-webp/financing/financing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:46,592 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:46] "[36mGET /static/images-webp/financing/financing_banner.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:49,183 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:49] "GET /about-us HTTP/1.1" 200 -
+2025-01-27 10:51:49,207 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:49] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:49,209 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:49] "[36mGET /static/images-webp/about_us/young_nick.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:49,209 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:49] "[36mGET /static/images-webp/about_us/jimmy.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:49,210 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:49] "[36mGET /static/images-webp/about_us/nick-jim.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:50,808 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:50] "GET /financing HTTP/1.1" 200 -
+2025-01-27 10:51:50,830 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:50] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:50,830 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:50] "[36mGET /static/images-webp/financing/financing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:50,833 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:50] "[36mGET /static/images-webp/financing/financing_banner.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,475 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "GET / HTTP/1.1" 200 -
+2025-01-27 10:51:51,495 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,497 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/concrete.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,497 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/home_header.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,499 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/asphalt.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,499 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/masonry.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,500 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/home_improvement.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,503 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,507 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/gallery.js HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,509 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/pressure_washing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,510 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/paver_sealing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,511 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_asphalt.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,512 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_concrete.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,514 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_home_improvement.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,516 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_masonry.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,518 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_paver_sealing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,519 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/service-cards-resized/home_pressure_washing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,522 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/backyard-pavers-and-siding.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,525 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-modern-bathroom.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,525 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-paver-backyard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,526 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/clean-pavers-by-pool.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,526 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/countertop-modern-design.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,529 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/kitchen-floors-and-granite.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,534 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/beautiful-home-and-yard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,536 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/backyard-asthetic-pavers.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,537 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/front-page-gallery-resized/pavers-walkway-steps.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,539 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/google-review.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,540 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/avatar.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,541 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/avatar-female.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,542 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/icons/Google_Review_logo.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:51,547 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:51] "[36mGET /static/images-webp/home/home-banner-resized/home.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,641 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "GET /home-improvement HTTP/1.1" 200 -
+2025-01-27 10:51:52,662 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_kitchen_remodel.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,664 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_bathroom_renovation.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,665 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,667 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_roofing.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,668 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_siding.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,669 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_window_installation.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:52,670 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:52] "[36mGET /static/images-webp/home_improvement/home_improvement_flooring_installation.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,583 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "GET /gallery HTTP/1.1" 200 -
+2025-01-27 10:51:56,604 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/bathroom-modern.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,604 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/bathtub-white.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,607 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/dist/css/styles.min.css?v=3 HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,612 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/bathroom-modern-2.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,612 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/gallery.js HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,613 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/full-view-kitchen.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,613 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/full-view-living-room.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,615 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/kitchen-modern.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,616 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/kitchen-wood-floors.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,622 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/living-room-interior.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,623 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/living-room-modern.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,623 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/living-room-design.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,623 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/marble-counters.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,625 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/new-stairs-modern.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,626 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/stairs-wooden-floors.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,634 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/windows-large.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,635 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/home-improvement/overlooking-water-view.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,635 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-sealant.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,636 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-sealant-2.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,637 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-sealant.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,638 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-sealant-2.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,648 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-sealant-3.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,649 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-sealant-3.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,651 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-sealant-4.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,652 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-paver-repair-and-restoration.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,652 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-sealant-4.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,653 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-paver-repair-and-restoration.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,659 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-sealant-5.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,660 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-sealant-5.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,662 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-washing-and-restoration.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,662 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-washing-and-restoration.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,663 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-pavers-sealant.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,665 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-pavers-sealant.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,670 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-pavers-sealant-2.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,672 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/after-pavers-sealant-2.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,672 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/before-afters/before-and-after-sealant.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,673 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/backyard-patio-pavers.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,673 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/backyard-pavers.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,674 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/backyard-pool.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,679 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/driveway-sealed.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,680 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/driveway-sparkling.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,681 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/fire-pit-backyard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,683 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/front-yard-patio.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,684 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/pavers-sealed.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,686 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/pool-backyard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,686 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/walkway-front-yard.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,688 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/walkway-side.webp HTTP/1.1[0m" 304 -
+2025-01-27 10:51:56,688 [INFO] 127.0.0.1 - - [27/Jan/2025 10:51:56] "[36mGET /static/images-webp/gallery/walkway-garden.webp HTTP/1.1[0m" 304 -
+2025-01-27 11:05:14,327 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-27 11:05:14,327 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-27 11:05:14,332 [INFO]  * Restarting with stat
+2025-01-27 11:05:15,735 [WARNING]  * Debugger is active!
+2025-01-27 11:05:15,745 [INFO]  * Debugger PIN: 827-230-871
+2025-01-27 11:05:32,875 [INFO]  * Detected change in '/mnt/c/Users/TonyR/OneDrive/Documents/jpm/app/tests/test_routes.py', reloading
+2025-01-27 11:05:32,960 [INFO]  * Restarting with stat
+2025-01-27 11:05:36,473 [WARNING]  * Debugger is active!
+2025-01-27 11:05:36,480 [INFO]  * Debugger PIN: 827-230-871
