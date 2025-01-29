@@ -76,5 +76,11 @@ The primary goals are to drive traffic to the website, engage users, and provide
 - **PostgreSQL**
 - **Virtual environment**
 
+## Installation and Setup
+
 ### Clone the repository:
 https://github.com/tonyrodriguez24/jpm-public
+
+- python3 -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt
