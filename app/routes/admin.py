@@ -25,7 +25,7 @@ def login():
         else:
             flash('Incorrect password/username', 'danger')
 
-    return render_template('admin/login.jinja', form = form, active_page = 'admin.login')
+    return render_template('admin/login.jinja', form = form, active_page = 'login')
 
 @admin.route('/dashboard', methods = ['GET','POST'])
 @login_required
@@ -38,7 +38,7 @@ def dashboard():
     contact_table_headers = get_column_names(Contact)
     projects = Projects.query.all()
 
-    return render_template('admin/dashboard.jinja', active_page = 'admin.dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
+    return render_template('admin/dashboard.jinja', active_page = 'dashboard', admin = admin, contacts = contacts, table_headers = contact_table_headers, projects = projects)
 
 @admin.route('/set-password', methods=['GET', 'POST'])
 @login_required
@@ -58,7 +58,7 @@ def set_password():
             db.session.rollback()
             flash(f'An error occurred: {str(e)}', 'danger')
 
-    return render_template('admin/set_password.jinja', form=form, active_page='admin.set_password')
+    return render_template('admin/set_password.jinja', form=form, active_page='set_password')
 
 @admin.route('/add-contact', methods=['GET', 'POST'])
 @login_required
