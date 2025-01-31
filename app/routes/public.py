@@ -10,7 +10,7 @@ public = Blueprint('public', __name__)
 def home():
     """Rendering home template and handling (quick) form on home page"""
     #gets the reCAPTCHA token from the form submission
-    
+
 
     form = ContactForm()
     
@@ -130,7 +130,7 @@ def gallery():
             return redirect(url_for('public.gallery') + '#ContactForm')
         
         #validation errors
-        if form.errors:
+    if form.errors:
             flash("There was an error with your submission. Please fill out required fields", "danger")
             return redirect(url_for('public.gallery')  + '#ContactForm')
     

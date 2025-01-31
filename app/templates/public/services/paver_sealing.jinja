@@ -10,20 +10,19 @@
                 sealants to safeguard your pavers against weather damage,
                 stains, and wear while enhancing their natural color and beauty.
             </p>
-            <a href="{{url_for('public.contact_us')}}" class="btn btn-primary btn-md mt-3"
-                >Get a Free Quote</a
-            >
+           
         </div>
     </div>
 
-     <div class="container my-5 p-0">
+    <div class="container my-5 p-0">
         <!-- Section Header -->
         <div class="row text-center mb-5">
-    <h2 class="fw-bold">Our Paver Sealing Services</h2>
-    <p class="text-muted fs-5">
-        Protect and enhance your outdoor surfaces with our expert paver sealing services, ensuring long-lasting beauty.
-    </p>
-</div>
+            <h2 class="fw-bold">Our Paver Sealing Services</h2>
+            <p class="text-muted fs-5">
+                Protect and enhance your outdoor surfaces with our expert paver
+                sealing services, ensuring long-lasting beauty.
+            </p>
+        </div>
 
         <!-- Services List -->
         <div class="row">
@@ -64,7 +63,10 @@
                                                 >
                                                     <span
                                                         class="badge border border-dark 
-                text-dark py-2 px-3 bg-warning"
+                text-dark py-2 px-3"
+                                    style="background-color: hsl(28, 84%, 77%);"
+
+
                                                     >
                                                         <i
                                                             class="bi 
@@ -123,7 +125,7 @@
 
                                     <!-- Render One Random Gallery Button -->
                                     {% set gallery_button = buttons.gallery | random %}
-                                    <a
+                                   <a
                                         href="{{ gallery_button.link }}"
                                         class="btn {{ gallery_button.style }} me-2 mb-2"
                                     >

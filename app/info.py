@@ -608,18 +608,18 @@ before_afters = [
 #list of CTA buttons for contacting us and gallery
 buttons = {
     "contact": [
-        {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Request a Free Quote", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Schedule a Consultation", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Talk to Us", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Get in Touch", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Request Assistance", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Ask a Question", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Start Your Project", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Get a Free Estimate", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Reach Out to Us", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Schedule an Appointment", "link": "/contact-us", "style": "btn-outline-primary"},
-        {"label": "Send Us a Message", "link": "/contact-us", "style": "btn-outline-primary"}
+        {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Request a Free Quote", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Schedule a Consultation", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Talk to Us", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Get in Touch", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Request Assistance", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Ask a Question", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Start Your Project", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Get a Free Estimate", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Reach Out to Us", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Schedule an Appointment", "link": "/contact-us", "style": "btn-outline-success"},
+        {"label": "Send Us a Message", "link": "/contact-us", "style": "btn-outline-success"}
     ],
     "gallery": [
         {"label": "View Our Work", "link": "/gallery", "style": "btn-success"},

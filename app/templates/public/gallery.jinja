@@ -1,250 +1,333 @@
 {% extends 'base.jinja' %}
 
-
 {% block content %}
-
     <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="spinner"></div>
         <p>Loading...</p>
     </div>
-    
-<section id="gallery" class="container-fluid p-lg-5">
-    <div class="row align-items-center">
-        <!-- Left Side: Paragraph -->
-        <div class="col-lg-6 text-start">
-            <h1 class="fw-bold my-3">Our Gallery</h1>
-            <p class="text-muted">
-                Explore our gallery showcasing a wide range of completed projects, from stunning paver installations and meticulous
-                pressure washing transformations to professional sealing and elegant home renovations. Each project reflects our commitment
-                to quality, precision, and creating spaces that are both functional and visually striking. Whether it's enhancing outdoor
-                areas or modernizing interiors, our work is designed to exceed expectations and bring your vision to life.
+
+    <section id="gallery" class="container-fluid p-lg-5">
+        <div class="row align-items-center">
+            <!-- Left Side: Paragraph -->
+            <div class="col-lg-6 text-start">
+                <h1 class="fw-bold my-3">Our Gallery</h1>
+                <p class="text-muted">
+                    Explore our gallery showcasing a wide range of completed
+                    projects, from stunning paver installations and meticulous
+                    pressure washing transformations to professional sealing and
+                    elegant home renovations. Each project reflects our
+                    commitment to quality, precision, and creating spaces that
+                    are both functional and visually striking. Whether it's
+                    enhancing outdoor areas or modernizing interiors, our work
+                    is designed to exceed expectations and bring your vision to
+                    life.
+                </p>
+            </div>
+
+            <!-- Right Side: Stats -->
+            <div class="d-none d-md-block col-lg-6">
+                <div class="row text-center g-3">
+                    <!-- Stat 1: Towns Served -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-3 shadow rounded">
+                            <ion-icon
+                                name="location-outline"
+                                class="text-success"
+                            ></ion-icon>
+                            <h4 class="fw-bold my-1">50+</h4>
+                            <small class="text-muted"
+                                >Towns Served on Long Island</small
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Stat 2: Same-Day Inquiries -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-3 shadow rounded">
+                            <ion-icon
+                                name="chatbubbles-outline"
+                                size="large"
+                                class="text-success"
+                            ></ion-icon>
+                            <h4 class="fw-bold my-1">Same-Day</h4>
+                            <small class="text-muted"
+                                >Response to Inquiries</small
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Stat 3: Years of Experience -->
+                    <div class="col-md col-lg-4">
+                        <div class="p-3 shadow rounded">
+                            <ion-icon
+                                name="calendar-outline"
+                                size="large"
+                                class="text-success"
+                            ></ion-icon>
+                            <h4 class="fw-bold my-1">35+</h4>
+                            <small class="text-muted"
+                                >Years of Experience</small
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="d-flex my-4 my-lg-5 w-100 w-lg-75 m-auto" />
+
+        <!-- Home Improvement Work Section -->
+        <section>
+            <h3 class="text-start mb-2">Home Improvement Work</h3>
+            <p class="text-muted text-start mb-4">
+                Featuring home improvement projects, including kitchens,
+                bathrooms, living spaces, and other modern upgrades.
             </p>
-        </div>
-
-        <!-- Right Side: Stats -->
-        <div class="d-none d-md-block col-lg-6">
-            <div class="row text-center g-3">
-                <!-- Stat 1: Towns Served -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-3 shadow rounded">
-                        <ion-icon name="location-outline" class="text-success"></ion-icon>
-                        <h4 class="fw-bold my-1">50+</h4>
-                        <small class="text-muted">Towns Served on Long Island</small>
-                    </div>
-                </div>
-
-                <!-- Stat 2: Same-Day Inquiries -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-3 shadow rounded">
-                        <ion-icon name="chatbubbles-outline" size="large" class="text-success"></ion-icon>
-                        <h4 class="fw-bold my-1">Same-Day</h4>
-                        <small class="text-muted">Response to Inquiries</small>
-                    </div>
-                </div>
-
-                <!-- Stat 3: Years of Experience -->
-                <div class="col-md col-lg-4">
-                    <div class="p-3 shadow rounded">
-                        <ion-icon name="calendar-outline" size="large" class="text-success"></ion-icon>
-                        <h4 class="fw-bold my-1">35+</h4>
-                        <small class="text-muted">Years of Experience</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Divider -->
-    <hr class="d-flex my-4 my-lg-5 w-100 w-lg-75 m-auto" />
-
-    <!-- Home Improvement Work Section -->
- <section>
-    <h3 class="text-start mb-2">Home Improvement Work</h3>
-    <p class="text-muted text-start mb-4">
-        Featuring home improvement projects, including kitchens, bathrooms, living spaces, and other modern upgrades.
-    </p>
-    <div class="row g-2">
-        <!-- Bathroom Modern -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/bathroom-modern.webp" class="img-fluid shadow-1-strong fade-in" alt="A modern bathroom with sleek fixtures and a large mirror.">
-            </figure>
-        </div>
-        
-        <!-- Bathtub White -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/bathtub-white.webp" class="img-fluid shadow-1-strong fade-in" alt="An elegant white freestanding bathtub with a stylish faucet.">
-            </figure>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/bathroom-modern-2.webp" class="img-fluid shadow-1-strong fade-in" alt="An elegant white bathroom with a modern and sleek design">
-            </figure>
-        </div>
-
-        <!-- Full View Kitchen -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/full-view-kitchen.webp" class="img-fluid shadow-1-strong fade-in" alt="A full view of a spacious modern kitchen with high-end appliances.">
-            </figure>
-        </div>
-
-        <!-- Full View Living Room -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/full-view-living-room.webp" class="img-fluid shadow-1-strong fade-in" alt="A spacious living room with modern furniture and decor.">
-            </figure>
-        </div>
-
-        <!-- Kitchen Modern -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/kitchen-modern.webp" class="img-fluid shadow-1-strong fade-in" alt="A modern kitchen with updated appliances and sleek countertops.">
-            </figure>
-        </div>
-
-        <!-- Kitchen Wood Floors -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/kitchen-wood-floors.webp" class="img-fluid shadow-1-strong fade-in" alt="A kitchen featuring polished wooden floors and bright lighting.">
-            </figure>
-        </div>
-
-        <!-- Living Room Design -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/living-room-design.webp" class="img-fluid shadow-1-strong fade-in" alt="A cozy and stylish living room with elegant furniture.">
-            </figure>
-        </div>
-
-        <!-- Living Room Interior -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/living-room-interior.webp" class="img-fluid shadow-1-strong fade-in" alt="The interior of a modern living room with large windows.">
-            </figure>
-        </div>
-
-        <!-- Living Room Modern -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/living-room-modern.webp" class="img-fluid shadow-1-strong fade-in" alt="A contemporary living room with modern decor and a comfortable setup.">
-            </figure>
-        </div>
-
-        <!-- Marble Counters -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/marble-counters.webp" class="img-fluid shadow-1-strong fade-in" alt="Luxurious marble countertops in a spacious kitchen.">
-            </figure>
-        </div>
-
-        <!-- New Stairs Modern -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/new-stairs-modern.webp" class="img-fluid shadow-1-strong fade-in" alt="Modern wooden stairs with a sleek design and polished finish.">
-            </figure>
-        </div>
-
-        <!-- Stairs Wooden Floors -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/stairs-wooden-floors.webp" class="img-fluid shadow-1-strong fade-in" alt="Wooden stairs with polished floors leading to the next level.">
-            </figure>
-        </div>
-
-        <!-- Windows Large -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/windows-large.webp" class="img-fluid shadow-1-strong fade-in" alt="Large windows with a clear view of the outdoor landscape.">
-            </figure>
-        </div>
-
-        <!-- Overlooking Water View -->
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <figure class="mb-0">
-                <img src="/static/images-webp/gallery/home-improvement/overlooking-water-view.webp" class="img-fluid shadow-1-strong fade-in" alt="A scenic view overlooking calm water from a beautifully designed interior space.">
-            </figure>
-        </div>
-    </div>
-</section>
-
-
-
-    <!-- Before and After Section -->
-    <section class="mb-0">
-        <h3 class="text-start mt-5 mb-2">Before and After</h3>
-        <p class="text-muted text-start mb-4">
-            Showcasing our pavers and pressure washing work: from stained and dull surfaces to vibrant, clean, and sealed finishes.
-        </p>
-        <div class="row g-2">
-            {% for pair in before_afters %}
-            <div class="col-lg-6 col-md-12">
-                <div class="row align-items-center">
-                    <!-- Before Image -->
-                    <div class="col-6">
-                        <figure class="mb-0 text-center">
-                            <img
-                                src="/static/images-webp/gallery/before-afters/{{ pair.before.file }}"
-                                class="img-fluid shadow-sm"
-                                alt="{{ pair.before.alt }}"
-                            />
-                            <figcaption class="mt-2 text-muted">Before</figcaption>
-                        </figure>
-                    </div>
-                    <!-- After Image -->
-                    <div class="col-6">
-                        <figure class="mb-0 text-center">
-                            <img
-                                src="/static/images-webp/gallery/before-afters/{{ pair.after.file }}"
-                                class="img-fluid shadow-sm"
-                                alt="{{ pair.after.alt }}"
-                            />
-                            <figcaption class="mt-2 text-muted">After</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <!-- Divider -->
-    <hr class="my-5" />
-
-    <!-- General Gallery Section -->
-    <section>
-    <h3 class="mb-2">Some Extra Pavers and Sealing Work</h3>
-    <p class="text-muted mb-4">
-        Highlighting paver installations, sealing, and maintenance work that ensures durability and beauty for years to come.
-    </p>
-    <div class="row g-2">
-        {% for image in gallery_and_alt %}
-            {% if not image.stackable %}
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <figure class="text-center mb-0">
+            <div class="row g-2">
+                <!-- Bathroom Modern -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
                         <img
-                            src="/static/images-webp/gallery/{{ image.file }}"
-                            class="img-fluid shadow-1-strong"
-                            alt="{{ image.alt }}"
+                            src="/static/images-webp/gallery/home-improvement/bathroom-modern.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A modern bathroom with sleek fixtures and a large mirror."
                         />
                     </figure>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</section>
 
-</section>
+                <!-- Bathtub White -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/bathtub-white.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="An elegant white freestanding bathtub with a stylish faucet."
+                        />
+                    </figure>
+                </div>
 
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/bathroom-modern-2.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="An elegant white bathroom with a modern and sleek design"
+                        />
+                    </figure>
+                </div>
 
-       <section class="py-5 my-5">
-       {% from "macros.jinja" import render_flashes %}
+                <!-- Full View Kitchen -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/full-view-kitchen.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A full view of a spacious modern kitchen with high-end appliances."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Full View Living Room -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/full-view-living-room.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A spacious living room with modern furniture and decor."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Kitchen Modern -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/kitchen-modern.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A modern kitchen with updated appliances and sleek countertops."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Kitchen Wood Floors -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/kitchen-wood-floors.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A kitchen featuring polished wooden floors and bright lighting."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Living Room Design -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/living-room-design.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A cozy and stylish living room with elegant furniture."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Living Room Interior -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/living-room-interior.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="The interior of a modern living room with large windows."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Living Room Modern -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/living-room-modern.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A contemporary living room with modern decor and a comfortable setup."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Marble Counters -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/marble-counters.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="Luxurious marble countertops in a spacious kitchen."
+                        />
+                    </figure>
+                </div>
+
+                <!-- New Stairs Modern -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/new-stairs-modern.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="Modern wooden stairs with a sleek design and polished finish."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Stairs Wooden Floors -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/stairs-wooden-floors.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="Wooden stairs with polished floors leading to the next level."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Windows Large -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/windows-large.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="Large windows with a clear view of the outdoor landscape."
+                        />
+                    </figure>
+                </div>
+
+                <!-- Overlooking Water View -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <figure class="mb-0">
+                        <img
+                            src="/static/images-webp/gallery/home-improvement/overlooking-water-view.webp"
+                            class="img-fluid shadow-1-strong fade-in"
+                            alt="A scenic view overlooking calm water from a beautifully designed interior space."
+                        />
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before and After Section -->
+        <section class="mb-0">
+            <h3 class="text-start mt-5 mb-2">Before and After</h3>
+            <p class="text-muted text-start mb-4">
+                Showcasing our pavers and pressure washing work: from stained
+                and dull surfaces to vibrant, clean, and sealed finishes.
+            </p>
+            <div class="row g-2">
+                {% for pair in before_afters %}
+                    <div class="col-lg-6 col-md-12">
+                        <div class="row align-items-center">
+                            <!-- Before Image -->
+                            <div class="col-6">
+                                <figure class="mb-0 text-center">
+                                    <img
+                                        src="/static/images-webp/gallery/before-afters/{{ pair.before.file }}"
+                                        class="img-fluid shadow-sm"
+                                        alt="{{ pair.before.alt }}"
+                                    />
+                                    <figcaption class="mt-2 text-muted">
+                                        Before
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <!-- After Image -->
+                            <div class="col-6">
+                                <figure class="mb-0 text-center">
+                                    <img
+                                        src="/static/images-webp/gallery/before-afters/{{ pair.after.file }}"
+                                        class="img-fluid shadow-sm"
+                                        alt="{{ pair.after.alt }}"
+                                    />
+                                    <figcaption class="mt-2 text-muted">
+                                        After
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <hr class="my-5" />
+
+        <!-- General Gallery Section -->
+        <section>
+            <h3 class="mb-2">Some Extra Pavers and Sealing Work</h3>
+            <p class="text-muted mb-4">
+                Highlighting paver installations, sealing, and maintenance work
+                that ensures durability and beauty for years to come.
+            </p>
+            <div class="row g-2">
+                {% for image in gallery_and_alt %}
+                    {% if not image.stackable %}
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <figure class="text-center mb-0">
+                                <img
+                                    src="/static/images-webp/gallery/{{ image.file }}"
+                                    class="img-fluid shadow-1-strong"
+                                    alt="{{ image.alt }}"
+                                />
+                            </figure>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+
+    <section class="py-5 my-5">
+        {% from "macros.jinja" import render_flashes %}
         {{ render_flashes() }}
-    <!-- Form Container -->
-    <div class="container p-4 p-lg-5 col-11" id="ContactForm">
+        <!-- Form Container -->
+        <div class="container p-4 p-lg-5 col-11" id="ContactForm">
             <!-- Section Header -->
             <header class="text-start mb-4">
                 <h3 class="fw-bold">
@@ -260,16 +343,15 @@
             <!-- Form Section -->
             <form
                 id="#form"
-            
                 action="/gallery"
                 method="post"
-                class="row g-3 align-items-center justify-content-center"
                 aria-labelledby="ContactForm-heading"
+                class="row g-0 g-lg-3 align-items-center justify-content-start"
             >
                 {{ form.hidden_tag() }}
 
                 <!-- Name Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="name" class="form-label mb-0"
                         >{{ form.name.label }}</label
                     >
@@ -277,7 +359,7 @@
                 </div>
 
                 <!-- Phone Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="phone" class="form-label mb-0"
                         >{{ form.phone.label }}</label
                     >
@@ -285,7 +367,7 @@
                 </div>
 
                 <!-- Email Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-3 mb-2">
                     <label for="email" class="form-label mb-0"
                         >{{ form.email.label }}</label
                     >
@@ -293,7 +375,7 @@
                 </div>
 
                 <!-- Service Type Field -->
-                <div class="col-md-3 col-sm-6 mb-2">
+                <div class="col-12 col-md-10 col-lg-3 mb-2">
                     <label for="service_type" class="form-label mb-0"
                         >{{ form.service_type.label }}</label
                     >
@@ -304,18 +386,20 @@
                 <div class="col-12 text-center mt-4">
                     <button
                         type="submit"
-                        class="btn btn-success btn-md px-4 g-recaptcha"
+                        class="btn btn-md text-white g-recaptcha"
                         aria-label="Schedule your free quote today"
                         data-sitekey="6LfOt8MqAAAAAB9DF-RVFtjT6xjZNalwfenaUHbQ"
                         data-callback="onSubmit"
                         data-action="submit"
+                            style = "background-color: hsl(12, 86%, 57%)"
+
                     >
-                        Get Started
+                        Get started today
                     </button>
                 </div>
             </form>
         </div>
-</section>
+    </section>
 
     <script src="/static/gallery.js"></script>
 {% endblock content %}

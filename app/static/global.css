@@ -13,7 +13,7 @@
 }
 
 .nav-item .nav-link.active {
-    color: rgb(255, 160, 65);
+    color: rgb(208, 208, 208);
 }
 .dropdown-item:hover {
     background-color: rgb(176, 195, 214); /* Hover background color */
