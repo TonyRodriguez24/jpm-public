@@ -39,6 +39,3 @@ Once your mentor approves your proposal, determine the database design and which
 
 
 ---
-
-
-This format is clear and easy to follow, allowing you to highlight your project's main points, the technology you're planning to use, and

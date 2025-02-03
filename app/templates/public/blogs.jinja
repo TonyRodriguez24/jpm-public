@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Blogs</h1>
+        <p>{{blog.title}}</p>
+        <p>{{blog.content}}</p>
+        <p>{{blog.date_posted}}</p>
+    </div>
+{% endblock content %}
