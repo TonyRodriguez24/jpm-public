@@ -142,6 +142,10 @@ ion-icon[name='call'] {
     border: 0;
 }
 
+.fs-1{
+    font-size: 2.5em !important;
+}
+
 
 @media (min-width: 1000px) {
     .header {
