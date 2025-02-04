@@ -146,17 +146,15 @@ ion-icon[name='call'] {
     border: 0;
 }
 
-.fs-1{
+.fs-1 {
     font-size: 2.5em !important;
 }
-
 
 @media (min-width: 1000px) {
     .header {
         font-size: 3.5em;
     }
 }
-
 
 #footer-border h3 {
     display: flex;
@@ -254,4 +252,10 @@ textarea {
 }
 .grecaptcha-badge {
     visibility: hidden !important;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    overscroll-behavior: none;
 }
