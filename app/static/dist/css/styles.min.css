@@ -90,9 +90,8 @@ ion-icon[name='call'] {
 }
 
 .navbar {
-    border-bottom: 2px solid #ffbd59;
+    border-bottom: 1px solid #ffbd59;
 }
-
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
