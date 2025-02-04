@@ -1,5 +1,6 @@
 from flask import Blueprint, current_app, flash, redirect, render_template, request, url_for
 import requests
+from markdown2 import markdown
 from app.forms import ContactForm
 from app.models import Blogs, Contact
 from app.info import services, buttons, gallery_and_alt, before_afters
@@ -136,13 +137,12 @@ def gallery():
     
     return render_template('public/gallery.jinja', active_page = 'gallery', gallery_and_alt = gallery_and_alt, before_afters = before_afters, form = form)
 
-@public.route('/blogs')
-def blogs():
-    blogs = Blogs.query.all()
-    return render_template('public/blogs.jinja', blogs = blogs)
+# @public.route('/blogs')
+# def blogs():
+#     blogs = Blogs.query.all()
+#     return render_template('public/blogs.jinja', blogs = blogs)
 
-@public.route('/blog/<slug>')
-def blog_post(slug):
-    blogs = Blogs.query.filter_by(slug=slug).first()
-    return render_template('public/blogs.jinja', blogs = blogs)
-
+# @public.route('/blogs/<slug>')
+# def blog_post(slug):
+#     post = Blogs.query.filter_by(slug=slug).first_or_404()
+#     return render_template('public/individual_blog_post.jinja', post = post )

@@ -81,11 +81,8 @@ class Blogs(db.Model):
 
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     title = db.Column(db.String(100), nullable = False)
-    content = db.Column(db.Text(), nullable = False)
     slug = db.Column(db.String(100), nullable = False, unique = True)
     date_posted = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
-    #foreign key
-    service_id = db.Column(db.Integer, db.ForeignKey('services.id'))
 
 
 class Contact(db.Model):

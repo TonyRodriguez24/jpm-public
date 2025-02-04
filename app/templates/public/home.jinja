@@ -10,68 +10,111 @@
     as="image"
     type="image/webp"
 />
+<link
+    rel="preload"
+    href="/static/images-webp/potential-bg.webp"
+    as="image"
+    type="image/webp"
+/>
 
 {% block content %}
-    <!-- Floating Specks -->
-
     <section
         id="hero-section"
-        class="container landing position-relative h-100 p-3 d-flex flex-column "
+        class="container position-relative h-100 d-flex flex-column justify-content-center"
         aria-labelledby="hero-heading"
+        style="min-height: calc(100dvh - 57px);"
     >
-        <div class="row align-items-center flex-grow-1">
+        <style>
+            /* Mobile - Default styles */
+            #hero-section {
+                background: url('/static/images-webp/potential-bg.webp')
+                    no-repeat center center;
+                background-size: cover;
+            }
+
+            #hero-overlay {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            /* Desktop - Remove background and overlay */
+            @media (min-width: 768px) {
+                #hero-section {
+                    background: none;
+                }
+
+                #hero-overlay {
+                    background: none;
+                }
+            }
+        </style>
+
+        <!-- Overlay Background (Mobile only) -->
+        <div id="hero-overlay" class="row align-items-center flex-grow-1">
             <!-- Left Column -->
-            <div class="col-md-6">
-                <h1 class="d-block d-lg-none text-black my-1">
-                    Get started on building the home of your dreams today
-                </h1>
-                <h1
-                    id="hero-heading"
-                    class="text-black header mb-4 d-none d-lg-block"
-                >
-                    Get started on building the home of your dreams today
-                </h1>
-                <p class="lead text-black">
-                    Long Island's top general contractor, industry-leading
-                    results for over <strong>35 years.</strong>
-                </p>
-                <a href="#services" class="btn btn-md text-white" style="background-color: hsl(12, 86%, 57%)"
-                    >Discover More</a
-                >
+            <div
+                class="col-md-6 d-flex flex-column justify-content-center px-4 px-md-5 text-center text-md-start"
+            >
+                <!-- Mobile Version -->
+                <div class="d-block d-md-none text-white">
+                    <h1 class="my-2 fw-bold fs-1">
+                        Get started on building the home of your dreams today
+                    </h1>
+                    <p class="lead">
+                        Long Island's top general contractor, industry-leading
+                        results for over <strong>35 years.</strong>
+                    </p>
+                </div>
+
+                <!-- Desktop Version -->
+                <div class="d-none d-md-block text-black">
+                    <h1 id="hero-heading" class="header mb-4 fw-bold">
+                        Get started on building the home of your dreams today
+                    </h1>
+                    <p class="lead">
+                        Long Island's top general contractor, industry-leading
+                        results for over <strong>35 years.</strong>
+                    </p>
+                </div>
+
+                <!-- Call to Action Button -->
+                <div class="mt-3">
+                    <a
+                        href="#services"
+                        class="btn btn-primary btn-md text-white mx-auto mx-md-0"
+                    >
+                        Discover More
+                    </a>
+                </div>
             </div>
 
-            <!-- Right Column with Image -->
-            <div class="col-md-6 text-center">
+            <!-- Right Column with Image (hidden on mobile) -->
+            <div
+                class="col-md-6 text-center d-none d-md-flex justify-content-center align-items-center"
+            >
                 <img
                     src="/static/images-webp/home/home_header.webp"
                     alt="A beautiful home showcasing contractor expertise"
-                    class="img-fluid my-2 m-lg-0 "
+                    class="img-fluid rounded"
                     width="572"
                     height="572"
-                    style="
-                    max-width: 100%;
-                    height: auto;
-                    aspect-ratio: 1 / 1; /* Ensures square space is reserved */
-                "
+                    style="max-width: 100%; height: auto; aspect-ratio: 1 / 1;"
                 />
             </div>
         </div>
 
-        <!-- Bottom Links for Services -->
-        <div class="container mt-lg-3 my-3 my-lg-0 py-1">
-            <div class="row d-flex justify-content-center">
+        <!-- Bottom Links for Services (hidden on mobile) -->
+        <div class="container mt-lg-4 py-2 d-none d-md-block">
+            <div class="row justify-content-center">
                 <div class="col-12 text-center">
-                    <div
-                        class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-2 g-lg-4 "
-                    >
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
                         <!-- Dynamic Service Links -->
                         {% for key, service in services.items() %}
                             <div class="col my-2">
                                 <a
                                     href="{{ url_for('public.' ~ key) }}"
-                                    class="d-flex flex-column justify-content-center align-items-center service-link text-decoration-none text-dark text-center "
+                                    class="d-flex flex-column justify-content-center align-items-center service-link text-decoration-none text-dark"
                                 >
-                                    <div class="icon-container p-lg-3 py-3 p-0">
+                                    <div class="icon-container p-3">
                                         <img
                                             src="{{ url_for('static', filename='images-webp/icons/' ~ service['name'].replace(' ', '_') ~ '.webp') }}"
                                             alt="{{ service['name'].replace('_', ' ').title() }} Icon"
@@ -90,7 +133,7 @@
         </div>
     </section>
 
-    <section id="services" class="py-2 py-lg-5">
+    <section id="services" class="py-5 py-lg-5">
         <div class="container">
             <!-- Section Heading -->
             <header
@@ -133,7 +176,7 @@
                                 >
                                     <h3
                                         class="fw-bold text-start service-header "
-                                        style ="color: hsl(12, 86%, 57%)"
+                                        style="color:#193e6d"
                                     >
                                         {{ service_key.replace('_', ' ').title() }}
                                     </h3>
@@ -163,7 +206,9 @@
                     Whether you’re starting a new project or just have a
                     question, we are here to help.
                 </p>
-                <a href="#ContactForm" class="btn btn-md text-white mt-2" style = "background-color: hsl(12, 86%, 57%)"
+                <a
+                    href="#ContactForm"
+                    class="btn btn-md btn-primary text-white mt-2"
                     >Reach Out to Us</a
                 >
             </div>
@@ -484,13 +529,11 @@
                 <div class="col-12 text-center mt-4">
                     <button
                         type="submit"
-                        class="btn btn-md text-white g-recaptcha"
+                        class="btn btn-md btn-primary text-white g-recaptcha"
                         aria-label="Schedule your free quote today"
                         data-sitekey="6LfOt8MqAAAAAB9DF-RVFtjT6xjZNalwfenaUHbQ"
                         data-callback="onSubmit"
                         data-action="submit"
-                            style = "background-color: hsl(12, 86%, 57%)"
-
                     >
                         Get started today
                     </button>

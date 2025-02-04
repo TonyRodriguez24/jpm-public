@@ -4,6 +4,11 @@
     font-style: normal;
 }
 
+:root {
+    --bs-primary: #193e6d; /* Your brand color */
+    --bs-primary-hover: #1451a1; /* Optional: adjust hover color */
+}
+
 .nav-link {
     color: black;
 }
@@ -12,8 +17,12 @@
     color: rgb(255, 255, 255);
 }
 
+.nav-item .nav-link {
+    color: #ffffff;
+}
+
 .nav-item .nav-link.active {
-    color: rgb(208, 208, 208);
+    color: #ffbd59;
 }
 .dropdown-item:hover {
     background-color: rgb(176, 195, 214); /* Hover background color */
@@ -32,9 +41,14 @@
 #services .card {
     border: 0px;
 }
-.header {
-    font-size: 3.5em;
+
+
+@media (max-width: 1000px) {
+    .header {
+        font-size: 3.5em;
+    }
 }
+
 
 #footer-border h3 {
     display: flex;

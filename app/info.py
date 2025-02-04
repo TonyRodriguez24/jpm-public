@@ -608,32 +608,32 @@ before_afters = [
 #list of CTA buttons for contacting us and gallery
 buttons = {
     "contact": [
-        {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Request a Free Quote", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Schedule a Consultation", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Talk to Us", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Get in Touch", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Request Assistance", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Ask a Question", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Start Your Project", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Get a Free Estimate", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Reach Out to Us", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Schedule an Appointment", "link": "/contact-us", "style": "btn-outline-success"},
-        {"label": "Send Us a Message", "link": "/contact-us", "style": "btn-outline-success"}
+        {"label": "Contact Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Request a Free Quote", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Schedule a Consultation", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Talk to Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Get in Touch", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Request Assistance", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Ask a Question", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Start Your Project", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Get a Free Estimate", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Reach Out to Us", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Schedule an Appointment", "link": "/contact-us", "style": "btn-outline-primary"},
+        {"label": "Send Us a Message", "link": "/contact-us", "style": "btn-outline-primary"}
     ],
     "gallery": [
-        {"label": "View Our Work", "link": "/gallery", "style": "btn-success"},
-        {"label": "See Portfolio", "link": "/gallery", "style": "btn-success"},
-        {"label": "Explore Our Projects", "link": "/gallery", "style": "btn-success"},
-        {"label": "Browse the Gallery", "link": "/gallery", "style": "btn-success"},
-        {"label": "Check Out Our Work", "link": "/gallery", "style": "btn-success"},
-        {"label": "Discover Our Projects", "link": "/gallery", "style": "btn-success"},
-        {"label": "Explore Completed Work", "link": "/gallery", "style": "btn-success"},
-        {"label": "See Our Creations", "link": "/gallery", "style": "btn-success"},
-        {"label": "View Past Projects", "link": "/gallery", "style": "btn-success"},
-        {"label": "Check Our Portfolio", "link": "/gallery", "style": "btn-success"},
-        {"label": "Explore Design Ideas", "link": "/gallery", "style": "btn-success"},
-        {"label": "See Our Expertise", "link": "/gallery", "style": "btn-success"}
+        {"label": "View Our Work", "link": "/gallery", "style": "btn-primary"},
+        {"label": "See Portfolio", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Explore Our Projects", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Browse the Gallery", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Check Out Our Work", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Discover Our Projects", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Explore Completed Work", "link": "/gallery", "style": "btn-primary"},
+        {"label": "See Our Creations", "link": "/gallery", "style": "btn-primary"},
+        {"label": "View Past Projects", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Check Our Portfolio", "link": "/gallery", "style": "btn-primary"},
+        {"label": "Explore Design Ideas", "link": "/gallery", "style": "btn-primary"},
+        {"label": "See Our Expertise", "link": "/gallery", "style": "btn-primary"}
     ]
 }
 
