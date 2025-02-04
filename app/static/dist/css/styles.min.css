@@ -89,6 +89,11 @@ ion-icon[name='call'] {
     color: #ffffff;
 }
 
+.navbar {
+    border-bottom: 2px solid #ffbd59;
+}
+
+
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
     color: #ffbd59;
