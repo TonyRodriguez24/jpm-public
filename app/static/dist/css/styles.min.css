@@ -253,9 +253,3 @@ textarea {
 .grecaptcha-badge {
     visibility: hidden !important;
 }
-
-html,
-body {
-    overflow-x: hidden;
-    overscroll-behavior: none;
-}
