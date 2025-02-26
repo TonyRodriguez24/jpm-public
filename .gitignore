@@ -9,3 +9,5 @@ venv/
 .webassets-cache/
 .env
 error.log
+domain.key
+domain.csr
