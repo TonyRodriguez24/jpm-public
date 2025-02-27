@@ -53,13 +53,13 @@ services = {
     "asphalt": {
     "id": 1,
     "name": "asphalt",
-    "less_information": "We provide professional asphalt paving services for driveways, walkways, parking lots, and basketball courts. Our skilled team ensures a durable and long-lasting finish using high-quality materials and proper installation techniques. Contact us for a consultation.",
+    "less_information": "We provide professional asphalt paving services for driveways, walkways, and parking lots. Our skilled team ensures a durable and long-lasting finish using high-quality materials and proper installation techniques. Contact us for a consultation.",
     "information": "At JPM and Sons, we specialize in professional asphalt paving services that enhance and protect your outdoor spaces. Contact us today to learn more and schedule a consultation.",
     "sub_services": [
         {
             "name": "Driveway Installation",
             "description": "Expertly crafted driveways using high-quality materials, ensuring durability and a polished appearance that enhances curb appeal.",
-            "long_description": "Our expertly crafted driveways use high-quality materials and advanced techniques to ensure durability and a polished appearance. Trusted by hundreds of customers in your area, we deliver fast and reliable service while ensuring peace of mind with our licensed and insured team.",
+            "long_description": "We use high-quality materials and advanced techniques to ensure durability and a polished appearance. Trusted by hundreds of customers in your area, we deliver fast and reliable service while ensuring peace of mind with our licensed and insured team.",
             "benefits": [
                 "Enhances curb appeal and property value.",
                 "Professionally graded for long-lasting durability.",
@@ -91,7 +91,7 @@ services = {
         {
             "name": "Belgium Block Borders",
             "description": "Precision installation of decorative Belgium block borders to define the edges of your driveway or walkway.",
-            "long_description": "Our decorative Belgium block borders combine elegance with functionality, ensuring structural integrity and a finished look. Fully licensed and trusted by customers, we provide reliable service tailored to your project's needs.",
+            "long_description": "Our decorative Belgium block borders combine elegance with functionality, ensuring structural integrity and a finished look.",
             "benefits": [
                 "Prevents erosion and edge deterioration.",
                 "Adds an elegant and finished look to your space.",
@@ -106,7 +106,7 @@ services = {
         },
         {
             "name": "Paver Walkways",
-            "description": "Design and installation of beautiful paver walkways that combine aesthetics with functionality.",
+            "description": "Beautiful paver walkways that combine aesthetics with functionality.",
             "long_description": "We specialize in the design and installation of stunning paver walkways that elevate the beauty and functionality of your property. Using high-quality materials and precise techniques, we ensure your walkways are durable, slip-resistant, and visually appealing. Trusted by customers in your area, our licensed and insured team guarantees reliable service tailored to your needs.",
             "benefits": [
                 "Improves property accessibility and visual appeal.",

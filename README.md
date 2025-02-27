@@ -1,6 +1,6 @@
 # JPM and Sons
 
-I wanted to make a web application that is thoughtful in terms of user experience and can also bring users in. This project is still a work in progress in terms of the marketing and SEO optimization aspect of it. I have enjoyed learning all the technologies behind it, even though at times it has been frustrating. I first started this in March 2024, and it was my introduction to web development. It’s also what led me to enroll in Springboard’s bootcamp because I found it interesting and something that I can turn into a career. I later revisited this project once I gained more knowledge in Flask and expect to revisit it again once I have more front-end skills or new tools to implement. I want to add more functionality to it as I continue learning, more so on the front end,
+I wanted to make a web application that is thoughtful in terms of user experience and can also bring users in. This project is still a work in progress in terms of the marketing and SEO optimization aspect of it. I have enjoyed learning all the technologies behind it. I first started this in March 2024, and it was my introduction to web development. It’s also what led me to enroll in Springboard’s bootcamp because I found it interesting and something that I can turn into a career. I later revisited this project once I gained more knowledge in Flask and expect to revisit it again once I have more front-end skills or new tools to implement. I want to add more functionality to it as I continue learning.
 
 ---
 

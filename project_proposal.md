@@ -14,7 +14,6 @@ The tech stack I will be using for my final project is:
 - **Bcrypt** will be implemented to securely hash user passwords.
 - **PostgreSQL** will serve as the database, and **SQLAlchemy** will be used as the ORM for seamless interaction with the database.
 - **WTForms** will be used for creating and validating forms efficiently.
-- **Flask-Mail** will be used for sending emails (e.g., notifications or password resets).
 - **Flask-Login** will handle user authentication and session management.
 
 ---
