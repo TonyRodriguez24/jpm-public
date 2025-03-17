@@ -192,7 +192,6 @@ form > li > label {
     height: 80vh;
 }
 .service-card {
-    background-color: #ececec;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
